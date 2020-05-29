@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Layout02</title>
+    <style>
+        * {margin: 0; padding: 0; }
+        #wrap {background-color: #ede7f6; }
+        .container {width: 1000px; margin: 0 auto; }
+        header {width: 100%; height: 120px; background-color: #b39ddb; }
+        aside {width: 30%; height: 700px; background-color: #9575cd ; float: left; }
+        section {width: 70%; height: 700px; background-color: #7e57c2 ; float: left; }
+        footer {width: 100%; height: 120px; background-color: #673ab7 ; clear: both; }
+        
+        @media (max-width: 1020px){
+            .container {width: 95%; }
+        }
+        @media (max-width: 768px){
+            .container {width: 100%; }
+        }
+        @media (max-width: 480px){
+            aside {float: none; width: 100%; height: 350px; }
+            section {float: none; width: 100%; height: 350px; }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="container">
+            <header></header>
+            <aside></aside>
+            <section></section>
+            <footer></footer>
+        </div>
+    </div>
+</body>
+</html>

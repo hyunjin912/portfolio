@@ -1,0 +1,578 @@
+@charset "UTF-8";
+/* 팝업 */
+.notice {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+}
+
+.notice .notice-cont {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background: #fff;
+  text-align: center;
+  line-height: 500px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.notice .notice-btn {
+  position: absolute;
+  top: 28%;
+  left: 61%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+}
+
+.notice .notice-btn a {
+  text-align: center;
+  font-size: 40px;
+  line-height: 50px;
+  color: black;
+}
+
+/* slide */
+.slider-wrap {
+  width: 100%;
+  /* position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%); */
+}
+
+.slider-img {
+  width: 100%;
+}
+
+.slider-img .slides {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.slider-img .slides img {
+  width: 100%;
+  height: 100vh;
+}
+
+/* 메인 인덱스 */
+.container {
+  margin: 0 auto;
+  width: 1440px;
+}
+
+/* 공통 헤더 부분 */
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 150px 0 40px;
+  /* 패딩탑 150으로 위쪽 여백을 띄웠었는데
+        그렇게 되면 박스의 높이가 길어져서 스크롤을
+        내리면 긴 상태로 픽스되어 마진탑으로 위쪽여백을 줬다
+        이렇게 하니 박스의 원래 높이 만큼만 픽스가 된다.
+    */
+  /* padding: 40px 234px 40px; */
+  /* margin-top: 110px; */
+  /* margin-bottom: 80px; */
+  /* position: fixed; left: 0; top: 0; z-index: 1000; width: 100%;
+    background: #fff; */
+}
+
+.header h1 img {
+  width: 180px;
+}
+
+.header ul.nav {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header ul.nav li {
+  margin: 0 25px;
+}
+
+.header ul.nav li a {
+  position: relative;
+  color: #fff;
+}
+
+.header ul.nav li a:before {
+  content: '';
+  width: 100%;
+  height: 0;
+  background: #38ccdd;
+  position: absolute;
+  top: 27px;
+  left: 0;
+  -webkit-transition: height 0.2s;
+  transition: height 0.2s;
+}
+
+.header ul.nav li a:hover::before {
+  height: 2px;
+}
+
+.header ul.nav li a span {
+  color: #000;
+}
+
+.header ul.nav li a.underline:before {
+  height: 2px;
+}
+
+/* .header.on {
+    position: fixed; top: -100px; top의 값을 몇으로 해야 할지 잘 모르겠다.
+                                  헤더의 높이를 알아야 하는 것인가?
+} */
+/* main */
+.stit {
+  font-size: 20px;
+  letter-spacing: 0.2px;
+  line-height: 25px;
+  color: #ffffff;
+  opacity: 0.4;
+}
+
+.btit {
+  margin-top: 20px;
+  color: #fff;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 55px;
+}
+
+.imgWrap {
+  margin: 40px 0;
+}
+
+.imgWrap img {
+  width: 40px;
+}
+
+ul.hoverText {
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+ul.hoverText li {
+  margin-bottom: 10px;
+}
+
+ul.hoverText li:last-child {
+  margin-bottom: 0;
+}
+
+ul.hoverText li a {
+  color: #fff;
+}
+
+/* about */
+.about-tit-wrap {
+  /* margin: 300px 0 50px; 
+    헤더 픽스할 때 사용하던 값. 헤더가 픽스가 되어 영역이 사라져서 위로 올라갔기 때문에 마진탑을 줬다.
+    */
+  margin: 60px 0 50px;
+}
+
+.about-tit-wrap .about-english-tit {
+  font-size: 65px;
+  font-weight: 700;
+  letter-spacing: -2px;
+}
+
+.about-tit-wrap .about-korean-tit {
+  font-size: 32px;
+  letter-spacing: -2.2px;
+}
+
+.about-tit-wrap .consulting-korean-desc {
+  font-size: 18px;
+  letter-spacing: -1px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.about-banner img {
+  width: 100%;
+}
+
+.first-cont {
+  margin-top: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.first-cont .overview-tit {
+  padding-top: 50px;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #1d1d1d;
+}
+
+.first-cont .overview-cont {
+  padding-top: 50px;
+  font-size: 18.4px;
+  letter-spacing: -1.3px;
+  line-height: 28px;
+}
+
+.two-cont {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 27% 73%;
+      grid-template-columns: 27% 73%;
+}
+
+.two-cont .ourservice-tit {
+  padding-top: 105px;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #1d1d1d;
+}
+
+.two-cont .ourservice-cont {
+  padding-top: 100px;
+  margin-left: -2px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.mid-cont {
+  padding-right: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.mid-cont .mid-cont-img {
+  width: 100%;
+}
+
+.mid-cont .mid-cont-tit-eng {
+  font-size: 18.5px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-top: 15px;
+}
+
+.mid-cont .mid-cont-tit-kor {
+  font-size: 16px;
+  letter-spacing: -1.5px;
+}
+
+.mid-cont .mid-cont-line img {
+  margin: 20px 0;
+  width: 20px;
+}
+
+.mid-cont .mid-cont-cont {
+  font-size: 14.5px;
+  letter-spacing: -1.2px;
+  color: #545454;
+  margin-top: 0px;
+  line-height: 23px;
+}
+
+.mid-cont4, .mid-cont5, .mid-cont6 {
+  margin-top: 15px;
+}
+
+.three-cont {
+  padding: 100px 0 250px 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 27% 73%;
+      grid-template-columns: 27% 73%;
+}
+
+.three-cont .clients-tit {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #1d1d1d;
+}
+
+.three-cont .clients-cont img {
+  width: 100%;
+}
+
+/* works */
+.works-cont-wrap {
+  margin-top: 80px;
+  margin-bottom: 130px;
+}
+
+.works-cont-wrap a {
+  display: inline-block;
+  width: 23%;
+  margin-bottom: 100px;
+}
+
+.works-cont-wrap a:hover {
+  color: #000;
+}
+
+.works-cont-wrap a .works-cont-box {
+  width: 100%;
+}
+
+.works-cont-wrap a .works-cont-box .works-cont-img img {
+  width: 100%;
+}
+
+.works-cont-wrap a .works-cont-box .works-cont-kor {
+  font-size: 16.5px;
+  margin: 20px 0 0 2px;
+  padding-bottom: 2px;
+  font-weight: 500;
+  letter-spacing: -0.3px;
+}
+
+.works-cont-wrap a .works-cont-box .works-cont-eng {
+  font-size: 11.5px;
+  color: #545454;
+  margin: 2px 0 0 2px;
+  font-weight: 300;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+/* consulting */
+.consulting-tit-wrap {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 25% 75%;
+      grid-template-columns: 25% 75%;
+  margin-top: 150px;
+  margin-bottom: 85px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.consulting-tit-wrap .consulting-tit-txt {
+  font-size: 22px;
+  letter-spacing: -0.5px;
+  color: #1d1d1d;
+}
+
+.consulting-tit-wrap .consulting-tit-img img {
+  width: 100%;
+}
+
+.consulting-case-wrap {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 25% 75%;
+      grid-template-columns: 25% 75%;
+  margin-bottom: 300px;
+}
+
+.consulting-case-wrap .case-box .case-tit {
+  font-size: 19px;
+  letter-spacing: -0.5px;
+  color: #1d1d1d;
+}
+
+.consulting-case-wrap .case-box .case-desc {
+  font-size: 15px;
+  letter-spacing: -1.1px;
+  color: #6a6a6a;
+  margin-top: 7px;
+  line-height: 20px;
+}
+
+.consulting-case-wrap .case-img-box img {
+  display: block;
+}
+
+.consulting-case-wrap .case-img-box .dotline {
+  margin: 100px 0;
+}
+
+/* contact */
+.contact-tit-wrap {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 65% 35%;
+      grid-template-columns: 65% 35%;
+}
+
+.contact-tit-wrap .contact-txt-box {
+  margin-top: 120px;
+}
+
+.contact-tit-wrap .contact-txt-box .txt-eng {
+  font-size: 68px;
+  font-weight: 700;
+  letter-spacing: -2px;
+  margin-bottom: 25px;
+}
+
+.contact-tit-wrap .contact-txt-box .txt-kor {
+  padding-right: 90px;
+  font-size: 33px;
+  line-height: 45px;
+  letter-spacing: -2.5px;
+  margin-bottom: 30px;
+}
+
+.contact-tit-wrap .contact-txt-box .txt-tel {
+  font-size: 23px;
+  letter-spacing: -0.4px;
+  margin-bottom: 33px;
+}
+
+.contact-tit-wrap .contact-txt-box .txt-tel span {
+  color: #4d4d4d;
+}
+
+.contact-tit-wrap .contact-txt-box .txt-tel a {
+  position: relative;
+}
+
+.contact-tit-wrap .contact-txt-box .txt-tel a:hover {
+  color: #000;
+}
+
+.contact-tit-wrap .contact-txt-box .txt-tel a:before {
+  content: '';
+  width: 100%;
+  height: 0;
+  background: #38ccdd;
+  position: absolute;
+  top: 32px;
+  left: 0;
+  -webkit-transition: height 0.2s;
+  transition: height 0.2s;
+}
+
+.contact-tit-wrap .contact-txt-box .txt-tel a:hover:before {
+  height: 2px;
+}
+
+.contact-tit-wrap .contact-txt-box .txt-btn a {
+  position: relative;
+}
+
+.contact-tit-wrap .contact-txt-box .txt-btn a:before {
+  content: '';
+  width: 100%;
+  height: 0;
+  background: #38ccdd;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  -webkit-transition: height 0.2s;
+  transition: height 0.2s;
+}
+
+.contact-tit-wrap .contact-txt-box .txt-btn a:hover:before {
+  height: 2px;
+}
+
+.contact-tit-wrap .contact-txt-box .txt-btn a img {
+  width: 230px;
+}
+
+.contact-tit-wrap .contact-img-box {
+  margin-top: 120px;
+}
+
+.contact-tit-wrap .contact-img-box img {
+  width: 100%;
+}
+
+#map {
+  margin: 150px 0;
+  width: 100%;
+  height: 450px;
+}
+
+/* 공통 푸터 부분 */
+#footer {
+  position: relative;
+  border-top: 1px solid rgba(235, 235, 235, 0.8);
+  padding: 50px 0;
+}
+
+#footer .fcont1 {
+  font-size: 16px;
+  letter-spacing: -0.3px;
+}
+
+#footer .fcont2 {
+  font-size: 15px;
+  color: #8d8d8d;
+  letter-spacing: -0.3px;
+  margin-bottom: 10px;
+}
+
+#footer .fcont3 {
+  font-size: 15px;
+  letter-spacing: 0.2px;
+}
+
+#footer .fcont4 {
+  font-size: 12px;
+  color: #8d8d8d;
+  letter-spacing: -0.1px;
+  margin-top: 15px;
+}
+
+.scrollUp {
+  display: block;
+  width: 40px;
+  height: 40px;
+  font-size: 35px;
+  background: #000;
+  border-radius: 3px;
+  opacity: 0.7;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.scrollUp:hover {
+  color: #fff;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="skyhyunjinlee">
+    <meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
+    <meta name="keywords"
+        content="웹스토리보이, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, skyhyunjinlee, publisher, css3, html, markup, design, Webstoryboy">
+    <title>테스트 | skyhyunjinlee | CSS Animation</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../../assets/css/docs.min.css" rel="stylesheet">
+    <link href="../../assets/css/prism.css" rel="stylesheet">
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="../../assets/ico/favicon_114.png">
+    <link rel="icon" href="../../assets/ico/icon.png">
+    <link rel="icon" href="../../assets/ico/favicon_57.png" sizes="16x16">
+    <link rel="icon" href="../../assets/ico/favicon_72.png" sizes="32x32">
+    <link rel="icon" href="../../assets/ico/favicon_114.png" sizes="48x48">
+    <link rel="icon" href="../../assets/ico/favicon_114.png" sizes="64x64">
+    <link rel="icon" href="../../assets/ico/favicon_114.png" sizes="128x128">
+
+    <!-- Facebook meta tags -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="웹스토리보이" />
+    <meta property="og:url" content="https://webstoryboy.co.kr/" />
+    <meta property="og:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
+    <meta property="og:site_name" content="웹스토리보이" />
+    <meta property="og:description" content="웹과 관련된 정보를 제공합니다." />
+
+    <!-- twitter meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@webstoryboy" />
+    <meta name="twitter:title" content="웹스토리보이" />
+    <meta name="twitter:description" content="웹과 관련된 정보를 제공합니다." />
+    <meta property="twitter:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
+
+    <!-- 웹 폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gaegu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.../assets2/js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <a class="sr-only" href="#content">Skip to main content</a>
+
+    <header class="navbar navbar-inverse navbar-static-top bs-docs-nav" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="../index.html" class="navbar-brand">WEB'S &lt;/doc&gt;</a>
+            </div>
+            <nav class="collapse navbar-collapse bs-navbar-collapse pull-right" role="navigation">
+                <ul class="nav navbar-nav">
+                    <li><a href="https://wiss.tistory.com/">Design</a></li>
+                    <li><a href="https://webzz.tistory.com/">Coding</a></li>
+                    <li><a href="https://wtss.tistory.com/">Tutor</a></li>
+                    <li><a href="https://wess.tistory.com/">Edu</a></li>
+                    <li><a href="https://wsss.tistory.com/">CSS</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="bs-header bgs3" id="content">
+        <div class="container">
+            <h1>CSS Animation Reference v1.0 &lt;/doc&gt;</h1>
+            <p><a href="https://hyunjin912.github.io/Save/index.html" target="_blank">hyunjin912.github.io/Save/index.html</a></p>
+        </div>
+    </div>
+
+    <div class="container bs-docs-container">
+        <div class="row">
+
+            <div class="col-md-9" role="main">
+                <!-- Intro1 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro1" class="page-header">Animation</h2>
+
+                    <h3 class="pt30">Animation</h3>
+                    <p class="bs-callout bs-callout-info">
+                        animation : name | duration | timing-fuction | delay | iteration | direction | fill-mode | play-state
+                    </p>
+                    <div class="table-reponsive">
+                        <table class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>종류</th>
+                                    <th>예시</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>animation-name</td>
+                                    <td>@keyframe에 지정된 이름을 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>animation-duration</td>
+                                    <td>애니메이션이 실행되는 시간을 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>animation-timing-function</td>
+                                    <td>애니메이션 키프레임 움직임을 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>animation-delay</td>
+                                    <td>애니메이션이 시작되기 전까지 시간을 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>animation-iteration</td>
+                                    <td>애니메이션 반복 횟수를 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>animation-derection</td>
+                                    <td>애니메이션 방향을 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>animation-fill-mode</td>
+                                    <td>애니메이션 끝나고 난 뒤 어떤 값을 적용할지 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>animation-play-state</td>
+                                    <td>애니메이션 실행 상태를 설정합니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="pt30">Transition</h3>
+                    <p class="bs-callout bs-callout-info">
+                        transition : property | duration | timing-fuction | delay
+                    </p>
+                    <div class="table-reponsive">
+                        <table class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>종류</th>
+                                    <th>예시</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>transition-property</td>
+                                    <td>트렌지션을 적용할 CSS 속성 대상을 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>transition-druation</td>
+                                    <td>트렌지션 작동시간을 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>transition-timing-function</td>
+                                    <td>트렌지션 움직임 효과를 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>transition-delay</td>
+                                    <td>트렌지션이 시작되기 전까지 시간을 설정합니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="pt30">Timing-fuction</h3>
+                    <div class="table-reponsive">
+                        <table class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>종류</th>
+                                    <th>예시</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>linear</td>
+                                    <td>일정한 간격으로 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>ease</td>
+                                    <td>처음에는 서서히 가속하고 마지막 부분에서 급격히 감속합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>ease-in</td>
+                                    <td>처음에는 천천히 시작하고 마지막에 가속합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>ease-out</td>
+                                    <td>처음에는 최대 속도로 시작하고 마지막에 감속합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>ease-in-out</td>
+                                    <td>처음에는 제로 속도로 시작하고, 중간 지점에서 최고 속도로 움직이고, 마지막 부분에서 서서히 감속합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>step-start</td>
+                                    <td>애니메이션을 시작점에서 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>step-end</td>
+                                    <td>애니메이션을 끝점에서 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>steps(int, start/end)</td>
+                                    <td>애니메이션을 단계별을 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>cubic-bezier(n,n,n,n)</td>
+                                    <td>버지니아 곡선 값을 만들어서 설정합니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- //Intro1 -->
+
+                <style>
+                    .sBox > div {
+                        width: 60px; height: 60px; 
+                        background-image: linear-gradient(to top, #feada6 0%, #f5efef 100%);
+                        text-align: center; color:#fff;
+                        line-height: 60px;
+                        border-radius: 50%;
+                        margin: 10px;
+                        position: relative;
+                    }
+                    .btn { 
+                        color: #fff;
+                        background-image: linear-gradient(to top, #feada6 0%, #f5efef 100%);
+                    }
+                </style>
+                <style>
+                    .circle1.show {animation: move 2s 1 linear;}
+                    .circle2.show {animation: move 2s 1 ease;}
+                    .circle3.show {animation: move 2s 1 ease-in;}
+                    .circle4.show {animation: move 2s 1 ease-out;}
+                    .circle5.show {animation: move 2s 1 ease-in-out;}
+                    @keyframes move {
+                        0% {left: 0%;}
+                        50% {left: calc(100% - 130px);}    /* 100%라서 원이 짤리게 된다. 그렇다고 90%라고 하면 전체크기에서는 괜찮지만 브라우저가 작아지면 짤리게된다. */
+                        100% {left: 0%;}                   /* 브라우저의 크기가 작아져도 안짤리게 하기 위해서는 calc를 사용한다.*/ 
+                    }
+                </style>
+                <!-- Intro2 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro2" class="page-header">Animation-timimg-function1<span class="btn" id="btn1">Click</span></h2>
+                    <div class="sBox s1">
+                        <div class="circle1">circle1</div>
+                        <div class="circle2">circle2</div>
+                        <div class="circle3">circle3</div>
+                        <div class="circle4">circle4</div>
+                        <div class="circle5">circle5</div>
+                    </div>
+<pre class="line-numbers language-css"><code>.circle1.show {animation: move 2s 1 linear;}
+.circle2.show {animation: move 2s 1 ease;}
+.circle3.show {animation: move 2s 1 ease-in;}
+.circle4.show {animation: move 2s 1 ease-out;}
+.circle5.show {animation: move 2s 1 ease-in-out;}
+@keyframes move {
+0% {left: 0%;}
+50% {left: calc(100% - 80px);}    
+100% {left: 0%;}                   
+}
+</code></pre>
+                </div>
+                <!-- //Intro2 -->
+
+                <style>
+                    .circle6.show {animation: move 3s 1 step-start;}
+                    .circle7.show {animation: move 3s 1 step-end;}
+                    .circle8.show {animation: move 3s 1 steps(4, start);}
+                    .circle9.show {animation: move 3s 1 steps(4, end);}
+                    .circle10.show {animation: move 3s 1 steps(10, start);}
+                    .circle11.show {animation: move 3s 1 steps(10, end);}
+                </style>
+                <!-- Intro3 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro3" class="page-header">Animation-timimg-function2<span class="btn" id="btn2">Click</span></h2>
+                    <div class="sBox s2">
+                        <div class="circle6">circle6</div>
+                        <div class="circle7">circle7</div>
+                        <div class="circle8">circle8</div>
+                        <div class="circle9">circle9</div>
+                        <div class="circle10">circle10</div>
+                        <div class="circle11">circle11</div>
+                    </div>
+<pre class="line-numbers language-css"><code>.circle6.show {animation: move 3s 1 step-start;}
+.circle7.show {animation: move 3s 1 step-end;}
+.circle8.show {animation: move 3s 1 steps(4, start);}
+.circle9.show {animation: move 3s 1 steps(4, end);}
+.circle10.show {animation: move 3s 1 steps(10, start);}
+.circle11.show {animation: move 3s 1 steps(10, end);}
+</code></pre>
+                    <p class="codepen" data-height="700" data-theme-id="light" data-default-tab="result" data-user="webstoryboys" data-slug-hash="BaoOywP" style="height: 700px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Animation Steps">
+                        <span>See the Pen <a href="https://codepen.io/webstoryboys/pen/BaoOywP">
+                        Animation Steps</a> by webstory (<a href="https://codepen.io/webstoryboys">@webstoryboys</a>)
+                        on <a href="https://codepen.io">CodePen</a>.</span>
+                    </p>
+                    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                </div>
+                <!-- //Intro3 -->
+
+                <style>
+                    .circle12.show {animation: move 3s 10 cubic-bezier(0,0,0,0);}
+                    .circle13.show {animation: move 3s 10 cubic-bezier(0,.52,1,-0.16);}
+                    .circle14.show {animation: move 3s 10 cubic-bezier(.89,1.16,.54,-0.66);}
+                    .circle15.show {animation: move 3s 10 cubic-bezier(1,.35,.1,1.26);}
+                    .circle16.show {animation: move 3s 10 cubic-bezier(1,-0.05,1,.85);}
+                </style>
+                 <!-- Intro4 -->
+                 <div class="bs-docs-section">
+                    <h2 id="intro4" class="page-header">Animation-timimg-function : Cubic-bezier<span class="btn" id="btn3">Click</span></h2>
+                    <div class="sBox s3">
+                        <div class="circle12">circle12</div>
+                        <div class="circle13">circle13</div>
+                        <div class="circle14">circle14</div>
+                        <div class="circle15">circle15</div>
+                        <div class="circle16">circle16</div>
+                    </div>
+<pre class="line-numbers language-css"><code>.circle12.show {animation: move 3s 10 cubic-bezier(0,0,0,0);}
+.circle13.show {animation: move 3s 10 cubic-bezier(0,.52,1,-0.16);}
+.circle14.show {animation: move 3s 10 cubic-bezier(.89,1.16,.54,-0.66);}
+.circle15.show {animation: move 3s 10 cubic-bezier(1,.35,.1,1.26);}
+.circle16.show {animation: move 3s 10 cubic-bezier(1,-0.05,1,.85);}
+</code></pre>    
+                </div>
+                <!-- //Intro4 -->
+
+                <style>
+                    .circle17.show {animation: move 3s 10 cubic-bezier(.89,1.16,.54,-0.66) 0.1s;}
+                    .circle18.show {animation: move 3s 10 cubic-bezier(.89,1.16,.54,-0.66) 0.2s;}
+                    .circle19.show {animation: move 3s 10 cubic-bezier(.89,1.16,.54,-0.66) 0.3s;}
+                    .circle20.show {animation: move 3s 10 cubic-bezier(.89,1.16,.54,-0.66) 0.4s;}
+                </style>
+                 <!-- Intro5 -->
+                 <div class="bs-docs-section">
+                    <h2 id="intro5" class="page-header">Animation-delay<span class="btn" id="btn4">Click</span></h2>
+                    <div class="sBox s4">
+                        <div class="circle17">circle17</div>
+                        <div class="circle18">circle18</div>
+                        <div class="circle19">circle19</div>
+                        <div class="circle20">circle20</div>
+                    </div>
+<pre class="line-numbers language-css"><code>.circle17 {animation: move 3s 10 cubic-bezier(.89,1.16,.54,-0.66) 0.1s;}
+.circle18 {animation: move 3s 10 cubic-bezier(.89,1.16,.54,-0.66) 0.2s;}
+.circle19 {animation: move 3s 10 cubic-bezier(.89,1.16,.54,-0.66) 0.3s;}
+.circle20 {animation: move 3s 10 cubic-bezier(.89,1.16,.54,-0.66) 0.4s;}
+</code></pre>    
+                </div>
+                <!-- //Intro5 -->
+
+                <style>
+                    .sBox.s5 {height: 500px;}
+                    .circle21.normal {animation: move2 3s 10 ease normal;}
+                    .circle21.reverse {animation: move2 3s 10 ease reverse;}
+                    .circle21.alternate {animation: move2 3s 10 ease alternate;}
+                    .circle21.alternate-reverse {animation: move2 3s 10 ease alternate-reverse;}
+                    @keyframes move2 {
+                        0% {left: 0; top: 0;}
+                        25% {left: calc(100% - 80px); top: 0;}
+                        50% {left: calc(100% - 80px); top: calc(100% - 80px);}
+                        75% {left: 0; top: calc(100% - 80px);}
+                        100% {left: 0; top: 0;}
+                    }
+                </style>
+                <!-- Intro6 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro6" class="page-header">Animation-direction
+                        <span class="btn" id="btn5-1">normal</span>
+                        <span class="btn" id="btn5-2">reverse</span>
+                        <span class="btn" id="btn5-3">alternate</span>
+                        <span class="btn" id="btn5-4">alternate-reverse</span>
+                    </h2>
+                    <div class="sBox s5">
+                        <div class="circle21">circle21</div>
+                    </div>
+<pre class="line-numbers language-css"><code>.sBox.s5 {height: 500px;}
+.circle21.normal {animation: move2 3s 10 ease normal;}
+.circle21.reverse {animation: move2 3s 10 ease reverse;}
+.circle21.alternate {animation: move2 3s 10 ease alternate;}
+.circle21.alternate-reverse {animation: move2 3s 10 ease alternate-reverse;}
+@keyframes move2 {
+0% {left: 0; top: 0;}
+25% {left: calc(100% - 80px); top: 0;}
+50% {left: calc(100% - 80px); top: calc(100% - 80px);}
+75% {left: 0; top: calc(100% - 80px);}
+100% {left: 0; top: 0;}
+}
+</code></pre>    
+                </div>
+                <!-- //Intro6 -->
+
+                <style>
+                    .circle22.show {animation: move 2s ease 1;}
+                    .circle23.show {animation: move 2s ease 2;}
+                    .circle24.show {animation: move 2s ease 3;}
+                    .circle25.show {animation: move 2s ease infinite;}
+                </style>
+                <!-- Intro7 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro7" class="page-header">Animation-infinite-count
+                        <span class="btn" id="btn7">start</span>
+                    </h2>
+                    <div class="sBox s7">
+                        <div class="circle22">circle22</div>
+                        <div class="circle23">circle23</div>
+                        <div class="circle24">circle24</div>
+                        <div class="circle25">circle25</div>
+                    </div>
+<pre class="line-numbers language-css"><code>.circle22.show {animation: move 2s ease 1;}
+.circle23.show {animation: move 2s ease 2;}
+.circle24.show {animation: move 2s ease 3;}
+.circle25.show {animation: move 2s ease infinite;}    
+</code></pre>
+                </div>
+                <!-- Intro7 -->
+
+                <style>
+                    .sBox.s8 {height: 500px;}
+                    .sBox.s8>div.running {animation: move2 3s 10 ease; animation-play-state: running;}
+                    .sBox.s8>div.paused {animation: move2 3s 10 ease; animation-play-state: paused;}
+                </style>
+                <!-- Intro8 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro8" class="page-header">Animation-play-state
+                        <span class="btn" id="btn8-1">running</span>
+                        <span class="btn" id="btn8-2">paused</span>
+                    </h2>
+                    <div class="sBox s8">
+                        <div class="circle26">circle26</div>
+                    </div>
+<pre class="line-numbers language-css"><code>.sBox.s8 {height: 500px;}
+.sBox.s8>div.running {animation: move2 3s 10 ease; animation-play-state: running;}
+.sBox.s8>div.paused {animation: move2 3s 10 ease; animation-play-state: paused;}  
+</code></pre>
+                </div>
+                <!-- Intro8 --> 
+                        
+                <style>
+                    .sBox.s9 > div {display: inline-block;}
+                    .sBox.s9 > div.bounce {animation: bounce 1s 10 ease;}
+                    .sBox.s9 > div.rubberBand {animation: rubberBand 1s 10 ease;}
+                    .sBox.s9 > div.flip {animation: flip 1s 10 ease;}
+                    .sBox.s9 > div.hinge {animation: hinge 1s 10 ease;}
+                    .sBox.s9 > div.lightSpeedInRight {animation: lightSpeedInRight 1s 10 ease;}
+                    .sBox.s9 > div.fadeInBottomRight {animation: fadeInBottomRight 1s 10 ease;}
+                    
+                    @keyframes bounce {
+                        from,60%, 75%,90%,to {
+                            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+                        }
+                        0% {
+                            opacity: 0;
+                            transform: translate3d(-3000px, 0, 0) scaleX(3);
+                        }
+                        60% {
+                            opacity: 1;
+                            transform: translate3d(25px, 0, 0) scaleX(1);
+                        }
+                        75% {
+                            transform: translate3d(-10px, 0, 0) scaleX(0.98);
+                        }
+                        90% {
+                            transform: translate3d(5px, 0, 0) scaleX(0.995);
+                        }
+                        to {
+                            transform: translate3d(0, 0, 0);
+                        }
+                    }
+
+                    @keyframes rubberBand {
+                        from {transform: scale3d(1, 1, 1);}
+                        30% {transform: scale3d(1.25, 0.75, 1);}
+                        40% {transform: scale3d(0.75, 1.25, 1);}
+                        50% {transform: scale3d(1.15, 0.85, 1);}
+                        65% {transform: scale3d(0.95, 1.05, 1);}
+                        75% {transform: scale3d(1.05, 0.95, 1);}
+                        to {transform: scale3d(1, 1, 1);}
+                    }
+
+                    @keyframes flip {
+                        from {
+                            transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, -360deg);
+                            animation-timing-function: ease-out;
+                        }
+
+                        40% {
+                            rotate3d(0, 1, 0, -190deg);
+                            transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px)
+                            rotate3d(0, 1, 0, -190deg);
+                            animation-timing-function: ease-out;
+                        }
+
+                        50% {
+                            rotate3d(0, 1, 0, -170deg);
+                            transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px)
+                            rotate3d(0, 1, 0, -170deg);
+                            animation-timing-function: ease-in;
+                        }
+
+                        80% {
+                            rotate3d(0, 1, 0, 0deg);
+                            transform: perspective(400px) scale3d(0.95, 0.95, 0.95) translate3d(0, 0, 0)
+                            rotate3d(0, 1, 0, 0deg);
+                            animation-timing-function: ease-in;
+                        }
+
+                        to {
+                            transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, 0deg);
+                            animation-timing-function: ease-in;
+                        }
+                    }
+
+                    @keyframes hinge {
+                        0% {
+                            animation-timing-function: ease-in-out;
+                        }
+
+                        20%,
+                        60% {
+                            transform: rotate3d(0, 0, 1, 80deg);
+                            animation-timing-function: ease-in-out;
+                        }
+
+                        40%,
+                        80% {
+                            transform: rotate3d(0, 0, 1, 60deg);
+                            animation-timing-function: ease-in-out;
+                            opacity: 1;
+                        }
+
+                        to {
+                            transform: translate3d(0, 700px, 0);
+                            opacity: 0;
+                        }
+                    }
+
+                    @keyframes lightSpeedInRight {
+                        from {
+                            transform: translate3d(100%, 0, 0) skewX(-30deg);
+                            opacity: 0;
+                        }
+
+                        60% {
+                            transform: skewX(20deg);
+                            opacity: 1;
+                        }
+
+                        80% {
+                            transform: skewX(-5deg);
+                        }
+
+                        to {
+                            transform: translate3d(0, 0, 0);
+                        }
+                    }
+
+                    @keyframes fadeInBottomRight {
+                        from {
+                            opacity: 0;
+                            transform: translate3d(100%, 100%, 0);
+                        }
+                        to {
+                            opacity: 1;
+                            transform: translate3d(0, 0, 0);
+                        }
+                    }
+                </style>
+                <!-- Intro9 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro9" class="page-header">animation
+                        <span class="btn">bounce</span>
+                        <span class="btn">rubberBand</span>
+                        <span class="btn">flip</span>
+                        <span class="btn">hinge</span>
+                        <span class="btn">lightSpeedInRight</span>
+                        <span class="btn">fadeInBottomRight</span>
+                    </h2>
+                    <div class="sBox s9">
+                        <div class="circle27">circle27</div>
+                        <div class="circle27">circle27</div>
+                        <div class="circle27">circle27</div>
+                        <div class="circle27">circle27</div>
+                        <div class="circle27">circle27</div>
+                        <div class="circle27">circle27</div>
+                        <div class="circle27">circle27</div>
+                        <div class="circle27">circle27</div>
+                    </div>
+<pre class="line-numbers language-css"><code>.sBox.s9 > div {display: inline-block;}
+.sBox.s9 > div.bounce {animation: bounce 1s 10 ease;}
+.sBox.s9 > div.rubberBand {animation: rubberBand 1s 10 ease;}
+.sBox.s9 > div.flip {animation: flip 1s 10 ease;}
+.sBox.s9 > div.hinge {animation: hinge 1s 10 ease;}
+.sBox.s9 > div.lightSpeedInRight {animation: lightSpeedInRight 1s 10 ease;}
+.sBox.s9 > div.fadeInBottomRight {animation: fadeInBottomRight 1s 10 ease;}
+    
+@keyframes bounce {
+    from,60%, 75%,90%,to {
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    0% {
+        opacity: 0;
+        transform: translate3d(-3000px, 0, 0) scaleX(3);
+    }
+    60% {
+        opacity: 1;
+        transform: translate3d(25px, 0, 0) scaleX(1);
+    }
+    75% {
+        transform: translate3d(-10px, 0, 0) scaleX(0.98);
+    }
+    90% {
+        transform: translate3d(5px, 0, 0) scaleX(0.995);
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes rubberBand {
+    from {transform: scale3d(1, 1, 1);}
+    30% {transform: scale3d(1.25, 0.75, 1);}
+    40% {transform: scale3d(0.75, 1.25, 1);}
+    50% {transform: scale3d(1.15, 0.85, 1);}
+    65% {transform: scale3d(0.95, 1.05, 1);}
+    75% {transform: scale3d(1.05, 0.95, 1);}
+    to {transform: scale3d(1, 1, 1);}
+}
+
+@keyframes flip {
+    from {
+        transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, -360deg);
+        animation-timing-function: ease-out;
+    }
+    40% {
+        rotate3d(0, 1, 0, -190deg);
+        transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px)
+        rotate3d(0, 1, 0, -190deg);
+        animation-timing-function: ease-out;
+    }
+    50% {
+        rotate3d(0, 1, 0, -170deg);
+        transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px)
+        rotate3d(0, 1, 0, -170deg);
+        animation-timing-function: ease-in;
+    }
+    80% {
+        rotate3d(0, 1, 0, 0deg);
+        transform: perspective(400px) scale3d(0.95, 0.95, 0.95) translate3d(0, 0, 0)
+        rotate3d(0, 1, 0, 0deg);
+        animation-timing-function: ease-in;
+    }
+    to {
+        transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, 0deg);
+        animation-timing-function: ease-in;
+    }
+}
+
+@keyframes hinge {
+    0% {
+        animation-timing-function: ease-in-out;
+    }
+    20%,
+    60% {
+        transform: rotate3d(0, 0, 1, 80deg);
+        animation-timing-function: ease-in-out;
+    }
+    40%,
+    80% {
+        transform: rotate3d(0, 0, 1, 60deg);
+        animation-timing-function: ease-in-out;
+        opacity: 1;
+    }
+    to {
+        transform: translate3d(0, 700px, 0);
+        opacity: 0;
+    }
+}
+
+@keyframes lightSpeedInRight {
+    from {
+        transform: translate3d(100%, 0, 0) skewX(-30deg);
+        opacity: 0;
+    }
+    60% {
+        transform: skewX(20deg);
+        opacity: 1;
+    }
+    80% {
+        transform: skewX(-5deg);
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInBottomRight {
+    from {
+        opacity: 0;
+        transform: translate3d(100%, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+</code></pre>
+                </div>
+                <!-- Intro9 -->
+
+
+
+               
+            </div>
+            <!-- //col-md-9 -->
+
+
+            <!-- //col-md-3 -->
+            <div class="col-md-3">
+                <div class="bs-sidebar hidden-print" role="complementary">
+                    <ul class="nav bs-sidenav">
+                        <li><a href="#intro1">Animation</a></li>
+                        <li><a href="#intro2">Animation-timimg-function1</a></li>
+                        <li><a href="#intro3">Animation-timimg-function2</a></li>
+                        <li><a href="#intro4">Animation-timimg-function : Cubic-bezier</a></li>
+                        <li><a href="#intro5">Animation-delay</a></li>
+                        <li><a href="#intro6">Animation-direction</a></li>
+                        <li><a href="#intro7">Animation-iteration-count</a></li>
+                        <li><a href="#intro8">Animation-play-state</a></li>
+                        <li><a href="#intro9">Animation-effect</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--//col-md-3 -->
+        </div>
+        <!-- //row -->
+    </div>
+    <!-- //container -->
+
+
+    <!-- Footer -->
+    <footer class="bs-footer" role="contentinfo">
+        <div class="container">
+            <ul class="footer-links muted">
+                <li>Currently v2.0</li>
+                <li>&middot;</li>
+                <li><a href="https://webstoryboy.github.io/w9/html/">webstoryboy</a></li>
+                <li>&middot;</li>
+                <li><a href="http://cafe.naver.com/crossbrowsing" target="_blank">publisher cafe</a></li>
+                <li>&middot;</li>
+                <li><a href="http://cafe.daum.net/flairdesignlink" target="_blank">designer cafe</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- //Footer -->
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../../assets/js/jquery-1.9.1.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/docs.min.js"></script>
+    <script src="../../assets/js/prism.js"></script>
+    <script>
+        $("#btn1").click(function(){
+            $(".sBox.s1 > div").toggleClass("show");
+        });
+
+        $("#btn2").click(function(){
+            $(".sBox.s2 > div").toggleClass("show");
+        });
+
+        $("#btn3").click(function(){
+            $(".sBox.s3 > div").toggleClass("show");
+        });
+
+        $("#btn4").click(function(){
+            $(".sBox.s4 > div").toggleClass("show");
+        });
+
+        //btn5-1을 클릭하면 글씨 색을 빨간색으로 변경하세요~~
+        // $("#btn5-1").click(function(){
+        //     $(this).css("color","red");
+        // });
+
+        //btn5-1을 클릭하면 컨텐츠 요소(텍스트)를 alert으로 표현해주세요~~
+        $("#intro6 > span").click(function(){
+            let tex = $(this).text();
+            //alert(tex);
+            $(".sBox.s5 > div").removeClass("normal reverse alternate alternate-reverse").addClass(tex);
+        });
+
+        $("#btn7").click(function(){
+            $(".sBox.s7 > div").toggleClass("show");
+        });
+
+        $("#intro8 > span").click(function(){
+            let tx = $(this).text()
+            $(".sBox.s8 > div").removeClass().addClass(tx);
+        })
+
+        $("#intro9 > span").click(function(){
+            let tx = $(this).text()
+            $(".sBox.s9 > div").removeClass().addClass(tx);
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout05</title>
+
+        <style>
+        * {margin: 0; padding: 0;}
+        #wrap {}
+        .container {width: 1200px; margin: 0 auto;}
+        header {width: 100%; height: 100px; background-color: #111;}
+        section.sec1 {width: 100%; height: 400px; background-color: #222;}
+        section.sec2 {}
+        section.sec2 aside {width: 33.3333%; height: 400px; background-color: #333; float: left;}
+        section.sec2 article.art1 {width: 66.6667%; height: 200px; background-color: #444; float: left;}
+        section.sec2 article.art2 {width: 66.6667%; height: 200px; background-color: #555; float: left;}
+        section.sec3 {}
+        section.sec3 article.art3 {width: 33.3333%; height: 300px; background-color: #666; float: left;}
+        section.sec3 article.art4 {width: 33.3333%; height: 300px; background-color: #777; float: left;}
+        section.sec3 article.art5 {width: 33.3333%; height: 300px; background-color: #888; float: left;}
+        section.sec4 {width: 90%; padding: 5%; background-color: #999; float: left;}
+        section.sec4 > article {width: 23%; margin: 1%; height: 200px; background-color: #f555; float: left; border-radius: 10px;}
+        footer {width: 100%; height: 100px; background-color: #111; clear: both;}
+
+        @media (max-width: 1220px){
+            .container {width: 100%;}
+        }
+        @media (max-width: 1024px){
+            section.sec4 > article {width: 31.3333%; margin: 1%;}
+            section.sec4 > article:last-child {display: none;}
+            section.sec3 article.art3 {width: 50%;}
+            section.sec3 article.art4 {width: 50%;}
+            section.sec3 article.art5 {display: none;}
+        }
+        @media (max-width: 768px){
+            section.sec3 article.art3 {width: 100%; height: 200px;}
+            section.sec3 article.art4 {width: 100%; height: 200px;}
+            section.sec3 article.art5 {display: none;}
+        }
+        @media (max-width: 480px){
+            section.sec2 aside {width: 100%;}
+            section.sec2 article.art1 {width: 100%;}
+            section.sec2 article.art2 {width: 100%;}
+            section.sec4 > article {width: 98%; margin: 1%;}
+        }
+        </style>
+    <!-- 
+    <style>
+        * {margin: 0; padding: 0;}
+        #wrap {background-color: #e3f2fd;}
+        .container {width: 1200px; margin: 0 auto;}
+        #header {width: 100%; height: 100px; background-color: #badefb;}
+        #banner {width: 100%; height: 300px; background-color: #8ecbf9;}
+        #content1 {overflow: hidden;}
+        #content1 .cont1-side {width: 30%; height: 400px; background-color:#61b6f6; float: left;}
+        #content1 .cont1-box1 {width: 70%; height: 200px; background-color: #3da7f5; float: left;}
+        #content1 .cont1-box2 {width: 70%; height: 200px; background-color: #1799f3; float: left;}
+        #content2 {overflow: hidden;}
+        #content2 .cont2-box1 {width: 33.3333%; height: 300px; background-color: #168be5; float: left;}
+        #content2 .cont2-box2 {width: 33.3333%; height: 300px; background-color: #127ad2; float: left;}
+        #content2 .cont2-box3 {width: 33.3333%; height: 300px; background-color: #0f69c0; float: left;}
+        #content3 {overflow: hidden; background-color: #3da7f5; padding: 3%;}
+        #content3  > article {width: 21%; margin: 2%; height: 200px; border-radius: 5px; background-color: #127ad2; float: left;}
+        #footer {width: 100%; height: 100px; background-color: #61b6f6;}
+
+        @media (max-width: 1220px){
+            .container {width: 100%;}
+            #content2 .cont2-box1 {width: 50%;}
+            #content2 .cont2-box2 {width: 50%;}
+            #content2 .cont2-box3 {display: none;}
+            #content3  > article {width: 29.3333%; margin: 2%;}
+            #content3  > article.cont3-box4 {display: none;}
+        }
+        @media (max-width: 768px){
+            #content2 .cont2-box1 {width: 100%; height: 200px;}
+            #content2 .cont2-box2 {width: 100%; height: 200px;}
+        }
+        @media (max-width: 480px){
+            #content1 .cont1-side {width: 100%; height: 200px;}
+            #content1 .cont1-box1 {width: 100%; height: 200px;}
+            #content1 .cont1-box2 {width: 100%; height: 200px;}
+            #content3  > article {width: 96%; margin: 2%;}
+        }
+    </style>
+-->
+
+    
+</head>
+<body>
+    <!-- 
+    <div id="wrap">
+        <div class="container">
+            <header id="header"></header>
+            <section id="banner"></section>
+            <section id="content1">
+                <aside class="cont1-side"></aside>
+                <article class="cont1-box1"></article>
+                <article class="cont1-box2"></article>
+            </section>
+            <section id="content2">
+                <section class="cont2-box1"></section>
+                <section class="cont2-box2"></section>
+                <section class="cont2-box3"></section>
+            </section>
+            <section id="content3">
+                <article class="cont3-box1"></article>
+                <article class="cont3-box2"></article>
+                <article class="cont3-box3"></article>
+                <article class="cont3-box4"></article>
+            </section>
+            <section id="footer"></section>
+        </div>
+    </div>
+    -->
+    
+     <div id="wrap">
+        <div class="container">
+            <header></header>
+            <section class="sec1"></section>
+            <section class="sec2">
+                <aside></aside>
+                <article class="art1"></article>
+                <article class="art2"></article>
+            </section>
+            <section class="sec3">
+                <article class="art3"></article>
+                <article class="art4"></article>
+                <article class="art5"></article>
+            </section>
+            <section class="sec4">
+                <article class="art6"></article>
+                <article class="art7"></article>
+                <article class="art8"></article>
+                <article class="art9"></article>
+            </section>
+            <footer></footer>
+        </div>
+    </div>
+
+</body>
+</html>

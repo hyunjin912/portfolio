@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="피티다임">
+    <meta name="author" content="skyhyunjinlee">
+    <title>피티다임 – No.1 Creative Partner</title>
+
+    <!-- meta -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta id="meta-ogtitle" property="og:title" content="0_Cover">
+    <meta id="meta-ogtype" property="og:type" content="article">
+    <meta id="meta-ogsitename" property="og:site_name" content="피티다임">
+    <meta id="meta-description" property="og:description" content="...">
+    <meta id="meta-twittercard" name="twitter:card" value="summary">
+
+    <!-- style -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- icon -->
+    <link rel="apple-touch-icon-precomposed" href="http://www.ptdigm.com/Portfolio_site/wp-content/uploads/2018/06/cropped-app_icon-180x180.png" />
+    <meta name="msapplication-TileImage" content="http://www.ptdigm.com/Portfolio_site/wp-content/uploads/2018/06/cropped-app_icon-270x270.png" />
+
+    <!-- 웹 폰트 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- 폰트어썸 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">    
+</head>
+
+<body>
+    <!-- slider -->
+    <div class="slider-wrap">
+        <div class="slider-img">
+            <div class="slides s1"><img src="img/about_hover.jpg" alt="이미지1"></div>
+            <div class="slides s2"><img src="img/model_hover.jpg" alt="이미지2"></div>
+            <div class="slides s3"><img src="img/event_hover.jpg" alt="이미지3"></div>
+            <div class="slides s4"><img src="img/support_hover.jpg" alt="이미지4"></div>
+        </div>
+    </div>
+
+    <div id="main">
+        <div class="notice">
+            <div class="notice-cont">
+                이 사이트는 포트폴리오를 위해 만들어진 사이트 입니다.
+            </div>
+            <div class="notice-btn">
+                <a class="notice-btn" href="#"><i class="fas fa-times"></i></a>
+            </div>
+           
+        </div>
+        <div class="container">
+            <header class="header">
+                <h1><a href="main.html"><img src="img/logo.png" alt="로고"></a></h1>
+                <ul class="nav">
+                    <li><a href="about.html" class="link1">about</a></li>
+                    <li><a href="works.html">works</a></li>
+                    <li><a href="consulting.html">consulting</a></li>
+                    <li><a href="contact.html">contact</a></li>
+                </ul>
+            </header>
+            <div class="stit">
+                Beyond design,<br>
+                Presentation paradigm
+            </div>
+            <div class="btit">
+                프레젠테이션<br>
+                패러다임을 바꾸다!
+            </div>
+            <div class="imgWrap">
+                <img src="img/line.png" alt="">
+            </div>
+            <ul class="hoverText">
+                <li><a href="#" class="hover1">about</a></li>
+                <li><a href="#" class="hover2">model</a></li>
+                <li><a href="#" class="hover3">event</a></li>
+                <li><a href="#" class="hover4">support</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- script -->
+    <script src="js/jquery.min.js"></script>
+    <script>
+        //메인화면 이미지 체인지
+        let slideWrap = $(".slide-wrap");
+        let slideImg = $(".slide-img");
+        let slides = $(".slides");
+
+        let previousIndex = 0;           
+        let slideCount = slides.length;  
+
+        $(".hoverText").on("mouseover","a", function(e){
+            e.preventDefault();
+            shak();
+        
+        });
+        
+        function shak(){
+            let currentIndex = (previousIndex - 1) % slideCount;
+            slides.eq(previousIndex).fadeOut(700);
+            slides.eq(currentIndex).fadeIn(700);
+
+           
+
+            console.log("previousIndex :"+previousIndex)
+            console.log("currentIndex :"+currentIndex)
+            
+            previousIndex = currentIndex;
+        }
+        
+        //팝업
+        $(".notice-btn").click(function(){
+            $(".notice").slideUp();
+        });
+    </script>
+</body>
+
+</html>

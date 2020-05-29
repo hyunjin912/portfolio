@@ -1,0 +1,54 @@
+/* 리셋 */
+* {margin: 0; padding: 0; }
+li {list-style: none;}
+a {text-decoration: none; color: black;}
+
+/* 전체 초기 레이아웃 */
+#wrap { }
+.container {width: 960px; margin: 0 auto; }
+.container #header {/* height: 100px; background-color: #111; */ }
+.container #banner {/* height: 400px; background-color: #333; */ }
+.container #content1 {/* height: 200px; background-color: #555; */ }
+.container #content2 {/* height: 200px; background-color: #777; */ }
+.container #footer {/* height: 100px; background-color: #999; */ }
+
+/* 헤더 */
+.container #header {overflow: hidden; }
+.container #header h2 {float: left; width: 100px; height: 100px;}
+.container #header h2 img {width: 100%; }
+.container #header ul {overflow: hidden; float: right; }
+.container #header ul li {float: left; padding: 20px;}
+
+/* 배너 */
+.container #banner { }
+.container #banner .ban-img {height: 400px; }
+.container #banner .ban-img img {width: 100%; }
+
+/* 컨텐츠 1 */
+.container #content1 {overflow: hidden; }
+.container #content1 .con1-1 {padding: 27px; width: 49%; margin-right: 2%; position: relative; float: left; border: 1px solid #ccc; box-sizing: border-box;}
+.container #content1 .con1-1 h4 {font-size: 20px;}
+.container #content1 .con1-1 h4 span {color: #999; }
+.container #content1 .con1-1 ul {margin-top: 5px; }
+.container #content1 .con1-1 ul li {padding: 5px 0; overflow: hidden; }
+.container #content1 .con1-1 ul li a {float: left; }
+.container #content1 .con1-1 ul li span { float: right; }
+.container #content1 .con1-1 a.more {position: absolute; top: 30px; right: 30px; }
+.container #content1 .con1-1 a.more img {width: 15px; padding-left: 5px; padding-top: 5px;}
+
+.container #content1 .con1-2 {width: 49%; margin-right: 0; float: left; }
+.container #content1 .con1-2 img {width: 100%; }
+
+/* 컨텐츠 2 */
+.container #content2 .cont2 {margin-top: 30px;}
+.container #content2 .cont2 h4 {font-size: 20px; padding-bottom: 20px;}
+.container #content2 .cont2 ul {overflow: hidden; }
+.container #content2 .cont2 ul li {float: left; width: 24.25%; margin-right: 1%;}
+.container #content2 .cont2 ul li:last-child {margin-right: 0;}
+.container #content2 .cont2 ul li a {width: 100px; }
+.container #content2 .cont2 ul li a  img {width: 100%; }
+.container #content2 .cont2 ul li span { }
+
+/* 푸터 */
+#footer {margin-top: 70px; color: #999; border-top: 1px solid #ccc; padding-top: 30px;}
+

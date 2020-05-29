@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn1">click</button>
+
+    <div class="selector" id="selector">
+        <div class="box">jQuery vs JavaScript</div>
+        <div class="box">jQuery vs JavaScript</div>
+        <div class="box add">jQuery vs JavaScript</div>
+        <div class="box">jQuery vs JavaScript</div>
+        <div class="box">jQuery vs JavaScript</div>
+    </div>
+    <br>
+    <div>
+        <ul id="list">
+            <li>list01</li>
+            <li>list02</li>
+            <li>list03</li>
+            <li>list04</li>
+            <li>list05</li>
+            <li>list06</li>
+            <li>list07</li>
+            <li>list08</li>
+            <li>list09</li>
+            <li>list10</li>
+        </ul>
+    </div>
+
+    <script src="js/jquery.min_1.12.4.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script>
+        // 제이쿼리를 이용해서 글씨색을 빨간색으롤 변경하세요~
+        //$(".box").css("color","red");
+
+        // 자바스크립트를 이용해서 글씨색을 빨간색으롤 변경하세요~
+        // document.querySelector(".box").style.color = "red";
+            // 제이쿼리는 .box라고 써도 모든 .box가 다 변하지만 자바스크립트는 하나의 .box만 적용된다
+            // 모든 .box를 적용시키기 위해서는 .box의 갯수를 파악해야 한다 .querySelectorAll(".box")을 사용해도 안된다
+            // 이유는 .box를 선택한 것은 맞지만 마찬가지롤 갯수를 파악하지 못했기에 아무것도 적용시키지 못한 것이다.
+        // 모든 .box에 적용시키기 위해 부모에 변화를 주면 된다.
+        // document.querySelector(".selector").style.color = "red"; 
+        
+        
+        // 위에 대한 문제를 해결 하기 위한 방법
+        
+            // 제이쿼리
+            // $("#list li").css("color","red");
+            
+            // 자바스크립트
+                // 예전 방식
+                // let list = document.getElementById("list");     // ID 선택자
+                // let listLi = list.getElementsByTagName("li");   // 자식 li를 선택
+
+                // for(let i = 0; i <= listLi.length; i++){        // li 갯수만큼 실행
+                //     let li = listLi[i];                         // 배열에 저장
+                //     li.style.color = "red";                     // 스타일 속성 지정
+                // }
+               
+
+            // $(".box").css("color","red");
+
+            // document.querySelector(".box").style.color = "red";       // 다중 선택(x)
+            // document.querySelectorAll(".box").style.color = "red";    // 다중 선택(x)
+                    // 예전방식
+                    // let box = document.querySelectorAll(".box");
+                    // for(let i = 0; i <= box.length; i++){
+                    //     box[i].style.color ="red";
+                    // }
+                    
+                    // 새로운 방식
+                    // document.querySelectorAll(".box").forEach(box => {box.style.color = "red";});
+
+        // 태그 선택자
+        // $("div").css("color","blue");
+        // document.getElementsByTagName("div").style.color = "blue"; 
+            // 위에는 예전 방식이라 적용이 안되지만 태그를 선택하려면 겟엘레먼트바이태그네임이라는 것을 알기위해 사용했음
+            // 적용이 되려면 쿼리셀렉터올을 사용해야 한다.
+
+        // 선택
+        // const selector = $("#selector .box")
+        // const box = selector.find(".box");
+        // selector.css("color","blue");
+        
+        // 하나만 블루로 바뀜
+        // const selector = document.getElementById("selector");
+        // const box = selector.querySelector(".box");
+        // box.style.color = "blue";
+        
+        // 전부다 블루로 바뀜
+        // const boxAll = selector.querySelectorAll(".box");
+        // boxAll.forEach(box => {box.style.color = "blue"});
+
+
+        //숨기고 보여주기 (제이쿼리 vs 자바스크립트)               
+            //$(".box").hide();
+            //$(".box").show();
+
+            //document.querySelectorAll(".box").forEach(box => {box.style.display = "none";});
+            //document.querySelectorAll(".box").forEach(box => {box.style.display = "block";});
+
+
+
+
+        //클래스 추가하기 (제이쿼리 vs 자바스크립트)
+            // $(".box").addClass("add");
+            // $(".box").removeClass("box");
+            // $(".btn1").click(function(){
+            //     $(".box").toggleClass("add");
+            // });
+            // $(".btn1").click(function(){
+            //     $(".box").css("color","red");
+            // });
+
+            // document.querySelectorAll(".box").forEach(box => { box.classList.add("add"); });
+            // document.querySelectorAll(".box").forEach(box => { box.classList.remove("box"); });
+            // document.querySelector(".btn1").addEventListener("click", function(){
+            //     document.querySelectorAll(".box").forEach( box =>  {box.classList.toggle("add"); } );
+            // });
+            // document.querySelector(".btn1").addEventListener("click", function(){
+            //     document.querySelectorAll(".box").forEach( box => { box.style.color = "red"; } );
+            // });
+
+
+
+
+        //마우스 엔터(=오버와 비슷) (제이쿼리 vs 자바스크립트)
+            // $(".box").on("mouseenter",function(){
+            //     $(".box").css("color","red");
+            // });
+                //내가 한 것
+            // document.querySelectorAll(".box").forEach( box => {box.addEventListener("mouseenter", function(){
+            //     document.querySelectorAll(".box").forEach( box => { box.style.color = "red"; } );
+            //     });
+            // } );
+                //선생님
+            // document.querySelector(".selector").addEventListener("mouseenter",function(){
+            //     document.querySelectorAll(".box").forEach(box => {box.style.color = "red"});
+            // });
+            // document.querySelector(".selector").addEventListener("mouseleave",function(){
+            //     document.querySelectorAll(".box").forEach(box => {box.style.color = "black"});
+            // });
+
+        
+        
+        
+        // 클래스 유무 확인 (제이쿼리 vs 자바스크립트)
+            // if( $(".box").hasClass("add") ){
+            //     $(".add").css("color","blue");
+            // }
+
+                //hasClass와 관련된 javascript는 다음 시간에
+        
+        
+        
+        //내용 추가하기 (제이쿼리 vs 자바스크립트)
+            // $(".btn1").click(function(){
+            //     $(".selector").append("<div class='box'>jQuery vs JavaScript</div>")
+            //     $(".selector").prepend("<div class='box'>jQuery vs JavaScript</div>")
+            // });
+
+            document.querySelector(".btn1").addEventListener("click",function(){
+            let elem = document.getElementById("selector");
+            let doc = document.createElement("div");
+            elem.appendChild(doc)
+            });
+    
+
+
+        
+    </script>
+</body>
+</html>

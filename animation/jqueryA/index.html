@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="skyhyunjinlee">
+    <meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
+    <meta name="keywords"
+        content="웹스토리보이, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, skyhyunjinlee, publisher, css3, html, markup, design, Webstoryboy">
+    <title>테스트 | skyhyunjinlee | JQUERY Animation</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../../assets/css/docs.min.css" rel="stylesheet">
+    <link href="../../assets/css/prism.css" rel="stylesheet">
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="../../assets/ico/favicon_114.png">
+    <link rel="icon" href="../../assets/ico/icon.png">
+    <link rel="icon" href="../../assets/ico/favicon_57.png" sizes="16x16">
+    <link rel="icon" href="../../assets/ico/favicon_72.png" sizes="32x32">
+    <link rel="icon" href="../../assets/ico/favicon_114.png" sizes="48x48">
+    <link rel="icon" href="../../assets/ico/favicon_114.png" sizes="64x64">
+    <link rel="icon" href="../../assets/ico/favicon_114.png" sizes="128x128">
+
+    <!-- Facebook meta tags -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="웹스토리보이" />
+    <meta property="og:url" content="https://webstoryboy.co.kr/" />
+    <meta property="og:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
+    <meta property="og:site_name" content="웹스토리보이" />
+    <meta property="og:description" content="웹과 관련된 정보를 제공합니다." />
+
+    <!-- twitter meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@webstoryboy" />
+    <meta name="twitter:title" content="웹스토리보이" />
+    <meta name="twitter:description" content="웹과 관련된 정보를 제공합니다." />
+    <meta property="twitter:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
+
+    <!-- 웹 폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gaegu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.../assets2/js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <a class="sr-only" href="#content">Skip to main content</a>
+
+    <header class="navbar navbar-inverse navbar-static-top bs-docs-nav" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="../index.html" class="navbar-brand">WEB'S &lt;/doc&gt;</a>
+            </div>
+            <nav class="collapse navbar-collapse bs-navbar-collapse pull-right" role="navigation">
+                <ul class="nav navbar-nav">
+                    <li><a href="https://wiss.tistory.com/">Design</a></li>
+                    <li><a href="https://webzz.tistory.com/">Coding</a></li>
+                    <li><a href="https://wtss.tistory.com/">Tutor</a></li>
+                    <li><a href="https://wess.tistory.com/">Edu</a></li>
+                    <li><a href="https://wsss.tistory.com/">CSS</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="bs-header bgs3" id="content">
+        <div class="container">
+            <h1>JQUERY Animation Reference v1.0 &lt;/doc&gt;</h1>
+            <p><a href="https://hyunjin912.github.io/Save/index.html" target="_blank">hyunjin912.github.io/Save/index.html</a></p>
+        </div>
+    </div>
+
+    <div class="container bs-docs-container">
+        <div class="row">
+
+            <div class="col-md-9" role="main">
+                <!-- Intro1 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro1" class="page-header">Animation</h2>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>유형</th>
+                                    <th>메서드</th>
+                                    <th>설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="ce va" rowspan="3">Basic</td>
+                                    <td>.hide()</td>
+                                    <td>선택한 요소를 숨깁니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.show()</td>
+                                    <td>선택한 요소를 보여줍니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.toggle() <span style="color:red">♥</span></td>
+                                    <td>선택한 요소를 숨김/보여줍니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce va" rowspan="4">Fading</td>
+                                    <td>.fadeIn()</td>
+                                    <td>선택한 요소를 천천히 보여줍니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.fadeOut()</td>
+                                    <td>선택한 요소를 천천히 숨김니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.fadeto()</td>
+                                    <td>선택한 요소를 투명도를 조절합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.fadeToggle()</td>
+                                    <td>선택한 요소를 천천히 숨김/보여줍니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce va" rowspan="3">Sliding</td>
+                                    <td>.slideDown()</td>
+                                    <td>선택한 요소를 슬라이딩으로 보여줍니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.slideToggle()</td>
+                                    <td>선택한 요소를 슬라이딩으로 숨김/보여줍니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.slideUp()</td>
+                                    <td>선택한 요소를 슬라이딩으로 숨김니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce va" rowspan="7">custom</td>
+                                    <td>.animate() <span style="color:red">♥</span></td>
+                                    <td>선택한 요소에 애니메이션을 적용합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.clearQueue()</td>
+                                    <td>선택한 요소에 첫 번째 큐만 실행하고 대기 중인 큐는 모두 삭제합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.delay()</td>
+                                    <td>선택한 요소의 애니메이션 효과를 지연합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.dequeue()</td>
+                                    <td>선택한 요소 스택에 쌓인 큐를 모두 제거합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.finish()</td>
+                                    <td>선택한 요소의 진행중인 애니메이션을 강제로 종료합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.queue()</td>
+                                    <td>선택한 요소 스택에 대기 중인 큐를 반환하거나 추가할 수 있습니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.stop()</td>
+                                    <td>선택한 요소의 실행중인 애니메이션을 정지합니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>          
+                </div>
+                <!-- //Intro1 -->
+
+                 <!-- Intro2 -->
+                 <div class="bs-docs-section">
+                    <h2 id="intro2" class="page-header">How to</h2>
+                    <p class="bs-callout bs-callout-info">
+                        $("selector").animate( {properties} );<br>
+                        $("selector").animate( {properties, duration} );<br>
+                        $("selector").animate( {properties, duration, easing} );<br>
+                        $("selector").animate( {properties, duration, easing, collback} );<br>
+                    </p>
+                    <p>
+                        properties: border, margin, padding, width, height, font-size, bottom, left, top, 
+                        right, line-height<br>
+                        transform(x)
+                    </p>
+                    <p>
+                        //폰트 사이즈를 현재 크기에서 20px로 2초동안 애니메이션<br>
+                        $("선택자").animate({"font-size":"20px"},2000);<br>
+                        $("선택자").animate({fontSize:"20px"},2000);<br>
+                        
+                        //선택한 요소를 왼쪽, 오른쪽 마진값을 100px 0.6초동안 애니메이션<br>
+                        $("선택자").animate({marginLeft:100, marginRight:100},600);<br>
+                        $("선택자").animate({marginLeft:100, marginRight:100},"slow");<br>
+                    </p>
+                </div>
+                <!-- //Intro2 -->
+
+                <style>
+                    .box {height: 300px; position: relative;}
+                    .circle1 {
+                        position: absolute;
+                        width: 50px; height: 50px; background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);
+                        border-radius: 50%;
+                    }
+                    .circle1.colorChange {
+                        background-image: linear-gradient(to right, #a8caba 0%, #5d4157 100%);
+                    }
+                </style>
+                <!-- Intro3 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro3" class="page-header">Basic</h2>
+                    <h4>animation <span class="btn btn1">Start</span></h4>
+                    <div class="well">
+                        <div class="box">
+                            <div class="circle circle1"></div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-html"><code>&lt;script&gt;
+    $(".btn1").click(function(){
+        let aWidth = $(".box").width();
+        let width =  $('.circle1').width();
+        let vWidth  = aWidth-width;
+        let aHeight = $(".box").height();
+        let height =  $('.circle1').height();
+        let vHeight  = aHeight-height;
+        
+        $(".circle1").addClass("colorChange");
+        $(".circle1").animate( {left:vWidth},1000)
+                    .animate( {top:vHeight},1000)
+                    .animate( {left:"0"},1000)
+                    .animate( {top:"0"},1000);
+    });
+&lt;/script&gt;
+</code></pre>
+                </div>
+                <!-- //Intro3 -->
+
+                <style>
+                    .box {height: 300px; position: relative;}
+                    .circle2 {
+                        position: absolute;
+                        width: 50px; height: 50px; background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);
+                        border-radius: 50%;
+                        animation: color 3s infinite alternate;
+                    }
+                    @keyframes color {
+                        25% {transform: rotate(0deg);}
+                        50% {transform: rotate(1500deg);}
+                        100% {transform: rotate(0deg);}
+                    }
+
+                </style>
+                <!-- Intro4 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro4" class="page-header">Timing-function</h2>
+                    <h4 class="btn2">animation 
+                        <button>easeOutBounce</button>  
+                        <button>easeInQuart</button>  
+                        <button>easeInBack</button> 
+                        <button>easeInOutBounce</button> 
+                        <button>easeOutSine</button> 
+                        <button>easeInCubic</button> 
+                    </h4>
+                    <div class="well">
+                        <div class="box">
+                            <div class="circle circle2"></div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-html"><code>&lt;script&gt;
+    $(".btn2 > button").click(function(){
+        let aWidth = $(".box").width();
+        let width =  $('.circle1').width();
+        let vWidth  = aWidth-width;
+        let aHeight = $(".box").height();
+        let height =  $('.circle1').height();
+        let vHeight  = aHeight-height;
+        
+        let easing = $(this).text();
+        $(".circle2")
+        .animate( {left:vWidth},1000, easing)
+        .animate( {top:vHeight},1000, easing)
+        .animate( {left:"0" },1000, easing)
+        .animate( {top:"0" },1000, easing);
+    });
+&lt;/script&gt;
+</code></pre>
+                </div>
+                <!-- //Intro4 -->
+
+                <style>
+                    .box {height: 300px; position: relative;}
+                    .circle {
+                        position: absolute;
+                        width: 50px; height: 50px; background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);
+                        border-radius: 50%;
+                        animation: color 3s infinite alternate;
+                    }
+                </style>
+                <!-- Intro5 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro5" class="page-header">Delay</h2>
+                    <h4 class="btn5">animation 
+                        <button>Start</button>  
+                    </h4>
+                    <div class="well">
+                        <div class="box circle5">
+                            <div class="circle"></div>
+                            <div class="circle"></div>
+                            <div class="circle"></div>
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-html"><code>&lt;script&gt;
+    $(".circle5 > div").css( {"position":"relative","margin-bottom":"30px"} );
+
+    let ease = "easeOutElastic"
+
+    $(".btn5").click(function(){
+        let aWidth = $(".box").width();
+        let width =  $('.circle1').width();
+        let vWidth  = aWidth-width;
+        let aHeight = $(".box").height();
+        let height =  $('.circle1').height();
+        let vHeight  = aHeight-height;
+
+        let ease = "easeOutElastic"
+
+        $(".circle5 > div").eq(0).delay(100).animate( {left: vWidth},3000,ease ).animate( {left: "0"},3000 );
+        $(".circle5 > div").eq(1).delay(200).animate( {left: vWidth},3000,ease ).animate( {left: "0"},3000 );
+        $(".circle5 > div").eq(2).delay(300).animate( {left: vWidth},3000,ease ).animate( {left: "0"},3000 );
+        $(".circle5 > div").eq(3).delay(400).animate( {left: vWidth},3000,ease ).animate( {left: "0"},3000 );
+    });
+&lt;/script&gt;
+</code></pre>
+                </div>
+                <!-- //Intro5 -->
+
+                <!-- Intro6 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro6" class="page-header">Width</h2>
+                    <h4 class="btn6">animation 
+                        <button>Start</button>  
+                    </h4>
+                    <div class="well">
+                        <div class="box circle6">
+                            <div class="circle"></div>
+                            <div class="circle"></div>
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-html"><code>&lt;script&gt;
+    let aWidth = $(".box").width();
+    let width =  $('.circle1').width();
+    let vWidth  = aWidth-width;
+    let aHeight = $(".box").height();
+    let height =  $('.circle1').height();
+    let vHeight  = aHeight-height;
+
+    $(".circle6").css("height","220px");
+    $(".circle6 > div").css( {"position":"relative","margin-bottom":"30px"} );
+
+    $(".btn6").click(function(){
+        $(".circle6 > div:eq(0)")
+            .css("z-index","10")
+            .animate( {left: vWidth, width: "150px", height: "300px"},2000 )
+            .animate( {left: "0", width:"50px", height: "50px"},2000 );
+
+        $(".circle6 > div:eq(1)")
+            .css("z-index","10")
+            .animate( {left: vWidth},2000,"easeOutCirc" )
+            .slideUp()
+            .slideDown()
+            .animate( {left: "0"},2000,"easeOutCirc" );  
+
+        $(".circle6 > div:eq(2)")
+            .css("z-index","10")
+            .animate( {left: "50%", borderRadius: "0%"},1000, "easeOutQuint" )
+            .animate( {height: 300, opacity: 0.5},"slow", "easeOutQuint" )
+            .animate( {width: 300, opacity: 1, borderRadius: "30%"}, "normal", "easeOutQuint" )
+            .animate( {height: 50, width: 50, borderRadius: "50%"},1000, "easeOutQuint" )
+            .animate( {left: 0},1000, "easeOutQuint" );
+    });
+&lt;/script&gt;
+</code></pre>
+                </div>
+                <!-- //Intro6 -->
+
+                <!-- Intro7 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro7" class="page-header">Click</h2>
+                    <h4 class="btn7">animation 
+                        <button class="btn7-1">Right</button>  
+                        <button class="btn7-2">Left</button>  
+                        <button class="btn7-3">Top</button>  
+                        <button class="btn7-4">Bottom</button>  
+                    </h4>
+                    <div class="well">
+                        <div class="box circle7">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-html"><code>&lt;script&gt;
+    $(".btn7-1").click(function(){
+        $(".circle7 > div").animate( {left: "+=100"}, "slow", "easeOutQuint" );
+    });
+    $(".btn7-2").click(function(){
+        $(".circle7 > div").animate( {left: "-=100"}, "slow", "easeOutQuint" );
+    });
+    $(".btn7-3").click(function(){
+        $(".circle7 > div").animate( {top: "-=100"}, "slow", "easeOutQuint" );
+    });
+    $(".btn7-4").click(function(){
+        $(".circle7 > div").animate( {top: "+=100"}, "slow", "easeOutQuint" );
+    });
+&lt;/script&gt;
+</code></pre>
+                </div>
+                <!-- //Intro7 -->
+
+                <!-- Intro8 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro8" class="page-header">Infinite</h2>
+                    <h4 class="btn8">animation 
+                        <button>Start</button>  
+                    </h4>
+                    <div class="well">
+                        <div class="box circle8">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-html"><code>&lt;script&gt;
+    let aWidth = $(".box").width();
+    let width =  $('.circle1').width();
+    let vWidth  = aWidth-width;
+    let aHeight = $(".box").height();
+    let height =  $('.circle1').height();
+    let vHeight  = aHeight-height;
+
+    $(".btn8 > button").click(function(){
+        loop();
+    });
+    function loop(){
+        $(".circle8 > div")
+            .animate( {left: vWidth},1000, "easeOutQuint" )
+            .animate( {left: 0},1000, "easeOutQuint", loop );
+    }
+&lt;/script&gt;
+</code></pre>
+                </div>
+                <!-- //Intro8 -->
+
+                <!-- Intro9 -->
+                 <div class="bs-docs-section">
+                    <h2 id="intro9" class="page-header">Interval</h2>
+                    <h4 class="btn9">animation 
+                        <button>Start</button>  
+                    </h4>
+                    <div class="well">
+                        <div class="box circle9">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-html"><code>&lt;script&gt;
+    $(".btn9").click(function(){
+        setInterval(time, 5000);
+    });
+    function time(){
+        $(".circle9 > div")
+            .animate( {left: vWidth},1000, "easeOutQuint" )
+            .animate( {left: 0},1000, "easeOutQuint" );
+    }
+&lt;/script&gt;
+</code></pre>
+                </div>
+                <!-- //Intro9 -->
+
+                <!-- Intro10 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro10" class="page-header">Disappear</h2>
+                    <h4 class="btn10">animation 
+                        <button>Start</button>  
+                    </h4>
+                    <div class="well">
+                        <div class="box circle10">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-html"><code>&lt;script&gt;
+    let aWidth = $(".box").width();
+    let width =  $('.circle1').width();
+    let vWidth  = aWidth-width;
+    let aHeight = $(".box").height();
+    let height =  $('.circle1').height();
+    let vHeight  = aHeight-height;
+
+    $(".btn10").click(function(){
+        $(".circle10 > div")
+            .animate( {left: vWidth},1000, "easeOutQuint" )
+            .animate( {left: 0},1000, "easeOutQuint" );
+
+        setTimeout(out, 2000);
+    });
+    function out(){
+        $(".circle10 > div").hide();
+    }
+&lt;/script&gt;
+</code></pre>
+                </div>
+                <!-- //Intro10 -->
+
+                <!-- Intro11 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro11" class="page-header">Create1</h2>
+                    <h4 class="btn11">animation 
+                        <button>Start</button>  
+                    </h4>
+                    <div class="well">
+                        <div class="box circle11">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-html"><code>&lt;script&gt;
+    $(".btn11").click(function(){
+        function loop(){
+        $(".circle11 > div")
+            .css("z-index","10")
+            .animate( {left: "50%", borderRadius: "0%"},1000, "easeOutQuint" )
+            .animate( {height: 300, opacity: 0.5},"slow", "easeOutQuint" )
+            .animate( {left: "100%", width: 300, opacity: 1, borderRadius: "30%"}, "slow", "easeOutQuint" )
+            .animate( {left: "-30%", width: 500, borderRadius: "0%"}, "slow", "easeOutQuint" )
+            .animate( {height: 50, width: 50, borderRadius: "50%"},"slow", "easeOutQuint" )
+            .animate( {height: "60%", borderRadius: "50%"},"slow", "easeOutQuint" )
+            .animate( {left: 0},"slow", "easeOutQuint", loop );
+        }
+        function out(){
+        $(".circle11 > div").hide();
+        }
+        loop();
+        setTimeout(out, 60000);
+    });
+&lt;/script&gt;
+</code></pre>
+                </div>
+                <!-- //Intro11 -->
+               
+            </div>
+            <!-- //col-md-9 -->
+
+
+            <!-- //col-md-3 -->
+            <div class="col-md-3">
+                <div class="bs-sidebar hidden-print" role="complementary">
+                    <ul class="nav bs-sidenav">
+                        <li><a href="#intro1">Animation</a></li>
+                        <li><a href="#intro2">How to</a></li>
+                        <li><a href="#intro3">Basic</a></li>
+                        <li><a href="#intro4">Timing-function</a></li>
+                        <li><a href="#intro5">Delay</a></li>
+                        <li><a href="#intro6">Width</a></li>
+                        <li><a href="#intro7">Click</a></li>
+                        <li><a href="#intro8">Infinite</a></li>
+                        <li><a href="#intro9">Interval</a></li>
+                        <li><a href="#intro10">Disappear</a></li>
+                        <li><a href="#intro11">Create</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--//col-md-3 -->
+        </div>
+        <!-- //row -->
+    </div>
+    <!-- //container -->
+
+
+    <!-- Footer -->
+    <footer class="bs-footer" role="contentinfo">
+        <div class="container">
+            <ul class="footer-links muted">
+                <li>Currently v2.0</li>
+                <li>&middot;</li>
+                <li><a href="https://webstoryboy.github.io/w9/html/">webstoryboy</a></li>
+                <li>&middot;</li>
+                <li><a href="http://cafe.naver.com/crossbrowsing" target="_blank">publisher cafe</a></li>
+                <li>&middot;</li>
+                <li><a href="http://cafe.daum.net/flairdesignlink" target="_blank">designer cafe</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- //Footer -->
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../../assets/js/jquery-1.9.1.min.js"></script>
+    <script src="../../assets/js/jquery-ui.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/docs.min.js"></script>
+    <script src="../../assets/js/prism.js"></script>
+    <script>
+        let aWidth = $(".box").width();
+        let width =  $('.circle1').width();
+        let vWidth  = aWidth-width;
+        let aHeight = $(".box").height();
+        let height =  $('.circle1').height();
+        let vHeight  = aHeight-height;
+
+        //Basic
+        $(".btn1").click(function(){
+            $(".circle1").addClass("colorChange");
+            $(".circle1").animate( {left:vWidth},1000)
+                        .animate( {top:vHeight},1000)
+                        .animate( {left:"0%"},1000)
+                        .animate( {top:"0%"},1000);
+         
+        });
+
+        //Timing-function
+        $(".btn2 > button").click(function(){
+            let easing = $(this).text();
+            $(".circle2")
+            .animate( {left:vWidth},1000, easing)
+            .animate( {top:vHeight},1000, easing)
+            .animate( {left:"0%" },1000, easing)
+            .animate( {top:"0%" },1000, easing);
+        });
+
+        //Delay
+        //원의 position값을 relative로 변경해주세요.
+        $(".circle5 > div").css( {"position":"relative","margin-bottom":"30px"} );
+
+        let ease = "easeOutElastic"
+
+        $(".btn5").click(function(){
+            $(".circle5 > div").eq(0).delay(100).animate( {left: vWidth},3000,ease ).animate( {left: "0"},3000 );
+            $(".circle5 > div").eq(1).delay(200).animate( {left: vWidth},3000,ease ).animate( {left: "0"},3000 );
+            $(".circle5 > div").eq(2).delay(300).animate( {left: vWidth},3000,ease ).animate( {left: "0"},3000 );
+            $(".circle5 > div").eq(3).delay(400).animate( {left: vWidth},3000,ease ).animate( {left: "0"},3000 );
+        });
+
+        //Width
+        $(".circle6").css("height","220px");
+        $(".circle6 > div").css( {"position":"relative","margin-bottom":"30px"} );
+
+        $(".btn6").click(function(){
+            $(".circle6 > div:eq(0)")
+                .css("z-index","10")
+                .animate( {left: vWidth, width: "150px", height: "300px"},2000 )
+                .animate( {left: "0", width:"50px", height: "50px"},2000 );
+
+            $(".circle6 > div:eq(1)")
+                .css("z-index","10")
+                .animate( {left: vWidth},2000,"easeOutCirc" )
+                .slideUp()
+                .slideDown()
+                .animate( {left: "0"},2000,"easeOutCirc" );
+
+            $(".circle6 > div:eq(2)")
+                .css("z-index","10")
+                .animate( {left: "50%", borderRadius: "0%"},1000, "easeOutQuint" )
+                .animate( {height: 300, opacity: 0.5},"slow", "easeOutQuint" )
+                .animate( {width: 300, opacity: 1, borderRadius: "30%"}, "normal", "easeOutQuint" )
+                .animate( {height: 50, width: 50, borderRadius: "50%"},1000, "easeOutQuint" )
+                .animate( {left: 0},1000, "easeOutQuint" );
+        });
+
+        //Click
+        $(".btn7-1").click(function(){
+            $(".circle7 > div").animate( {left: "+=100"}, "slow", "easeOutQuint" );
+        });
+        $(".btn7-2").click(function(){
+            $(".circle7 > div").animate( {left: "-=100"}, "slow", "easeOutQuint" );
+        });
+        $(".btn7-3").click(function(){
+            $(".circle7 > div").animate( {top: "-=100"}, "slow", "easeOutQuint" );
+        });
+        $(".btn7-4").click(function(){
+            $(".circle7 > div").animate( {top: "+=100"}, "slow", "easeOutQuint" );
+        });
+
+        //Infinite
+        $(".btn8 > button").click(function(){
+            loop();
+        });
+        function loop(){
+            $(".circle8 > div")
+                .animate( {left: vWidth},1000, "easeOutQuint" )
+                .animate( {left: 0},1000, "easeOutQuint", loop );
+        }
+
+        //Interval
+        $(".btn9").click(function(){
+            setInterval(time, 5000);
+        });
+        function time(){
+            $(".circle9 > div")
+                .animate( {left: vWidth},1000, "easeOutQuint" )
+                .animate( {left: 0},1000, "easeOutQuint" );
+        }
+
+        //Disappear
+        $(".btn10").click(function(){
+            $(".circle10 > div")
+                .animate( {left: vWidth},1000, "easeOutQuint" )
+                .animate( {left: 0},1000, "easeOutQuint" );
+
+            setTimeout(out, 2000);
+        });
+        function out(){
+            $(".circle10 > div").hide();
+        }
+
+        //Create
+        $(".btn11").click(function(){
+            function loop(){
+            $(".circle11 > div")
+                .css("z-index","10")
+                .animate( {left: "50%", borderRadius: "0%"},1000, "easeOutQuint" )
+                .animate( {height: 300, opacity: 0.5},"slow", "easeOutQuint" )
+                .animate( {left: "100%", width: 300, opacity: 1, borderRadius: "30%"}, "slow", "easeOutQuint" )
+                .animate( {left: "-30%", width: 500, borderRadius: "0%"}, "slow", "easeOutQuint" )
+                .animate( {height: 50, width: 50, borderRadius: "50%"},"slow", "easeOutQuint" )
+                .animate( {height: "60%", borderRadius: "50%"},"slow", "easeOutQuint" )
+                .animate( {left: 0},"slow", "easeOutQuint", loop );
+            }
+            function out(){
+            $(".circle11 > div").hide();
+            }
+            loop();
+            setTimeout(out, 60000);
+        });
+    </script>
+</body>
+
+</html>

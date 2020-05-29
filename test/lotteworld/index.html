@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>롯데월드</title>
+    
+    <!-- style -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   <div id="wrap">
+        <header id="header" class="clearfix">
+            <h1><a href="#"><img src="img/logo.jpg" alt="롯데월드"></a></h1>
+            <nav class="nav">
+                <ul class="clearfix">
+                    <li><a href="#">즐길거리</a></li>
+                    <li><a href="#">요금/우대혜택</a></li>
+                    <li><a href="#">참여프로그램</a></li>
+                    <li><a href="#">이용가이드</a></li>
+                    <li><a href="#">소통서비스</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- //header -->
+        
+        <section id="banner">
+            <img src="img/banner.jpg" alt="미라클있수마수">
+        </section>
+        <!-- //banner -->
+        
+        <section id="content1" class="clearfix">
+            <article class="notice">
+            <ul class="clearfix">
+                <li class="active">
+                    <a href="#">롯데월드 소식</a>
+                    <ul>
+                        <li><a href="#">1.첫번째 목록1.첫번째 목록1.첫번째 목록</a><span>2018.11.19</span></li>
+                        <li><a href="#">1.첫번째 목록1.첫번째 목록1.첫번째 목록</a>
+                        <span>2018.11.19</span></li>
+                        <li><a href="#">1.첫번째 목록1.첫번째 목록1.첫번째 목록</a>
+                        <span>2018.11.19</span></li>
+                        <li><a href="#">1.첫번째 목록1.첫번째 목록1.첫번째 목록</a>
+                        <span>2018.11.19</span></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">뉴스&middot;공지</a>
+                    <ul>
+                        <li><a href="#">2.두번째 목록2.두번째 목록2.두번째 목록</a>
+                        <span>2018.11.19</span></li>
+                        <li><a href="#">2.두번째 목록2.두번째 목록2.두번째 목록</a>
+                        <span>2018.11.19</span></li>
+                        <li><a href="#">2.두번째 목록2.두번째 목록2.두번째 목록</a>
+                        <span>2018.11.19</span></li>
+                        <li><a href="#">2.두번째 목록2.두번째 목록2.두번째 목록</a>
+                        <span>2018.11.19</span></li>
+                    </ul>
+                </li>
+            </ul>
+            </article>
+            <figure class="ad">
+            <img src="img/sbanner.jpg" alt="온종일 혜택">
+            </figure>
+        </section>
+        <!-- //content1 -->
+        
+        <section id="content2">
+            <h2>특별한 경험</h2>
+            <ul class="clearfix">
+                <li>
+                    <a href="#">
+                        <img src="img/box1.jpg" alt="연간회원안내">
+                        <span>연간회원안내</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/box2.jpg" alt="프리미엄투어">
+                        <span>프리미엄투어</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/box3.jpg" alt="공연참여프로그램">
+                        <span>공연참여프로그램</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/box4.jpg" alt="단체프로그램">
+                        <span>단체프로그램</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        
+        <footer id="footer">
+            <address>
+                <ul>
+                    <li>서울 특별시 송파구 올림픽로 240 롯데월드</li>
+                    <li>대표자 : 박동기</li>
+                    <li>사업자등록번호 : 22-093-00392</li>
+                    <li>통신판매업신고번호 : 384-02894-90348</li>
+                    <li>전화 : 02-3045-3943</li>
+                </ul>
+                <p>Copyright2018 Lotteworld, All Right RESERVED.</p>
+            </address>
+        </footer>
+   </div>
+    
+    
+    
+    <script src="js/jquery.min_1.12.4.js"></script>
+    <script>
+        let tabMenu = $(".notice");
+        
+        tabMenu.find("ul > li > ul").hide().eq(0).show();
+        
+        
+        tabMenu.find("ul > li > a").click(function(){
+           $(this).next().show().parent().addClass("active").siblings().removeClass("active").find("ul").hide(); 
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+/* 리셋 */
+* {margin: 0; padding: 0;}
+li {list-style: none;}
+a {text-decoration: none; color: #111}
+img {width: 100%;}
+
+/* 레이아웃 */
+#wrap { }
+.header { }
+.banner { }
+.content1 { }
+.content2 { }
+.footer { }
+
+/* 컨테이너 */
+.container {width: 1200px; margin: 0 auto; }
+
+/* 헤더 */
+.header {overflow: hidden;}
+.header h1 {float: left; }
+.header h1 img {width: 100px;}
+.header ul {float: right;}
+.header ul li {display: inline;}
+.header ul li a {display: inline-block; padding: 25px 20px; font-size: 20px;}
+
+/* 배너 */
+.banner { }
+.banner img {margin-bottom: 10px;}
+
+/* 컨텐츠 */
+.content1 {overflow: hidden; margin-bottom: 30px;}
+.content1 .cont1-notice {overflow: hidden; position: relative;width: 49%; height: 260px; margin-right: 2%; float: left; border: 1px solid #ccc; box-sizing: border-box; padding-top: 30px;}
+.content1 .cont1-notice h3 {padding-left: 36px; }
+.content1 .cont1-notice li {overflow: hidden; padding: 10px 0 0 36px;}
+.content1 .cont1-notice li a { }
+.content1 .cont1-notice li span {float: right; padding-right: 10px;}
+.content1 .cont1-notice .more {float: left; position: absolute; top: 30px; right: 9px;}
+.content1 .cont1-notice .more img{width: 20px; float: right; padding-left: 10px;}
+.content1 .cont1-ad {width: 49%; height: 260px; float: left;}
+
+.content2 { }
+.content2 h3 { }
+.content2 ul {overflow: hidden;}
+.content2 li {float: left; width: 24.25%; margin-right: 1%;}
+.content2 li:last-child {margin-right: 0;}
+.content2 li img { }
+.content2 li em {font-style: normal; display: block; margin-top: 10px;}
+
+/* 푸터 */
+.footer {border-top: 1px solid #ccc; padding-top: 20px;}
+.footer > div { margin-bottom: 5px;}
+.footer > div:last-child {margin-top: 30px;}
+
+
+
+
+
+

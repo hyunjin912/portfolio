@@ -1,0 +1,102 @@
+/* 레이아웃 */
+#wrap {width: 1200px; margin: 0 auto;}
+#header {width: 20%; height: 1000px; float: left;}
+#ban {width: 80%; float: left;}
+#intro1 {width: 80%; float: left;}
+#intro2 {width: 80%; float: left;}
+#footer {width: 100%; height: 200px; background: #999; float: left;}
+
+/* 헤더 겸 메뉴 */
+.header {}
+.header h1 {margin-bottom: 40px;}
+.header h1 a img{width: 150px;}
+.header > a {
+    display: block;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.header > a:hover {color: #0068e1;}
+.header ul {
+    width: 70%; position: relative; left: 20px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.header ul li {
+    border-bottom: 1px solid gray;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* 배너 */
+.ban {}
+.ban img {}
+
+/* intro1 */
+.intro1 {
+    padding: 40px 0 0 0;
+    height: 300px;
+}
+.intro1 ul li {
+    position: relative;
+}
+.intro1 ul li a {
+    text-align: center;
+    display: block;
+    font-size: 30px;
+    padding-bottom: 40px;
+}
+.intro1 .img {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    grid-column-gap: 20px;
+    position: absolute; top: 70px; left: 30px;
+    width: 900px;
+}
+.intro1 .img > div {
+    position: relative;
+}
+
+.intro1 ul li .img img {
+    width: 100px;
+}
+.intro1 ul li .img span {
+    text-align: center;
+    position: absolute; top: 100px; left: 0px;
+    width: 100px;
+
+}
+
+/* 인트로2 */
+.intro {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+.intro div {
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+    width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+    position: relative;
+}
+.intro div span {
+    display: block;
+    font-size: 20px;
+}
+.intro div img {
+    display: block;
+    width: 100px;
+}
+.intro div ul {}
+.intro div ul li {}
+.intro div ul li {}
+.intro div a img {
+    width: 20px;
+    position: absolute; top: 0; right: 0;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>skyhyunjinlee</title>
+
+    <style>
+        * {margin: 0; padding: 0;}
+        #wrap {}
+        #header {height: 300px; background: url(../site-webstandard/img/header_bg.jpg) repeat-x center top;}
+        #header .header-top {text-align: right;}
+        #header .header-top a {display: inline-block; padding: 10px 30px 0px 10px;}
+        #header .header-name {text-align: center; color: #fff; font-size: 20px;}
+        #header .header-name h1 {background-color: #00838f; display: inline-block; }
+        #header .header-name a {background-color: #00838f; display: inline-block; text-decoration: none;}
+        #header .header-name a:hover{color: green;}
+
+        .button {text-align: center; margin-top: 30px;}
+        .button a {display: inline-block; width: 60px; height: 60px; background: url(../site-webstandard/img/icon.png)}
+        .button a.b1 {}
+        .button a.b2 {}
+        .button a.b3 {}
+        .button a.b4 {}
+
+        .container {width: 1200px; margin: 0 auto;}
+        #cont1 {}
+        #cont2 {overflow: hidden;}
+        #cont2 .cont2-box1{width: 33.3333%; height: 400px; background-color: #aed581; float: left;}
+        #cont2 .cont2-box2{width: 66.6667%; height: 400px; background-color: #9ccc65 ; float: left;}
+        #cont3 {overflow: hidden;}
+        #cont3 .cont3-box1 {width: 33.3333%; height: 300px; background-color: #8bc34a; float: left;}
+        #cont3 .cont3-box2 {width: 33.3333%; height: 300px; background-color: #7cb342; float: left;}
+        #cont3 .cont3-box3 {width: 33.3333%; height: 300px; background-color: #689f38; float: left;}
+        #cont4 {overflow: hidden; background-color: #43a047; padding: 5%;}
+        #cont4 > article{width: 23%; height: 200px; margin: 1%; border-radius: 30px; background-color: #2e7d32; float: left;}
+
+        #footer {width: 100%; height: 100px; background-color: #81c784;}
+
+        @media (max-width: 1220px){
+            .container {width: 100%;}
+        }
+        @media (max-width: 1024px){
+            #header {display: none;}
+            #change-header {width: 100%; height: 100px; background-color: #dcedc8;}
+            #cont1 {width: 100%; height: 200px; background-color: #c5e1a5;}
+            #cont3 .cont3-box1 {width: 50%;}
+            #cont3 .cont3-box2 {width: 50%;}
+            #cont3 .cont3-box3 {display: none;}
+            #cont4 > article{width: 31.3333%; margin: 1%;}
+            #cont4 > article:last-child{display: none;}
+        }
+        @media (max-width: 768px){
+            #cont3 .cont3-box1 {width: 100%; height: 200px;}
+            #cont3 .cont3-box2 {width: 100%; height: 200px;}
+        }
+        @media (max-width: 480px){
+            #cont2 .cont2-box1{width: 100%; height: 150px;}
+            #cont2 .cont2-box2{width: 100%; height: 150px;}
+            #cont4 > article{width: 98%; margin: 1%;}
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <article class="header-top">
+                <a href="#">Designer</a>
+                <a href="#">Publisher</a>
+                <a href="#">Youtube</a>
+            </article>
+            <article class="header-name">
+                <h1>PROFESSIONAL DESIGNER & PUBLISHER</h1><br>
+                <a href="#">skyhyunjinlee.dothome.co.kr</a>
+            </article>
+            <article class="button">
+                <a href="#" class="b1">버튼1</a>
+                <a href="#" class="b2">버튼2</a>
+                <a href="#" class="b3">버튼3</a>
+                <a href="#" class="b3">버튼4</a>
+            </article>
+        </header>
+        <div class="container"> 
+            <header id="change-header"></header>
+            <section id="cont1"></section>
+            <section id="cont2">
+                <article class="cont2-box1"></article>
+                <article class="cont2-box2"></article>
+            </section>
+            <section id="cont3">
+                <article class="cont3-box1"></article>
+                <article class="cont3-box2"></article>
+                <article class="cont3-box3"></article>
+            </section>
+            <section id="cont4">
+                <article class="cont4-box1"></article>
+                <article class="cont4-box2"></article>
+                <article class="cont4-box3"></article>
+                <article class="cont4-box4"></article>
+            </section>
+            <footer id="footer"></footer>
+        </div>
+    </div>
+</body>
+</html>

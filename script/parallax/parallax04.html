@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax04</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+         @font-face { 
+            font-family: 'GmarketSansMedium'; 
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff'); 
+            font-weight: normal; 
+            font-style: normal;
+        }
+
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        li {list-style: none;}
+        a {text-decoration: none; color: #fff;}
+        :root {
+            font-size: 16px;
+        }
+
+        body {
+            --color-h1: #dc6e25;
+            --color-title: #fff;
+            --color-sub: #999;
+            --color-link: #000;
+            --color-bg: #111;
+            --font-family: 'lato', sans-serif;
+            --aspect-ratio: 32/17;
+            --image-width-max: 500px;
+
+            background-color: var(--color-bg);
+            font-family: var(--font-family);
+            color: var(--color-title);
+        }
+
+        .title {
+            position: fixed; top: 0; right: 0; z-index: 1000;
+            padding: 20px;
+            font-family: 'GmarketSansMedium';
+            text-align: right;
+        }
+        .title h1 {
+            margin-bottom: 10px;
+        }
+        .title p {
+            font-size: 18px;
+        }
+        .title ul {
+            padding: 20px 0;
+            font-family: "Abel";
+        }
+        .title li {
+            padding-bottom: 5px;
+        }
+        .title li.active a {
+            border-bottom: 1px dashed #fff;
+        }
+
+        #wrap h1 {
+            font-size: 7vw;
+            color: var(--color-h1);
+            padding: 3vw;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        #wrap h1 em {
+            display: block;
+            font-weight: 100;
+            padding-left: 18vw;
+        }
+
+        .contents {
+            margin: 35vh auto 35vh;
+        }
+
+        .content-item {
+            position: relative;
+            --image-width: calc(var(--image-width-max) * var(--aspect-ratio)); 
+            width: var(--image-width);
+            max-width: 90vw;
+            margin: 30vh 0 50vh;
+        }
+        
+        .content-item-imgWrap {
+            position: relative;
+            --width: 100%;
+            width: var(--width);
+            padding-bottom: calc(var(--width) / (var(--aspect-ratio)));
+            overflow: hidden;
+        }
+
+        .content-item-img {
+            position: absolute;
+            width: var(--width);
+            --overflow: 40px;
+            top: calc(-1 * var(--overflow));
+            height: calc(100% + (2 * var(--overflow)));
+            background-size: cover;
+            background-position: 50% 0;
+        }
+
+        .content-item:nth-child(even) {
+            margin-left: auto;
+        }
+
+        .content-item-num {
+            font-size: 20vw;
+            font-weight: 100;
+            position: absolute; right: -5vw; top: -15vw;
+            opacity: 0.04;
+        }
+
+        .content-item:nth-child(even) .content-item-num {
+            right: auto; left: -8vw;
+        }
+
+        .content-item-title {
+            text-align: right;
+            font-weight: 300;
+            text-transform: capitalize;
+            color: var(--color-sub);
+            padding-bottom: 0.8vw;
+            font-size: 1.5rem;    
+        }
+
+        .content-item:nth-child(even) .content-item-title {
+            text-align: left;
+        }
+
+        .content-item-desc {
+            font-size: 4vw;
+            line-height: 1.2;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--color-title);
+            text-align: right;
+            word-break: keep-all;
+            margin-top: -6vw;
+            margin-right: -3vw;
+            position: relative;
+            z-index: 20;
+        }
+
+        .content-item:nth-child(even) .content-item-desc {
+            text-align: left;
+            margin-right: 0;
+            margin-left: -3vw;
+        }
+        #section1 .content-item-img {background-image: url(img/p1.jpg);}
+        #section2 .content-item-img {background-image: url(img/p2.jpg);}
+        #section3 .content-item-img {background-image: url(img/p3.jpg);}
+        #section4 .content-item-img {background-image: url(img/p4.jpg);}
+        #section5 .content-item-img {background-image: url(img/p5.jpg);}
+        #section6 .content-item-img {background-image: url(img/p6.jpg);}
+        #section7 .content-item-img {background-image: url(img/p7.jpg);}
+        #section8 .content-item-img {background-image: url(img/p8.jpg);}
+        #section9 .content-item-img {background-image: url(img/p9.jpg);}
+
+        /* info */
+        .info {
+            position: fixed; top: 370px; right: 20px;
+            background: rgba(255,255,255,0.4);
+            color: #fff; padding: 10px;
+            font-size: 14px; font-weight: 300;
+            z-index: 10000;
+            font-style: normal;
+        }
+
+        .contents > section {
+            opacity: 0; transform: translateY(10vh);
+            transition: all 0.6s ease;
+        }
+        .contents > section.show {
+            opacity: 1; transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+        <h1>Parallax04</h1>
+        <p>Parallax Effect<br>-javascript</p>
+        <ul>
+            <li><a href="parallax01.html">parallax01</a></li>
+            <li><a href="parallax02.html">parallax02</a></li>
+            <li><a href="parallax03.html">parallax03</a></li>
+            <li class="active"><a href="parallax04.html">parallax04</a></li>
+            <li><a href="parallax05.html">parallax05</a></li>
+            <li><a href="parallax06.html">parallax06</a></li>
+            <li><a href="parallax07.html">parallax07</a></li>
+            <li><a href="parallax08.html">parallax08</a></li>
+        </ul>
+    </div>
+
+    <div class="info">
+        <span>pageYOffset() : <strong class="pageYOffset">0</strong>px</span><br>
+        <span>#section1 offset : <strong class="s1OT">0</strong>px</span><br>
+        <span>#section2 offset : <strong class="s2OT">0</strong>px</span><br>
+        <span>#section3 offset : <strong class="s3OT">0</strong>px</span><br>
+        <span>#section4 offset : <strong class="s4OT">0</strong>px</span><br>
+        <span>#section5 offset : <strong class="s5OT">0</strong>px</span><br>
+        <span>#section6 offset : <strong class="s6OT">0</strong>px</span><br>
+        <span>#section7 offset : <strong class="s7OT">0</strong>px</span><br>
+        <span>#section8 offset : <strong class="s8OT">0</strong>px</span><br>
+        <span>#section9 offset : <strong class="s9OT">0</strong>px</span><br>
+    </div>
+
+    <section id="wrap">
+        <h1>Parallax <em>Scrolling</em></h1>
+        <div class="contents">
+            <section id="section1" class="content-item">
+                <span class="content-item-num">01</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+            </section>
+            <section id="section2" class="content-item">
+                <span class="content-item-num">02</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+            </section>
+            <section id="section3" class="content-item">
+                <span class="content-item-num">03</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+            </section>
+            <section id="section4" class="content-item">
+                <span class="content-item-num">04</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+            </section>
+            <section id="section5" class="content-item">
+                <span class="content-item-num">05</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+            </section>
+            <section id="section6" class="content-item">
+                <span class="content-item-num">06</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+            </section>
+            <section id="section7" class="content-item">
+                <span class="content-item-num">07</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+            </section>
+            <section id="section8" class="content-item">
+                <span class="content-item-num">08</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+            </section>
+            <section id="section9" class="content-item">
+                <span class="content-item-num">09</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+            </section>
+        </div> 
+    </section>
+
+    <script>
+        // 스크롤은 이벤트 함수인데 자바스크립트는 이렇게 쓴다.
+        // $(window).scroll(function(){});
+        // $(window).on("scroll", function(){});
+        // window.addEventListener("scroll",function(){});              펑션()을 아래의 () => 로 쓴 것
+        // window.addEventListener("scroll", () => {});
+
+        // const scrollTop = $("window").scrollTop();                   제이쿼리 스크롤탑과 자바스크립트 페이지와이오프셋은 같은 기능
+        // let pageYOffset = window.pageYOffset;                        현재 자바스크립트 방식
+        // var pageYOffset = document.documentElement.scrollTop;        과거 자바스크립트 방식
+
+        // $(".scrollTop").text(scrollTop);                             제이쿼리 달러표시로 선택하는것과 자바스크립트 다큐먼트쿼리샐랙터와 같다.
+        // $(".scrollTop").html(<span>scrollTop</span>);                html메서드도 글을 써주는 text메서드와 같지만 태그도 사용 가능하다. text는 태그도 텍스트로 인식해버린다.
+        // document.querySelector(".pageYOffset").textContent = pageYOffset;  최신 방식
+        // document.querySelector(".pageYOffset").innerText = pageYOffset;    위 textContent의 예전방식
+        // document.querySelector(".pageYOffset").innerHTML = pageYOffset;
+
+        window.addEventListener("scroll", () => {
+            // let pageYOffset = window.pageYOffset;                    //IE 에서 적용이 안됨 현재방식(버전)이라서
+            // var pageYOffset = document.documentElement.scrollTop;    //예전 방식(버전)이라 IE에서 적용 됨
+            let pageYOffset = (window.pageYOffset || document.documentElement.scrollTop) + screen.height/2;  //or 연산자를 이용해 이렇게 쓰면 IE에서 예전과 현재 버전 둘다 호환 가능
+
+            console.log("1." + screen.height/2)         //제이쿼리 $(window).height()/2 와 같다
+            console.log("2." + document.documentElement.scrollTop)
+            console.log("3." + window.pageYOffset)
+
+            //info 에 보여질 수치
+            document.querySelector(".pageYOffset").textContent = pageYOffset;
+            // document.querySelector(".s1OT").textContent = parseInt( document.querySelector("#section1").offsetTop );
+            // document.querySelector(".s2OT").textContent = parseInt( document.querySelector("#section2").offsetTop );
+            // document.querySelector(".s3OT").textContent = parseInt( document.querySelector("#section3").offsetTop );
+            // document.querySelector(".s4OT").textContent = parseInt( document.querySelector("#section4").offsetTop );
+            // document.querySelector(".s5OT").textContent = parseInt( document.querySelector("#section5").offsetTop );
+            // document.querySelector(".s6OT").textContent = parseInt( document.querySelector("#section6").offsetTop );
+            // document.querySelector(".s7OT").textContent = parseInt( document.querySelector("#section7").offsetTop );
+            // document.querySelector(".s8OT").textContent = parseInt( document.querySelector("#section8").offsetTop );
+            // document.querySelector(".s9OT").textContent = parseInt( document.querySelector("#section9").offsetTop );
+            //위를 for문으로 변경
+            for (let i = 1; i <= 9; i++){
+                document.querySelector(".s"+i+"OT").textContent = parseInt( document.querySelector("#section"+i).offsetTop );
+            }
+
+            // if( pageYOffset > document.querySelector("#section1").offsetTop ){
+            //     document.querySelector(".s1OT").style.color = "red";
+            // } else {
+            //     document.querySelector(".s1OT").style.color = "black";
+            // }
+            // if( pageYOffset > document.querySelector("#section2").offsetTop ){
+            //     document.querySelector(".s2OT").style.color = "red";
+            // } else {
+            //     document.querySelector(".s2OT").style.color = "black";
+            // }
+            // if( pageYOffset > document.querySelector("#section3").offsetTop ){
+            //     document.querySelector(".s3OT").style.color = "red";
+            // } else {
+            //     document.querySelector(".s3OT").style.color = "black";
+            // }
+            // if( pageYOffset > document.querySelector("#section4").offsetTop ){
+            //     document.querySelector(".s4OT").style.color = "red";
+            // } else {
+            //     document.querySelector(".s4OT").style.color = "black";
+            // }
+            // if( pageYOffset > document.querySelector("#section5").offsetTop ){
+            //     document.querySelector(".s5OT").style.color = "red";
+            // } else {
+            //     document.querySelector(".s5OT").style.color = "black";
+            // }
+            // if( pageYOffset > document.querySelector("#section6").offsetTop ){
+            //     document.querySelector(".s6OT").style.color = "red";
+            // } else {
+            //     document.querySelector(".s6OT").style.color = "black";
+            // }
+            // if( pageYOffset > document.querySelector("#section7").offsetTop ){
+            //     document.querySelector(".s7OT").style.color = "red";
+            // } else {
+            //     document.querySelector(".s7OT").style.color = "black";
+            // }
+            // if( pageYOffset > document.querySelector("#section8").offsetTop ){
+            //     document.querySelector(".s8OT").style.color = "red";
+            // } else {
+            //     document.querySelector(".s8OT").style.color = "black";
+            // }
+            // if( pageYOffset > document.querySelector("#section9").offsetTop ){
+            //     document.querySelector(".s9OT").style.color = "red";
+            // } else {
+            //     document.querySelector(".s9OT").style.color = "black";
+            // }
+            
+            //위를 for문으로 변경
+            for (let i = 1; i <= 9; i++){
+                if( pageYOffset > document.querySelector("#section"+i).offsetTop ){
+                    document.querySelector(".s"+i+"OT").style.color = "red";
+                } else {
+                    document.querySelector(".s"+i+"OT").style.color = "black";
+                }
+            }
+
+
+         
+            //수작업
+            // if( pageYOffset > document.querySelector("#section1").offsetTop ) {
+            //     document.querySelector("#section1").classList.add( "show" );
+            // } else {
+            //     document.querySelector("#section1").classList.remove( "show" );
+            // }
+            // if( pageYOffset > document.querySelector("#section2").offsetTop ) {
+            //     document.querySelector("#section2").classList.add( "show" );
+            // } else {
+            //     document.querySelector("#section2").classList.remove( "show" );
+            // }
+            // if( pageYOffset > document.querySelector("#section3").offsetTop ) {
+            //     document.querySelector("#section3").classList.add( "show" );
+            // } else {
+            //     document.querySelector("#section3").classList.remove( "show" );
+            // }
+            // if( pageYOffset > document.querySelector("#section4").offsetTop ) {
+            //     document.querySelector("#section4").classList.add( "show" );
+            // } else {
+            //     document.querySelector("#section4").classList.remove( "show" );
+            // }
+            // if( pageYOffset > document.querySelector("#section5").offsetTop ) {
+            //     document.querySelector("#section5").classList.add( "show" );
+            // } else {
+            //     document.querySelector("#section5").classList.remove( "show" );
+            // }
+            // if( pageYOffset > document.querySelector("#section6").offsetTop ) {
+            //     document.querySelector("#section6").classList.add( "show" );
+            // } else {
+            //     document.querySelector("#section6").classList.remove( "show" );
+            // }
+            // if( pageYOffset > document.querySelector("#section7").offsetTop ) {
+            //     document.querySelector("#section7").classList.add( "show" );
+            // } else {
+            //     document.querySelector("#section7").classList.remove( "show" );
+            // }
+            // if( pageYOffset > document.querySelector("#section8").offsetTop ) {
+            //     document.querySelector("#section8").classList.add( "show" );
+            // } else {
+            //     document.querySelector("#section8").classList.remove( "show" );
+            // }
+            // if( pageYOffset > document.querySelector("#section9").offsetTop ) {
+            //     document.querySelector("#section9").classList.add( "show" );
+            // } else {
+            //     document.querySelector("#section9").classList.remove( "show" );
+            // }
+
+            //한번에
+            document.querySelectorAll(".content-item").forEach(elem => {
+                console.log(elem.offsetTop);
+                if( pageYOffset > elem.offsetTop) {
+                    elem.classList.add("show");
+                } else {
+                    elem.classList.remove("show");
+                }
+            });
+        });
+    </script>    
+</body>
+</html>
