@@ -127,7 +127,7 @@
             <li><a href="slide06.html">slider06</a></li>
             <li><a href="slide07.html">slider07</a></li>
             <li class="active"><a href="slide08.html">slider08</a></li>
-            <li><a href="slide08.html">slider09</a></li>
+            <li><a href="slide09.html">slider09</a></li>
         </ul>
     </div>
 
@@ -223,12 +223,19 @@
         //액티브 없을 때만 닷 메뉴 순서 번호 추출
         //고투슬라이드에 번호 입력 gotoSlide(index)
         //닷 버튼 클릭하기
-        sliderDot.on("click","a", function(e){
-        e.preventDefault();
 
-            currentIndex = $(this).index();
-            sliderImg.animate( {left: -( slideWidth * currentIndex ) + "px"}, 400 )
-            updataDot()
+        // 위 숙제 내가 한것
+
+        // sliderDot.on("click","a", function(e){
+        // e.preventDefault();
+
+        //     currentIndex = $(this).index();
+        //     sliderImg.animate( {left: -( slideWidth * currentIndex ) + "px"}, 400 )
+        //     updataDot()
+        // });
+
+        sliderDot.on("click", "a", function(){
+            gotoSlider( $(this).index() );
         });
     </script>
 </body>
