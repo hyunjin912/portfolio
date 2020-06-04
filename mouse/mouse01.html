@@ -164,50 +164,62 @@
 
      <script src="../slider/js/jquery.min_1.12.4.js"></script>
      <script>
-        $("body, html").mousemove(function(event){
-            $(".clientX").text(event.clientX);
-            $(".clientY").text(event.clientY);
-            $(".offsetX").text(event.offsetX);
-            $(".offsetY").text(event.offsetY);
-            $(".pageX").text(event.pageX);
-            $(".pageY").text(event.pageY);
-            $(".screenX").text(event.screenX);
-            $(".screenY").text(event.screenY);
+        // $("body, html").mousemove(function(event){
+        //     $(".clientX").text(event.clientX);
+        //     $(".clientY").text(event.clientY);
+        //     $(".offsetX").text(event.offsetX);
+        //     $(".offsetY").text(event.offsetY);
+        //     $(".pageX").text(event.pageX);
+        //     $(".pageY").text(event.pageY);
+        //     $(".screenX").text(event.screenX);
+        //     $(".screenY").text(event.screenY);
 
-            $(".cursor").css({ left: event.clientX-25, top: event.clientY-25 });
-        });
+        //     $(".cursor").css({ left: event.clientX-25, top: event.clientY-25 });
+        // });
 
-        $(".contents a").mouseenter(function(){
-            $(".cursor").css({borderColor: "orange"})
-        })
-        $(".contents a").mouseleave(function(){
-            $(".cursor").css({borderColor: "white"})
-        })
+        // $(".contents a").mouseenter(function(){
+        //     $(".cursor").css({borderColor: "orange"})
+        // })
+        // $(".contents a").mouseleave(function(){
+        //     $(".cursor").css({borderColor: "white"})
+        // })
         // 위에꺼 자바스크립트로 변경하기
         
 
 
 
-        // window.addEventListener("mousemove", function(event){
-        //     document.querySelector(".clientX").innerHTML = event.clientX
-        //     document.querySelector(".clientY").innerHTML = event.clientY
-        //     document.querySelector(".offsetX").innerHTML = event.offsetX
-        //     document.querySelector(".offsetY").innerHTML = event.offsetY
-        //     document.querySelector(".pageX").innerHTML = event.pageX
-        //     document.querySelector(".pageY").innerHTML = event.pageY
-        //     document.querySelector(".screenX").innerHTML = event.screenX
-        //     document.querySelector(".screenY").innerHTML = event.screenY
+        window.addEventListener("mousemove", function(event){
 
-        //     document.querySelector(".cursor").style.left = event.clientX;
-        //     document.querySelector(".cursor").style.top = event.clientY;
-        // });
+            document.querySelector(".clientX").innerHTML = event.clientX
+            document.querySelector(".clientY").innerHTML = event.clientY
+            document.querySelector(".offsetX").innerHTML = event.offsetX
+            document.querySelector(".offsetY").innerHTML = event.offsetY
+            document.querySelector(".pageX").innerHTML = event.pageX
+            document.querySelector(".pageY").innerHTML = event.pageY
+            document.querySelector(".screenX").innerHTML = event.screenX
+            document.querySelector(".screenY").innerHTML = event.screenY
 
-        // document.querySelector(".contents a").addEventListener("mouseenter", function(event){
-        //     document.querySelector(".cursor").style.borderColor = "orange"
-        // });
-        // document.querySelector(".contents a").addEventListener("mouseleave", function(event){
-        //     document.querySelector(".cursor").style.borderColor = "white"
-        // });
+
+            document.querySelector(".cursor").style.left = (event.clientX-25)+"px"     //event.clientX+"px" - "25px" 나 event.clientX+"px-25px"는 왜 안되는지 꼭! 물어보자
+            document.querySelector(".cursor").style.top = (event.clientY-25)+"px"
+        });
+
+        let aTag = document.querySelectorAll(".contents p a");
+        let aTagCount = aTag.length;
+
+        for(i = 0; i < aTagCount; i++){
+            aTag[i].addEventListener("mouseenter", function(){
+                document.querySelector(".cursor").style.borderColor = "orange";
+            });
+            aTag[i].addEventListener("mouseleave", function(){
+                document.querySelector(".cursor").style.borderColor = "white";
+            });
+        };
+        
+    
+        
+       
+      
      </script>
 </body>
 </html>
