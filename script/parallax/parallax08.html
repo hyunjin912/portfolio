@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parallax07</title>
+    <title>Parallax08</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <style>
@@ -176,17 +176,128 @@
             font-style: normal;
             font-family: "Abel";
         }
+
+        /* contents */
+        /*
+        .content-item-desc {
+            opacity: 0;
+            transform: translateY(70px);
+            transition: all 0.44s ease;
+        }
+        .content-item-desc.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        */
+
+        #section1 .content-item-desc span {
+            opacity: 0;
+            transform: translateY(70px);
+            transition: all 0.44s ease;
+            display: inline-block;      /* 인라인은 translate가 적용 되지 않음 */
+            min-width: 20px;            /* 띄어쓰기가 없어져서 적용 시킴 */    
+        } 
+        #section1 .content-item-desc span.show {
+            opacity: 1;
+            transform: translateY(0);
+        } 
+
+        #section2 .content-item-desc span {
+            opacity: 0;
+            transition: all 0.44s ease;
+            display: inline-block;      /* 인라인은 translate가 적용 되지 않음 */
+            min-width: 20px;            /* 띄어쓰기가 없어져서 적용 시킴 */    
+        } 
+        #section2 .content-item-desc span.show {
+            opacity: 1;
+            animation: flipInY 1s;
+        } 
+        @keyframes flipInY {
+            from {
+                transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+                animation-timing-function: ease-in;
+                opacity: 0;
+            }
+
+            40% {
+                transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+                animation-timing-function: ease-in;
+            }
+
+            60% {
+                transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+                opacity: 1;
+            }
+
+            80% {
+                transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+            }
+
+            to {
+                transform: perspective(400px);
+            }
+        }   
+
+        #section3 .content-item-desc span {
+            opacity: 0;
+            transition: all 0.44s ease;
+            display: inline-block;      /* 인라인은 translate가 적용 되지 않음 */
+            min-width: 20px;            /* 띄어쓰기가 없어져서 적용 시킴 */    
+        } 
+        #section3 .content-item-desc span.show {
+            opacity: 1;
+            animation: backInLeft 1s;
+        }
+        @keyframes backInLeft {
+            0% {
+            transform: translateX(-2000px) scale(0.7);
+            opacity: 0.7;
+            }
+
+            80% {
+            transform: translateX(0px) scale(0.7);
+            opacity: 0.7;
+            }
+
+            100% {
+            transform: scale(1);
+            opacity: 1;
+            }
+        }   
+
+        #section4 .content-item-desc span {
+            opacity: 0;
+            transition: all 0.44s ease;
+            display: inline-block;      /* 인라인은 translate가 적용 되지 않음 */
+            min-width: 20px;            /* 띄어쓰기가 없어져서 적용 시킴 */    
+        } 
+        #section4 .content-item-desc span.show {
+            opacity: 1;
+            animation: rotateInDownLeft 1s;
+        } 
+        @keyframes rotateInDownLeft {
+            from {
+            transform: rotate3d(0, 0, 1, -45deg);
+            opacity: 0;
+            }
+
+            to {
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+            }
+        }
     </style>
 </head>
 <body>
 
     <div class="info">
         <div>pageYOffset : <span class="pageYOffset">0</span>px</div>
+        <div>scrollTop : <span class="scrollTop">0</span>px</div>
     </div>
 
     <div class="title">
-        <h1>Parallax07</h1>
-        <p>기울임 효과</p>
+        <h1>Parallax08</h1>
+        <p>텍스트 효과</p>
         <ul>
             <li><a href="parallax01.html">parallax01</a></li>
             <li><a href="parallax02.html">parallax02</a></li>
@@ -194,8 +305,8 @@
             <li><a href="parallax04.html">parallax04</a></li>
             <li><a href="parallax05.html">parallax05</a></li>
             <li><a href="parallax06.html">parallax06</a></li>
-            <li class="active"><a href="parallax07.html">parallax07</a></li>
-            <li><a href="parallax08.html">parallax08</a></li>
+            <li><a href="parallax07.html">parallax07</a></li>
+            <li class="active"><a href="parallax08.html">parallax08</a></li>
         </ul>
     </div>
 
@@ -282,65 +393,87 @@
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/gsap.min_3.3.0.js"></script>
     <script>
+        // let txt = $("#section1 .content-item-desc").text();     //  text메서드는 가져 올 수도 있고 삽입할 수도 있다.
+        // alert(txt);
+        // let split = txt.split("").join("</span><span aira-hidden='true'>")
+        //     split = "<span aira-hidden='true'>" + split + "</span>"
+        // alert(split);
+        // $("#section1 .content-item-desc").html(split).attr("aira-label", txt)
+
         /*
-        // 제이쿼리
-        let scrollTop = $(window).scrollTop();
+        split은 javascript 언어이다. .split("") 하면 한 글자씩 쪼갠다(띄어쓰기도 같이 쪼갠다)
+        .split(" ") 하면 한 단어씩 쪼갠다.
+        join도 javascript 언어이다.
 
-        function scroll(){
-            let newScrollTop = $(window).scrollTop();
-            let different = newScrollTop - scrollTop;
-
-            console.log("scrollTop : "+scrollTop)
-            console.log("newScrollTop : "+newScrollTop)
-            console.log("different : "+different)
-
-            $(".content-item-desc").css( "transform","skewY("+different+"deg)")
-
-            scrollTop = newScrollTop;
-            requestAnimationFrame(scroll)
-        }
-        scroll();
-
-        // 일정한 시간 동안 반복적 함수를 실행
-        
-        let num = 0;
-        function render(){
-            $(".content-item-num").text(num);
-            num++;
-            requestAnimationFrame(render);      // 본인 함수를 안에 또 쓰면 재귀함수라 한다(무한에 빠진다)
-            // setInterval(render, 100);        버벅이기 때문에 새로나온 위에 코드를 사용
-        }
-        // render(); 숫자 막 커지기 때문에 주석했음
+        span에 aria-hidden을 써야 접근성을 준수하는 것이다.
+        저 속성이 없으면 시각리더기가 한 글자씩 끊어서 읽어버린다.
+        그래서 aria-hidden을 써서 시각리더기가 읽지 못하도록 해야 한다.
+        aria-hidden을 사용할 때는 aira-label속성도 같이 있어야 한다.
+        이 속성의 속성값으로는 읽지 않아야 하는 글을 쓰면 된다.
         */
+        
 
-        // 자바스크립트
-        let pageYOffset = window.pageYOffset;
+        
+        // 위 스크립트를 한 번에 사용(글씨 분할)
+        $(".content-item-desc").each(function(){
+            let txt = $(this).text();
+            let split = txt.split("").join("</span><span aira-hidden='true'>")
+                split = "<span aira-hidden='true'>" + split + "</span>"
+            $(this).html(split).attr("aira-label", txt)
+        });
+        // for(i = 1; i <= 9; i++){
+        //     $("#section"+i+ ".content-item-desc").html(split).attr("aira-label", txt)
+        // }
 
-        const scroll = () => {
-            const newPageYOffset = window.pageYOffset;
-            const different = newPageYOffset - pageYOffset;
 
-            console.log("pageYOffset : "+pageYOffset)
-            console.log("newPageYOffset : "+newPageYOffset)
-            console.log("different : "+different)
 
-            /*
-            let target = document.querySelectorAll(".content-item-img");
-            // forEach는 jQuery의 each와 똑같이 forEach메서드에 함수를 사용하고 그 함수의 첫번 째 매개변수를 사용하면 선택자의 인덱스를 알 수 있다.
-            target.forEach(function(imgIndex){
-                imgIndex.style.transform = 'skewY('+different * 0.1 +'deg)' // different에 숫자를 곱하면 천천히 적용된다.
-            });
-            */
+        // 패럴랙스 이펙트
+        $(window).scroll(function(){
+            const scrollTop = $(window).scrollTop();
+            $(".scrollTop").text(scrollTop);
 
-            // gsap
-            // gsap.to(".content-item-img", {duration: 0.3, rotation: different});
-            gsap.to(".content-item-img", {duration: 0.3, ease: "power1.out", skewY: different * 0.2});
-            gsap.to(".content-item-desc", {duration: 0.3, ease: "power5.out", skewY: -different * 0.7});
+
+            // $(".content-item").each(function(){
+            //     if( $(window).scrollTop() > $(this).offset().top ){
+            //         $(this).find(".content-item-desc").addClass("show");
+            //     } else {
+            //         $(this).find(".content-item-desc").removeClass("show");
+            //     }
+            // });
+
+            if( $(window).scrollTop() >= $("#section1").offset().top ){
+                $("#section1 .content-item-desc span").each(function(index){
+                    setInterval(function(){
+                        $("#section1 .content-item-desc span").eq(index).addClass("show");
+                    }, 100 * index);
+                });
+            }
+
+            if( $(window).scrollTop() >= $("#section2").offset().top ){
+                $("#section2 .content-item-desc span").each(function(index){
+                    setInterval(function(){
+                        $("#section2 .content-item-desc span").eq(index).addClass("show");
+                    }, 100 * index);
+                });
+            }
+
+            if( $(window).scrollTop() >= $("#section3").offset().top ){
+                $("#section3 .content-item-desc span").each(function(index){
+                    setInterval(function(){
+                        $("#section3 .content-item-desc span").eq(index).addClass("show");
+                    }, 100 * index);
+                });
+            }
+
+            if( $(window).scrollTop() >= $("#section4").offset().top ){
+                $("#section4 .content-item-desc span").each(function(index){
+                    setInterval(function(){
+                        $("#section4 .content-item-desc span").eq(index).addClass("show");
+                    }, 100 * index);
+                });
+            }
             
-            pageYOffset = newPageYOffset;
-            requestAnimationFrame(scroll);
-        }
-        scroll();
+        });
     </script>
 </body>
 </html>
