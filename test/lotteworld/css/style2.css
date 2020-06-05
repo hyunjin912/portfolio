@@ -1,0 +1,230 @@
+/* reset */
+* {margin: 0; padding: 0;}
+li {list-style: none;}
+a {color: #333; text-decoration: none;}
+.clearfix::before, .clearfix::after {display: block; content: ''; clear: both;}
+
+/* 레이아웃 */
+.container {
+    width: 960px; margin: 0 auto;
+}
+
+/* 헤더 */
+.headerWrap {}
+.headerWrap .header {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+.headerWrap .header h1 {}
+.headerWrap .header h1 a img {
+    width: 100px;
+}
+.header ul.bigTitle {
+    justify-self: flex-end;
+    align-self: center;
+}
+.header ul.bigTitle li.bigLi {
+    display: inline-block;
+    padding: 0 15px;
+}
+.header ul.bigTitle li.bigLi:last-child {
+    padding: 0;
+}
+
+/* 헤더 아코디언  */
+.bigLi {
+    position: relative;
+    display: inline-block;
+}
+.bigLi .menu {
+    display: none;
+    z-index: 100;
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, 10%);
+}
+.bigLi .menu li a {
+    display: block;
+    width: 65px;
+}
+
+/* 배너 */
+.banWrap {}
+.banWrap .ban {background: #000;}
+.banWrap .ban img {
+    display: block;
+    width: 960px;
+    height: 361.906px; 
+}
+
+/* 슬라이드 효과 */
+.slideFrame {
+    width: 960px;
+    height: 361.906px;
+    overflow: hidden;
+}
+.slideMove {
+    position: relative; /* absolute를 하면 안되는 이유 정확히 알기 */
+    display: flex;
+    width: 2280px;
+}
+
+/* 컨텐츠  */
+.contentWrap {margin-top: 13px;}
+.contentWrap .cont1 {
+    float: left;
+    width: 49%; height:211.72px; margin-right: 2%;
+    padding: 30px;
+    box-sizing: border-box;
+    border: 1px solid #e4e4e4;
+}
+.titleWrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.moreBox {
+    justify-self: end;
+    align-self: center;
+}
+.moreBox .moreImg img {
+    width: 14px;
+}
+.contentWrap .cont1 .tit {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ccc;
+}
+.contentWrap .cont1 .tit.black {
+    color: #000;
+}
+
+
+.cont1 .titleWrap .tit ul {
+    position: absolute; top: 31px; left: 0;
+    width: 408px;
+    padding-top: 3px;
+    box-sizing: border-box;
+}
+.cont1 .titleWrap .tit ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 4.7px 0;
+}
+.cont1 .titleWrap .tit li a {
+    font-size: 16px;
+    font-weight: normal;
+}
+.cont1 .titleWrap .tit ul li span {
+    color: #000;
+    font-weight: normal;
+    font-size: 14px;
+}
+.cont1 .titleWrap .t2 ul {
+    position: absolute; top: 31px; left: -136px;
+}
+
+.contentWrap .cont2 {
+    float: left;
+    width: 49%; margin-right: 0%;
+}
+.contentWrap .cont2 a {}
+.contentWrap .cont2 a img {
+    width: 100%;
+}
+
+/* 팝업 */
+.contentWrap .cont2 .popUp {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px; height: 300px;
+    background: tomato;
+}
+.contentWrap .cont2 .popUp::before {
+    content: '';
+    width: 2px;
+    height: 15px;
+    background: #000;
+    position: absolute; top: 10px; left: 270px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+.contentWrap .cont2 .popUp::after {
+    content: '';
+    width: 2px;
+    height: 15px;
+    background: #000;
+    position: absolute; top: 10px; left: 270px;
+    transform: rotate(-45deg);
+    cursor: pointer;
+}
+
+/* 광고 */
+.adWrap {margin-top: 20px;}
+.adWrap .adTitle {margin-bottom: 13px;}
+.adWrap .adTitle .adTit {
+    font-size: 18px;
+    font-weight: bold;
+}
+.adWrap .adImgBox {
+    display: grid;
+    grid-template-columns: repeat(4, 23.5%);
+    gap: 2%;
+}
+.adWrap .adImgBox a {}
+.adWrap .adImgBox a img {width: 100%;}
+.adWrap .adImgBox a span {
+    display: inline-block;
+    padding: 20px 0;
+}
+
+/* 푸터 */
+.footer {
+    border-top: 1px solid #d9d9d9;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+.footer ul {
+    box-sizing: border-box;
+    width: 60%;
+    font-size: 12px;
+    color: #7b7b7b;
+}
+.footer ul li {
+    position: relative;
+    display: inline-block;
+    padding: 3px 10px;
+}
+.footer ul li:nth-child(1) {
+    padding-left: 0;
+}
+.footer ul li:nth-child(3) {
+    padding-left: 0;
+}
+.footer ul li:nth-child(6) {
+    padding-left: 0;
+}
+.footer ul li:last-child {
+    padding: 20px 0;
+}
+.footer ul li::after {
+    content: '';
+    width: 1px;
+    height: 13px;
+    background: #d9d9d9;
+    position: absolute; top: 6px; right: -4px;
+}
+.footer ul li:nth-child(2)::after {
+    display: none;
+}
+.footer ul li:nth-child(5)::after {
+    display: none;
+}
+.footer ul li:nth-child(6)::after {
+    display: none;
+}

@@ -30,8 +30,8 @@
 .header .header-menu a {color: #fff; padding: 10px 0px 10px 13px; display: inline-block; text-transform: capitalize;}
 .header .header-menu a:hover {color: #666;}
 .header .header-tit {text-align: center;}
-.header .header-tit h1 {font-size: 28px; padding: 5px 20px 6px 20px; background-color: #4aa8d4; color: #fff; text-transform: uppercase; display: inline-block; margin-top: 40px;}
-.header .header-tit a {font-size: 18px; color: #fff; background-color: #2698cb; padding: 5px 20px 6px 20px; display: inline-block; margin-top: -5px;}
+.header .header-tit h1 {font-size: 28px; padding: 5px 20px 6px 20px; background-color: #4ad4af; color: #fff; text-transform: uppercase; display: inline-block; margin-top: 40px;}
+.header .header-tit a {font-size: 18px; color: #fff; background-color: #26cb9d; padding: 5px 20px 6px 20px; display: inline-block; margin-top: -5px;}
 
 .header .header-icon {text-align: center; margin-top: 30px;}
 .header .header-icon a {display: inline-block; width: 60px; height: 60px; background-image: url(../img/icon.png);}
@@ -56,7 +56,7 @@
 
 /* 타이틀 */
 .tit {position: relative;}
-.tit h2 {text-align: center; font-size: 40px; color: #2c94c4; padding: 5px 0; font-family: 'Nanum Brush Script', cursive;}
+.tit h2 {text-align: center; font-size: 40px; color: #2cc49b; padding: 5px 0; font-family: 'Nanum Brush Script', cursive;}
 .tit .btn {position: absolute; top: 5px; right: 0; width: 60px; height: 60px; background-image: url(../img/icon.png); background-position: 0 -600px;}
 .tit .btn:hover {background-position: -60px -600px;}
 
@@ -92,8 +92,8 @@
 .ban .slick-slide {margin: 10px;} 
 .ban .slick-dots {position: absolute; bottom: 5px; display: block; width: 100%; text-align: center;}
 .ban .slick-dots li {display: inline-block; margin: 5px;}
-.ban .slick-dots li button {font-size: 0; line-height: 0; display: block; width: 15px; height: 15px; background: #5dbfeb; border-radius: 50%; cursor: pointer;}
-.ban .slick-dots li.slick-active button {background: #2b91c8;}
+.ban .slick-dots li button {font-size: 0; line-height: 0; display: block; width: 15px; height: 15px; background: #5debc4; border-radius: 50%; cursor: pointer;}
+.ban .slick-dots li.slick-active button {background: #2bc8a3;}
 
 /* 컨텐츠 */
 .cont {overflow: hidden; padding-top: 30px;}
@@ -106,7 +106,7 @@
 .cont .column.col6 {padding-right: 0; margin-right: 0;}
 
 .cont .column .icon-img {display: block; width: 60px; height: 60px; background: url(../img/icon.png); position: absolute; left: 0; top: 0;}
-.cont .column .icon-tit {padding-left: 70px; font-size: 16px; color: #2c94c4;}
+.cont .column .icon-tit {padding-left: 70px; font-size: 16px; color: #2cdfa5;}
 .cont .column .icon-desc {padding-left: 70px; border-bottom: 1px solid #d0d0d0; padding-bottom: 15px; margin-bottom: 15px;}
 
 .cont .col1 .icon-img {background-position: 0 -240px;}
@@ -124,7 +124,7 @@
 
 /* 게시판 */
 .notice {position: relative;}
-.notice h4 {font-size: 14px; color: #0093bd; padding-bottom: 3px; font-weight: bold; }
+.notice h4 {font-size: 14px; color: #28bf92; padding-bottom: 3px; font-weight: bold; }
 .notice ul li {overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding-left: 8px; background: url(../img/dot.gif) no-repeat 0 8px;}
 .notice ul li a {font-size: 12px;}
 .notice a.more {position: absolute; right: 0; top: 0; width: 17px; height: 17px; background: url(../img/icon.png) -150px -90px;}
@@ -132,7 +132,7 @@
 
 /* 게시판2 */
 .notice2 {position: relative;}
-.notice2 h4 {font-size: 14px; color: #0093bd; padding-bottom: 3px; font-weight: bold; margin-top: 15px;}
+.notice2 h4 {font-size: 14px; color: #28bf92; padding-bottom: 3px; font-weight: bold; margin-top: 15px;}
 .notice2 li {overflow: hidden; background: url(../img/dot.gif) no-repeat 0 8px; padding-left: 8px;}
 .notice2 li a {float: left; width: 70%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px;}
 .notice2 li span {float: left; width: 30%; text-align: right; font-size: 12px;}
@@ -141,7 +141,7 @@
 
 /* 게시판3 */
 .notice3 {position: relative;}
-.notice3 h4 {font-size: 14px; color: #0093bd; padding-bottom: 3px; font-weight: bold; margin-top: 15px;}
+.notice3 h4 {font-size: 14px; color: #28bf92; padding-bottom: 3px; font-weight: bold; margin-top: 15px;}
 .notice3 li {position: relative; padding: 8px 0 14px 60px;}
 .notice3 li a img {width: 50px; border: 1px solid #0093bd; position: absolute; left: 0; top: 0;}
 .notice3 li a strong {display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
@@ -150,7 +150,7 @@
 .notice3 .more:hover {background-position: -167px -90px;}
 
 /* 오버효과1 */
-.notice-hover h4 {font-size: 14px; color: #0093bd; padding-bottom: 3px; font-weight: bold; margin-top: 15px;}
+.notice-hover h4 {font-size: 14px; color: #28bf92; padding-bottom: 3px; font-weight: bold; margin-top: 15px;}
 .notice-hover ul {overflow: hidden;}
 .notice-hover li {float: left; width: 93px; margin-right: 5px; text-align: center;}
 .notice-hover li:last-child {margin-right: 0;}
@@ -195,7 +195,7 @@
 .tab-menu ul li ul li {float: none; border: 0; padding-left: 18px; padding-bottom: 3px; background: url(../img/dot.gif) no-repeat 9px 8px;}
 .tab-menu ul li ul li a {padding: 0;}
 
-.tab-menu ul li.active {background-color: #2c94c4;}
+.tab-menu ul li.active {background-color: #28bf92;}
 .tab-menu ul li.active a {color: #fff;}
 .tab-menu ul li.active ul li a {color: #333;}
 
@@ -230,7 +230,7 @@
 .gallery {position: relative; border: 1px solid #ccc; height: 254px; overflow: hidden;}
 .gallery h4 {
     border-bottom: 1px solid #ccc; font-size: 14px;
-    color: #0093bd; font-weight: bold; padding: 8px 10px;
+    color: #28bf92; font-weight: bold; padding: 8px 10px;
 }
 .gallery-btn {position: absolute; right: 5px; top: 7px;}
 .gallery-btn button {
@@ -254,7 +254,7 @@
 .login-header .lh-check {float: left; padding-right: 15px;}
 .login-header .lh-check .input-check {vertical-align: -2px;}
 .login-header .lh-ip {float: left;}
-.login-header .lh-ip strong {color: #0093bd; text-decoration: underline;}
+.login-header .lh-ip strong {color: #28bf92; text-decoration: underline;}
 
 
 .login-content {position: relative;}
