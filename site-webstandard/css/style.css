@@ -3,7 +3,7 @@
 #skip {position: relative;}
 #skip a {
     border: 1px solid #fff; background-color: #333; 
-    color: #fff; position: absolute; left: 0px; top: -50px; 
+    color: #fff; position: absolute; left: 0; top: -50px; 
     width: 140px; text-align: center; 
     font-size: 14px; padding: 10px;
 }
@@ -37,7 +37,10 @@
 .header .header-tit a {font-size: 18px; color: #fff; background-color: #26cb9d; padding: 5px 20px 6px 20px; display: inline-block; margin-top: -5px;}
 
 .header .header-icon {text-align: center; margin-top: 30px;}
-.header .header-icon a {display: inline-block; width: 60px; height: 60px; background-image: url(../img/icon.png);}
+.header .header-icon a {
+    display: inline-block; width: 60px; height: 60px; 
+    background-image: url(../img/icon.png);
+}                             /* position값으로 이미지 변경 */
 .header .header-icon a.icon1 {background-position: 0 0;}
 .header .header-icon a.icon2 {background-position: 0 -60px;}
 .header .header-icon a.icon3 {background-position: 0 -120px;}
