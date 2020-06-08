@@ -14,6 +14,48 @@
     img {width: 100%; vertical-align: top;}
     li {list-style: none;}
 
+    
+    .cursor {
+        position: absolute;
+        width: 10px; height: 10px;
+        background: rgb(212, 27, 27);
+        border-radius: 50%;
+        z-index: 3000;
+        user-select: none;
+        pointer-events: none;
+        transform: scale(1);
+        transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
+    }
+    .cursor.active {
+        opacity: 0.5;
+        transform: scale(0);
+    }
+    .cursor-follower {
+        position: absolute;
+        width: 30px; height: 30px;
+        background: rgba(248, 159, 159, 0.3);
+        border-radius: 50%;
+        z-index: 3000;
+        user-select: none;
+        pointer-events: none;
+        transition: transform 0.6s ease-in-out, opacity 0.2s ease-in-out;
+    }
+    .cursor-follower.active {
+        opacity: 0.7;
+        transform: scale(4);
+    }
+    .s2 .cursor {background: dodgerblue;}
+    .s3 .cursor {background: rgb(246, 7, 155);}
+    .s4 .cursor {background: rgb(1, 251, 147);}
+    .s5 .cursor {background: rgb(255, 196, 0);}
+    .s6 .cursor {background: rgb(140, 0, 255);}
+    .s7 .cursor {background: rgb(21, 255, 0);}
+    .s2 .cursor-follower {background: rgba(137, 174, 223, 0.3);}
+    .s3 .cursor-follower {background: rgba(240, 130, 172, 0.3);}
+    .s4 .cursor-follower {background: rgba(151, 246, 234, 0.3);}
+    .s5 .cursor-follower {background: rgba(245, 229, 141, 0.3);}
+    .s6 .cursor-follower {background: rgba(245, 129, 255, 0.3);}
+    .s7 .cursor-follower {background: rgba(143, 255, 152, 0.3);}
 
     #nav {
         display: flex;
@@ -258,6 +300,8 @@
 
     </style>
 <body>
+    
+
     <nav id="nav">
         <ul class="menu">
             <li class="active"><a href="#">Work</a></li>
@@ -328,7 +372,7 @@
                         <h2>webstandard</h2>
                     </div>
                     <div class="simg">
-                        <img src="img/img1.png" alt="이미지4">
+                        <img src="img/img1.png" alt="이미지1">
                     </div>
                     <div class="snum">
                         <span class="currentIndex">05</span>
@@ -340,7 +384,7 @@
                         <h2>webstandard</h2>
                     </div>
                     <div class="simg">
-                        <img src="img/img2.png" alt="이미지4">
+                        <img src="img/img2.png" alt="이미지2">
                     </div>
                     <div class="snum">
                         <span class="currentIndex">06</span>
@@ -352,7 +396,7 @@
                         <h2>webstandard</h2>
                     </div>
                     <div class="simg">
-                        <img src="img/img3.png" alt="이미지4">
+                        <img src="img/img3.png" alt="이미지3">
                     </div>
                     <div class="snum">
                         <span class="currentIndex">07</span>
@@ -364,13 +408,14 @@
     </section>
 
 
-
     <script src="js/jquery.min_1.12.4.js"></script>
     <script src="js/jquery-ui.min.js"></script>
+    <script src="js/gsap.min.js"></script>
     <script>
         // 닷, 버튼 생성
         $(".slide-wrap").append("<div class='slide-dot'></div>");
         $(".slide-wrap").append("<div class='slide-btn'><a href='#' class='prev'></a><a href='#' class='next'></a></div>");
+        $(".slide").append("<div class='cursor'></div><div class='cursor-follower'></div>");
 
 
         const slideWrap = $(".slide-wrap");
@@ -427,6 +472,7 @@
         function updataDot(){
             slideDot.find("a").removeClass().eq(currentIndex).addClass("active");
             slide.removeClass("active").eq(currentIndex).addClass("active");
+
         }
 
 
@@ -478,8 +524,24 @@
             $(this).toggleClass("on")
         });
 
+        // 마우스 효과
+        const cursor = $(".cursor");
+        const follower = $(".cursor-follower");
 
+        $(document).mousemove(function(e){
+            gsap.to(cursor, 0.3, {left: e.pageX - 5 , top: e.pageY - 5 })
+            gsap.to(follower, 0.8, {left: e.pageX - 15, top: e.pageY -15 })
+        });
 
+        $("a").hover(function(){
+            cursor.addClass("active");
+            follower.addClass("active");
+        }, function(){
+            cursor.removeClass("active");
+            follower.removeClass("active");
+        });
+
+        
     </script>
 </body>
 </html>

@@ -1,0 +1,95 @@
+/* web font */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap');
+@font-face {
+    font-family: 'S-CoreDream-9Black';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff')
+    format('woff'); font-weight: normal; font-style: normal;
+}
+@font-face {
+    font-family: 'S-CoreDream-4Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff')
+    format('woff'); font-weight: normal; font-style: normal;
+}
+@font-face {
+    font-family: 'S-CoreDream-2ExtraLight'; 
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-2ExtraLight.woff') 
+    format('woff'); font-weight: normal; font-style: normal; 
+}
+@font-face { 
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') 
+    format('woff'); font-weight: normal; font-style: normal; 
+}
+
+
+/* container */
+.container {width: 81vw; margin: 0 auto;}
+
+/* section1 */
+#section1 {
+    height: 70vw;
+    background-color: #203B34;
+    font-family: 'S-CoreDream-4Regular';
+    color: #fff;
+}
+.section1 {
+    position: relative;
+}
+.section1 .s1-title {
+    position: absolute; left: 0; top: 10vw;
+}
+.section1 .s1-title h1 {
+    font-family: 'S-CoreDream-9Black';
+    font-size: 8vw;
+    color: #fff;
+}
+.section1 .s1-title p {
+    font-size: 2vw;
+}
+.section1 .s1-desc {
+    position: absolute; left: 0; top: 40vw;
+}
+.section1 .s1-desc p {
+    font-family: 'S-CoreDream-2ExtraLight';
+    font-size: 1vw;
+}
+.section1 .s1-desc p strong {font-family: 'S-CoreDream-6Bold';}
+
+/* section2 */
+#section2 {
+
+    overflow: hidden;
+    padding-top: 500px;
+    background-color: #203B34;
+    height: 100vh;
+}
+.section2 {
+    position: relative;
+    width: 70vw; height: 35vw;
+    background: url(../img/webstandard.jpg) center center no-repeat;
+    background-size: cover;
+
+}
+.section2 h2 {
+    font-family: 'S-CoreDream-9Black';
+    font-size: 10vw;
+    color: #A68A73;
+    position: absolute; left: 5vw; top: -10vw;
+    z-index: 1000;
+    text-transform: uppercase;
+}
+.section2 h3 {
+    position: absolute; top: 4vw; right: -35vw;
+    transform: rotate(90deg);
+    font-family: 'Rubik', sans-serif;
+    font-weight: 700;
+    font-size: 20vw;
+}
+.section2 h4 {
+    position: absolute; top: 8vw; right: -7vw;
+    transform: rotate(90deg);
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 1.5vw;
+}
+

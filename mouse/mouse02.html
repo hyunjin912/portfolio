@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Effect02</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+    @font-face { 
+        font-family: 'GmarketSansMedium'; 
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff'); 
+        font-weight: normal; 
+        font-style: normal; 
+    }
+    @font-face {
+        font-family: 'S-CoreDream-7ExtraBold'; 
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-7ExtraBold.woff') format('woff'); 
+        font-weight: normal; 
+        font-style: normal; 
+    }
+
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    a {text-decoration: none; color: #fff;}
+    img {width: 100%; vertical-align: top;}
+    ul {padding:10px 20px;}
+    body {
+        background: url(../slider/img/p12.jpg) no-repeat center center;
+        background-size: cover;
+        font-family: 'Lato','GmarketSansMedium';
+        color: #fff;
+        height: 100vh;
+        cursor: none;
+        overflow: hidden;
+        }
+    body::before {
+        content: '';
+        position: absolute; left: 0; top: 0;
+        width: 100%; height: 100vh;
+        background: rgba(133, 18, 43, 0.4);
+        z-index: -1;
+    }
+
+    /* info */
+    .info {
+        position: absolute; left: 0; top: 0; z-index: 1000;
+        padding: 20px;
+    }
+    .info h1 {
+     margin-bottom: 10px;
+    }
+
+    .info2 {
+        position: absolute; top: 0; right: 0; z-index: 1000;
+        padding: 20px;
+    }
+    .info2 li {
+        list-style: none;
+        margin-bottom: 5px;
+    }.info2 li a {
+         color: #fff;
+    }
+    .info2 li.active a {
+        border-bottom: 1px dashed #fff;
+    }
+
+    .info3 {
+        position: absolute; right: 0; bottom: 0; z-index: 1000; padding: 20px;
+    }
+    .info3 li {
+        list-style: none;
+        margin-bottom: 5px;
+    }
+    .info3 li a {
+        color: #fff;
+    }
+
+    .contents {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%; height: 100vh;
+        flex-direction: column;
+    }
+    .contents p {
+        max-width: 70vw;
+        font-size: 2vw;
+        font-family: 'S-CoreDream-7ExtraBold';
+        color: rgba(255,255,255,0.9);
+
+    }
+    .contents p a {
+        text-decoration: none; color: orange;
+        border-bottom: 2px dashed orange;
+    }
+        
+    .cursor {
+        position: absolute;
+        width: 10px; height: 10px;
+        background: #fff;
+        border-radius: 50%;
+        z-index: 1000;
+        user-select: none;
+        pointer-events: none;
+        transform: scale(1);
+        transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
+    }
+    .cursor.active {
+        opacity: 0.5;
+        transform: scale(0);
+    }
+    .cursor-follower {
+        position: absolute;
+        width: 30px; height: 30px;
+        background: rgba(255,255,255,0.3);
+        border-radius: 50%;
+        user-select: none;
+        pointer-events: none;
+        transition: transform 0.6s ease-in-out, opacity 0.2s ease-in-out;
+    }
+    .cursor-follower.active {
+        opacity: 0.7;
+        transform: scale(4);
+    }
+
+    .infor4 {position: absolute; left: 0; bottom: 0; z-index: 1000; padding: 20px;}
+    .infor4 a {color: #fff; border: 1px solid #fff; border-radius: 30px; padding: 5px 30px}
+    .infor4 .modal {
+        background: rgba(0,0,0,0.8);
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 100%;
+        left: 0;
+        transition: all 600ms cubic-bezier(0.86, 0, 0.07, 1);
+    }
+    .infor4 .modal.show {
+        top: 0;
+    }
+    .infor4 .modal .close {
+        position: absolute; right: 10px; top: 20px;
+    }
+    </style>
+
+    <link rel="stylesheet" href="prism.css">
+</head>
+<body>
+    <div class="info">
+        <h1>Mouse Effect02</h1>
+        <p>마우스 따라다니기</p>
+        <ul>
+            <li>GSAP</li>
+        </ul>
+    </div>
+
+    <div class="info2">
+        <ul>
+            <li><a href="mouse01.html">Mouse01</a></li>
+            <li class="active"><a href="mouse02.html">Mouse02</a></li>
+            <li><a href="mouse03.html">Mouse03</a></li>
+            <li><a href="mouse04.html">Mouse04</a></li>
+            <li><a href="mouse05.html">Mouse05</a></li>
+        </ul>
+    </div>
+
+    <div class="info3">
+        <ul>
+            <li>pageX : <span class="pageX">0</span></li>
+            <li>pageY : <span class="pageY">0</span></li>
+        </ul>
+    </div>
+
+    <div class="infor4">
+        <a href="#" class="view">소스보기</a>
+        <!-- modal -->
+        <div class="modal">
+            <div class="code-editor">   
+                <span class="control"></span>
+                <span class="control"></span>
+                <span class="control"></span>
+<pre class="line-numbers"><code class="language-js">// const cursor = $(".cursor");
+// const follower = $(".cursor-follower");
+
+// $(document).mousemove(function(e){
+//     gsap.to(cursor, 0.3, {left: e.pageX - 5 , top: e.pageY - 5 })
+//     gsap.to(follower, 0.8, {left: e.pageX - 15, top: e.pageY -15 })
+// });
+
+// $("a").hover(function(){
+//     cursor.addClass("active");
+//     follower.addClass("active");
+// }, function(){
+//     cursor.removeClass("active");
+//     follower.removeClass("active");
+// });
+
+// 출력용
+// $(document).mousemove(function(e){  // 마우스가 움직였을 때 이벤트 함수
+//     $(".pageX").text(e.pageX)   // 이벤트 pageX값을 화면에 출력
+//     $(".pageY").text(e.pageY)   // 이벤트 pageY값을 화면에 출력
+// });
+
+
+// 제이쿼리 -> 자바스크립트
+const cursor = document.querySelector(".cursor");
+const follower = document.querySelector(".cursor-follower");
+
+window.addEventListener("mousemove", function(e){
+    gsap.to(cursor, 0.3, {left: e.pageX - 5 + "px" , top: e.pageY - 5 + "px"})
+    gsap.to(follower, 0.8, {left: e.pageX - 15 + "px", top: e.pageY -15 + "px"})
+});
+
+document.querySelectorAll("a").forEach(elem => {
+    elem.addEventListener("mouseenter", () => {
+        cursor.classList.add("active");
+        follower.classList.add("active");
+    });
+    elem.addEventListener("mouseleave", () => {
+        cursor.classList.remove("active");
+        follower.classList.remove("active");
+    });
+});
+
+// 출력용
+window.addEventListener("mousemove", function(e){
+    document.querySelector(".pageX").textContent = e.pageX;
+    document.querySelector(".pageY").textContent = e.pageY;
+});
+</code></pre>
+                
+                
+            </div>
+            <a class="close">Close</a>
+        </div>
+    </div>
+
+   
+
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    <div class="contents">
+        <p>When money speaks, the <a>truth</a> keeps silent.</p>
+        <p>돈이 말할 때는 <a>진실</a>은 입을 다문다.</p>
+    </div>
+
+    <script src="../slider/js/jquery.min_1.12.4.js"></script>
+    <script src="gsap.min.js"></script>
+    <script src="prism.js"></script>
+    <script>
+        // const cursor = $(".cursor");
+        // const follower = $(".cursor-follower");
+
+        // $(document).mousemove(function(e){
+        //     gsap.to(cursor, 0.3, {left: e.pageX - 5 , top: e.pageY - 5 })
+        //     gsap.to(follower, 0.8, {left: e.pageX - 15, top: e.pageY -15 })
+        // });
+
+        // $("a").hover(function(){
+        //     cursor.addClass("active");
+        //     follower.addClass("active");
+        // }, function(){
+        //     cursor.removeClass("active");
+        //     follower.removeClass("active");
+        // });
+
+        // 출력용
+        // $(document).mousemove(function(e){  // 마우스가 움직였을 때 이벤트 함수
+        //     $(".pageX").text(e.pageX)   // 이벤트 pageX값을 화면에 출력
+        //     $(".pageY").text(e.pageY)   // 이벤트 pageY값을 화면에 출력
+        // });
+
+
+        // 제이쿼리 -> 자바스크립트
+        const cursor = document.querySelector(".cursor");
+        const follower = document.querySelector(".cursor-follower");
+
+        window.addEventListener("mousemove", function(e){
+            gsap.to(cursor, 0.3, {left: e.pageX - 5 + "px" , top: e.pageY - 5 + "px"})
+            gsap.to(follower, 0.8, {left: e.pageX - 15 + "px", top: e.pageY -15 + "px"})
+        });
+
+        document.querySelectorAll("a").forEach(elem => {
+            elem.addEventListener("mouseenter", () => {
+                cursor.classList.add("active");
+                follower.classList.add("active");
+            });
+            elem.addEventListener("mouseleave", () => {
+                cursor.classList.remove("active");
+                follower.classList.remove("active");
+            });
+        });
+
+        // 출력용
+        window.addEventListener("mousemove", function(e){
+            document.querySelector(".pageX").textContent = e.pageX;
+            document.querySelector(".pageY").textContent = e.pageY;
+        });
+    </script>
+</body>
+</html>
