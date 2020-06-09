@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mouse Effect02</title>
+    <title>Mouse Effect03</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <style>
     @font-face { 
@@ -24,7 +25,7 @@
     img {width: 100%; vertical-align: top;}
     ul {padding:10px 20px;}
     body {
-        background: url(../slider/img/p12.jpg) no-repeat center center;
+        background: url(../slider/img/p13.jpg) no-repeat center center;
         background-size: cover;
         font-family: 'Lato','GmarketSansMedium';
         color: #fff;
@@ -36,7 +37,7 @@
         content: '';
         position: absolute; left: 0; top: 0;
         width: 100%; height: 100vh;
-        background: rgba(133, 18, 43, 0.4);
+        background: rgba(0, 0, 0, 0.8);
         z-index: -1;
     }
 
@@ -92,7 +93,15 @@
         text-decoration: none; color: orange;
         border-bottom: 2px dashed orange;
     }
-        
+    .contents p a.color2 {
+        text-decoration: none; color: rgb(153, 0, 255);
+        border-bottom: 2px dashed rgb(153, 0, 255);
+    }
+    .contents p a.color3 {
+        text-decoration: none; color: rgb(0, 255, 64);
+        border-bottom: 2px dashed rgb(0, 255, 64);
+    }
+
     .cursor {
         position: absolute;
         width: 10px; height: 10px;
@@ -101,27 +110,14 @@
         z-index: 1000;
         user-select: none;
         pointer-events: none;
-        transform: scale(1);
-        transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
+        transform: scale(12);
+        transition: transform 0.3s ease-in-out;
+        mix-blend-mode: difference;
     }
     .cursor.active {
-        opacity: 0.5;
-        transform: scale(0);
+        transform: scale(12);
     }
-    .cursor-follower {
-        position: absolute;
-        width: 30px; height: 30px;
-        background: rgba(255,255,255,0.3);
-        border-radius: 50%;
-        user-select: none;
-        pointer-events: none;
-        transition: transform 0.6s ease-in-out, opacity 0.2s ease-in-out;
-    }
-    .cursor-follower.active {
-        opacity: 0.7;
-        transform: scale(4);
-    }
-
+    
     .infor4 {position: absolute; left: 0; bottom: 0; z-index: 1000; padding: 20px;}
     .infor4 a {color: #fff; border: 1px solid #fff; border-radius: 30px; padding: 5px 30px}
     .infor4 .modal {
@@ -145,7 +141,7 @@
 </head>
 <body>
     <div class="info">
-        <h1>Mouse Effect02</h1>
+        <h1>Mouse Effect03</h1>
         <p>마우스 따라다니기</p>
         <ul>
             <li>GSAP</li>
@@ -155,8 +151,8 @@
     <div class="info2">
         <ul>
             <li><a href="mouse01.html">Mouse01</a></li>
-            <li class="active"><a href="mouse02.html">Mouse02</a></li>
-            <li><a href="mouse03.html">Mouse03</a></li>
+            <li><a href="mouse02.html">Mouse02</a></li>
+            <li class="active"><a href="mouse03.html">Mouse03</a></li>
             <li><a href="mouse04.html">Mouse04</a></li>
             <li><a href="mouse05.html">Mouse05</a></li>
         </ul>
@@ -180,47 +176,17 @@
                     <span class="control"></span>
                 </h3>
                 <div class="code">
-                    <pre class="line-numbers"><code class="language-js">// const cursor = $(".cursor");
-// const follower = $(".cursor-follower");
-
-// $(document).mousemove(function(e){
-//     gsap.to(cursor, 0.3, {left: e.pageX - 5 , top: e.pageY - 5 })
-//     gsap.to(follower, 0.8, {left: e.pageX - 15, top: e.pageY -15 })
-// });
-
-// $("a").hover(function(){
-//     cursor.addClass("active");
-//     follower.addClass("active");
-// }, function(){
-//     cursor.removeClass("active");
-//     follower.removeClass("active");
-// });
-
-// 출력용
-// $(document).mousemove(function(e){  // 마우스가 움직였을 때 이벤트 함수
-//     $(".pageX").text(e.pageX)   // 이벤트 pageX값을 화면에 출력
-//     $(".pageY").text(e.pageY)   // 이벤트 pageY값을 화면에 출력
-// });
-
-
-// 제이쿼리 -> 자바스크립트
-const cursor = document.querySelector(".cursor");
-const follower = document.querySelector(".cursor-follower");
-
-window.addEventListener("mousemove", function(e){
-    gsap.to(cursor, 0.3, {left: e.pageX - 5 + "px" , top: e.pageY - 5 + "px"})
-    gsap.to(follower, 0.8, {left: e.pageX - 15 + "px", top: e.pageY -15 + "px"})
+                    <pre class="line-numbers"><code class="language-js"> $(document).mousemove(function(e){
+    gsap.to(".cursor",{duration: 0.3, left: e.pageX - 5, top: e.pageY - 5});
 });
 
 // 오버효과
 document.querySelectorAll("a").forEach(elem => {
     elem.addEventListener("mouseenter", () => {
-        cursor.classList.add("active");
-        follower.classList.add("active");
+        document.querySelector(".cursor").classList.add("active");
     });
     elem.addEventListener("mouseleave", () => {
-        cursor.classList.remove("active");
-        follower.classList.remove("active");
+        document.querySelector(".cursor").classList.remove("active");
     });
 });
 
@@ -237,62 +203,31 @@ window.addEventListener("mousemove", function(e){
         </div>
     </div>
 
-   
-
     <div class="cursor"></div>
-    <div class="cursor-follower"></div>
     <div class="contents">
-        <p>When money speaks, the <a>truth</a> keeps silent.</p>
-        <p>돈이 말할 때는 <a>진실</a>은 입을 다문다.</p>
+        <p><a>Think</a> like a man of action and act like man of thought.</p>
+        <p>I never think of the future. It comes <a class="color2">soon</a> enough.</p>
+        <p>The will of a man is his <a class="color3">happiness.</a></p>
     </div>
 
     <script src="../slider/js/jquery.min_1.12.4.js"></script>
     <script src="gsap.min.js"></script>
     <script src="prism.js"></script>
     <script>
-        // const cursor = $(".cursor");
-        // const follower = $(".cursor-follower");
-
-        // $(document).mousemove(function(e){
-        //     gsap.to(cursor, 0.3, {left: e.pageX - 5 , top: e.pageY - 5 })
-        //     gsap.to(follower, 0.8, {left: e.pageX - 15, top: e.pageY -15 })
-        // });
-
-        // $("a").hover(function(){
-        //     cursor.addClass("active");
-        //     follower.addClass("active");
-        // }, function(){
-        //     cursor.removeClass("active");
-        //     follower.removeClass("active");
-        // });
-
-        // 출력용
-        // $(document).mousemove(function(e){  // 마우스가 움직였을 때 이벤트 함수
-        //     $(".pageX").text(e.pageX)   // 이벤트 pageX값을 화면에 출력
-        //     $(".pageY").text(e.pageY)   // 이벤트 pageY값을 화면에 출력
-        // });
-
-
-        // 제이쿼리 -> 자바스크립트
-        const cursor = document.querySelector(".cursor");
-        const follower = document.querySelector(".cursor-follower");
-
-        window.addEventListener("mousemove", function(e){
-            gsap.to(cursor, 0.3, {left: e.pageX - 5 + "px" , top: e.pageY - 5 + "px"})
-            gsap.to(follower, 0.8, {left: e.pageX - 15 + "px", top: e.pageY -15 + "px"})
+        $(document).mousemove(function(e){
+            gsap.to(".cursor",{duration: 0.3, left: e.pageX - 5, top: e.pageY - 5});
         });
 
         // 오버효과
         document.querySelectorAll("a").forEach(elem => {
             elem.addEventListener("mouseenter", () => {
-                cursor.classList.add("active");
-                follower.classList.add("active");
+                document.querySelector(".cursor").classList.add("active");
             });
             elem.addEventListener("mouseleave", () => {
-                cursor.classList.remove("active");
-                follower.classList.remove("active");
+                document.querySelector(".cursor").classList.remove("active");
             });
         });
+
 
         // 출력용
         window.addEventListener("mousemove", function(e){

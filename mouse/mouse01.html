@@ -163,71 +163,124 @@
     </div>
 
     <div class="infor4">
-        <a href="#" class="view">소스보기</a>
+        <a href="#" class="view">코드 보기</a>
         <!-- modal -->
         <div class="modal">
-            <div class="code-editor">   
-                <span class="control"></span>
-                <span class="control"></span>
-                <span class="control"></span>
-<pre class="line-numbers"><code class="language-js">$(window).mousemove(function(event){
-    $(".clientX").text(event.clientX);
-    $(".clientY").text(event.clientY);
-    $(".offsetX").text(event.offsetX);
-    $(".offsetY").text(event.offsetY);
-    $(".pageX").text(event.pageX);
-    $(".pageY").text(event.pageY);
-    $(".screenX").text(event.screenX);
-    $(".screenY").text(event.screenY);
+            <div class="code-editor">
+                <h3>Script Editor
+                    <span class="control"></span>
+                    <span class="control"></span>
+                    <span class="control"></span>
+                </h3>
+                <div class="code">
+                    <pre class="line-numbers"><code class="language-js">// $("body, html").mousemove(function(event){
+//     $(".clientX").text(event.clientX);
+//     $(".clientY").text(event.clientY);
+//     $(".offsetX").text(event.offsetX);
+//     $(".offsetY").text(event.offsetY);
+//     $(".pageX").text(event.pageX);
+//     $(".pageY").text(event.pageY);
+//     $(".screenX").text(event.screenX);
+//     $(".screenY").text(event.screenY);
 
-    $(".cursor").css({ left: event.clientX -25, top: event.clientY-25 });
+//     $(".cursor").css({ left: event.clientX-25, top: event.clientY-25 });
+// });
 
-    $(".contents a").hover(function(){
-        $(".cursor").addClass("active");
-    }, function(){
-        $(".cursor").removeClass("active");
+// $(".contents a").mouseenter(function(){
+//     $(".cursor").css({borderColor: "orange"})
+// })
+// $(".contents a").mouseleave(function(){
+//     $(".cursor").css({borderColor: "white"})
+// })
+
+
+// 위에꺼 자바스크립트로 변경하기
+
+/*
+window.addEventListener("mousemove", function(event){
+
+    document.querySelector(".clientX").innerHTML = event.clientX
+    document.querySelector(".clientY").innerHTML = event.clientY
+    document.querySelector(".offsetX").innerHTML = event.offsetX
+    document.querySelector(".offsetY").innerHTML = event.offsetY
+    document.querySelector(".pageX").innerHTML = event.pageX
+    document.querySelector(".pageY").innerHTML = event.pageY
+    document.querySelector(".screenX").innerHTML = event.screenX
+    document.querySelector(".screenY").innerHTML = event.screenY
+
+
+    document.querySelector(".cursor").style.left = (event.clientX-25)+"px"     //event.clientX+"px" - "25px" 나 event.clientX+"px-25px"는 왜 안되는지 꼭! 물어보자 자바스크립트는 단위를 안쓰면 인식 못한다. 제이쿼리는 인식한다.
+    document.querySelector(".cursor").style.top = (event.clientY-25)+"px"
+});
+
+let aTag = document.querySelectorAll(".contents p a");
+let aTagCount = aTag.length;
+
+for(i = 0; i < aTagCount; i++){
+    aTag[i].addEventListener("mouseenter", function(){
+        document.querySelector(".cursor").style.borderColor = "orange";
     });
+    aTag[i].addEventListener("mouseleave", function(){
+        document.querySelector(".cursor").style.borderColor = "white";
+    });
+};
+*/
 
-    //javascript
-    window.addEventListener("mousemove", function(event){
-        document.querySelector(".clientX").innerHTML = event.clientX;
-        document.querySelector(".clientY").innerHTML = event.clientY;
-        document.querySelector(".offsetX").innerHTML = event.offsetX;
-        document.querySelector(".offsetY").innerHTML = event.offsetY;
-        document.querySelector(".pageX").innerHTML = event.pageX;
-        document.querySelector(".pageY").innerHTML = event.pageY;
-        document.querySelector(".screenX").innerHTML = event.screenX;
-        document.querySelector(".screenY").innerHTML = event.screenY;
+// 위에껀 내가, 아래껀 선생님
+window.addEventListener("mousemove", function(event){
 
-        document.querySelector(".cursor").style.left = event.clientX - 25 + "px";
-        document.querySelector(".cursor").style.top = event.clientY - 25 + "px";
+    document.querySelector(".clientX").innerHTML = event.clientX
+    document.querySelector(".clientY").innerHTML = event.clientY
+    document.querySelector(".offsetX").innerHTML = event.offsetX
+    document.querySelector(".offsetY").innerHTML = event.offsetY
+    document.querySelector(".pageX").innerHTML = event.pageX
+    document.querySelector(".pageY").innerHTML = event.pageY
+    document.querySelector(".screenX").innerHTML = event.screenX
+    document.querySelector(".screenY").innerHTML = event.screenY
 
-        let x = event.clientX - 25 + "px";
-        let y = event.clientY - 25 + "px";
 
-        document.querySelector(".cursor").style.cssText = "left:"+ x +"; top:" + y;
+    document.querySelector(".cursor").style.left = (event.clientX-25)+"px"     //event.clientX+"px" - "25px" 나 event.clientX+"px-25px"는 왜 안되는지 꼭! 물어보자 자바스크립트는 단위를 안쓰면 인식 못한다. 제이쿼리는 인식한다.
+    document.querySelector(".cursor").style.top = (event.clientY-25)+"px"
 
-        // document.querySelector(".contents a").addEventListener("mouseenter", function(){});
-        // document.querySelector(".contents a").addEventListener("mouseleave", function(){});
+    let x = (event.clientX-25)+"px"
+    let y = (event.clientY-25)+"px"
+    document.querySelector(".cursor").style.cssText = "left: "+x+"; top: "+y;
 
-        // document.querySelector(".contents a").addEventListener("mouseenter", () => {
-        //     document.querySelector(".cursor").classList.add("active");
-        // });
-        // document.querySelector(".contents a").addEventListener("mouseleave", () => {
-        //     document.querySelector(".cursor").classList.remove("active");
-        // });
 
-        document.querySelectorAll("a").forEach(elem => {
-            elem.addEventListener("mouseenter", () => {
-                document.querySelector(".cursor").classList.add("active");
-            });
-            elem.addEventListener("mouseleave", () => {
-                document.querySelector(".cursor").classList.remove("active");
-            });
+    // document.querySelector(".contents a").addEventListener("mouseenter", function(){});
+    // document.querySelector(".contents a").addEventListener("mouseleave", function(){});
+    // document.querySelector(".contents a").addEventListener("mouseenter", () => {
+    //     document.querySelector(".cursor").classList.add("active");
+    // });
+    // document.querySelector(".contents a").addEventListener("mouseleave", () => {
+    //     document.querySelector(".cursor").classList.remove("active");
+    // });
+    document.querySelectorAll("a").forEach(elem => {
+        elem.addEventListener("mouseenter", () => {
+            document.querySelector(".cursor").classList.add("active");
+        });
+        elem.addEventListener("mouseleave", () => {
+            document.querySelector(".cursor").classList.remove("active");
         });
     });
+
+});
+
+
+// 모달
+$(".infor4 a").click(function(){
+    $(".infor4 .modal").addClass("show");
+});
+$(".infor4 .close").click(function(){
+    $(".infor4 .modal").removeClass("show");
 });
 </code></pre>
+                </div>
+
+            </div>
+            <a class="close">Close</a>
+        </div>
+    </div>
                 
                 
             </div>
@@ -318,7 +371,7 @@
         };
         */
         
-        // 위에껀 내가, 아래껀 선생님
+        // 위에껀 내가, 아래껀 또 다른 방법
         window.addEventListener("mousemove", function(event){
 
             document.querySelector(".clientX").innerHTML = event.clientX
@@ -358,7 +411,6 @@
 
         });
 
-
         // 모달
         $(".infor4 a").click(function(){
             $(".infor4 .modal").addClass("show");
@@ -366,10 +418,6 @@
         $(".infor4 .close").click(function(){
             $(".infor4 .modal").removeClass("show");
         });
-
-        
-
-
      </script>
 </body>
 </html>
