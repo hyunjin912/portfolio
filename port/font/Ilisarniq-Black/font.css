@@ -1,0 +1,18 @@
+@font-face {
+  font-family: '5cf80bc40491204e655d8711_Ilisarniq-Black';
+  src: url('5cf80bc40491204e655d8711_Ilisarniq-Black.eot');
+  src: url('5cf80bc40491204e655d8711_Ilisarniq-Black.eot?#iefix') format('embedded-opentype'),
+       url('5cf80bc40491204e655d8711_Ilisarniq-Black.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ilisarniq-Black';
+  src: url('Ilisarniq-Black.svg#Ilisarniq-Black') format('svg'),
+       url('Ilisarniq-Black.ttf') format('truetype'),
+       url('Ilisarniq-Black.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
