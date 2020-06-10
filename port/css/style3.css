@@ -80,9 +80,10 @@ body {background-color: #1B1B1B;}
     font-family: 'S-CoreDream-9Black';
     font-size: 10vw;
     color: #fff;
-    position: absolute; left: 5vw; top: 6vw;
+    position: absolute; left: 18vw; top: 6vw;
     text-transform: uppercase;
-    /* mix-blend-mode: difference; */
+    mix-blend-mode: difference;
+    letter-spacing: 3.6px;
 }
 .allsite .num-wrap .num {
     font-family: 'S-CoreDream-9Black';
@@ -90,7 +91,7 @@ body {background-color: #1B1B1B;}
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 2px #fff;
     transform: rotate(90deg);
-    position: absolute; top: 22vw; right: -5.6vw;
+    position: absolute; top: 19.5vw; right: -5.6vw;
 }
 .allsite .circle {
     position: absolute; left: 74vw; top: 40.5vw; 
