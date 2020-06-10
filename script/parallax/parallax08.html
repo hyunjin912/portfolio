@@ -286,12 +286,32 @@
             opacity: 1;
             }
         }
+        
+        .infor4 {position: fixed; right: 0; bottom: 50px; z-index: 1000; padding: 20px;}
+        .infor4 a {color: #fff; border: 1px solid #fff; border-radius: 30px; padding: 5px 10px}
+        .infor4 .modal {
+            background: rgba(0,0,0,0.8);
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            top: 100%;
+            left: 0;
+            transition: all 600ms cubic-bezier(0.86, 0, 0.07, 1);
+        }
+        .infor4 .modal.show {
+            top: 0;
+        }
+        .infor4 .modal .close {
+            position: absolute; right: 10px; top: 20px;
+            cursor: pointer;
+        }
     </style>
+
+    <link rel="stylesheet" href="../../mouse/prism.css">
 </head>
 <body>
 
     <div class="info">
-        <div>pageYOffset : <span class="pageYOffset">0</span>px</div>
         <div>scrollTop : <span class="scrollTop">0</span>px</div>
     </div>
 
@@ -307,7 +327,109 @@
             <li><a href="parallax06.html">parallax06</a></li>
             <li><a href="parallax07.html">parallax07</a></li>
             <li class="active"><a href="parallax08.html">parallax08</a></li>
+            <li><a href="parallax09.html">parallax09</a></li>
+            <li><a href="parallax10.html">parallax10</a></li>
         </ul>
+    </div>
+
+    <div class="infor4">
+        <a href="#" class="view">코드 보기</a>
+        <!-- modal -->
+        <div class="modal">
+            <div class="code-editor">
+                <h3>Script Editor
+                    <span class="control"></span>
+                    <span class="control"></span>
+                    <span class="control"></span>
+                </h3>
+                <div class="code">
+                    <pre class="line-numbers"><code class="language-js"> // let txt = $("#section1 .content-item-desc").text();     //  text메서드는 가져 올 수도 있고 삽입할 수도 있다.
+// alert(txt);
+// let split = txt.split("").join("&lt;/span>&lt;span aira-hidden='true'>")
+//     split = "&lt;span aira-hidden='true'>" + split + "&lt;/span>"
+// alert(split);
+// $("#section1 .content-item-desc").html(split).attr("aira-label", txt)
+
+/*
+split은 javascript 언어이다. .split("") 하면 한 글자씩 쪼갠다(띄어쓰기도 같이 쪼갠다)
+.split(" ") 하면 한 단어씩 쪼갠다.
+join도 javascript 언어이다.
+
+span에 aria-hidden을 써야 접근성을 준수하는 것이다.
+저 속성이 없으면 시각리더기가 한 글자씩 끊어서 읽어버린다.
+그래서 aria-hidden을 써서 시각리더기가 읽지 못하도록 해야 한다.
+aria-hidden을 사용할 때는 aira-label속성도 같이 있어야 한다.
+이 속성의 속성값으로는 읽지 않아야 하는 글을 쓰면 된다.
+*/
+
+
+
+// 위 스크립트를 한 번에 사용(글씨 분할)
+$(".content-item-desc").each(function(){
+    let txt = $(this).text();
+    let split = txt.split("").join("&lt;/span>&lt;span aira-hidden='true'>")
+        split = "&lt;span aira-hidden='true'>" + split + "&lt;/span>"
+    $(this).html(split).attr("aira-label", txt)
+});
+// for(i = 1; i &lt;= 9; i++){
+//     $("#section"+i+ ".content-item-desc").html(split).attr("aira-label", txt)
+// }
+
+
+
+// 패럴랙스 이펙트
+$(window).scroll(function(){
+    const scrollTop = $(window).scrollTop();
+    $(".scrollTop").text(scrollTop);
+
+
+    // $(".content-item").each(function(){
+    //     if( $(window).scrollTop() > $(this).offset().top ){
+    //         $(this).find(".content-item-desc").addClass("show");
+    //     } else {
+    //         $(this).find(".content-item-desc").removeClass("show");
+    //     }
+    // });
+
+    if( $(window).scrollTop() >= $("#section1").offset().top ){
+        $("#section1 .content-item-desc span").each(function(index){
+            setInterval(function(){
+                $("#section1 .content-item-desc span").eq(index).addClass("show");
+            }, 100 * index);
+        });
+    }
+
+    if( $(window).scrollTop() >= $("#section2").offset().top ){
+        $("#section2 .content-item-desc span").each(function(index){
+            setInterval(function(){
+                $("#section2 .content-item-desc span").eq(index).addClass("show");
+            }, 100 * index);
+        });
+    }
+
+    if( $(window).scrollTop() >= $("#section3").offset().top ){
+        $("#section3 .content-item-desc span").each(function(index){
+            setInterval(function(){
+                $("#section3 .content-item-desc span").eq(index).addClass("show");
+            }, 100 * index);
+        });
+    }
+
+    if( $(window).scrollTop() >= $("#section4").offset().top ){
+        $("#section4 .content-item-desc span").each(function(index){
+            setInterval(function(){
+                $("#section4 .content-item-desc span").eq(index).addClass("show");
+            }, 100 * index);
+        });
+    }
+    
+});
+</code></pre>
+                </div>
+
+            </div>
+            <a class="close">Close</a>
+        </div>
     </div>
 
     <!-- parallax -->
@@ -392,6 +514,7 @@
     <script src="js/jquery.min_1.12.4.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/gsap.min_3.3.0.js"></script>
+    <script src="../../mouse/prism.js"></script>
     <script>
         // let txt = $("#section1 .content-item-desc").text();     //  text메서드는 가져 올 수도 있고 삽입할 수도 있다.
         // alert(txt);

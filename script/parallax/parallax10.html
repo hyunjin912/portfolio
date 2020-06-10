@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parallax06</title>
+    <title>Parallax10</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <style>
@@ -29,13 +29,12 @@
             --color-link: #000;
             --color-bg: #111;
             --font-family: 'lato', sans-serif;
-            --aspect-ratio: 32/17;
+            --aspect-ratio: 32/18;
             --image-width-max: 500px;
 
             background-color: var(--color-bg);
             font-family: var(--font-family);
             color: var(--color-title);
-            overflow-x: hidden;
         }
 
         .title {
@@ -85,7 +84,8 @@
             --image-width: calc(var(--image-width-max) * var(--aspect-ratio)); 
             width: var(--image-width);
             max-width: 90vw;
-            margin: 30vh 0 50vh;
+            margin: 0 0 50vh;
+            padding-top: 20vh;
         }
         
         .content-item-imgWrap {
@@ -114,7 +114,8 @@
         .content-item-num {
             font-size: 20vw;
             font-weight: 100;
-            position: absolute; right: -5vw; top: -15vw;
+            position: absolute; right: -5vw; top: -3vw;
+            z-index: -1;
             opacity: 0.04;
             will-change: transform;
         }
@@ -157,7 +158,7 @@
             margin-right: 0;
             margin-left: -3vw;
         }
-        #section1 .content-item-img {background-image: url(img/p1.jpg);}
+        /* #section1 .content-item-img {background-image: url(img/p1.jpg);}
         #section2 .content-item-img {background-image: url(img/p2.jpg);}
         #section3 .content-item-img {background-image: url(img/p3.jpg);}
         #section4 .content-item-img {background-image: url(img/p4.jpg);}
@@ -165,7 +166,7 @@
         #section6 .content-item-img {background-image: url(img/p6.jpg);}
         #section7 .content-item-img {background-image: url(img/p7.jpg);}
         #section8 .content-item-img {background-image: url(img/p8.jpg);}
-        #section9 .content-item-img {background-image: url(img/p9.jpg);}
+        #section9 .content-item-img {background-image: url(img/p9.jpg);} */
 
         /* info */
         .info {
@@ -178,6 +179,23 @@
             font-family: "Abel";
         }
 
+        #nav {
+            position: fixed; left: 50%; top: 20px; z-index: 1000;
+            transform: translateX(-50%); font-family: 'Abel';
+        }
+        #nav li {display: inline;}
+        #nav li a {
+            display: inline-block; padding: 10px;
+            color: #fff; font-size: 16px;
+        }
+
+        .top a {
+            margin: 50px 200px 50px 0; 
+            background: #fff; color: #000; font-size: 20px;
+            padding: 20px;
+            display: inline-block;
+        }
+        
         .infor4 {position: fixed; right: 0; bottom: 50px; z-index: 1000; padding: 20px;}
         .infor4 a {color: #fff; border: 1px solid #fff; border-radius: 30px; padding: 5px 10px}
         .infor4 .modal {
@@ -207,21 +225,36 @@
     </div>
 
     <div class="title">
-        <h1>Parallax06</h1>
-        <p>이질감 효과<br>- javascript</p>
+        <h1>Parallax10</h1>
+        <p>Link 효과</p>
         <ul>
             <li><a href="parallax01.html">parallax01</a></li>
             <li><a href="parallax02.html">parallax02</a></li>
             <li><a href="parallax03.html">parallax03</a></li>
             <li><a href="parallax04.html">parallax04</a></li>
             <li><a href="parallax05.html">parallax05</a></li>
-            <li class="active"><a href="parallax06.html">parallax06</a></li>
+            <li><a href="parallax06.html">parallax06</a></li>
             <li><a href="parallax07.html">parallax07</a></li>
             <li><a href="parallax08.html">parallax08</a></li>
             <li><a href="parallax09.html">parallax09</a></li>
-            <li><a href="parallax10.html">parallax10</a></li>
+            <li class="active"><a href="parallax09.html">parallax10</a></li>
         </ul>
     </div>
+
+    <nav id="nav">
+        <!-- ul>li*9>a[href="#section$"]{s$} -->
+        <ul>
+            <li><a href="#section1">s1</a></li>
+            <li><a href="#section2">s2</a></li>
+            <li><a href="#section3">s3</a></li>
+            <li><a href="#section4">s4</a></li>
+            <li><a href="#section5">s5</a></li>
+            <li><a href="#section6">s6</a></li>
+            <li><a href="#section7">s7</a></li>
+            <li><a href="#section8">s8</a></li>
+            <li><a href="#section9">s9</a></li>
+        </ul>
+    </nav>
 
     <div class="infor4">
         <a href="#" class="view">코드 보기</a>
@@ -234,18 +267,25 @@
                     <span class="control"></span>
                 </h3>
                 <div class="code">
-                    <pre class="line-numbers"><code class="language-js">window.addEventListener("scroll",function(){
+                    <pre class="line-numbers"><code class="language-js">// $("a[href^='#']").click(function(e){
+//     e.preventDefault();
+//     let target = $(this).attr("href");
+//     // alert(target);
+//     $("html, body").animate({scrollTop: $(target).offset().top}, 600, "easeInOutExpo");
+// });
+document.querySelectorAll("a[href^='#']").forEach(elem => {
+    elem.addEventListener("click", e => {
+        e.preventDefault();
+        document.querySelector(elem.getAttribute("href")).scrollIntoView({
+            behavior: "smooth"
+        });
+    });
+});
+
+window.addEventListener("scroll",function(){
     let pageYOffset = window.pageYOffset || document.documentElement.scrollTop
 
     document.querySelector(".pageYOffset").textContent = pageYOffset;
-    document.querySelector("#wrap h1").style.transform = "translateX("+pageYOffset+"px)";
-
-    document.querySelectorAll(".content-item").forEach(elem => {
-        let target = elem.childNodes[7];
-        console.log(target)
-        let offset = (pageYOffset - elem.offsetTop) * 0.2;
-        target.style.transform = "translateY("+ offset +"px)"
-    });
 });
 </code></pre>
                 </div>
@@ -261,95 +301,152 @@
         <div class="contents">
             <section id="section1" class="content-item">
                 <span class="content-item-num">01</span>
-                <h2 class="content-item-title">Basic Coding</h2>
+                <h2 class="content-item-title"><a href="#section2">Next Section</a></h2>
                 <figure class="content-item-imgWrap">
-                    <div class="content-item-img"></div>
+                    <div class="content-item-img">
+                        <img src="img/p1.jpg" alt="이미지1">
+                    </div>
                 </figure>
-                <p class="content-item-desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+                <p class="content-item-desc">
+                    <span>높은 목표를 세우고, 스스로 채찍질 한다.</span>
+                </p>
             </section>
             <section id="section2" class="content-item">
                 <span class="content-item-num">02</span>
-                <h2 class="content-item-title">Basic Coding</h2>
+                <h2 class="content-item-title"><a href="#section3">Next Section</a></h2>
                 <figure class="content-item-imgWrap">
-                    <div class="content-item-img"></div>
+                    <div class="content-item-img">
+                        <img src="img/p2.jpg" alt="이미지2">
+                    </div>
                 </figure>
-                <p class="content-item-desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+                <p class="content-item-desc">
+                    <span>높은 목표를 세우고, 스스로 채찍질 한다.</span>
+                </p>
             </section>
             <section id="section3" class="content-item">
                 <span class="content-item-num">03</span>
-                <h2 class="content-item-title">Basic Coding</h2>
+                <h2 class="content-item-title"><a href="#section4">Next Section</a></h2>
                 <figure class="content-item-imgWrap">
-                    <div class="content-item-img"></div>
+                    <div class="content-item-img">
+                        <img src="img/p3.jpg" alt="이미지3">
+                    </div>
                 </figure>
-                <p class="content-item-desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+                <p class="content-item-desc">
+                    <span>높은 목표를 세우고, 스스로 채찍질 한다.</span>
+                </p>
             </section>
             <section id="section4" class="content-item">
                 <span class="content-item-num">04</span>
-                <h2 class="content-item-title">Basic Coding</h2>
+                <h2 class="content-item-title"><a href="#section5">Next Section</a></h2>
                 <figure class="content-item-imgWrap">
-                    <div class="content-item-img"></div>
+                    <div class="content-item-img">
+                        <img src="img/p4.jpg" alt="이미지4">
+                    </div>
                 </figure>
-                <p class="content-item-desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+                <p class="content-item-desc">
+                    <span>높은 목표를 세우고, 스스로 채찍질 한다.</span>
+                </p>
             </section>
             <section id="section5" class="content-item">
                 <span class="content-item-num">05</span>
-                <h2 class="content-item-title">Basic Coding</h2>
+                <h2 class="content-item-title"><a href="#section6">Next Section</a></h2>
                 <figure class="content-item-imgWrap">
-                    <div class="content-item-img"></div>
+                    <div class="content-item-img">
+                        <img src="img/p5.jpg" alt="이미지5">
+                    </div>
                 </figure>
-                <p class="content-item-desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+                <p class="content-item-desc">
+                    <span>높은 목표를 세우고, 스스로 채찍질 한다.</span>
+                </p>
             </section>
             <section id="section6" class="content-item">
                 <span class="content-item-num">06</span>
-                <h2 class="content-item-title">Basic Coding</h2>
+                <h2 class="content-item-title"><a href="#section7">Next Section</a></h2>
                 <figure class="content-item-imgWrap">
-                    <div class="content-item-img"></div>
+                    <div class="content-item-img">
+                        <img src="img/p6.jpg" alt="이미지6">
+                    </div>
                 </figure>
-                <p class="content-item-desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+                <p class="content-item-desc">
+                    <span>높은 목표를 세우고, 스스로 채찍질 한다.</span>
+                </p>
             </section>
             <section id="section7" class="content-item">
                 <span class="content-item-num">07</span>
-                <h2 class="content-item-title">Basic Coding</h2>
+                <h2 class="content-item-title"><a href="#section8">Next Section</a></h2>
                 <figure class="content-item-imgWrap">
-                    <div class="content-item-img"></div>
+                    <div class="content-item-img">
+                        <img src="img/p7.jpg" alt="이미지7">
+                    </div>
                 </figure>
-                <p class="content-item-desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+                <p class="content-item-desc">
+                    <span>높은 목표를 세우고, 스스로 채찍질 한다.</span>
+                </p>
             </section>
             <section id="section8" class="content-item">
                 <span class="content-item-num">08</span>
-                <h2 class="content-item-title">Basic Coding</h2>
+                <h2 class="content-item-title"><a href="#section9">Next Section</a></h2>
                 <figure class="content-item-imgWrap">
-                    <div class="content-item-img"></div>
+                    <div class="content-item-img">
+                        <img src="img/p8.jpg" alt="이미지8">
+                    </div>
                 </figure>
-                <p class="content-item-desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+                <p class="content-item-desc">
+                    <span>높은 목표를 세우고, 스스로 채찍질 한다.</span>
+                </p>
             </section>
             <section id="section9" class="content-item">
                 <span class="content-item-num">09</span>
-                <h2 class="content-item-title">Basic Coding</h2>
+                <h2 class="content-item-title"><a href="#section1">Next Section</a></h2>
                 <figure class="content-item-imgWrap">
-                    <div class="content-item-img"></div>
+                    <div class="content-item-img">
+                        <img src="img/p9.jpg" alt="이미지9">
+                    </div>
                 </figure>
-                <p class="content-item-desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+                <p class="content-item-desc">
+                    <span>높은 목표를 세우고, 스스로 채찍질 한다.</span>
+                </p>
             </section>
         </div> 
     </section>
 
+    <div class="top"><a href="#wrap">Top</a></div>
+
     <script src="js/jquery.min_1.12.4.js"></script>
     <script src="js/jquery-ui.min.js"></script>
+    <script src="js/gsap.min_3.3.0.js"></script>
     <script src="../../mouse/prism.js"></script>
     <script>
+        // 네비 버튼을 클릭하면 모든 글씨를 빨간색으로 변경
+        // $("#nav li a").click(function(){
+        //     $("*").css("color","red");
+        // });
+        // document.querySelector("#nav li a").addEventListener("click", function(){
+        //     document.querySelectorAll("*").forEach(function(e){
+        //         e.style.color = "red"
+        //     })
+        // });
+
+        // $("a[href^='#']").click(function(e){
+        //     e.preventDefault();
+        //     let target = $(this).attr("href");
+        //     // alert(target);
+        //     $("html, body").animate({scrollTop: $(target).offset().top}, 600, "easeInOutExpo");
+        // });
+        document.querySelectorAll("a[href^='#']").forEach(elem => {
+            elem.addEventListener("click", e => {
+                e.preventDefault();
+                document.querySelector(elem.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"
+                });
+            });
+        });
+
+
         window.addEventListener("scroll",function(){
             let pageYOffset = window.pageYOffset || document.documentElement.scrollTop
 
             document.querySelector(".pageYOffset").textContent = pageYOffset;
-            document.querySelector("#wrap h1").style.transform = "translateX("+pageYOffset+"px)";
-
-            document.querySelectorAll(".content-item").forEach(elem => {
-                let target = elem.childNodes[7];
-                console.log(target)
-                let offset = (pageYOffset - elem.offsetTop) * 0.2;
-                target.style.transform = "translateY("+ offset +"px)"
-            });
         });
     </script>
 </body>

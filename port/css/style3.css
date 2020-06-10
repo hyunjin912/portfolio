@@ -43,6 +43,29 @@ body {background-color: #1B1B1B;}
     font-size: 8vw;
     color: #fff;
 }
+.s1-title h1 span {
+    display: inline-block;
+    /* 인라인요소는 transform이 먹히지 않음 */    
+    opacity:0;
+}
+.s1-title h1 span:nth-child(1) {
+    animation: ani1 3s linear forwards;
+}
+@keyframes ani1 {
+    0% {transform: scale(5); opacity:0;}
+    20% {transform: scale(1); opacity:1;}
+    /* 90% {transform: scale(1); opacity:1;} */
+    100% {transform: scale(1);}
+  }
+.s1-title h1 span:nth-child(2) {
+    animation: ani2 3s 1s linear;
+}
+@keyframes ani2 {
+    0% {transform: scale(5); opacity:0;}
+    20% {transform: scale(1); opacity:1;}
+    /* 90% {transform: scale(1); opacity:1;} */
+    100% {transform: scale(1);}
+}
 .section1 .s1-title p {
     font-size: 2vw;
 }
@@ -57,43 +80,44 @@ body {background-color: #1B1B1B;}
 
 
 
-/* section2 */
-#section2 {
-    overflow: hidden;
+/* all section */
+
+.allsite {
+    position: relative;
+    overflow-x: hidden;
     padding-top: 15vw;
-    height: 100vw;
+    height: 50vw;
 }
-.section2 {position: relative;}
-.section2 .img-wrap {
+.allsite .img-wrap {
     position: relative;
     width: 70vw;
 }
-.section2 .img-wrap::before {
+.allsite .img-wrap::before {
     content: '';
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.24);
     width: 70vw; height: 33.8vw;
     position: absolute; left: 0; top: 0;
 }
-.section2 .img-wrap img {}
+.allsite .img-wrap img {}
 
-.section2 h2 {
+.allsite h2 {
     font-family: 'S-CoreDream-9Black';
     font-size: 10vw;
     color: #fff;
-    position: absolute; left: 5vw; top: -10vw;
+    position: absolute; left: 5vw; top: 6vw;
     text-transform: uppercase;
     /* mix-blend-mode: difference; */
 }
-.section2 .num-wrap .num {
+.allsite .num-wrap .num {
     font-family: 'S-CoreDream-9Black';
-    font-size: 19vw;
+    font-size: 16vw;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 2px #fff;
     transform: rotate(90deg);
-    position: absolute; top: 4vw; right: -6vw;
+    position: absolute; top: 22vw; right: -5.6vw;
 }
-.section2 .circle {
-    position: absolute; left: 72%; top: 90%; 
+.allsite .circle {
+    position: absolute; left: 74vw; top: 40.5vw; 
     display: flex;
     justify-content: center;
     align-items: center;
