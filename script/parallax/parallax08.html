@@ -286,6 +286,135 @@
             opacity: 1;
             }
         }
+        #section5 .content-item-desc span {
+            opacity: 0;
+            transition: all 0.44s ease;
+            display: inline-block;      /* 인라인은 translate가 적용 되지 않음 */
+            min-width: 20px;            /* 띄어쓰기가 없어져서 적용 시킴 */    
+        } 
+        #section5 .content-item-desc span.show {
+            opacity: 1;
+            animation: fadeInBottomRight 1s;
+        }
+        @keyframes fadeInBottomRight {
+            from {
+                opacity: 0;
+                -webkit-transform: translate3d(100%, 100%, 0);
+                transform: translate3d(100%, 100%, 0);
+            }
+            to {
+                opacity: 1;
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+        }
+        #section6 .content-item-desc span {
+            opacity: 0;
+            transition: all 0.44s ease;
+            display: inline-block;      /* 인라인은 translate가 적용 되지 않음 */
+            min-width: 20px;            /* 띄어쓰기가 없어져서 적용 시킴 */    
+        } 
+        #section6 .content-item-desc span.show {
+            opacity: 1;
+            animation: rotateIn 1s;
+        }
+        @keyframes rotateIn {
+            from {
+                -webkit-transform: rotate3d(0, 0, 1, -200deg);
+                transform: rotate3d(0, 0, 1, -200deg);
+                opacity: 0;
+            }
+
+            to {
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+                opacity: 1;
+            }
+        }
+        #section7 .content-item-desc span {
+            opacity: 0;
+            transition: all 0.44s ease;
+            display: inline-block;      /* 인라인은 translate가 적용 되지 않음 */
+            min-width: 20px;            /* 띄어쓰기가 없어져서 적용 시킴 */    
+        } 
+        #section7 .content-item-desc span.show {
+            opacity: 1;
+            animation: zoomInUp 1s;
+        }
+        @keyframes zoomInUp {
+            from {
+                opacity: 0;
+                -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 1000px, 0);
+                transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 1000px, 0);
+                -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+                animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            }
+
+            60% {
+                opacity: 1;
+                -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+                transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+                -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+                animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+            }
+        }
+        #section8 .content-item-desc span {
+            opacity: 0;
+            transition: all 0.44s ease;
+            display: inline-block;      /* 인라인은 translate가 적용 되지 않음 */
+            min-width: 20px;            /* 띄어쓰기가 없어져서 적용 시킴 */    
+        } 
+        #section8 .content-item-desc span.show {
+            opacity: 1;
+            animation: rollIn 1s;
+        }
+        @keyframes rollIn {
+            from {
+                opacity: 0;
+                -webkit-transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+                transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+            }
+
+            to {
+                opacity: 1;
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+        }
+        #section9 .content-item-desc span {
+            opacity: 0;
+            transition: all 0.44s ease;
+            display: inline-block;      /* 인라인은 translate가 적용 되지 않음 */
+            min-width: 20px;            /* 띄어쓰기가 없어져서 적용 시킴 */    
+        } 
+        #section9 .content-item-desc span.show {
+            opacity: 1;
+            animation: lightSpeedInRight 1s;
+        }
+        @keyframes lightSpeedInRight {
+            from {
+                -webkit-transform: translate3d(100%, 0, 0) skewX(-30deg);
+                transform: translate3d(100%, 0, 0) skewX(-30deg);
+                opacity: 0;
+            }
+
+            60% {
+                -webkit-transform: skewX(20deg);
+                transform: skewX(20deg);
+                opacity: 1;
+            }
+
+            80% {
+                -webkit-transform: skewX(-5deg);
+                transform: skewX(-5deg);
+            }
+
+            to {
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+        }
+        
         
         .infor4 {position: fixed; right: 0; bottom: 50px; z-index: 1000; padding: 20px;}
         .infor4 a {color: #fff; border: 1px solid #fff; border-radius: 30px; padding: 5px 10px}
@@ -564,7 +693,7 @@ $(window).scroll(function(){
             //     }
             // });
 
-            if( $(window).scrollTop() >= $("#section1").offset().top ){
+            if( $(window).scrollTop() + $(window).height() / 2 >= $("#section1").offset().top ){
                 $("#section1 .content-item-desc span").each(function(index){
                     setInterval(function(){
                         $("#section1 .content-item-desc span").eq(index).addClass("show");
@@ -572,7 +701,7 @@ $(window).scroll(function(){
                 });
             }
 
-            if( $(window).scrollTop() >= $("#section2").offset().top ){
+            if( $(window).scrollTop() + $(window).height() / 2 >= $("#section2").offset().top ){
                 $("#section2 .content-item-desc span").each(function(index){
                     setInterval(function(){
                         $("#section2 .content-item-desc span").eq(index).addClass("show");
@@ -580,7 +709,7 @@ $(window).scroll(function(){
                 });
             }
 
-            if( $(window).scrollTop() >= $("#section3").offset().top ){
+            if( $(window).scrollTop() + $(window).height() / 2 >= $("#section3").offset().top ){
                 $("#section3 .content-item-desc span").each(function(index){
                     setInterval(function(){
                         $("#section3 .content-item-desc span").eq(index).addClass("show");
@@ -588,10 +717,50 @@ $(window).scroll(function(){
                 });
             }
 
-            if( $(window).scrollTop() >= $("#section4").offset().top ){
+            if( $(window).scrollTop() + $(window).height() / 2 >= $("#section4").offset().top ){
                 $("#section4 .content-item-desc span").each(function(index){
                     setInterval(function(){
                         $("#section4 .content-item-desc span").eq(index).addClass("show");
+                    }, 100 * index);
+                });
+            }
+
+            if( $(window).scrollTop() + $(window).height() / 2 >= $("#section5").offset().top ){
+                $("#section5 .content-item-desc span").each(function(index){
+                    setInterval(function(){
+                        $("#section5 .content-item-desc span").eq(index).addClass("show");
+                    }, 100 * index);
+                });
+            }
+
+            if( $(window).scrollTop() + $(window).height() / 2 >= $("#section6").offset().top ){
+                $("#section6 .content-item-desc span").each(function(index){
+                    setInterval(function(){
+                        $("#section6 .content-item-desc span").eq(index).addClass("show");
+                    }, 100 * index);
+                });
+            }
+
+            if( $(window).scrollTop() + $(window).height() / 2 >= $("#section7").offset().top ){
+                $("#section7 .content-item-desc span").each(function(index){
+                    setInterval(function(){
+                        $("#section7 .content-item-desc span").eq(index).addClass("show");
+                    }, 100 * index);
+                });
+            }
+
+            if( $(window).scrollTop() + $(window).height() / 2 >= $("#section8").offset().top ){
+                $("#section8 .content-item-desc span").each(function(index){
+                    setInterval(function(){
+                        $("#section8 .content-item-desc span").eq(index).addClass("show");
+                    }, 100 * index);
+                });
+            }
+
+            if( $(window).scrollTop() + $(window).height() / 2 >= $("#section9").offset().top ){
+                $("#section9 .content-item-desc span").each(function(index){
+                    setInterval(function(){
+                        $("#section9 .content-item-desc span").eq(index).addClass("show");
                     }, 100 * index);
                 });
             }
