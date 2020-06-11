@@ -176,7 +176,28 @@
             font-style: normal;
             font-family: "Abel";
         }
+        
+        .infor4 {position: fixed; right: 0; bottom: 50px; z-index: 1000; padding: 20px;}
+        .infor4 a {color: #fff; border: 1px solid #fff; border-radius: 30px; padding: 5px 10px}
+        .infor4 .modal {
+            background: rgba(0,0,0,0.8);
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            top: 100%;
+            left: 0;
+            transition: all 600ms cubic-bezier(0.86, 0, 0.07, 1);
+        }
+        .infor4 .modal.show {
+            top: 0;
+        }
+        .infor4 .modal .close {
+            position: absolute; right: 10px; top: 20px;
+            cursor: pointer;
+        }
     </style>
+
+    <link rel="stylesheet" href="../../mouse/prism.css">
 </head>
 <body>
 
@@ -196,7 +217,93 @@
             <li><a href="parallax06.html">parallax06</a></li>
             <li class="active"><a href="parallax07.html">parallax07</a></li>
             <li><a href="parallax08.html">parallax08</a></li>
+            <li><a href="parallax09.html">parallax09</a></li>
+            <li><a href="parallax10.html">parallax10</a></li>
         </ul>
+    </div>
+
+    <div class="infor4">
+        <a href="#" class="view">코드 보기</a>
+        <!-- modal -->
+        <div class="modal">
+            <div class="code-editor">
+                <h3>Script Editor
+                    <span class="control"></span>
+                    <span class="control"></span>
+                    <span class="control"></span>
+                </h3>
+                <div class="code">
+                    <pre class="line-numbers"><code class="language-js">/*
+// 제이쿼리
+let scrollTop = $(window).scrollTop();
+
+function scroll(){
+    let newScrollTop = $(window).scrollTop();
+    let different = newScrollTop - scrollTop;
+
+    console.log("scrollTop : "+scrollTop)
+    console.log("newScrollTop : "+newScrollTop)
+    console.log("different : "+different)
+
+    $(".content-item-desc").css( "transform","skewY("+different+"deg)")
+
+    scrollTop = newScrollTop;
+    requestAnimationFrame(scroll)
+}
+scroll();
+
+// 일정한 시간 동안 반복적 함수를 실행
+
+let num = 0;
+function render(){
+    $(".content-item-num").text(num);
+    num++;
+    requestAnimationFrame(render);      // 본인 함수를 안에 또 쓰면 재귀함수라 한다(무한에 빠진다)
+    // setInterval(render, 100);        버벅이기 때문에 새로나온 위에 코드를 사용
+}
+// render(); 숫자 막 커지기 때문에 주석했음
+*/
+
+// 자바스크립트
+let pageYOffset = window.pageYOffset;
+
+const scroll = () => {
+    const newPageYOffset = window.pageYOffset;
+    const different = newPageYOffset - pageYOffset;
+
+    console.log("pageYOffset : "+pageYOffset)
+    console.log("newPageYOffset : "+newPageYOffset)
+    console.log("different : "+different)
+
+    /*
+    let target = document.querySelectorAll(".content-item-img");
+    // forEach는 jQuery의 each와 똑같이 forEach메서드에 함수를 사용하고 그 함수의 첫번 째 매개변수를 사용하면 선택자의 인덱스를 알 수 있다.
+    target.forEach(function(imgIndex){
+        imgIndex.style.transform = 'skewY('+different * 0.1 +'deg)' // different에 숫자를 곱하면 천천히 적용된다.
+    });
+    */
+
+    // gsap
+    // gsap.to(".content-item-img", {duration: 0.3, rotation: different});
+    gsap.to(".content-item-img", {duration: 0.3, ease: "power1.out", skewY: different * 0.2});
+    gsap.to(".content-item-desc", {duration: 0.3, ease: "power5.out", skewY: -different * 0.7});
+    
+    pageYOffset = newPageYOffset;
+    requestAnimationFrame(scroll);
+}
+scroll();
+
+window.addEventListener("scroll",function(){
+    let pageYOffset = window.pageYOffset || document.documentElement.scrollTop
+
+    document.querySelector(".pageYOffset").textContent = pageYOffset;
+});
+</code></pre>
+                </div>
+
+            </div>
+            <a class="close">Close</a>
+        </div>
     </div>
 
     <!-- parallax -->
@@ -281,6 +388,7 @@
     <script src="js/jquery.min_1.12.4.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/gsap.min_3.3.0.js"></script>
+    <script src="../../mouse/prism.js"></script>
     <script>
         /*
         // 제이쿼리
@@ -341,6 +449,12 @@
             requestAnimationFrame(scroll);
         }
         scroll();
+
+        window.addEventListener("scroll",function(){
+            let pageYOffset = window.pageYOffset || document.documentElement.scrollTop
+
+            document.querySelector(".pageYOffset").textContent = pageYOffset;
+        });
     </script>
 </body>
 </html>

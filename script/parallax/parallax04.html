@@ -163,7 +163,7 @@
 
         /* info */
         .info {
-            position: fixed; top: 370px; right: 20px;
+            position: fixed; top: 420px; right: 20px;
             background: rgba(255,255,255,0.4);
             color: #fff; padding: 10px;
             font-size: 14px; font-weight: 300;
@@ -178,7 +178,28 @@
         .contents > section.show {
             opacity: 1; transform: translateY(0);
         }
+
+        .infor4 {position: fixed; right: 0; bottom: 50px; z-index: 1000; padding: 20px;}
+        .infor4 a {color: #fff; border: 1px solid #fff; border-radius: 30px; padding: 5px 10px}
+        .infor4 .modal {
+            background: rgba(0,0,0,0.8);
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            top: 100%;
+            left: 0;
+            transition: all 600ms cubic-bezier(0.86, 0, 0.07, 1);
+        }
+        .infor4 .modal.show {
+            top: 0;
+        }
+        .infor4 .modal .close {
+            position: absolute; right: 10px; top: 20px;
+            cursor: pointer;
+        }
     </style>
+
+    <link rel="stylesheet" href="../../mouse/prism.css">
 </head>
 <body>
     <div class="title">
@@ -193,6 +214,8 @@
             <li><a href="parallax06.html">parallax06</a></li>
             <li><a href="parallax07.html">parallax07</a></li>
             <li><a href="parallax08.html">parallax08</a></li>
+            <li><a href="parallax09.html">parallax09</a></li>
+            <li><a href="parallax10.html">parallax10</a></li>
         </ul>
     </div>
 
@@ -207,6 +230,180 @@
         <span>#section7 offset : <strong class="s7OT">0</strong>px</span><br>
         <span>#section8 offset : <strong class="s8OT">0</strong>px</span><br>
         <span>#section9 offset : <strong class="s9OT">0</strong>px</span><br>
+    </div>
+
+    <div class="infor4">
+        <a href="#" class="view">코드 보기</a>
+        <!-- modal -->
+        <div class="modal">
+            <div class="code-editor">
+                <h3>Script Editor
+                    <span class="control"></span>
+                    <span class="control"></span>
+                    <span class="control"></span>
+                </h3>
+                <div class="code">
+                    <pre class="line-numbers"><code class="language-js">// 스크롤은 이벤트 함수인데 자바스크립트는 이렇게 쓴다.
+// $(window).scroll(function(){});
+// $(window).on("scroll", function(){});
+// window.addEventListener("scroll",function(){});              펑션()을 아래의 () => 로 쓴 것
+// window.addEventListener("scroll", () => {});
+
+// const scrollTop = $("window").scrollTop();                   제이쿼리 스크롤탑과 자바스크립트 페이지와이오프셋은 같은 기능
+// let pageYOffset = window.pageYOffset;                        현재 자바스크립트 방식
+// var pageYOffset = document.documentElement.scrollTop;        과거 자바스크립트 방식
+
+// $(".scrollTop").text(scrollTop);                             제이쿼리 달러표시로 선택하는것과 자바스크립트 다큐먼트쿼리샐랙터와 같다.
+// $(".scrollTop").html(&lt;span&gt;scrollTop&lt;/span&gt;);                html메서드도 글을 써주는 text메서드와 같지만 태그도 사용 가능하다. text는 태그도 텍스트로 인식해버린다.
+// document.querySelector(".pageYOffset").textContent = pageYOffset;  최신 방식
+// document.querySelector(".pageYOffset").innerText = pageYOffset;    위 textContent의 예전방식
+// document.querySelector(".pageYOffset").innerHTML = pageYOffset;
+
+window.addEventListener("scroll", () => {
+    // let pageYOffset = window.pageYOffset;                    //IE 에서 적용이 안됨 현재방식(버전)이라서
+    // var pageYOffset = document.documentElement.scrollTop;    //예전 방식(버전)이라 IE에서 적용 됨
+    let pageYOffset = (window.pageYOffset || document.documentElement.scrollTop) + screen.height/2;  //or 연산자를 이용해 이렇게 쓰면 IE에서 예전과 현재 버전 둘다 호환 가능
+
+    console.log("1." + screen.height/2)         //제이쿼리 $(window).height()/2 와 같다
+    console.log("2." + document.documentElement.scrollTop)
+    console.log("3." + window.pageYOffset)
+
+    //info 에 보여질 수치
+    document.querySelector(".pageYOffset").textContent = pageYOffset;
+    // document.querySelector(".s1OT").textContent = parseInt( document.querySelector("#section1").offsetTop );
+    // document.querySelector(".s2OT").textContent = parseInt( document.querySelector("#section2").offsetTop );
+    // document.querySelector(".s3OT").textContent = parseInt( document.querySelector("#section3").offsetTop );
+    // document.querySelector(".s4OT").textContent = parseInt( document.querySelector("#section4").offsetTop );
+    // document.querySelector(".s5OT").textContent = parseInt( document.querySelector("#section5").offsetTop );
+    // document.querySelector(".s6OT").textContent = parseInt( document.querySelector("#section6").offsetTop );
+    // document.querySelector(".s7OT").textContent = parseInt( document.querySelector("#section7").offsetTop );
+    // document.querySelector(".s8OT").textContent = parseInt( document.querySelector("#section8").offsetTop );
+    // document.querySelector(".s9OT").textContent = parseInt( document.querySelector("#section9").offsetTop );
+    //위를 for문으로 변경
+    for (let i = 1; i &lt;= 9; i++){
+        document.querySelector(".s"+i+"OT").textContent = parseInt( document.querySelector("#section"+i).offsetTop );
+    }
+
+    // if( pageYOffset > document.querySelector("#section1").offsetTop ){
+    //     document.querySelector(".s1OT").style.color = "red";
+    // } else {
+    //     document.querySelector(".s1OT").style.color = "black";
+    // }
+    // if( pageYOffset > document.querySelector("#section2").offsetTop ){
+    //     document.querySelector(".s2OT").style.color = "red";
+    // } else {
+    //     document.querySelector(".s2OT").style.color = "black";
+    // }
+    // if( pageYOffset > document.querySelector("#section3").offsetTop ){
+    //     document.querySelector(".s3OT").style.color = "red";
+    // } else {
+    //     document.querySelector(".s3OT").style.color = "black";
+    // }
+    // if( pageYOffset > document.querySelector("#section4").offsetTop ){
+    //     document.querySelector(".s4OT").style.color = "red";
+    // } else {
+    //     document.querySelector(".s4OT").style.color = "black";
+    // }
+    // if( pageYOffset > document.querySelector("#section5").offsetTop ){
+    //     document.querySelector(".s5OT").style.color = "red";
+    // } else {
+    //     document.querySelector(".s5OT").style.color = "black";
+    // }
+    // if( pageYOffset > document.querySelector("#section6").offsetTop ){
+    //     document.querySelector(".s6OT").style.color = "red";
+    // } else {
+    //     document.querySelector(".s6OT").style.color = "black";
+    // }
+    // if( pageYOffset > document.querySelector("#section7").offsetTop ){
+    //     document.querySelector(".s7OT").style.color = "red";
+    // } else {
+    //     document.querySelector(".s7OT").style.color = "black";
+    // }
+    // if( pageYOffset > document.querySelector("#section8").offsetTop ){
+    //     document.querySelector(".s8OT").style.color = "red";
+    // } else {
+    //     document.querySelector(".s8OT").style.color = "black";
+    // }
+    // if( pageYOffset > document.querySelector("#section9").offsetTop ){
+    //     document.querySelector(".s9OT").style.color = "red";
+    // } else {
+    //     document.querySelector(".s9OT").style.color = "black";
+    // }
+    
+    //위를 for문으로 변경
+    for (let i = 1; i &lt;= 9; i++){
+        if( pageYOffset > document.querySelector("#section"+i).offsetTop ){
+            document.querySelector(".s"+i+"OT").style.color = "red";
+        } else {
+            document.querySelector(".s"+i+"OT").style.color = "black";
+        }
+    }
+
+
+    
+    //수작업
+    // if( pageYOffset > document.querySelector("#section1").offsetTop ) {
+    //     document.querySelector("#section1").classList.add( "show" );
+    // } else {
+    //     document.querySelector("#section1").classList.remove( "show" );
+    // }
+    // if( pageYOffset > document.querySelector("#section2").offsetTop ) {
+    //     document.querySelector("#section2").classList.add( "show" );
+    // } else {
+    //     document.querySelector("#section2").classList.remove( "show" );
+    // }
+    // if( pageYOffset > document.querySelector("#section3").offsetTop ) {
+    //     document.querySelector("#section3").classList.add( "show" );
+    // } else {
+    //     document.querySelector("#section3").classList.remove( "show" );
+    // }
+    // if( pageYOffset > document.querySelector("#section4").offsetTop ) {
+    //     document.querySelector("#section4").classList.add( "show" );
+    // } else {
+    //     document.querySelector("#section4").classList.remove( "show" );
+    // }
+    // if( pageYOffset > document.querySelector("#section5").offsetTop ) {
+    //     document.querySelector("#section5").classList.add( "show" );
+    // } else {
+    //     document.querySelector("#section5").classList.remove( "show" );
+    // }
+    // if( pageYOffset > document.querySelector("#section6").offsetTop ) {
+    //     document.querySelector("#section6").classList.add( "show" );
+    // } else {
+    //     document.querySelector("#section6").classList.remove( "show" );
+    // }
+    // if( pageYOffset > document.querySelector("#section7").offsetTop ) {
+    //     document.querySelector("#section7").classList.add( "show" );
+    // } else {
+    //     document.querySelector("#section7").classList.remove( "show" );
+    // }
+    // if( pageYOffset > document.querySelector("#section8").offsetTop ) {
+    //     document.querySelector("#section8").classList.add( "show" );
+    // } else {
+    //     document.querySelector("#section8").classList.remove( "show" );
+    // }
+    // if( pageYOffset > document.querySelector("#section9").offsetTop ) {
+    //     document.querySelector("#section9").classList.add( "show" );
+    // } else {
+    //     document.querySelector("#section9").classList.remove( "show" );
+    // }
+
+    //한번에
+    document.querySelectorAll(".content-item").forEach(elem => {
+        console.log(elem.offsetTop);
+        if( pageYOffset > elem.offsetTop) {
+            elem.classList.add("show");
+        } else {
+            elem.classList.remove("show");
+        }
+    });
+});
+</code></pre>
+                </div>
+
+            </div>
+            <a class="close">Close</a>
+        </div>
     </div>
 
     <section id="wrap">
@@ -287,6 +484,9 @@
         </div> 
     </section>
 
+    <script src="js/jquery.min_1.12.4.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="../../mouse/prism.js"></script>
     <script>
         // 스크롤은 이벤트 함수인데 자바스크립트는 이렇게 쓴다.
         // $(window).scroll(function(){});
