@@ -310,7 +310,8 @@ body {background: url(../img/header_bg.jpg) repeat-x center top;}
 .notice2 h5 {font-size: 15px; color: #2f7fa6; padding-bottom: 5px;}
 .notice2 li {
     position: relative; padding-left: 8px;
-    overflow: hidden; text-overflow: ellipsis;
+    overflow: hidden;
+    text-overflow: ellipsis; /* 이거 없어도 두 줄 효과 된다. */
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
