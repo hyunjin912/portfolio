@@ -35,7 +35,7 @@ body {background-color: #1B1B1B;}
 
 /* all section */
 
-/* .allsite {
+.allsite {
     position: relative;
     overflow-x: hidden;
     padding-top: 15vw;
@@ -43,15 +43,19 @@ body {background-color: #1B1B1B;}
 }
 .allsite .img-wrap {
     position: relative;
-    width: 70vw;
+    width: 68vw;
+    height: 38vw;
+    overflow: hidden;
 }
 .allsite .img-wrap::before {
     content: '';
     background: rgba(0, 0, 0, 0.24);
-    width: 70vw; height: 33.8vw;
+    width: 100%; height: 100%;
     position: absolute; left: 0; top: 0;
 }
-.allsite .img-wrap img {}
+.allsite .img-wrap img {
+    
+}
 
 .allsite h2 {
     font-family: 'Ilisarniq-Black';
@@ -59,32 +63,41 @@ body {background-color: #1B1B1B;}
     font-size: 10vw;
     color: #fff;
     position: absolute; left: 18vw; top: 6vw;
+    z-index: 10;
     text-transform: uppercase;
     mix-blend-mode: difference;
     letter-spacing: 3.6px;
 }
+
 .allsite .num-wrap .num {
     font-family: 'Ilisarniq-Black';
-    font-size: 16vw;
+    font-size: 21vw;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 2px #fff;
     transform: rotate(90deg);
-    position: absolute; top: 19.5vw; right: -5.6vw;
+    position: absolute; top: 19.5vw; right: -7.5vw;
 }
-.allsite .circle {
-    position: absolute; left: 74vw; top: 40.5vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 8vw; height: 8vw;
-    border: 2px solid rgb(101, 248, 108);
+.allsite .num-wrap .num.num2 {
+    right: -8vw;
+}
+.allsite .num-wrap .num.num3 {
+    right: -9vw;
+}
+.allsite .num-wrap .num.num4 {
+    right: -9vw;
+}
+.allsite .circle-wrap {
+    position: absolute; bottom: 14vw; right: 20vw;
+    width: 150px; height: 150px;
+    border: 2px solid #12e09b;
     border-radius: 50%;
-    font-family: 'Ilisarniq-Regular'; 
+    font-family: 'Ilisarniq-Light';
+    text-align: center;
+    line-height: 150px;
     font-size: 14px;
-    letter-spacing: 6px;
+    /* letter-spacing: 7px; */
     color: #fff;
-    white-space: nowrap;
-} */
+}
 
 #section2 {}
 .section2 {}
