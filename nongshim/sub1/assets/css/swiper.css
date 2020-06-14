@@ -23,7 +23,7 @@
   margin-left: auto; 
   margin-right: auto;
   position: relative;
-  /* overflow: hidden; */
+  overflow: hidden;
   list-style: none;
   padding: 0;
   /* Fix of Webkit flickering */
@@ -35,11 +35,13 @@
 .swiper-wrapper {
   position: relative;
   width: 100%;
-  height: 100%; 
+  height: 130%; 
   z-index: 1;
   display: flex;
   transition-property: transform;
-  box-sizing: content-box;
+  box-sizing: border-box;
+  padding-bottom: 80px;
+
 }
 .swiper-container-android .swiper-slide,
 .swiper-wrapper {
@@ -361,7 +363,7 @@ button.swiper-pagination-bullet {
 .swiper-scrollbar {
   position: absolute;
   left: 1%;
-  bottom: -20px;
+  bottom: 62px;
 /*    left: 0; top: 350px;*/
   z-index: 50;
   height: 5px;
@@ -376,13 +378,13 @@ button.swiper-pagination-bullet {
   height: 98%;
 }
 .swiper-scrollbar-drag {
-  height: 100%;
-  width: 100%;
-  position: relative;
-  background: /* rgba(0, 0, 0, 0.5) */ green;
+  height: 3px;
+  width: 100px;
+  position: absolute;
+  background: dodgerblue;
   border-radius: 10px;
   left: 0;
-  top: 0;
+  top: 230px;
 }
 .swiper-scrollbar-cursor-drag {
   cursor: move;
