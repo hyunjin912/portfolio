@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parallax12</title>
+    <style>
+        @font-face {
+            font-family: 'Cafe24Danjunghae';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Danjunghae.woff')
+            format('woff'); font-weight: normal; font-style: normal;
+        }
+        @font-face {
+            font-family: 'MapoDacapo';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoDacapoA.woff')
+            format('woff'); font-weight: normal; font-style: normal;
+        }
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        .pageYOffset {
+            position: fixed;
+            left: 10px; top: 10px; width: 40px; height: 40px;
+            background: rgba(0,0,0,0.6);
+            text-align: center;
+            line-height: 40px;
+            color: #fff; font-size: 12px;
+        }
+        #section1 {
+            height: 5000px;
+        }
+        #section1 h1 {
+            font-family: 'Cafe24Danjunghae';
+            font-size: 6vw; color: #fff;
+            position: fixed; top: 50%; left: 50%; /* absolute를 사용하면 안된다. */
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="pageYOffset">0</div>
+    <!-- //pageYOffset -->
+
+    <section id="content">
+        <section id="section1"
+        data-0 ="background-color: rgb(114, 73, 152);"
+        data-1000 ="background-color: rgb(114, 73, 152);"
+        data-2000 ="background-color: rgb(114, 73, 152);"
+        data-3000 ="background-color: rgb(114, 73, 152);"
+        data-4000 ="background-color: rgb(30, 144, 255);"
+        >
+            <h1
+                data-0 = "transform: translate(-50%, -50%) rotate(0deg) scale(1)"
+                data-1000 = "transform: translate(-250%, -50%) rotate(0deg) scale(1)"
+                data-2000 = "transform: translate(-50%, -50%) rotate(0deg) scale(1)"
+                data-3000 = "transform: translate(-50%, -50%) rotate(360deg) scale(1)"
+                data-4000 = "transform: translate(-50%, -50%) rotate(360deg) scale(6)"
+            >포트폴리오입니다.</h1>
+            <!-- data-3000에 rotate(360deg)을 넣고 싶다면 rotate(0deg)을 다 넣어줘야한다 -->
+        </section>
+        <!-- //section1 -->
+
+        <section id="section2"></section><!-- //section2 -->
+        <section id="section3"></section><!-- //section3 -->
+        <section id="section4"></section><!-- //section4 -->
+        <section id="section5"></section><!-- //section5 -->
+        <section id="section6"></section><!-- //section6 -->
+    </section>
+    <!-- //contents -->
+
+    <!-- script -->
+    <script src="js/skrollr.min.js"></script>   <!-- 이 파일을 링크하는 순간 페이지에 스크롤이 자동으로 생김 -->
+    <script>
+        var s = skrollr.init();
+
+        window.addEventListener("scroll", () => {
+            let pageYOffset = (window.pageYOffset || document.documentElement.scrollTop)
+            document.querySelector(".pageYOffset").textContent = pageYOffset;
+        });
+    </script>
+</body>
+</html>

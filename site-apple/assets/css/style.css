@@ -1,5 +1,136 @@
-body {
-    font-family: "SF Pro";
-    font-weight: 800;
-    font-size: 30px;
+/* container */
+.container {max-width: 1000px; margin: 0 auto;}
+
+/* row */
+.row {position: relative; margin: 0 20px;}
+
+/* layout */
+#header .container {}
+
+/* line */
+.line {
+    margin: 16px 0;
+    width: 100%;
+    height: 1px;
+    background: #EBEBEB;
+}
+
+/* header */
+#header {overflow: hidden;}
+.header-date {
+    font-family: "SF Pro Display";
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: -0.24px;
+    color: #A8A8A8;
+}
+.title-id-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+.header-title {
+    font-family: "SF Pro Display";
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 20px;
+    letter-spacing: -0.24px;
+    color: #000000;
+}
+.header-id {}
+.header-id span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(360deg, #FFFFFF 0%, #A0A0A0 100%), #686565;
+    border-radius: 50%;
+    font-weight: 300;
+    font-size: 20px;
+    font-family: "SF Pro Display";
+    letter-spacing: -0.24px;
+    color: #FFFFFF;
+}
+
+/* banner */
+.banner {}
+.banner .banner-title {}
+.banner .banner-title .bt-stit {
+    font-family: "SF Pro Display";
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: -0.24px;
+    color: #DA5E7C;
+}
+.banner .banner-title .bt-tit {
+    font-family: "SF Pro Display";
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.24px;
+    color: #000000;
+}
+.banner .banner-title .bt-desc {
+    font-family: "SF Pro Display";
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: -0.24px;
+    color: #A8A8A8;
+    font-weight: 300;
+    margin-bottom: 11px;
+}
+.banner img {width: 100%;}
+
+/* recentMusic */
+.recentWrap {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+.recentMusic {
+    width: 49%;
+}
+.recent-title {
+    display: flex;
+    justify-content: space-between;
+}
+.recent-title h1 {
+    font-family: "SF Pro Display";
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: -0.24px;
+    color: #000000;
+}
+.recent-title h2 {
+    font-family: "SF Pro Display";
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.24px;
+    color: #DA5E7C;
+}
+.recentImg {
+    margin-top: 9px;
+}
+.recentImg img {
+    width: 100%;
+}
+.recent-stitle {
+    font-family: "SF Pro Display";
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.24px;
+    color: #000000;
+    margin-top: 8px;
+}
+.recent-sdesc {
+    font-family: "SF Pro Display";
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.24px;
+    color: #A8A8A8;
+    margin-top: 6px;
 }

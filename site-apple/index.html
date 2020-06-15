@@ -25,6 +25,85 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div>dkfjkdad;aksdjfkads;faksdfj</div>
+    <header id="header">
+        <div class="container">
+            <div class="row">
+                <time class="header-date">2020년 6월 15일</time>
+                <div class="title-id-wrap">
+                    <h1 class="header-title">음악듣기</h1>
+                    <div class="header-id"><span>w</span></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="mainBanner">
+            <div class="container">
+                <div class="row">
+                    <div class="banner">
+                        <div class="banner-title">
+                            <span class="bt-stit">Beat1 on Air</span>
+                            <h2 class="bt-tit">Travis Mills</h2>
+                            <p class="bt-desc">L.A’s pop culture authority</p>
+                        </div>
+                        <picture>
+                            <source srcset="assets/img/bestM01@3x.jpg" media="(min-width:800px)" />
+                            <source srcset="assets/img/bestM01@2x.jpg" media="(min-width:600px)" />
+                            <img srcset="assets/img/bestM01.jpg 1x,
+                                         assets/img/bestM01@2x.jpg 2x,
+                                         assets/img/bestM01@3x.jpg 3x" src="assets/img/bestM01.jpg" alt="이미지">
+                        </picture>
+                        <!-- picture태그는 해상도에 따라 이미지를 보여주기 위한 태그. 애플에 의해 새로 나왔음 -->
+                    </div>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </section>
+        <!-- //mainBanner -->
+
+        <section id="recentMusic">
+            <div class="container">
+                <div class="row">
+                    <div class="recent-title">
+                        <h1>최근 재생한 음악</h1>
+                        <h2>전체 보기</h2>
+                    </div>
+                    <div class="recentWrap">
+                        <div class="recentMusic">
+                            <div class="recentImg">
+                                <picture>
+                                    <source srcset="assets/img/recent_img02@3x.jpg" media="(min-width:800px)" />
+                                    <source srcset="assets/img/recent_img02@2x.jpg" media="(min-width:600px)" />
+                                    <img srcset="assets/img/recent_img02.jpg 1x,
+                                                assets/img/recent_img02@2x.jpg 2x,
+                                                assets/img/recent_img02@3x.jpg 3x" src="assets/img/recent_img02.jpg" alt="이미지">
+                                </picture>
+                            </div>
+                            <div class="recent-stitle">오늘의 신곡</div>   
+                            <div class="recent-sdesc">Apple Music</div>   
+                        </div>
+                        <div class="recentMusic">
+                            <div class="recentImg">
+                                <picture>
+                                    <source srcset="assets/img/recent_img03@3x.jpg" media="(min-width:800px)" />
+                                    <source srcset="assets/img/recent_img03@2x.jpg" media="(min-width:600px)" />
+                                    <img srcset="assets/img/recent_img03.jpg 1x,
+                                                assets/img/recent_img03@2x.jpg 2x,
+                                                assets/img/recent_img03@3x.jpg 3x" src="assets/img/recent_img03.jpg" alt="이미지">
+                                </picture>
+                            </div>
+                            <div class="recent-stitle">오늘의 신곡</div>   
+                            <div class="recent-sdesc">Apple Music</div>   
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </section>
+        <!-- //recentMusic -->
+
+        <section id="nextProgram"></section>
+    </main>
 </body>
 </html>
