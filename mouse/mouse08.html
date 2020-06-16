@@ -160,7 +160,41 @@
                     <span class="control"></span>
                 </h3>
                 <div class="code">
-                    <pre class="line-numbers"><code class="language-js">
+                    <pre class="line-numbers"><code class="language-js">// 자바스크립트
+// const spanSlow = document.querySelectorAll(".spanSlow");
+// const spanFast = document.querySelectorAll(".spanFast");
+
+
+// window.addEventListener("mousemove", mouseMove);
+
+// function mouseMove(e){
+//     let position = ( e.pageX / (window.innerWidth / 2) ) * 10;
+
+//     spanSlow.forEach((span) => {
+//         span.style.transform = `translate(${position}px)`; // `를 리터럴? 이라고 한다.
+//     })
+//     spanFast.forEach((span) => {
+//         span.style.transform = `translate(${-position}px)`; // `를 템플릿 리터럴? 이라고 한다.
+//     })
+// }
+
+// 제이쿼리
+    const spanSlow = $(".spanSlow");
+    const spanFast = $(".spanFast");
+
+    $(window).on("mousemove", mouseMove);
+
+    function mouseMove(e) {
+        let position = ( e.pageX / ($(window).width() / 2) ) * 10;
+        console.log(position)
+
+        
+            spanSlow.css({"transform": "translate("+position+"px)"});
+            // spanSlow.css("transform", "translate("+position+"px)");
+        
+        
+            spanFast.css({"transform": "translate("+-position+"px)"});
+    }
 </code></pre>
                 </div>
 
@@ -240,7 +274,7 @@
         // window.addEventListener("mousemove", mouseMove);
 
         // function mouseMove(e){
-        //     let position = ( e.pageX / (window.innerWidth / 2) ) * 0.1;
+        //     let position = ( e.pageX / (window.innerWidth / 2) ) * 10;
 
         //     spanSlow.forEach((span) => {
         //         span.style.transform = `translate(${position}px)`; // `를 리터럴? 이라고 한다.
@@ -257,7 +291,7 @@
             $(window).on("mousemove", mouseMove);
 
             function mouseMove(e) {
-                let position = ( e.pageX / ($(window).width() / 2) ) * 0.1;
+                let position = ( e.pageX / ($(window).width() / 2) ) * 10;
                 console.log(position)
 
                
@@ -267,7 +301,6 @@
                 
                     spanFast.css({"transform": "translate("+-position+"px)"});
             }
-
     </script>
 </body>
 </html>
