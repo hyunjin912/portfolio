@@ -136,6 +136,7 @@
             <li><a href="mouse05.html">Mouse05</a></li>
             <li><a href="mouse06.html">Mouse06</a></li>
             <li class="active"><a href="mouse07.html">Mouse07</a></li>
+            <li><a href="mouse08.html">Mouse08</a></li>
         </ul>
     </div>
 
@@ -200,7 +201,7 @@ window.addEventListener("mousemove", function(e){
         let circleWidth = cursor.offsetWidth;    // 제이쿼리의 width()와 같다
         let circleHeight = cursor.offsetHeight;  // 제이쿼리의 height()와 같다 
 
-        
+
         document.addEventListener("mousemove", function(e){
             gsap.to(cursor,{duration: 0.3, left: e.pageX - (circleWidth / 2), top: e.pageY - (circleHeight / 2)});
         });
