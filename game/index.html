@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory Game</title>
     <style>
+        @font-face { 
+            font-family: 'Recipekorea'; 
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Recipekorea.woff') format('woff'); 
+            font-weight: normal; font-style: normal; 
+        }
+        
+        body {
+            background: #314F4F;
+        }
+        img {width: 100%;}
+
         main {
             display: flex;
             flex-wrap: wrap;
@@ -12,44 +23,65 @@
             justify-content: center;
             width: 100%;
             max-width: 900px;
-            margin: 10% auto;
-            
+            margin: 2% auto;
         }
-
         main .card {
-            position: relative;
             width: 120px;
             height: 150px;
             margin: 1%;
+            backface-visibility: hidden;
+            position: relative;
             perspective: 1000px;
-        }
-
-        .front {
-            position: absolute; top: 0; left: 0;
-            z-index: 10;
-            width: 100%;
-            height: 100%;
-            transform-style: preserve-3d;
-            backface-visibility: hidden;
+        }    
+        .card .front {
+            width: 100%; height: 100%;
+            position: absolute; left: 0; top: 0;
             transform: rotatey(0);
-            transition: transform 1s;
-        }
-        .card:hover .front {
-            transform: rotatey(180deg);
-        }
-        .back {
-            position: absolute; top: 0; left: 0;
-            width: 100%;
-            height: 100%;
-            transform-style: preserve-3d;
             backface-visibility: hidden;
-            transform: rotatey(-180deg);
-            transition: transform 1s;
+            background-image: url(img/back.jpg);
+            background-size: cover;
+            transition: transform 0.6s;
         }
-        .card:hover .back {
-            transform: rotatey(0deg);
+        .card .back {
+            width: 100%; height: 100%;
+            position: absolute; left: 0; top: 0;
+            transform: rotatey(-180deg);
+            backface-visibility: hidden;
+            transition: transform 0.6s;
         }
 
+        /* 카드를 클릭했을 때 */
+        .card:hover .front {
+            /* transform: rotatey(180deg);
+            transition: transform 1s; */
+        }
+        .card.is-selected .front {
+            transform: rotatey(180deg);
+            transition: transform 0.6s;
+        }
+
+        .card:hover .back {
+            /* transform: rotatey(0);
+            transition: transform 1s; */
+        }
+        .card.is-selected .back {
+            transform: rotatey(0deg);
+            transition: transform 0.6s;
+        }
+
+        [data-matched= "true"] .front {
+            transform: rotateY(180deg);
+            transition: transform 0.6s;
+        }
+
+        [data-matched= "true"] .back {
+            transform: rotateY(0deg);
+            transition: transform 0.6s;
+        }
+
+
+
+        /* 이미지 */
         [data-type^="img"] .front {
             background: url(img/back.jpg) center center;
             background-size: cover;
@@ -110,10 +142,130 @@
         
         }
        
+        /* info */
+        /* .info {
+            position: relative;
+            font-family: 'Recipekorea';
+            width: 100%;
+            max-width: 950px;
+            margin: 0 auto;
+            padding-top: 6%;
+        }
+        .info h1 {
+            font-family: 'Recipekorea';
+            color: #fff;
+            text-align: center;
+            margin-top: 5%;
+        }
+        .btn-sound {
+            position: absolute; top: 14%; right: 7%;
+            width: 40px; height: 40px;
+            background: url(img/icon-sound-on.svg) no-repeat center center;
+            background-size: contain;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+        .btn-sound::before {
+            content: '';
+            width: 3px;
+            height: 40px;
+            background: #fff;
+            position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+        .score {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            color: #fff;
+        }
+        .turns span.last-turn {
+            color: red;
+        } */
 
+        .info {
+            width: 100%;
+            max-width: 950px;
+            margin: 0 auto;
+            text-align: center;
+            color: #fff;
+            font-family: 'Recipekorea';
+        }
+
+        .score {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 2vw;
+            padding-top: 3vw;
+
+        }
+
+        .score span {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .turns span.last-turn {
+            color: red;
+        }
+
+        .text {
+            font-size: 4vw
+        }
+
+        .btn-sound {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            width: 24px;
+            height: 24px;
+            background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/225363/icon-sound-on.svg);
+            background-color: transparent;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            border: none;
+            outline: none;
+        }
+
+        .btn-sound:active {
+            transform: translateY(1px);
+        }
+
+        .btn-sound::before {
+            content: '';
+            position: absolute;
+            top: 9px;
+            left: -2px;
+            width: 120%;
+            height: 2px;
+            background-color: #fff;
+            transform: rotate(35deg);
+            box-shadow: 0 0 0 2px #000;
+        }
+
+        .btn-sound.is-playing::before {
+            display: none;
+        }
+        
     </style>
 </head>
 <body>
+
+    <div class="info">
+        <button class="btn-sound"></button>
+        <audio id="theme-song" src="bgm/backbgm.mp3" loop="loop"></audio>
+        <div class="score">
+            <div class="turns">기회 : <span>2</span></div>
+            <div class="attempts">시도 : <span>0</span></div>
+            <div class="wins">우승 : <span>0</span></div>
+        </div>
+        <!-- <h1>카드 뒤집기 게임</h1> -->
+        <p class="text">카드 뒤집기 게임</p>
+    </div>
+
     <main>
         <div class="card" data-type="img1" data-matched="false">
             <div class="front"></div>
@@ -191,9 +343,98 @@
 
 
     <!-- script -->
-    <script src="../slider/js/jquery.min_1.12.4.js"></script>
+    <script src="js/jquery.min_1.12.4.js"></script>
     <script>
-        
+        const $board = $('main');
+        const $card = $('.card');
+        const $btnSound = $('.btn-sound');
+        const $themeSongEl = $('#theme-song')[0];
+        // console.log($themeSongEl);
+        // $themeSongEl.pause();
+        const $turns = $(".turns span");
+        const selectedClass = 'is-selected';    // 카드를 선택했을 때
+        const dataMatch = 'data-matched';
+        const dataType = 'data-type';
+        const playSoundClass = 'is-playing';
+        const lastTurnClass = 'last-turn'
+        const timeoutLength = 800;
+
+
+        let sound = ['bgm/truebgm.mp3', 'bgm/flasebgm.mp3', 'bgm/smb3_1-up.mp3']
+        let soundMatch = new Audio(sound[0]);
+        let soundNoMatch = new Audio(sound[1]);
+        let soundSuccess = new Audio(sound[3]);
+        let card1;
+        let card2;
+        let turnsCount = 2;   // 기회 횟수
+
+
+        // 카드를 클릭하면 클릭한 카드한테 is-selected를 추가
+        $card.click(function(){
+            if($(this).attr(dataMatch) == 'false'){
+                $(this).addClass(selectedClass);
+            }
+
+            let selectedCards = $('.' + selectedClass );     // 선택된 카드를 클래스로 변경
+
+            // 만약에 두개의 카드가 똑같다면
+            if(selectedCards.length == 2){
+                card1 = selectedCards.eq(0).attr(dataType);
+                card2 = selectedCards.eq(1).attr(dataType);
+
+                // 만약에 카드1과 카드2가 같다면
+                if(card1 == card2){
+                    // 카드가 일치할 때의 bgm
+                    if($btnSound.hasClass(playSoundClass)){
+                        soundMatch.play();
+                    }
+                    selectedCards.attr(dataMatch, "true").removeClass(selectedClass);    // "true"를 따옴표없이 true로 사용해도 된다. 문자열인데 이유는? 불리언이라 따옴표가 없어도 되는 건가?
+                } else {
+                    // 카드가 일치하지 않을 때의 bgm
+                    if($btnSound.hasClass(playSoundClass)){
+                        soundNoMatch.play();
+                    }
+
+                    // 카드가 일치하지 않으면 원래 상태로 되돌림
+                    setTimeout(function(){
+                        $card.removeClass(selectedClass);
+                        turnsCount--;   // 기회 감소
+                        $turns.html(turnsCount);
+                        console.log(turnsCount);
+                    }, timeoutLength);
+
+                    // 카운트 기회가 없을 때(주의)
+                    if(turnsCount === 1){
+                        setTimeout(function(){
+                            $turns.addClass(lastTurnClass);
+                        }, timeoutLength)
+                    }
+
+                    // 카운트 기회가 없을 때(시도+1, 기회+2)
+                    if(turnsCount <= 0){
+                        setTimeout(function(){
+                        turnsCount = 2;
+                        $turns.removeClass(lastTurnClass).html(turnsCount)  // 주의 표시 삭제, 기회 표시
+                        $card.attr(dataMatch, "false");
+                        }, timeoutLength)
+                    }
+                }
+
+            }
+        });
+
+
+
+        // 오디오 버튼 클릭
+        $btnSound.click(function(){
+            $(this).toggleClass("line").toggleClass(playSoundClass);
+
+            if($(this).hasClass(playSoundClass)){
+                $themeSongEl.play();
+            } else {
+                $themeSongEl.pause();
+            }
+        });
     </script>
 </body>
 </html>
