@@ -85,7 +85,7 @@
             transition: transform 0.6s;
         }
 
-
+        
 
         /* 이미지 */
         [data-type^="img"] .front {
@@ -761,7 +761,6 @@ function shuffleCards(){
 
             // 완성했을 때
             // dataMatch가 true이면서 갯수가 전체 카드 갯수랑 같을 때
-            
             if( $('[' + dataMatch +'="true"]').length == $card.length ){
                 setTimeout(function(){
                     $success.addClass(visibleClass);
