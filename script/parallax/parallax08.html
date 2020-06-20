@@ -669,7 +669,6 @@ $(window).scroll(function(){
         // 위 스크립트를 한 번에 사용(글씨 분할)
         $(".content-item-desc").each(function(){
             let txt = $(this).text();   // 메서드만 쓰면 대상의 텍스트를 가져온다.
-            console.log(txt)
             let split = txt.split("").join("</span><span aira-hidden='true'>")
                 split = "<span aira-hidden='true'>" + split + "</span>"
             $(this).html(split).attr("aira-label", txt)
@@ -697,7 +696,7 @@ $(window).scroll(function(){
             if( $(window).scrollTop() + $(window).height() / 2 >= $("#section1").offset().top ){
                 $("#section1 .content-item-desc span").each(function(index){
                     setInterval(function(){
-                        $("#section1 .content-item-desc span").eq(index).addClass("show");
+                        $("#section1 .content-item-desc span").eq(index).addClass("show");  // 여러개의 span에 0.1s마다 show가 붙는다. 그래서 애니메이션에 dealy가 있는 것 처럼 보인다.
                     }, 100 * index);
                 });
             }
