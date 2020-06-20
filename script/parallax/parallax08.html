@@ -668,7 +668,8 @@ $(window).scroll(function(){
         
         // 위 스크립트를 한 번에 사용(글씨 분할)
         $(".content-item-desc").each(function(){
-            let txt = $(this).text();
+            let txt = $(this).text();   // 메서드만 쓰면 대상의 텍스트를 가져온다.
+            console.log(txt)
             let split = txt.split("").join("</span><span aira-hidden='true'>")
                 split = "<span aira-hidden='true'>" + split + "</span>"
             $(this).html(split).attr("aira-label", txt)
