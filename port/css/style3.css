@@ -319,7 +319,6 @@ h2.ftitle {
     display: flex;
     width: 100%;
     height: 8%;
-    background: rgb(246, 5, 214);
     border-radius: 5px 5px 0px 0px;
 }
 .menu-bar .circle-bar {
@@ -351,12 +350,12 @@ h2.ftitle {
     display: flex;
     width: 88%;
     height: 100%;
-    background: #12DA97;
+    background: #202124;
     border-radius: 0px 5px 0px 0px;
 }
 .title-bar .htmlTap {
     width: 25%;
-    background: #333;
+    background: #35363A;
 }
 .title-bar .htmlTap a {
     display: flex;
@@ -364,10 +363,11 @@ h2.ftitle {
     align-items: center;
     width: 100%;
     height: 100%;
+    color: #fff;
 }
 .title-bar .cssTap {
     width: 25%;
-    background: #666;
+    background: #999;
 }
 .title-bar .cssTap a {
     display: flex;
@@ -375,6 +375,7 @@ h2.ftitle {
     align-items: center;
     width: 100%;
     height: 100%;
+    color: #fff;
 }
 .title-bar .scriptTap {
     width: 25%;
@@ -386,6 +387,7 @@ h2.ftitle {
     align-items: center;
     width: 100%;
     height: 100%;
+    color: #fff;
 }
 .title-bar > div .code-content {
     position: absolute; top: 84px; left: 50px;
@@ -396,14 +398,12 @@ h2.ftitle {
 .menu-content {
     width: 100%;
     height: 92%;
-    background: dodgerblue;
     border-radius: 0px 0px 5px 5px;
 }
 .menu-content .option-bar {
     display: flex;
     width: 100%;
     height: 8%;
-    background: rgb(0, 0, 0);
 }
 .option-bar .arrowL {
     display: flex;
@@ -411,7 +411,7 @@ h2.ftitle {
     align-items: center;
     width: 4%;
     height: 100%;
-    background: rgb(255, 0, 0);
+    background: #35363A;
 }
 .option-bar .arrowL svg {
     width: 13px;
@@ -422,7 +422,7 @@ h2.ftitle {
     align-items: center;
     width: 4%;
     height: 100%;
-    background: rgb(255, 115, 0);
+    background: #35363A;
 }
 .option-bar .arrowR svg {
     width: 13px;
@@ -433,7 +433,7 @@ h2.ftitle {
     align-items: center;
     width: 4%;
     height: 100%;
-    background: rgb(202, 206, 0);
+    background: #35363A;
 }
 .option-bar .redo svg {
     width: 13px;
@@ -444,7 +444,8 @@ h2.ftitle {
     align-items: center;
     width: 84%;
     height: 100%;
-    background: rgb(3, 200, 3);
+    background: #35363A;
+    color: #fff;
 }
 .option-bar .address-box .address {
     display: flex;
@@ -452,7 +453,7 @@ h2.ftitle {
     align-items: center;
     width: 97%;
     height: 100%;
-    background: rgb(200, 3, 167);
+    background: #202124;
     border-radius: 30px;
 }
 .option-bar .dot {
@@ -461,7 +462,7 @@ h2.ftitle {
     align-items: center;
     width: 4%;
     height: 100%;
-    background: rgb(5, 8, 172);
+    background: #35363A;
 }
 .option-bar .dot svg {
     width: 5px;
