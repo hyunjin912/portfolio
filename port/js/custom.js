@@ -12,7 +12,7 @@ $("#section1").on("mousemove", function(e){
 $(window).scroll(function(){
     // scroll 값
     const scrollTop = $(window).scrollTop();
-    $(".scrollTop").text(scrollTop);
+    $(".scrollTop").text(parseInt(scrollTop));
 
     // 커서 hidden
     let sectionTop1 = $("#big-title").offset().top;
