@@ -15,9 +15,25 @@ body {
     background-size: cover; /* 이게 없으면 실제 이미지 크기만큼의 영역이 생겨버린다.*/
     box-shadow: 0px 0px 50px inset white, 0px 0px 50px inset white;
 }
-.hidden {
+.cursor.hidden {
     display: none;
 }
+
+/* Circle Text Styles */
+#outerCircleText {
+    /* Optional - DO NOT SET FONT-SIZE HERE, SET IT IN THE SCRIPT */
+    font-style: italic;
+    font-weight: bold;
+    font-family: 'comic sans ms', verdana, arial;
+    color: red;
+    /* End Optional */
+    
+    /* Start Required - Do Not Edit */
+    position: absolute;top: 0;left: 0;z-index: 3000;cursor: default;}
+    #outerCircleText div {position: relative;}
+    #outerCircleText div div {position: absolute;top: 0;left: 0;text-align: center;}
+    /* End Required */
+    /* End Circle Text Styles */
 
 /* info */
 .info {
@@ -290,5 +306,58 @@ h2.ftitle {
     border-radius: 50%;
 }
 .circle-wrap4 .circle4 {}
+
+.chromebox {position: relative;}
+.chromebox .chromewrap {
+    position: absolute; top: 1240px; left: 120px;
+    width: 46.615vw;
+    height: 28.49vw;
+    background: rgba(255, 99, 71, 0.356);
+    border-radius: 5px;
+}
+.menu-bar {
+    display: flex;
+    width: 100%;
+    height: 20%;
+    background: white;
+    border-radius: 5px 5px 0px 0px;
+}
+.menu-bar .circle-bar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 12%;
+    height: 50%;
+    background: #202124;
+    border-radius: 5px 0px 0px 0px;
+}
+.circle-bar .red {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: #ED6A5F;
+}
+.circle-bar .yellow {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: #F6BF4F;
+}
+.circle-bar .green {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: #63C654;
+}
+
+.menu-bar .title-bar {
+    width: 88%;
+    height: 50%;
+    background: #666;
+    border-radius: 0px 5px 0px 0px;
+}
+.menu-content {
+    width: 100%;
+    height: 80%;
+    background: dodgerblue;
+    border-radius: 0px 0px 5px 5px;
+}
 
 
