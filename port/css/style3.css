@@ -253,7 +253,7 @@ h2.ftitle {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px; height: 100px;
+    width: 5.208vw; height: 5.208vw;
     border: 2px solid #12DA97;
     border-radius: 50%;
 }
@@ -269,7 +269,7 @@ h2.ftitle {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 136px; height: 136px;
+    width: 7.083vw; height: 7.083vw;
     border: 2px solid #12DA97;
     border-radius: 50%;
 }
@@ -285,7 +285,7 @@ h2.ftitle {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 64px; height: 64px;
+    width: 3.333vw; height: 3.333vw;
     border: 2px solid #12DA97;
     border-radius: 50%;
 }
@@ -301,7 +301,7 @@ h2.ftitle {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px; height: 100px;
+    width: 5.208vw; height: 5.208vw;
     border: 2px solid #12DA97;
     border-radius: 50%;
 }
@@ -309,7 +309,7 @@ h2.ftitle {
 
 .chromebox {position: relative;}
 .chromebox .chromewrap {
-    position: absolute; top: 1240px; left: 120px;
+    position: absolute; top: 64.583vw; left: 6.25vw;
     width: 46.615vw;
     height: 28.49vw;
     background: rgba(255, 99, 71, 0.356);
@@ -318,8 +318,8 @@ h2.ftitle {
 .menu-bar {
     display: flex;
     width: 100%;
-    height: 20%;
-    background: white;
+    height: 8%;
+    background: rgb(246, 5, 214);
     border-radius: 5px 5px 0px 0px;
 }
 .menu-bar .circle-bar {
@@ -327,37 +327,149 @@ h2.ftitle {
     justify-content: space-evenly;
     align-items: center;
     width: 12%;
-    height: 50%;
+    height: 100%;
     background: #202124;
     border-radius: 5px 0px 0px 0px;
 }
 .circle-bar .red {
-    width: 12px; height: 12px;
+    width: 0.625vw; height: 0.625vw;
     border-radius: 50%;
     background: #ED6A5F;
 }
 .circle-bar .yellow {
-    width: 12px; height: 12px;
+    width: 0.625vw; height: 0.625vw;
     border-radius: 50%;
     background: #F6BF4F;
 }
 .circle-bar .green {
-    width: 12px; height: 12px;
+    width: 0.625vw; height: 0.625vw;
     border-radius: 50%;
     background: #63C654;
 }
 
 .menu-bar .title-bar {
+    display: flex;
     width: 88%;
-    height: 50%;
-    background: #666;
+    height: 100%;
+    background: #12DA97;
     border-radius: 0px 5px 0px 0px;
 }
+.title-bar .htmlTap {
+    width: 25%;
+    background: #333;
+}
+.title-bar .htmlTap a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.title-bar .cssTap {
+    width: 25%;
+    background: #666;
+}
+.title-bar .cssTap a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.title-bar .scriptTap {
+    width: 25%;
+    background: #999;
+}
+.title-bar .scriptTap a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.title-bar > div .code-content {
+    position: absolute; top: 84px; left: 50px;
+    width: 500px; height: 300px;  
+    background: white; 
+}
+
 .menu-content {
     width: 100%;
-    height: 80%;
+    height: 92%;
     background: dodgerblue;
     border-radius: 0px 0px 5px 5px;
 }
-
+.menu-content .option-bar {
+    display: flex;
+    width: 100%;
+    height: 8%;
+    background: rgb(0, 0, 0);
+}
+.option-bar .arrowL {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 4%;
+    height: 100%;
+    background: rgb(255, 0, 0);
+}
+.option-bar .arrowL svg {
+    width: 13px;
+}
+.option-bar .arrowR {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 4%;
+    height: 100%;
+    background: rgb(255, 115, 0);
+}
+.option-bar .arrowR svg {
+    width: 13px;
+}
+.option-bar .redo {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 4%;
+    height: 100%;
+    background: rgb(202, 206, 0);
+}
+.option-bar .redo svg {
+    width: 13px;
+}
+.option-bar .address-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 84%;
+    height: 100%;
+    background: rgb(3, 200, 3);
+}
+.option-bar .address-box .address {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 97%;
+    height: 100%;
+    background: rgb(200, 3, 167);
+    border-radius: 30px;
+}
+.option-bar .dot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4%;
+    height: 100%;
+    background: rgb(5, 8, 172);
+}
+.option-bar .dot svg {
+    width: 5px;
+}
+.menu-content .code {
+    width: 100%;
+    height: 92%;
+    background: red;
+    border-radius: 0px 0px 5px 5px;
+}
 

@@ -16,7 +16,7 @@ $(window).scroll(function(){
 
     // 커서 hidden
     let sectionTop1 = $("#big-title").offset().top;
-    if( scrollTop >= sectionTop1 ){
+    if( scrollTop >= 900 ){
         cursor.addClass("hidden");
     } else {
         cursor.removeClass("hidden");
@@ -136,3 +136,15 @@ else if (window.attachEvent){
 };
 
 })();
+
+/* code tap-menu */
+$(".title-bar").find("div > div").hide().eq(0).show();
+
+$(".title-bar a").click(function(e){
+    e.preventDefault();
+    $(this).next().show().parent().siblings().find("div").hide();
+});
+
+
+
+
