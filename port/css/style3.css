@@ -1,7 +1,66 @@
-body {background-color: #1B1B1B;}
+body {
+    background-color: #1B1B1B;
+    
+    overflow-x: hidden;
+}
+
+/* cursor */
+.cursor {
+    position: absolute;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    user-select: none;
+    pointer-events: none;
+    background: url(../img/mainbg.jpg) no-repeat center center fixed; /* body에 있는거 그래도 사용하는데 꼭 background-attachment: fixed가 추가되어야 한다.*/
+    background-size: cover; /* 이게 없으면 실제 이미지 크기만큼의 영역이 생겨버린다.*/
+    box-shadow: 0px 0px 50px inset white, 0px 0px 50px inset white;
+}
+.hidden {
+    display: none;
+}
+
+/* info */
+.info {
+    position: fixed; bottom: 20px; right: 20px;
+    background: rgba(255,255,255,0.4);
+    color: #fff; padding: 10px;
+    font-size: 14px; font-weight: 300;
+    z-index: 10000;
+    font-style: normal;
+}
 
 /* container */
 .container {width: 81vw; margin: 0 auto;}
+
+/* big-title */
+#big-title {}
+.big-title {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Ilisarniq-Black';
+    font-size: 10.4vw;
+    text-transform: uppercase;
+    letter-spacing: 0.53vw;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px #fff;
+    -moz-text-fill-color: transparent;
+    -moz-text-stroke: 2px #fff;
+    -ms-text-fill-color: transparent;
+    -ms-text-stroke: 2px #fff;
+    -o-text-fill-color: 2px #fff;
+    -o-text-stroke: 2px #fff;
+}
+/* .big-title::before {
+    position: absolute; top: 62%; left: 50%;
+    transform: translate(-50%, -50%);
+    content: '';
+    width: 24vw;
+    height: 0.7vw;
+    border: 2px solid #fff;
+} */
 
 /* section1 */
 #section1 {
@@ -16,15 +75,34 @@ body {background-color: #1B1B1B;}
     position: absolute; left: 0; top: 10vw;
 }
 .section1 .s1-title h1 {
-    font-family: 'S-CoreDream-9Black';
-    font-size: 8vw;
+    font-family: 'Ilisarniq-Black';
+    font-size: 7.5vw;
+    line-height: 7.3vw;
     color: #fff;
+    text-transform: uppercase;
+}
+.section1 .s1-title h1 span {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px #fff;
+    -moz-text-fill-color: transparent;
+    -moz-text-stroke: 2px #fff;
+    -ms-text-fill-color: transparent;
+    -ms-text-stroke: 2px #fff;
+    -o-text-fill-color: 2px #fff;
+    -o-text-stroke: 2px #fff;
 }
 .section1 .s1-title p {
-    font-size: 2vw;
+    margin-top: 1.5vw;
+    text-indent: 0.6vw;
+    font-family: 'Ilisarniq-Light';
+    font-size: 1.15vw;
+}
+.section1 .s1-title p span {
+    font-family: 'Ilisarniq-Regular';
+    font-size: 1.15vw;
 }
 .section1 .s1-desc {
-    position: absolute; left: 0; top: 40vw;
+    position: absolute; left: 0.6vw; top: 39vw;
 }
 .section1 .s1-desc p {
     font-family: 'S-CoreDream-2ExtraLight';
@@ -33,71 +111,67 @@ body {background-color: #1B1B1B;}
 .section1 .s1-desc p strong {font-family: 'S-CoreDream-6Bold';}
 
 
-/* all section */
-
-.allsite {
+/* section2 */
+#section2 {
     position: relative;
     overflow-x: hidden;
-    padding-top: 15vw;
-    height: 50vw;
+    height: 100vh;
 }
-.allsite .img-wrap {
+.section2 {}
+.s2-title {
     position: relative;
-    width: 68vw;
-    height: 38vw;
-    overflow: hidden;
 }
-.allsite .img-wrap::before {
-    content: '';
-    background: rgba(0, 0, 0, 0.24);
-    width: 100%; height: 100%;
-    position: absolute; left: 0; top: 0;
-}
-.allsite .img-wrap img {
-    
-}
-
-.allsite h2 {
+.s2-title h2 {
+    position: absolute; top: 1.25vw; left: 7.604vw;
+    font-size: 9.986vw;
     font-family: 'Ilisarniq-Black';
-    font-weight: 900;
-    font-size: 10vw;
     color: #fff;
-    position: absolute; left: 18vw; top: 6vw;
-    z-index: 10;
     text-transform: uppercase;
-    mix-blend-mode: difference;
-    letter-spacing: 3.6px;
+    letter-spacing: 0.346vw;
 }
-
-.allsite .num-wrap .num {
-    font-family: 'Ilisarniq-Black';
-    font-size: 21vw;
+h2.ftitle {
+    z-index: 10;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 2px #fff;
+    -moz-text-fill-color: transparent;
+    -moz-text-stroke: 2px #fff;
+    -ms-text-fill-color: transparent;
+    -ms-text-stroke: 2px #fff;
+    -o-text-fill-color: 2px #fff;
+    -o-text-stroke: 2px #fff;
+}
+.img-wrap {
+    width: 67.917vw;
+    height: 38.542vw;
+    position: absolute; top: 9.531vw; left: 0;
+}
+.img-wrap::before {
+    position: absolute; left: 0; top: 0;
+    content: '';
+    width: 100%; height: 100%;
+    background: rgba(13, 147, 120, 0.5);
+}
+.img {
+    background: url(../img/webstandard_silver_gray.jpg) no-repeat center center;
+    width: 100%; height: 100%;
+}
+.num-wrap {
+    position: absolute; top: 100px; left: 100px;
     transform: rotate(90deg);
-    position: absolute; top: 19.5vw; right: -7.5vw;
+    width: 23.906vw; height: 24.74vw;
 }
-.allsite .num-wrap .num.num2 {
-    right: -9vw;
-}
-.allsite .num-wrap .num.num3 {
-    right: -9vw;
-}
-.allsite .num-wrap .num.num4 {
-    right: -9vw;
-}
-.allsite .circle-wrap {
-    position: absolute; bottom: 14vw; right: 20vw;
-    width: 150px; height: 150px;
-    border: 2px solid #12e09b;
-    border-radius: 50%;
-    font-family: 'Ilisarniq-Light';
-    text-align: center;
-    line-height: 150px;
-    font-size: 14px;
-    /* letter-spacing: 7px; */
-    color: #fff;
+.num-wrap .num {
+    font-size: 20.625vw;
+    text-transform: uppercase;
+    font-family: 'Ilisarniq-Black';
+    letter-spacing: 0.206vw;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px #292929;
+    -moz-text-fill-color: transparent;
+    -moz-text-stroke: 2px #292929;
+    -ms-text-fill-color: transparent;
+    -ms-text-stroke: 2px #292929;
+    -o-text-fill-color: 2px  #292929;
+    -o-text-stroke: 2px #292929;
 }
 
-#section2 {}
-.section2 {}
