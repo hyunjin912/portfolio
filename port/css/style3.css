@@ -116,7 +116,7 @@ body {
     position: relative;
     overflow-x: hidden;
     height: 200vh;
-    background: red;
+    background: powderblue;
 }
 .section2 {}
 .s2-title {
@@ -223,4 +223,72 @@ h2.ftitle {
     font-size: 0.938vw;
     text-transform: uppercase;
 }
+.circleAll:hover {
+    color: #fff;
+}
+.circle-wrap1 {
+    position: absolute; top: 67vw; left: 62vw;
+    font-family: 'Ilisarniq-Regular';
+    font-size: 16px;
+    letter-spacing: 0.56px;
+    text-transform: uppercase;
+    color: #fff;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px; height: 100px;
+    border: 2px solid #12DA97;
+    border-radius: 50%;
+}
+.circle-wrap1 .circle1 {}
+.circle-wrap2 {
+    position: absolute; top: 74vw; left: 73vw;
+    font-family: 'Ilisarniq-Regular';
+    font-size: 16px;
+    letter-spacing: 0.56px;
+    text-transform: uppercase;
+    color: #fff;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 136px; height: 136px;
+    border: 2px solid #12DA97;
+    border-radius: 50%;
+}
+.circle-wrap2 .circle2 {}
+.circle-wrap3 {
+    position: absolute; top: 87vw; left: 70vw;
+    font-family: 'Ilisarniq-Regular';
+    font-size: 16px;
+    letter-spacing: 0.56px;
+    text-transform: uppercase;
+    color: #fff;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px; height: 64px;
+    border: 2px solid #12DA97;
+    border-radius: 50%;
+}
+.circle-wrap3 .circle3 {}
+.circle-wrap4 {
+    position: absolute; top: 91vw; left: 83.4vw;
+    font-family: 'Ilisarniq-Regular';
+    font-size: 16px;
+    letter-spacing: 0.56px;
+    text-transform: uppercase;
+    color: #fff;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px; height: 100px;
+    border: 2px solid #12DA97;
+    border-radius: 50%;
+}
+.circle-wrap4 .circle4 {}
+
 
