@@ -7,6 +7,7 @@
 /* row */
 .row {
     position: relative; margin: 20px 20px 0 20px;
+    background: tomato;
 }
 
 /* header */
@@ -16,11 +17,13 @@
     height: 21px;
 }
 .headerbar .barcode {
-    margin-left: 70px;
-    width: 60px;
+    position: absolute; top: 0; left: 21%;
+    width: 62px;
+    height: 14px;
+    background: yellow;
 }
 .headerbar .barcode img {
-    width: 100%;
+    width: 62px;
 }
 .headerbar .point {
     display: flex;

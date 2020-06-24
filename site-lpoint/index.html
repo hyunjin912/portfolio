@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <!-- <header id="header">
+    <header id="header">
         <div class="container">
             <div class="row">
                 <div class="headerbar">
@@ -74,15 +74,19 @@
                         <a href="#"></a>
                         <a href="#"></a>
                     </div>
-                    <div class="realImg">
-                        <a href="#"><img src="assets/img/1/selfcastick.png" alt="엘포인트특가 led+무선 리모컨 셀카봉 삼각대"></a>
-                    </div>
+                    <picture class="realImg">
+                        <source srcset="assets/img/1/selfcastick@3x.jpg" media="(min-width:800px)" />
+                        <source srcset="assets/img/1/selfcastick@2x.jpg" media="(min-width:600px)" />
+                        <img srcset="assets/img/1/selfcastick.jpg 1x,
+                                     assets/img/1/selfcastick@2x.jpg 2x,
+                                     assets/img/1/selfcastick@3x.jpg 3x" src="assets/img/1/selfcastick.jpg" alt="이미지">
+                    </picture>
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
 
-    <section id="advertiise">
+    <!-- <section id="advertiise">
         <div class="container">
             <div class="row">
                 <div class="ad-box">
@@ -100,6 +104,6 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 </body>
 </html>
