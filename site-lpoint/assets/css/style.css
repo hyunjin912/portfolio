@@ -1,0 +1,142 @@
+/* container */
+.container {
+    max-width: 1000px; margin: 0 auto;
+    background: #009AFA;
+}
+
+/* row */
+.row {
+    position: relative; margin: 20px 20px 0 20px;
+}
+
+/* header */
+.headerbar {
+    position: relative;
+    display: flex;
+    height: 21px;
+}
+.headerbar .barcode {
+    margin-left: 70px;
+    width: 60px;
+}
+.headerbar .barcode img {
+    width: 100%;
+}
+.headerbar .point {
+    display: flex;
+}
+.headerbar .point p {
+    width: 50px;
+    margin-left: 11px;
+    font-size: 15px;
+}
+.headerbar .point .arrowR-blue {}
+.arrowR-blue a {
+    display: block;
+    width: 16px;
+}
+.arrowR-blue a img {
+    width: 100%;
+}
+.headerbar .bell {
+    position: absolute; top: 0; left: 280px;
+}
+.headerbar .bell a {
+    display: block;
+    width: 21px;
+}
+.headerbar .bell a img {
+    width: 100%;
+}
+.hamburger {
+    margin-top: 7px;
+    margin-left: 110px;
+    position: relative;
+    width: 17px;
+    height: 2px;
+    background: #000;
+    border-radius: 20px;
+}
+.hamburger::before {
+    position: absolute; top: 7px; left: 0;
+    content: '';
+    width: 17px;
+    height: 2px;
+    background: #000;
+    border-radius: 20px;
+}
+.hamburger::after {
+    position: absolute; top: -7px; left: 0;
+    content: '';
+    width: 17px;
+    height: 2px;
+    background: #000;
+    border-radius: 20px;
+}
+
+/* banner */
+.bannerImgWrap {}
+.bannerImgWrap .dotbox {
+    margin-top: 84px;
+    margin-left: 70px;
+}
+.bannerImgWrap .dotbox a {
+    display: inline-block;
+    width: 4px; height: 4px;
+    margin-right: 6px;
+    background: #dcdcdc;
+    border-radius: 50%;
+}
+.bannerImgWrap .dotbox a:last-child {
+    margin-right: 0;
+}
+.bannerImgWrap .dotbox a.active {
+    background: #393939;
+}
+
+/* advertise */
+#advertise {
+    background: #009AFA;
+}
+
+.ad-box {
+    padding-top: 42px;
+}
+
+.ad-title {}
+.ad-title h2 {
+    font-size: 25px;
+    color: #fff;
+    letter-spacing: -0.045em;
+}
+.ad-title p {
+    margin:8px 0px 25px;
+    font-size: 14px;
+    letter-spacing: -0.085em;
+    color: #fff;
+}
+
+.ad-img {}
+.ad-img img {
+    width: 100%;
+}
+.link-img {}
+.link-img .lotteon {
+    position: absolute; top: 4%; left: 92%;
+    /* position: absolute; top: 10px; left: 925px; */
+    display: block;
+    width: 45px; height: 45px;
+     
+}
+.link-img .lotteon img {
+    width: 100%;
+}
+.link-img .plus {
+    position: absolute; top: 17%; left: 92%;
+    /* position: absolute; top: 70px; left: 925px; */
+    display: block;
+    width: 45px; height: 45px;
+}
+.link-img .plus img {
+    width: 100%;
+}
