@@ -14,53 +14,34 @@
 .headerbar {
     position: relative;
     display: flex;
-    height: 21px;
 }
+
 .headerbar .barcode {
-    position: absolute; top: 0; left: 21%;
-    width: 62px;
-    height: 14px;
-    background: yellow;
+    position: absolute; top: 0; left: 24.5%;
+    /* position: absolute; top: 0; left: 237px; */
 }
-.headerbar .barcode img {
-    width: 62px;
-}
+
 .headerbar .point {
-    display: flex;
+    position: absolute; top: 0; left: 33%;
+    /* position: absolute; top: 0; left: 315px; */
 }
 .headerbar .point p {
-    width: 50px;
-    margin-left: 11px;
-    font-size: 15px;
 }
-.headerbar .point .arrowR-blue {}
-.arrowR-blue a {
-    display: block;
-    width: 16px;
-}
-.arrowR-blue a img {
-    width: 100%;
-}
+
 .headerbar .bell {
-    position: absolute; top: 0; left: 280px;
 }
-.headerbar .bell a {
-    display: block;
-    width: 21px;
-}
-.headerbar .bell a img {
-    width: 100%;
-}
-.hamburger {
-    margin-top: 7px;
-    margin-left: 110px;
+
+
+
+.headerbar .hamburger {
+    margin-top: 8px;
     position: relative;
     width: 17px;
     height: 2px;
     background: #000;
     border-radius: 20px;
 }
-.hamburger::before {
+.headerbar .hamburger::before {
     position: absolute; top: 7px; left: 0;
     content: '';
     width: 17px;
@@ -68,7 +49,7 @@
     background: #000;
     border-radius: 20px;
 }
-.hamburger::after {
+.headerbar .hamburger::after {
     position: absolute; top: -7px; left: 0;
     content: '';
     width: 17px;
@@ -78,24 +59,7 @@
 }
 
 /* banner */
-.bannerImgWrap {}
-.bannerImgWrap .dotbox {
-    margin-top: 84px;
-    margin-left: 70px;
-}
-.bannerImgWrap .dotbox a {
-    display: inline-block;
-    width: 4px; height: 4px;
-    margin-right: 6px;
-    background: #dcdcdc;
-    border-radius: 50%;
-}
-.bannerImgWrap .dotbox a:last-child {
-    margin-right: 0;
-}
-.bannerImgWrap .dotbox a.active {
-    background: #393939;
-}
+
 
 /* advertise */
 #advertise {
@@ -128,7 +92,7 @@
     position: absolute; top: 4%; left: 92%;
     /* position: absolute; top: 10px; left: 925px; */
     display: block;
-    width: 45px; height: 45px;
+    width: 45px; height: 45px; 
      
 }
 .link-img .lotteon img {
