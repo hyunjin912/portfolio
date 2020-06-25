@@ -25,10 +25,13 @@ $(window).scroll(function(){
 
 /* code tap-menu */
 $(".title-bar").find("div > div").hide().eq(0).show();
+$(".address p").hide().eq(0).show();
 
 $(".title-bar a").click(function(e){
     e.preventDefault();
     $(this).addClass("active").next().show().parent().siblings().find("a").removeClass("active").next().hide();
+
+
 });
 
 

@@ -19,22 +19,6 @@ body {
     display: none;
 }
 
-/* Circle Text Styles */
-#outerCircleText {
-    /* Optional - DO NOT SET FONT-SIZE HERE, SET IT IN THE SCRIPT */
-    font-style: italic;
-    font-weight: bold;
-    font-family: 'comic sans ms', verdana, arial;
-    color: red;
-    /* End Optional */
-    
-    /* Start Required - Do Not Edit */
-    position: absolute;top: 0;left: 0;z-index: 3000;cursor: default;}
-    #outerCircleText div {position: relative;}
-    #outerCircleText div div {position: absolute;top: 0;left: 0;text-align: center;}
-    /* End Required */
-    /* End Circle Text Styles */
-
 /* info */
 .info {
     position: fixed; bottom: 20px; right: 20px;
@@ -52,11 +36,15 @@ body {
 #big-title {}
 .big-title {
     position: relative;
+    width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.big-title p {
     font-family: 'Ilisarniq-Black';
+    height: 350px;
     font-size: 10.4vw;
     text-transform: uppercase;
     letter-spacing: 0.53vw;
@@ -69,14 +57,6 @@ body {
     -o-text-fill-color: 2px #fff;
     -o-text-stroke: 2px #fff;
 }
-/* .big-title::before {
-    position: absolute; top: 62%; left: 50%;
-    transform: translate(-50%, -50%);
-    content: '';
-    width: 24vw;
-    height: 0.7vw;
-    border: 2px solid #fff;
-} */
 
 /* section1 */
 #section1 {
@@ -232,9 +212,10 @@ h2.ftitle {
     justify-content: center;
     align-items: center;
     width: 12.813vw;
+    height: 48px;
+    box-sizing: border-box;
     background: #000;
     padding: 20px 50px;
-    box-sizing: border-box;
     color: #fff;
     font-size: 0.938vw;
     text-transform: uppercase;
@@ -359,6 +340,7 @@ h2.ftitle {
 
 .menu-bar .title-bar {
     position: absolute; top: 8px; left: 78px;
+    z-index: 20;
     display: flex;
     /* width: 88%; */
     /* width: 42.5vw; */
@@ -377,7 +359,8 @@ h2.ftitle {
     width: 100%;
     height: 100%;
     color: #fff;
-    background: #999;
+    background: #18181b;
+    border-radius: 10px 10px 0 0;
 }
 .title-bar .cssTap {
     width: 12.5vw;
@@ -389,7 +372,8 @@ h2.ftitle {
     width: 100%;
     height: 100%;
     color: #fff;
-    background: #999;
+    background: #18181b;
+    border-radius: 10px 10px 0 0;
 }
 .title-bar .scriptTap {
     width: 12.5vw;
@@ -401,7 +385,8 @@ h2.ftitle {
     width: 100%;
     height: 100%;
     color: #fff;
-    background: #999;
+    background: #18181b;
+    border-radius: 10px 10px 0 0;
 }
 .title-bar .tap a.active {
     background: #35363A;
@@ -411,7 +396,8 @@ h2.ftitle {
     z-index: 20;
     /* width: 885px; height: 460px; 원래크기. 반응형때문에 잠시 주석 */
     width: 46.094vw; height: 460px;
-    background: white; 
+    background: #272822; 
+    overflow: auto;
 }
 
 .menu-content {
@@ -434,31 +420,35 @@ h2.ftitle {
     padding: 0 15px;
     box-sizing: border-box;
     width: 108px;
-    height: 40px;
+    height: 37px;
     /* background: #35363A; */
 }
 .option-bar .arrowL {
     width: 14px;
+    height: 13px;
     margin-right: 18px;
 }
 .option-bar .arrowL svg {}
 .option-bar .arrowR {
     width: 14px;
+    height: 13px;
     margin-right: 18px;
 }
 .option-bar .arrowR svg {}
 .option-bar .redo {
     width: 14px;
+    height: 13px;
 }
 .option-bar .redo svg {}
 
 .option-bar .address-box {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     /* width: 84%; */
     width: 742px;
-    height: 40px;
+    height: 39px;
     background: #35363A;
     color: #fff;
 }
@@ -470,6 +460,9 @@ h2.ftitle {
     background: #202124;
     border-radius: 30px;
 }
+.option-bar .address-box .address p {
+    position: absolute; top: 9px; left: 33px;
+}
 .option-bar .address-box .address span {
     padding: 0 13px 0 14px;
 }
@@ -479,11 +472,31 @@ h2.ftitle {
     align-items: center;
     /* width: 4%; */
     width: 44px;
-    height: 100%;
+    height: 37px;
     background: #35363A;
 }
 .option-bar .dot .dot-box {
     width: 4px;
+    height: 14px;
 }
-
+/* .justsquare {
+    position: absolute; top: -8px; left: 70px;
+    width: 38.333vw;
+    height: 8px;
+    background: #35363A;
+}
+.justcircle1 {
+    position: absolute; top: -16px; left: 62px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #202124;
+}
+.justcircle2 {
+    position: absolute; top: -16px; right: 80px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #202124;
+} */
 
