@@ -7,13 +7,15 @@ body {
 /* cursor */
 .cursor {
     position: absolute;
-    width: 15.625vw; height: 15.625vw;
+    /* width: 15.625vw; height: 15.625vw; */
+    width: 20vw; height: 20vw;
     border-radius: 50%;
     user-select: none;
     pointer-events: none;
     background: url(../img/mainbg.jpg) no-repeat center center fixed; /* body에 있는거 그래도 사용하는데 꼭 background-attachment: fixed가 추가되어야 한다.*/
     background-size: cover; /* 이게 없으면 실제 이미지 크기만큼의 영역이 생겨버린다.*/
-    box-shadow: 0px 0px 50px inset white, 0px 0px 50px inset white;
+    /* box-shadow: 0px 0px 50px inset white, 0px 0px 50px inset white; */
+    opacity: 1;
 }
 .cursor.hidden {
     display: none;
@@ -42,7 +44,8 @@ body {
     justify-content: center;
     align-items: center;
 }
-.big-title p {
+.big-title div {
+    position: relative;
     font-family: 'Ilisarniq-Black';
     height: 350px;
     font-size: 10.4vw;
@@ -57,6 +60,14 @@ body {
     -o-text-fill-color: 2px #fff;
     -o-text-stroke: 2px #fff;
 }
+/* 위 div에 클래스를 주면 .underline이 width가 상속이
+되지 않음 또한 div를 p로 하면 아예 안됨 */
+.underline {
+    position: absolute; top: -30px; left: 0;
+    width: inherit;
+    height: 10px !important;
+    border: 2px solid white;
+}
 
 /* section1 */
 #section1 {
@@ -66,6 +77,8 @@ body {
 }
 .section1 {
     position: relative;
+    transform: skew(0deg, 0deg);
+    opacity: 1;
 }
 .section1 .s1-title {
     position: absolute; left: 0; top: 10vw;
@@ -460,13 +473,17 @@ h2.ftitle {
     background: #202124;
     border-radius: 30px;
 }
-.option-bar .address-box .address p {
+.option-bar .address-box .address .address-target {
     position: absolute; top: 9px; left: 33px;
+    display: none;
+}
+.option-bar .address-box .address .address-target.show {
+    display: block;
 }
 .option-bar .address-box .address span {
     padding: 0 13px 0 14px;
 }
-.option-bar .dot {
+.option-bar .dot-box {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -475,7 +492,7 @@ h2.ftitle {
     height: 37px;
     background: #35363A;
 }
-.option-bar .dot .dot-box {
+.option-bar .dot-box .dot {
     width: 4px;
     height: 14px;
 }

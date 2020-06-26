@@ -16,14 +16,18 @@
 </head>
 <body>
     <section id="contents">
-        <div class="cursor"></div>
+        <div class="cursor"
+            data-0 = "opacity: 1;"
+            data-800 = "opacity: 0;"></div>
         <!-- //cursor -->
 
         <div id="section1">
             <div class="container">
-                <div class="section1">
+                <div class="section1"
+                    data-0 = "transform: skew(0deg, 0deg); opacity: 1;"
+                    data-800 = "transform: skew(0deg, 10deg); opacity: 0;">
                     <div class="s1-title">
-                        <h1>
+                        <h1> 
                             <span>you can see hj's</span><br>
                             portpolio
                         </h1>
@@ -47,7 +51,9 @@
         <div id="big-title">
             <div class="container">
                 <div class="big-title">
-                    <p>site</p>
+                    <div>site
+                        <div class="underline"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -107,7 +113,7 @@
                             </div>
                             <div class="title-bar">
                                 <div class="tap htmlTap">
-                                    <a class="active" href="#">HTML</a>
+                                    <a class="active target" href="#">HTML</a>
                                     <div class="code-content">
                                         <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang="ko"&gt;
@@ -212,7 +218,7 @@
                                     </div>
                                 </div>
                                 <div class="tap cssTap">
-                                    <a href="#">CSS</a>
+                                    <a class="target" href="#">CSS</a>
                                     <div class="code-content">
                                         <pre class="line-numbers"><code class="language-css">/* 스킵 네비게이션 */
 #skip {position: relative;}
@@ -228,7 +234,7 @@
                                     </div>
                                 </div>
                                 <div class="tap scriptTap">
-                                    <a href="#">SCRIPT</a>
+                                    <a class="target" href="#">SCRIPT</a>
                                     <div class="code-content">
                                         <pre class="line-numbers"><code class="language-js">const sliderWrap = $(".slider-wrap");
 const sliderImg = $(".slider-img");
@@ -272,13 +278,13 @@ let timer = "";
                                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M4 0C2.61929 0 1.5 1.11929 1.5 2.5V3.5H1C0.447715 3.5 0 3.94772 0 4.5V9.5C0 10.0523 0.447715 10.5 1 10.5H7C7.55228 10.5 8 10.0523 8 9.5V4.5C8 3.94772 7.55228 3.5 7 3.5H6.5V2.5C6.5 1.11929 5.38071 0 4 0ZM5.5 3.5V2.5C5.5 1.67157 4.82843 1 4 1C3.17157 1 2.5 1.67157 2.5 2.5V3.5H5.5Z" fill="#EAEAEA"/>
                                             </svg>
                                         </span>
-                                        <p>hyunjin912.github.io/portfolio/index.html</p>
-                                        <p>hyunjin912.github.io/portfolio/index.css</p>
-                                        <p>hyunjin912.github.io/portfolio/index.script</p>
+                                        <div class="address-target">hyunjin912.github.io/portfolio/index.html</div>
+                                        <div class="address-target show">hyunjin912.github.io/portfolio/index.css</div>
+                                        <div class="address-target">hyunjin912.github.io/portfolio/index.script</div>
                                     </div>
                                 </div> 
-                                <div class="dot">
-                                    <div class="dot-box">
+                                <div class="dot-box">
+                                    <div class="dot">
                                         <svg width="4" height="14" viewBox="0 0 4 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M3.5 2.1001C3.5 2.92852 2.82843 3.6001 2 3.6001C1.17157 3.6001 0.5 2.92852 0.5 2.1001C0.5 1.27167 1.17157 0.600098 2 0.600098C2.82843 0.600098 3.5 1.27167 3.5 2.1001Z" fill="#F1F3F4"/>
                                             <path d="M3.5 7.1001C3.5 7.92852 2.82843 8.6001 2 8.6001C1.17157 8.6001 0.5 7.92852 0.5 7.1001C0.5 6.27167 1.17157 5.6001 2 5.6001C2.82843 5.6001 3.5 6.27167 3.5 7.1001Z" fill="#F1F3F4"/>
@@ -364,10 +370,32 @@ let timer = "";
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/gsap.min.js"></script>
     <script src="js/prism.js"></script>
+    <script src="../script/parallax/js/skrollr.min.js"></script>
     <script src="js/custom.js"></script>
     <script>
-        let $tapButtons = $(".tap > a");
-        console.log($tapButtons)
+        var s = skrollr.init();
+        // var $tapButtons = document.querySelectorAll(".target");
+        // var $address = document.querySelectorAll(".address-target");
+
+        // $tapButtons.each(function(idx){
+        //     console.log(idx);
+        //     console.log( $address[idx] )
+        // });
+        // $tapButtons.click(function(index){
+        //     console.log(index);
+        // });
+
+        // function handler(){
+        //     for(var i = 0; i < $tapButtons.length; i++){
+        //         $address[i].classList.remove("show")
+        //     }
+        //     $address[i].classList.add("show");
+        // }   
+
+        // for(var i = 0; i < $tapButtons.length; i++){
+        //     $tapButtons[i].addEventListener("click", handler);
+        // }
+    
     </script>
 </body>
 </html>

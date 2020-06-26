@@ -31,8 +31,8 @@ $(".title-bar a").click(function(e){
     e.preventDefault();
     $(this).addClass("active").next().show().parent().siblings().find("a").removeClass("active").next().hide();
 
-
 });
+
 
 
 
