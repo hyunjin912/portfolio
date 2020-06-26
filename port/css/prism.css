@@ -34,7 +34,7 @@ pre[class*="language-"] {
 pre[class*="language-"] {
 	padding: 1em;
 	margin: .5em 0;
-	overflow: auto;
+	/* overflow: auto; x축스크롤이 이상해서 주석표시함 */
 	border-radius: 0.3em;
 }
 
