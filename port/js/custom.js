@@ -1433,5 +1433,3 @@ $(".s5-circleAll").click(function(e){
 let Width =$(".ani1-1").outerWidth();
 console.log("width : "+Width);
 
-
-

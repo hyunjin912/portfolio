@@ -1,36 +1,34 @@
 body {
     background-color: #1B1B1B;
-    
     overflow-x: hidden;
 }
 #big-title {
-    position: relative; z-index: 10000;
+    position: relative; z-index: 1000;
     background: #1b1b1b;
 }
 #section1 {
     position: relative;
-    z-index: 10000;
+    z-index: 1000;
     background: #1b1b1b;
 }
 .section2 {
     position: relative;
-    z-index: 10000;
-    height: 220vh;
+    z-index: 1000;
     background: #1b1b1b;
 }
-#section3 {
+.section3 {
     position: relative;
-    z-index: 10000;
+    z-index: 1000;
     background: #1b1b1b;
 }
-#section4 {
+.section4 {
     position: relative;
-    z-index: 10000;
+    z-index: 1000;
     background: #1b1b1b;
 }
-#section5 {
+.section5 {
     position: relative;
-    z-index: 10000;
+    z-index: 1000;
     background: #1b1b1b;
 }
 #section6 {}
@@ -47,7 +45,7 @@ body {
     background-size: cover; /* 이게 없으면 실제 이미지 크기만큼의 영역이 생겨버린다.*/
     /* box-shadow: 0px 0px 50px inset white, 0px 0px 50px inset white; */
     opacity: 1;
-    z-index: 2000;
+    z-index: 1001;
 }
 /* .cursor.hidden {
     display: none;
@@ -266,6 +264,7 @@ h2.ftitle {
 }
 .s2-circleAll:hover {
     color: #fff;
+    background: #12DA97;
 }
 .circle-wrap1 {
     position: absolute; top: 67vw; left: 62vw;
@@ -281,8 +280,15 @@ h2.ftitle {
     width: 5.208vw; height: 5.208vw;
     border: 2px solid #12DA97;
     border-radius: 50%;
+    transition: background .2s;
 }
-.circle-wrap1 .circle1 {}
+.circle-wrap1 .s2-circle1 {
+    animation: s2-c1 8s linear infinite;
+}
+@keyframes s2-c1 {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
 .circle-wrap2 {
     position: absolute; top: 74vw; left: 73vw;
     font-family: 'Ilisarniq-Regular';
@@ -297,8 +303,15 @@ h2.ftitle {
     width: 7.083vw; height: 7.083vw;
     border: 2px solid #12DA97;
     border-radius: 50%;
+    transition: background .2s;
 }
-.circle-wrap2 .circle2 {}
+.circle-wrap2 .s2-circle2 {
+    animation: s2-c2 4s linear infinite;
+}
+@keyframes s2-c2 {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(-360deg);}
+}
 .circle-wrap3 {
     position: absolute; top: 87vw; left: 70vw;
     font-family: 'Ilisarniq-Regular';
@@ -313,8 +326,15 @@ h2.ftitle {
     width: 3.333vw; height: 3.333vw;
     border: 2px solid #12DA97;
     border-radius: 50%;
+    transition: background .2s;
 }
-.circle-wrap3 .circle3 {}
+.circle-wrap3 .s2-circle3 {
+    animation: s2-c3 7s linear infinite;
+}
+@keyframes s2-c3 {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(-360deg);}
+}
 .circle-wrap4 {
     position: absolute; top: 91vw; left: 83.4vw;
     font-family: 'Ilisarniq-Regular';
@@ -329,8 +349,15 @@ h2.ftitle {
     width: 5.208vw; height: 5.208vw;
     border: 2px solid #12DA97;
     border-radius: 50%;
+    transition: background .2s;
 }
-.circle-wrap4 .circle4 {}
+.circle-wrap4 .s2-circle4 {
+    animation: s2-c4 15s linear infinite;
+}
+@keyframes s2-c4 {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
 
 .left-chromebox {position: relative;}
 .left-chromebox .left-chromewrap {
@@ -563,9 +590,11 @@ h2.ftitle {
 }
 .s3-circleAll {
     border-color: #7A2415;
+    transition: background .2s;
 }
 .s3-circleAll:hover {
     color: #fff;
+    background: #7a2415;
 }
 .s3-circle-w1 {width: 7.1vw; height: 7.1vw;}
 .s3-circle-w2 {
@@ -575,6 +604,27 @@ h2.ftitle {
 .s3-circle-w3 {
     width: 7.4vw; height: 7.4vw;
     top: 89vw; left: 72vw;
+}
+.s3-circle1 {
+    animation: s3-c1 8s linear infinite;
+}
+@keyframes s3-c1 {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+.s3-circle2 {
+    animation: s3-c2 4s linear infinite;
+}
+@keyframes s3-c2 {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(-360deg);}
+}
+.s3-circle3 {
+    animation: s3-c3 12s linear infinite;
+}
+@keyframes s3-c3 {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
 }
 
 /* section4 */
@@ -689,8 +739,12 @@ h2.ftitle2 {
     font-size: 0.938vw;
     text-transform: uppercase;
 }
+.s4-circleAll {
+    transition: background .2s;
+}
 .s4-circleAll:hover {
     color: #fff;
+    background: #72652e;
 }
 .circle-wrap5 {
     position: absolute; top: 67vw; right: 62vw;
@@ -707,7 +761,13 @@ h2.ftitle2 {
     border: 2px solid #72652E;
     border-radius: 50%;
 }
-.circle-wrap5 .circle5 {}
+.circle-wrap5 .s4-circle5 {
+    animation: s4-c5 12s linear infinite;
+}
+@keyframes s4-c5 {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(-360deg);}
+}
 .circle-wrap6 {
     position: absolute; top: 77vw; right: 82vw;
     font-family: 'Ilisarniq-Regular';
@@ -723,7 +783,13 @@ h2.ftitle2 {
     border: 2px solid #72652E;
     border-radius: 50%;
 }
-.circle-wrap6 .circle6 {}
+.circle-wrap6 .s4-circle6 {
+    animation: s4-c6 5s linear infinite;
+}
+@keyframes s4-c6 {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
 .circle-wrap7 {
     position: absolute; top: 89vw; right: 72vw;
     font-family: 'Ilisarniq-Regular';
@@ -739,7 +805,13 @@ h2.ftitle2 {
     border: 2px solid #72652E;
     border-radius: 50%;
 }
-.circle-wrap7 .circle7 {}
+.circle-wrap7 .s4-circle7 {
+    animation: s4-c7 9s linear infinite;
+}
+@keyframes s4-c7 {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(-360deg);}
+}
 /* .circle-wrap8 {
     position: absolute; top: 91vw; right: 83.4vw;
     font-family: 'Ilisarniq-Regular';
@@ -755,7 +827,7 @@ h2.ftitle2 {
     border: 2px solid #72652E;
     border-radius: 50%;
 }
-.circle-wrap8 .circle8 {} */
+.circle-wrap8 .s4-circle8 {} */
 
 .right-chromebox {position: relative;}
 .right-chromebox .right-chromewrap {
@@ -1008,27 +1080,49 @@ h2.ftitle2 {
     font-size: 0.938vw;
     text-transform: uppercase;
 }
+.s5-circleAll {
+    transition: background .2s;
+}
 .s5-circleAll:hover {
     color: #fff;
+    background: #0d5cd1;
 }
 .s5-circle-w1 {
     position: absolute; top: 67vw; right: 62vw;
     width: 7.4vw; height: 7.4vw;
     border: 2px solid #0D5CD1;
 }
-.s5-circle-w1 .circle5 {}
+.s5-circle-w1 .s5-circle5 {
+    animation: s5-c5 5s linear infinite;
+}
+@keyframes s5-c5 {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(-360deg);}
+}
 .s5-circle-w2 {
     position: absolute; top: 77vw; right: 86vw;
     width: 2.9vw; height: 2.9vw;
     border: 2px solid #0D5CD1;
 }
-.s5-circle-w2 .circle6 {}
+.s5-circle-w2 .s5-circle6 {
+    animation: s5-c6 10s linear infinite;
+}
+@keyframes s5-c6 {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
 .s5-circle-w3 {
     position: absolute; top: 89vw; right: 76vw;
     width: 6.3vw; height: 6.3vw;
     border: 2px solid #0D5CD1;
 }
-.s5-circle-w3 .circle7 {}
+.s5-circle-w3 .s5-circle7 {
+    animation: s5-c7 8s linear infinite;
+}
+@keyframes s5-c7 {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(-360deg);}
+}
 /* .circle-wrap8 {
     position: absolute; top: 91vw; right: 83.4vw;
     font-family: 'Ilisarniq-Regular';
@@ -1044,7 +1138,7 @@ h2.ftitle2 {
     border: 2px solid #72652E;
     border-radius: 50%;
 }
-.circle-wrap8 .circle8 {} */
+.circle-wrap8 .s5-circle8 {} */
 
 .right-chromebox {position: relative;}
 .right-chromebox .right-chromewrap {
