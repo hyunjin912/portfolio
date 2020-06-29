@@ -1229,3 +1229,31 @@ h2.ftitle2 {
     border-radius: 50%;
     background: #202124;
 } */
+
+/* section6 */
+#section6 {
+    height: 100vh;
+}
+.section6 {}
+.aniText1,
+.aniText2,
+.collText1,
+.collText2 {
+    font-size: 200px;
+    font-family: 'Ilisarniq-Black';
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px #fff;
+    -moz-text-fill-color: transparent;
+    -moz-text-stroke: 2px #fff;
+    -ms-text-fill-color: transparent;
+    -ms-text-stroke: 2px #fff;
+    -o-text-fill-color: 2px #fff;
+    -o-text-stroke: 2px #fff;
+    position: relative;
+    white-space: nowrap;
+    text-transform: uppercase;
+    display: flex;
+}
+.collTextWrap {
+    display: flex;
+}
