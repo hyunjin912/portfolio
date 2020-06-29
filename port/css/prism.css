@@ -165,3 +165,39 @@ pre[class*="language-"].line-numbers > code {
 			text-align: right;
 		}
 
+/* scrollbar */
+.code-content::-webkit-scrollbar {
+	width: 10px;  /* 세로축 스크롤바 길이 */
+	height: 10px; /* 가로축 스크롤바 길이 */
+}
+.code-content::-webkit-scrollbar-track {
+	background-color: lightblue;
+}
+.code-content::-webkit-scrollbar-track-piece {
+	background-color: gray;
+}
+.code-content::-webkit-scrollbar-thumb {
+	border-radius: 8px;
+	background-color: black;
+}
+.code-content::-webkit-resizer {
+	background-color: green;
+}
+
+.code-content2::-webkit-scrollbar {
+	width: 10px;  /* 세로축 스크롤바 길이 */
+	height: 10px; /* 가로축 스크롤바 길이 */
+}
+.code-content2::-webkit-scrollbar-track {
+	background-color: lightblue;
+}
+.code-content2::-webkit-scrollbar-track-piece {
+	background-color: gray;
+}
+.code-content2::-webkit-scrollbar-thumb {
+	border-radius: 8px;
+	background-color: black;
+}
+.code-content2::-webkit-resizer {
+	background-color: green;
+}

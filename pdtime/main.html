@@ -100,7 +100,6 @@
         $(".hoverText").on("mouseover","a", function(e){
             e.preventDefault();
             shak();
-        
         });
         
         function shak(){
@@ -108,11 +107,9 @@
             slides.eq(previousIndex).fadeOut(700);
             slides.eq(currentIndex).fadeIn(700);
 
-           
-
             console.log("previousIndex :"+previousIndex)
             console.log("currentIndex :"+currentIndex)
-            
+
             previousIndex = currentIndex;
         }
         

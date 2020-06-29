@@ -1116,3 +1116,306 @@ $(".s4-circleAll").click(function(e){
     $("code.lj3").html(jsText3[$(this).index()]);
     TextColor();
 });
+
+/* section5 */
+/* code tap-menu */
+$(".title-bar2 a").click(function(e){
+    e.preventDefault();
+    $(this).addClass("active2").next().show().parent().siblings().find("a").removeClass("active2").next().hide();
+
+});
+
+let htmlText4 = [];
+htmlText4.push(`&lt;!-- slider --&gt;
+&lt;div class="slider-wrap"&gt;
+    &lt;div class="slider-img"&gt;
+        &lt;div class="slides s1"&gt;&lt;img src="img/about_hover.jpg" alt="이미지1"&gt;&lt;/div&gt;
+        &lt;div class="slides s2"&gt;&lt;img src="img/model_hover.jpg" alt="이미지2"&gt;&lt;/div&gt;
+        &lt;div class="slides s3"&gt;&lt;img src="img/event_hover.jpg" alt="이미지3"&gt;&lt;/div&gt;
+        &lt;div class="slides s4"&gt;&lt;img src="img/support_hover.jpg" alt="이미지4"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="main"&gt;
+    &lt;div class="notice"&gt;
+        &lt;div class="notice-cont"&gt;
+            이 사이트는 포트폴리오를 위해 만들어진 사이트 입니다.
+        &lt;/div&gt;
+        &lt;div class="notice-btn"&gt;
+            &lt;a class="notice-btn" href="#"&gt;&lt;i class="fas fa-times"&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;/div&gt;
+       
+    &lt;/div&gt;
+    &lt;div class="container"&gt;
+        &lt;header class="header"&gt;
+            &lt;h1&gt;&lt;a href="main.html"&gt;&lt;img src="img/logo.png" alt="로고"&gt;&lt;/a&gt;&lt;/h1&gt;
+            &lt;ul class="nav"&gt;
+                &lt;li&gt;&lt;a href="about.html" class="link1"&gt;about&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="works.html"&gt;works&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="consulting.html"&gt;consulting&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="contact.html"&gt;contact&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/header&gt;
+        &lt;div class="stit"&gt;
+            Beyond design,&lt;br&gt;
+            Presentation paradigm
+        &lt;/div&gt;
+        &lt;div class="btit"&gt;
+            프레젠테이션&lt;br&gt;
+            패러다임을 바꾸다!
+        &lt;/div&gt;
+        &lt;div class="imgWrap"&gt;
+            &lt;img src="img/line.png" alt=""&gt;
+        &lt;/div&gt;
+        &lt;ul class="hoverText"&gt;
+            &lt;li&gt;&lt;a href="#" class="hover1"&gt;about&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#" class="hover2"&gt;model&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#" class="hover3"&gt;event&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#" class="hover4"&gt;support&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;`);
+
+htmlText4.push(`&lt;div class="two-cont"&gt;
+    &lt;div class="ourservice-tit"&gt;Our Service .&lt;/div&gt;
+    &lt;div class="ourservice-cont"&gt;
+        &lt;div class="mid-cont mid-cont1"&gt;
+            &lt;div class="mid-cont-img"&gt;&lt;img src="img/about_c1.jpg" alt=""&gt;&lt;/div&gt;
+            &lt;div class="mid-cont-tit-eng"&gt;Conference Presentation&lt;/div&gt;
+            &lt;div class="mid-cont-tit-kor"&gt;컨퍼런스 프레젠테이션 제작 컨설팅&lt;/div&gt;
+            &lt;div class="mid-cont-line"&gt;&lt;img src="img/about_line.jpg" alt=""&gt;&lt;/div&gt;
+            &lt;div class="mid-cont-cont"&gt;
+                &lt;strong&gt;·&lt;/strong&gt;&nbsp; 모터쇼 / 제품 / 사내행사 컨퍼런스
+                &lt;br&gt;
+                &lt;strong&gt;·&lt;/strong&gt;&nbsp; 전략발표 / 경영회의 / 마케팅 컨퍼런스
+                &lt;br&gt;
+                &lt;strong&gt;·&lt;/strong&gt;&nbsp; 키노트 / 영상 프레젠테이션
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="mid-cont mid-cont2"&gt;
+            &lt;div class="mid-cont-img"&gt;&lt;img src="img/about_c2.jpg" alt=""&gt;&lt;/div&gt;
+            &lt;div class="mid-cont-tit-eng"&gt;PR, Marketing Presentation&lt;/div&gt;
+            &lt;div class="mid-cont-tit-kor"&gt;홍보 프레젠테이션 제작 컨설팅&lt;/div&gt;
+            &lt;div class="mid-cont-line"&gt;&lt;img src="img/about_line.jpg" alt=""&gt;&lt;/div&gt;
+            &lt;div class="mid-cont-cont"&gt;
+                &lt;strong&gt;·&lt;/strong&gt;&nbsp; 회사소개서 프레젠테이션 기획/ 디자인 &lt;!-- ㄱ한자로 미드 닷 사용 --&gt;
+                &lt;br&gt;
+                &lt;strong&gt;·&lt;/strong&gt;&nbsp; 정부 및 기관 홍보 프레젠테이션 기획 / 디자인
+                &lt;br&gt;
+                &lt;strong&gt;·&lt;/strong&gt;&nbsp; 신제품 런칭 / 서비스 소개 프레젠테이션
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="mid-cont mid-cont3"&gt;
+            &lt;div class="mid-cont-img"&gt;&lt;img src="img/about_c3.jpg" alt=""&gt;&lt;/div&gt;
+            &lt;div class="mid-cont-tit-eng"&gt;Proposal Presentation&lt;/div&gt;
+            &lt;div class="mid-cont-tit-kor"&gt;컨퍼런스 프레젠테이션 제작 컨설팅&lt;/div&gt;
+            &lt;div class="mid-cont-line"&gt;&lt;img src="img/about_line.jpg" alt=""&gt;&lt;/div&gt;
+            &lt;div class="mid-cont-cont"&gt;
+                &lt;strong&gt;·&lt;/strong&gt;&nbsp; 모터쇼 / 제품 / 사내행사 컨퍼런스
+                &lt;br&gt;
+                &lt;strong&gt;·&lt;/strong&gt;&nbsp; 전략발표 / 경영회의 / 마케팅 컨퍼런스
+                &lt;br&gt;
+                &lt;strong&gt;·&lt;/strong&gt;&nbsp; 키노트 / 영상 프레젠테이션
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="mid-cont mid-cont4"&gt;
+            &lt;div class="mid-cont-img"&gt;&lt;img src="img/about_c4.jpg" alt=""&gt;&lt;/div&gt;
+            &lt;div class="mid-cont-tit-eng"&gt;Conference Presentation&lt;/div&gt;
+            &lt;div class="mid-cont-tit-kor"&gt;컨퍼런스 프레젠테이션 제작 컨설팅&lt;/div&gt;
+            &lt;div class="mid-cont-line"&gt;&lt;img src="img/about_line.jpg" alt=""&gt;&lt;/div&gt;
+            &lt;div class="mid-cont-cont"&gt;
+                &lt;strong&gt;·&lt;/strong&gt;&nbsp; 모터쇼 / 제품 / 사내행사 컨퍼런스
+                &lt;br&gt;
+                &lt;strong&gt;·&lt;/strong&gt;&nbsp; 전략발표 / 경영회의 / 마케팅 컨퍼런스
+                &lt;br&gt;
+                &lt;strong&gt;·&lt;/strong&gt;&nbsp; 키노트 / 영상 프레젠테이션
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="mid-cont mid-cont5"&gt;
+            &lt;div class="mid-cont-img"&gt;&lt;img src="img/about_c5.jpg" alt=""&gt;&lt;/div&gt;
+            &lt;div class="mid-cont-tit-eng"&gt;Conference Presentation&lt;/div&gt;
+            &lt;div class="mid-cont-tit-kor"&gt;컨퍼런스 프레젠테이션 제작 컨설팅&lt;/div&gt;
+            &lt;div class="mid-cont-line"&gt;&lt;img src="img/about_line.jpg" alt=""&gt;&lt;/div&gt;
+            &lt;div class="mid-cont-cont"&gt;
+                &lt;strong&gt;·&lt;/strong&gt;&nbsp; 모터쇼 / 제품 / 사내행사 컨퍼런스
+                &lt;br&gt;
+                &lt;strong&gt;·&lt;/strong&gt;&nbsp; 전략발표 / 경영회의 / 마케팅 컨퍼런스
+                &lt;br&gt;
+                &lt;strong&gt;·&lt;/strong&gt;&nbsp; 키노트 / 영상 프레젠테이션
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="mid-cont mid-cont6"&gt;
+            &lt;div class="mid-cont-img"&gt;&lt;img src="img/about_c6.jpg" alt=""&gt;&lt;/div&gt;
+            &lt;div class="mid-cont-tit-eng"&gt;Conference Presentation&lt;/div&gt;
+            &lt;div class="mid-cont-tit-kor"&gt;컨퍼런스 프레젠테이션 제작 컨설팅&lt;/div&gt;
+            &lt;div class="mid-cont-line"&gt;&lt;img src="img/about_line.jpg" alt=""&gt;&lt;/div&gt;
+            &lt;div class="mid-cont-cont"&gt;
+                &lt;strong&gt;·&lt;/strong&gt;&nbsp; 모터쇼 / 제품 / 사내행사 컨퍼런스
+                &lt;br&gt;
+                &lt;strong&gt;·&lt;/strong&gt;&nbsp; 전략발표 / 경영회의 / 마케팅 컨퍼런스
+                &lt;br&gt;
+                &lt;strong&gt;·&lt;/strong&gt;&nbsp; 키노트 / 영상 프레젠테이션
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- //two-cont --&gt;`);
+
+htmlText4.push(`&lt;!-- Google Map API의 html은 제공된 태그만 사용합니다. --&gt;
+&lt;div id="map"&gt;&lt;/div&gt;`);
+
+let cssText4 = [];
+cssText4.push(`ul.hoverText {
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+ul.hoverText li {
+    margin-bottom: 10px;
+}
+ul.hoverText li:last-child {
+    margin-bottom: 0;
+}
+ul.hoverText li a {
+    color: #fff;
+}`);
+
+cssText4.push(`.two-cont {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 27% 73%;
+        grid-template-columns: 27% 73%;
+}
+.two-cont .ourservice-tit {
+    padding-top: 105px;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #1d1d1d;
+}
+.two-cont .ourservice-cont {
+    padding-top: 100px;
+    margin-left: -2px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: (1fr)[2];
+        grid-template-rows: repeat(2, 1fr);
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.mid-cont {
+    padding-right: 10px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.mid-cont .mid-cont-img {
+    width: 100%;
+}
+.mid-cont .mid-cont-tit-eng {
+    font-size: 18.5px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-top: 15px;
+}
+.mid-cont .mid-cont-tit-kor {
+    font-size: 16px;
+    letter-spacing: -1.5px;
+}
+.mid-cont .mid-cont-line img {
+    margin: 20px 0;
+    width: 20px;
+}
+.mid-cont .mid-cont-cont {
+    font-size: 14.5px;
+    letter-spacing: -1.2px;
+    color: #545454;
+    margin-top: 0px;
+    line-height: 23px;
+}
+.mid-cont4, .mid-cont5, .mid-cont6 {
+    margin-top: 15px;
+}
+.three-cont {
+    padding: 100px 0 250px 0;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 27% 73%;
+        grid-template-columns: 27% 73%;
+}
+.three-cont .clients-tit {
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #1d1d1d;
+}
+.three-cont .clients-cont img {
+    width: 100%;
+}`);
+
+cssText4.push(`/* Google Map API에 관한 css는 없습니다.*/`);
+
+let jsText4 = [];
+jsText4.push(`//메인화면 이미지 체인지
+let slideWrap = $(".slide-wrap");
+let slideImg = $(".slide-img");
+let slides = $(".slides");
+
+let previousIndex = 0;           
+let slideCount = slides.length;  
+
+$(".hoverText").on("mouseover","a", function(e){
+    e.preventDefault();
+    shak();
+});
+
+function shak(){
+    let currentIndex = (previousIndex - 1) % slideCount;
+    slides.eq(previousIndex).fadeOut(700);
+    slides.eq(currentIndex).fadeIn(700);
+
+    console.log("previousIndex :"+previousIndex)
+    console.log("currentIndex :"+currentIndex)
+
+    previousIndex = currentIndex;
+}`);
+
+jsText4.push(`// 그리드에 관한 script는 없습니다.`);
+
+jsText4.push(`// Initialize and add the map
+function initMap() {
+// The location of Uluru
+var uluru = {lat: -25.344, lng: 131.036};
+// The map, centered at Uluru
+var map = new google.maps.Map(
+    document.getElementById('map'), {zoom: 4, center: uluru});
+// The marker, positioned at Uluru
+var marker = new google.maps.Marker({position: uluru, map: map});
+}
+
+&lt;!--Load the API from the specified URL
+* The async attribute allows the browser to render the page while the API loads
+* The key parameter will contain your own API key (which is not needed for this tutorial)
+* The callback parameter executes the initMap() function
+--&gt;
+&lt;script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcpoQX6_z0JdS1WitwlwMvwClhif4omgM&callback=initMap"&gt;
+&lt;/script&gt;`);
+
+// // 처음 보이기 위한 화면
+$(".s5-title-bar").find("div > div").hide().eq(0).show();
+$("code.lh4").html(htmlText4[0]);
+$("code.lc4").html(cssText4[0]);
+$("code.lj4").html(jsText4[0]);
+
+$(".s5-circleAll").click(function(e){
+    e.preventDefault();
+    console.log($("code.lh4"));
+    $("code.lh4").html(htmlText4[$(this).index()]);
+    $("code.lc4").html(cssText4[$(this).index()]);
+    $("code.lj4").html(jsText4[$(this).index()]);
+    TextColor();
+});
+
