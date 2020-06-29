@@ -507,91 +507,6 @@ let htmlText3 = [];
 htmlText3.push(`&lt;ul class="menu-wrap"&gt;
     &lt;li class="color"&gt;
         &lt;a href="#menu-name" class="menu-name"&gt;전체&lt;/a&gt;
-        &lt;ul class="sub-name"&gt;
-            &lt;li class="li-1"&gt;
-                &lt;a href="#li-1" class="clearfix"&gt;&lt;img src="assets/img/question.jpg" alt=""&gt;&lt;span&gt;[전체] 새우깡과 매운 새우깡의 열량이 차이가 나는 이유는 매운 맛 때문인가요?&lt;/span&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"&gt;
-                        &lt;path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/&gt;
-                        &lt;path d="M0 0h24v24H0z" fill="none"/&gt;
-                    &lt;/svg&gt;
-                &lt;/a&gt;
-                &lt;div class="opencont"&gt;매운새우깡과 새우깡의 열량차는 단순히 DHA 첨가에 기인하지는 않으며 매운새우깡의 시즈닝의 경우도 단순한 매운맛 시즈닝이 아닌 복합된 원료를 사용합니다.&lt;/div&gt;
-            &lt;/li&gt;
-            &lt;li class="li-2"&gt;
-                &lt;a href="#li-2" class="clearfix"&gt;&lt;img src="assets/img/question.jpg" alt=""&gt;&lt;span&gt;[전체] 견학 신청은 어떻게 해야하나요?&lt;/span&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"&gt;
-                        &lt;path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/&gt;
-                        &lt;path d="M0 0h24v24H0z" fill="none"/&gt;
-                    &lt;/svg&gt;
-                &lt;/a&gt;
-                &lt;div class="opencont"&gt;공장 견학 신청은 매달 1~4일 농심 홈페이지 [홍보센터] &gt; [공장견학] &gt; [견학신청] 에서 로그인 후 신청하실 수 있습니다. 신청자들을 대상으로 추첨을 통해 선정하고 있습니다. &lt;a href="#"&gt;[농심 공장견학 신청 바로가기] 링크&lt;/a&gt;&lt;/div&gt;
-            &lt;/li&gt;
-            &lt;li class="li-3"&gt;
-                &lt;a href="#li-3" class="clearfix"&gt;&lt;img src="assets/img/question.jpg" alt=""&gt;&lt;span&gt;[전체] 공장 견학 시 중식 제공을 하나요?&lt;/span&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"&gt;
-                        &lt;path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/&gt;
-                        &lt;path d="M0 0h24v24H0z" fill="none"/&gt;
-                    &lt;/svg&gt;
-                &lt;/a&gt;
-                &lt;div class="opencont"&gt;중식은 제공되지 않습니다.&lt;/div&gt;
-            &lt;/li&gt;
-            &lt;li class="li-4"&gt;
-                &lt;a href="#li-4" class="clearfix"&gt;&lt;img src="assets/img/question.jpg" alt=""&gt;&lt;span&gt;[전체] 공장 견학 시 제품 시식 기회가 주어지나요?&lt;/span&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"&gt;
-                        &lt;path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/&gt;
-                        &lt;path d="M0 0h24v24H0z" fill="none"/&gt;
-                    &lt;/svg&gt;
-                &lt;/a&gt;
-                &lt;div class="opencont"&gt;농심 공장을 견학하시면 견학을 마친 후에 저희가 마련한 답례품을 드립니다. 답례품은 농심에서 생산한 주요 제품들로 구성되어 있습니다.&lt;/div&gt;
-            &lt;/li&gt;
-            &lt;li class="li-5"&gt;
-                &lt;a href="#li-5" class="clearfix"&gt;&lt;img src="assets/img/question.jpg" alt=""&gt;&lt;span&gt;[전체] 견학 가능한 대상은 어떠한가요?&lt;/span&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"&gt;
-                        &lt;path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/&gt;
-                        &lt;path d="M0 0h24v24H0z" fill="none"/&gt;
-                    &lt;/svg&gt;
-                &lt;/a&gt;
-                &lt;div class="opencont"&gt;견학 대상 인원은 견학을 희망하는 모든 2~30명 이상의 단체(초등학교 3학년 이상)면 가능합니다. 공장별로 가능 대상이 조금씩 차이나니 [견학신청] 페이지를 확인해주세요. http://www.nongshim.com/tour/tour_introduction 링크&lt;/div&gt;
-            &lt;/li&gt;
-            &lt;li class="li-6"&gt;
-                &lt;a href="#li-6" class="clearfix"&gt;&lt;img src="assets/img/question.jpg" alt=""&gt;&lt;span&gt;[전체] 새우깡의 깡의 기원에 대해서 궁금합니다.&lt;/span&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"&gt;
-                        &lt;path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/&gt;
-                        &lt;path d="M0 0h24v24H0z" fill="none"/&gt;
-                    &lt;/svg&gt;
-                &lt;/a&gt;
-                &lt;div class="opencont"&gt;새우깡은 우리 민족 고유의 간식과자라 할 수 있는 뻥튀기 제품에서 착안해 상품화한 것입니다. 개발 당시 농심 회장의 어린 딸이 '아리랑'이란 노래를 '아리깡 아리깡 아라리요~'라고 부르는 것에 힌트를 얻었고 우리 민족 고유의 음식 이름 중 '깡보리밥' 등에서 쓰이는 깡이란 말이 신선하고 부드럽게 느껴져 '새우+깡'이 결합되어 새우깡이라는 단어가 생겨난 것입니다.&lt;/div&gt;
-            &lt;/li&gt;
-            &lt;li class="li-7"&gt;
-                &lt;a href="#li-7" class="clearfix"&gt;&lt;img src="assets/img/question.jpg" alt=""&gt;&lt;span&gt;[전체] 견학을 주말에도 할 수 있나요?&lt;/span&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"&gt;
-                        &lt;path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/&gt;
-                        &lt;path d="M0 0h24v24H0z" fill="none"/&gt;
-                    &lt;/svg&gt;
-                &lt;/a&gt;
-                &lt;div class="opencont"&gt;견학 가능 공장은 안양, 안성, 아산, 구미, 부산 공장이며 견학은 평일 (공휴일 제외)만 가능합니다.&lt;/div&gt;
-            &lt;/li&gt;
-            &lt;li class="li-8"&gt;
-                &lt;a href="#li-8" class="clearfix"&gt;&lt;img src="assets/img/question.jpg" alt=""&gt;&lt;span&gt;[전체] 농심 공장 견학을 가족끼리 하고 싶은데 가능한가요?&lt;/span&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"&gt;
-                        &lt;path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/&gt;
-                        &lt;path d="M0 0h24v24H0z" fill="none"/&gt;
-                    &lt;/svg&gt;
-                &lt;/a&gt;
-                &lt;div class="opencont"&gt;공장견학은 단체견학만 접수 받고 있습니다. 또한 견학 인원이 2~30명 이상이 되어야 견학이 가능합니다.&lt;/div&gt;
-            &lt;/li&gt;
-            &lt;li class="li-9"&gt;
-                &lt;a href="#li-9" class="clearfix"&gt;&lt;img src="assets/img/question.jpg" alt=""&gt;&lt;span&gt;[전체] 농심의 채용 시기는 언제인가요?&lt;/span&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"&gt;
-                        &lt;path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/&gt;
-                        &lt;path d="M0 0h24v24H0z" fill="none"/&gt;
-                    &lt;/svg&gt;
-                &lt;/a&gt;
-                &lt;div class="opencont"&gt;㈜농심의 채용은 크게 공개채용과 수시채용으로 나누어 운영하고 있습니다. [공개채용] * 채용대상 : 4년제 대졸이상 학력소지자 * 채용시기 : 하반기 10월 실시 * 채용공고 : 홈페이지, 취업포탈사이트, 대학교 취업게시판 * 접수방법 : 홈페이지 접수 * 합격자 통보방법 : e-mail, SMS(문자서비스) 등 [수시채용] * 채용대상 : 고졸, 전문대졸, 대졸이상 * 채용시기 : 결원 인력발생시 수시발생 * 채용공고 : 농심 채용홈페이지, 취업포탈사이트, 대학교 취업게시판 * 접수방법 : 우편접수 및 e-mail 접수 * 합격자 통보방법 : SMS(문자서비스) 및 유선(전화)&lt;/div&gt;
-            &lt;/li&gt;
-            &lt;li class="li-10"&gt;
-                &lt;a href="#li-10" class="clearfix"&gt;&lt;img src="assets/img/question.jpg" alt=""&gt;&lt;span&gt;[전체] 견학 담당자와 직접 연락이 가능한가요?&lt;/span&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"&gt;
-                        &lt;path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/&gt;
-                        &lt;path d="M0 0h24v24H0z" fill="none"/&gt;
-                    &lt;/svg&gt;
-                &lt;/a&gt;
-                &lt;div class="opencont"&gt;견학 담당자와 직접 연락을 원하시면 농심 홍보팀 혹은 해당 공장으로 연락하여 주시기 바랍니다. 안양공장 031)450-5515 안성공장 031)8046-6515 아산공장 041)540-4713 구미공장 054)469-5017 부산공장 051)366-5326 홍 보 팀 02)820-7567&lt;/div&gt;
-            &lt;/li&gt;
-            &lt;li&gt;
-                &lt;a href="#contmore" class="contmore"&gt;&lt;img src="assets/img/more.jpg" alt="리스트 더보기"&gt;&lt;br&gt;&lt;span&gt;리스트 더보기(1/16)&lt;/span&gt;&lt;/a&gt;
-            &lt;/li&gt;
-        &lt;/ul&gt;
     &lt;/li&gt;
     &lt;li&gt;
         &lt;a href="#menu-name" class="menu-name"&gt;면&lt;/a&gt;
@@ -833,12 +748,314 @@ htmlText3.push(`&lt;ul class="sub-name"&gt;
 &lt;/ul&gt;`);
 
 let cssText3 = [];
-cssText3.push(``);
+cssText3.push(`.contents-wrap ul.menu-wrap {
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(7, 1fr);
+}
+.contents-wrap ul.menu-wrap > li {
+    height: 62px;
+    line-height: 62px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    margin-left: -1px;
+    margin-top: -1px;
+}
+.contents-wrap ul.menu-wrap > li.color{
+    background: #ca0202;
+}
+.contents-wrap ul.menu-wrap > li.color a.menu-name{
+    color: #fff;
+}
+.contents-wrap ul.menu-wrap > li.color a.menu-name:hover{
+    color: #fff;
+}
+.contents-wrap ul.menu-wrap > li > a.menu-name {
+    display: block;
+    width: inherit;
+    text-align: center;
+    text-decoration: none
+}
+.contents-wrap ul.menu-wrap > li > a.menu-name:hover {
+    color: #000;
+}`);
+
+cssText3.push(`/* 헤더 */
+.header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.header h1 {
+    width: 140px; 
+    margin: 18px 0 0 20px;
+}
+.header h1 svg {
+    fill: #000; 
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+.header h1 svg:hover {
+  /* fill: #000; */
+}
+.header .nav li {
+    display: inline;
+}
+.header .nav li a {
+    font-size: 16px;
+    color: #000;
+    font-weight: 500;
+    padding: 26px 20px;
+    display: inline-block;
+}
+.header .nav li a span {
+    position: relative;
+}
+.header .nav li a span::before {
+    content: '';
+    display: block;
+    position: absolute; bottom: -3px; left: 50%;
+    width: 0%; height: 0;
+    border-bottom: 2px solid #d83832;
+    transform: translateX(-50%);
+    transition: width 0.3s;
+}
+.header .nav li a span:hover::before {
+    width: 100%;
+}
+.header .nav li:nth-child(5) a span::before {
+    display: none;
+}
+.header .nav li.live a {
+    padding: 4px 20px 6px 20px;
+    display: inline-block;
+    border: 1px solid #000;
+    border-radius: 20px;
+}
+.header .nav li.underline span {
+    border-bottom: 2px solid #d83832;
+    padding-bottom: 2px;
+}
+.header .side-nav {
+    margin-right: 40px;
+}
+
+.header .side-nav li {
+    display: inline;
+}
+.header .side-nav li a {
+    width: 25px;
+    display: inline-block;
+    padding: 28px 10px 20px 20px;
+}
+.header .side-nav li a svg {
+    fill: #000;
+}
+.header .up-btn {
+    transform: rotate(90deg);
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+}
+.header .up-btn a {
+    display: block;
+    width: 50px; height: 50px;
+    background: #fff;
+    text-align: center;
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
+.header .up-btn svg {
+    width: 30px; height: 30px;
+    margin-top: 8px;
+}
+
+/* 헤더 메뉴2 */
+#nav2-wrap {
+    position: fixed;
+    left: 0;
+    top: 76px;
+    z-index: 1000;
+    width: 100%;
+    height: 70px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
+}
+#nav2-wrap.on {
+    position: fixed; top: -80px; 
+}
+.nav2-container {
+    position: relative;
+} 
+.nav2-contents {
+    transition: background 0.5s;
+}
+.nav2-contents:hover {
+    background: #fff;
+}
+.nav2-contents:hover li .b-arrow {
+    border-color: #ccc;
+}
+.nav2-contents:hover .b-arrow svg {
+    fill: #333;
+}
+.nav2-contents:hover li span {
+    color: #333;
+}
+.nav2-contents:hover li:nth-child(2)::after {
+    color: #333;
+}
+.nav2-contents:hover li .m-arrow svg {
+    fill: #333;
+}
+.nav2-contents:hover .d-more {
+    border-color: #ccc;
+}
+.nav2-contents:hover .d-more i {
+    color: #333;
+}
+.nav2-contents li {
+    display: inline-block;
+    padding: 14px 17px 14px 17px;
+}
+.nav2-contents li:nth-child(1) {
+    padding: 14px 4px 14px 26px;
+}
+.nav2-contents li:nth-child(2) {
+    position: relative;
+}
+.nav2-contents li:nth-child(2)::after {
+    content: '/';
+    position: absolute; top: 15px; right: -5px;
+    color: #fff;
+}
+.nav2-contents li:nth-child(4) {
+    position: absolute; top: 9px; left: 250px;
+}
+.nav2-contents li:nth-child(5) {
+    position: absolute; top: 1px; right: 40px;
+}
+.nav2-contents li .b-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px; height: 40px;
+    border: 1px solid #fff;
+}
+.nav2-contents .b-arrow svg {
+    width: 16px; height: 12px;
+    fill: #fff;
+}
+.nav2-contents li span {
+    color: #fff;
+    font-size: 14px;
+}
+.nav2-contents li .m-arrow {
+    transition: border 0.4s
+}
+.nav2-contents li .m-arrow:hover {
+    border-bottom : 2px solid red;
+}
+.nav2-contents li .m-arrow svg {
+    transform: rotate(-90deg);
+    fill: #fff;
+    width: 25px; height: 25px;
+}
+.nav2-contents li .d-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px; height: 40px;
+    border: 1px solid #fff;
+    transition: border 0.4s
+}
+.nav2-contents li .d-more:hover {
+    border-bottom : 2px solid red;
+}
+.nav2-contents li .d-more i {
+    color: #fff;
+    font-size: 20px;
+}`);
+
+cssText3.push(`.menu-wrap .sub-name {
+    position: absolute; left: 0; top: 290px;
+}
+.menu-wrap .sub-name li {
+    /* position: relative; 없어도 되는 것 같다. */
+}
+.menu-wrap .sub-name li a {
+    position: relative;
+    text-decoration: none;
+    display: block;
+    width: 1200px;
+    padding: 14px 90px 14px 35px;
+    border-bottom: 1px solid #e4e4e4;
+    box-sizing: border-box;
+}
+.menu-wrap .sub-name li:last-child {
+    position: relative;
+}
+.menu-wrap .sub-name li:last-child a.contmore {
+    border: 0;
+    height: 200px;
+    display: block;
+}
+.menu-wrap .sub-name li:last-child a.contmore img{
+    width: 50px;
+    position: absolute; top: 50%; left: 45%;
+    translate: translate(-50%, -50%);
+}
+.menu-wrap .sub-name li:last-child a.contmore span{
+    font-size: 20px;
+    float: none;
+    position: absolute; top: 80%; left: 40%;
+    translate: translate(-50%, -50%);
+}
+.menu-wrap .sub-name li:nth-child(1) a {
+    border-top: 1px solid #e4e4e4;
+}
+.menu-wrap .sub-name li a:hover {
+    color: #000;
+}
+.menu-wrap .sub-name li a img {
+    display: block;
+    width: 20px;
+    float: left;
+    margin: 13px 8px 0 0;
+}
+.menu-wrap .sub-name li a span {
+    display: block;
+    float: left;
+}
+.menu-wrap .sub-name li a svg {
+    fill: #999;
+    width: 40px; height: 40px;
+    position: absolute; top: 50%; right: 4%;
+    transform: translate(50%, -50%) rotate(-90deg);
+}
+.menu-wrap .sub-name li .opencont {
+    width: 1200px;
+    padding: 60px 83px 60px 35px;
+    line-height: 2;
+    border-bottom: 1px solid #ca0202;
+    box-sizing: border-box;
+    color: #777;
+}
+.menu-wrap .sub-name li .opencont a {
+    border: 0;
+    padding: 0;
+    display: inline;
+}`);
 
 // // 처음 보이기 위한 화면
 $(".s4-title-bar").find("div > div").hide().eq(0).show();
 $("code.lh3").html(htmlText3[0]);
-$("code.lh3").html(cssText3[0]);
+$("code.lc3").html(cssText3[0]);
 
 $(".s4-circleAll").click(function(e){
     e.preventDefault();
