@@ -1420,28 +1420,18 @@ $(".s5-circleAll").click(function(e){
 });
 
 /* section6 */
-aniTextMove1();
-function aniTextMove1(){
-    let Width =$(".ani1-1").outerWidth();
-    $(".aniText1").animate({left: -Width}, 100000, "linear", function(){
-        $(".aniText1 p:first-child").appendTo(".aniText1");
-        $(this).css({left: "0"});
-    });
-}
-setInterval(aniTextMove1, 100000);
+// aniTextMove1();
+// function aniTextMove1(){
+//     let Width =$(".ani1-1").outerWidth();
+//     $(".aniText1").animate({left: -Width}, 100000, "linear", function(){
+//         $(".aniText1 p:first-child").appendTo(".aniText1");
+//         $(this).css({left: "0"});
+//     });
+// }
+// setInterval(aniTextMove1, 100000);
 
-$(".collText1").after(`<div class="collText1">
-<p class="collect1-1">collection &ndash; collection &ndash; collection &ndash; collection &ndash; </p> 
-<p class="collect1-2">collection &ndash; collection &ndash; collection &ndash; collection &ndash; </p> 
-</div>`);
-collTextMove1();
-function collTextMove1(){
-    $(".collText1").animate({left: "1000px"}, 50000, "linear", function(){
-        $(".collText1 p:first-child").appendTo(".collText1");
-        $(this).css({left: "0"});
-    });
-}
-setInterval(collTextMove1, 50000);
+let Width =$(".ani1-1").outerWidth();
+console.log("width : "+Width);
 
 
 

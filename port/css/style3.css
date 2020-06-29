@@ -3,6 +3,37 @@ body {
     
     overflow-x: hidden;
 }
+#big-title {
+    position: relative; z-index: 10000;
+    background: #1b1b1b;
+}
+#section1 {
+    position: relative;
+    z-index: 10000;
+    background: #1b1b1b;
+}
+.section2 {
+    position: relative;
+    z-index: 10000;
+    height: 220vh;
+    background: #1b1b1b;
+}
+#section3 {
+    position: relative;
+    z-index: 10000;
+    background: #1b1b1b;
+}
+#section4 {
+    position: relative;
+    z-index: 10000;
+    background: #1b1b1b;
+}
+#section5 {
+    position: relative;
+    z-index: 10000;
+    background: #1b1b1b;
+}
+#section6 {}
 
 /* cursor */
 .cursor {
@@ -16,6 +47,7 @@ body {
     background-size: cover; /* 이게 없으면 실제 이미지 크기만큼의 영역이 생겨버린다.*/
     /* box-shadow: 0px 0px 50px inset white, 0px 0px 50px inset white; */
     opacity: 1;
+    z-index: 2000;
 }
 /* .cursor.hidden {
     display: none;
@@ -408,7 +440,7 @@ h2.ftitle {
     z-index: 20;
     /* width: 885px; height: 460px; 원래크기. 반응형때문에 잠시 주석 */
     width: 46.094vw; height: 460px;
-    background: #272822; 
+    background: #202124; 
     overflow: auto;
 }
 
@@ -833,7 +865,7 @@ h2.ftitle2 {
     z-index: 20;
     /* width: 885px; height: 460px; 원래크기. 반응형때문에 잠시 주석 */
     width: 46.094vw; height: 460px;
-    background: #272822; 
+    background: #202124; 
     overflow: auto;
 }
 
@@ -1122,7 +1154,7 @@ h2.ftitle2 {
     z-index: 20;
     /* width: 885px; height: 460px; 원래크기. 반응형때문에 잠시 주석 */
     width: 46.094vw; height: 460px;
-    background: #272822; 
+    background: #202124;
     overflow: auto;
 }
 
@@ -1232,14 +1264,21 @@ h2.ftitle2 {
 
 /* section6 */
 #section6 {
+    width: 100%;
     height: 100vh;
+    /* background: blue; */
 }
-.section6 {}
+.section6 {
+    position: fixed; top: 0; left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #1b1b1b;
+}
 .aniText1,
 .aniText2,
 .collText1,
 .collText2 {
-    font-size: 200px;
+    font-size: 150px;
     font-family: 'Ilisarniq-Black';
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 2px #fff;
@@ -1254,6 +1293,33 @@ h2.ftitle2 {
     text-transform: uppercase;
     display: flex;
 }
-.collTextWrap {
-    display: flex;
+.aniText1 {
+    animation: move1 20s linear infinite;
 }
+@keyframes move1 {
+    0% {left: -4081px;}
+    100% {left: 0px;}
+}
+.collText1 {
+    animation: move2 40s linear infinite;
+}
+@keyframes move2 {
+    0% {left: 0;}
+    100% {left: -5880px;}
+}
+.aniText2 {
+    animation: move3 40s linear infinite;
+}
+@keyframes move3 {
+    0% {left: 0;}
+    100% {left: -4081px;}
+}
+.collText2 {
+    animation: move4 70s linear infinite;
+}
+@keyframes move4 {
+    0% {left: -5580px;}
+    100% {left: 0px;}
+}
+
+
