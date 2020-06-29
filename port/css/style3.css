@@ -125,7 +125,6 @@ body {
     position: relative;
     overflow-x: hidden;
     height: 220vh;
-    background: powderblue;
 }
 .left-section {}
 .left-title {
@@ -522,7 +521,6 @@ h2.ftitle {
     position: relative;
     overflow-x: hidden;
     height: 220vh;
-    background: powderblue;
 }
 .s3-img-wrap::before {
     background: rgba(122, 36, 21, 0.5);
@@ -552,7 +550,6 @@ h2.ftitle {
     position: relative;
     overflow-x: hidden;
     height: 220vh;
-    background: powderblue;
 }
 .right-section {}
 .right-title {

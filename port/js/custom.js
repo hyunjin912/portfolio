@@ -1052,16 +1052,67 @@ cssText3.push(`.menu-wrap .sub-name {
     display: inline;
 }`);
 
+let jsText3 = [];
+jsText3.push(`//제목 분류 탭 색깔
+$(".menu-wrap > li").click(function(){
+   $(this).addClass("color").siblings().removeClass("color"); 
+});`);
+
+jsText3.push(`let wHeight = $(window).height();         //브라우저 높이
+let dHeight = $(document).height();       //문서 자체 높이
+let hHeight = $("#header").outerHeight(); //헤더 높이
+
+let moveScroll;   //스크롤 값을 감지하기 위한 변수 
+let lastScrollTop = 0;  //스크롤의 마지막 위치의 값
+
+$(window).scroll(function(){
+moveScroll = true;
+//console.log(moveScroll);
+});
+
+setInterval(function(){
+if(moveScroll){
+    hasScroll();
+    moveScroll = false;
+}
+    
+moveScroll = 0;
+//console.log(moveScroll);
+},250);
+
+function hasScroll(){
+let wScroll = $(this).scrollTop();
+//스크롤을 내렸을 때
+if(wScroll > lastScrollTop){
+    $("#header").addClass("on");
+    $("#nav2-wrap").addClass("on");
+} else {
+    //스크롤을 올렸을 때
+    if( wScroll + wHeight < dHeight ){
+    $("#header").removeClass("on");
+    $("#nav2-wrap").removeClass("on");
+    }
+}
+lastScrollTop = wScroll;
+}`);
+
+jsText3.push(`//내용 아코디언
+$(".sub-name > li > div").hide();
+$(".sub-name > li > a").click(function(){
+    $(this).next().slideToggle(400).parent().siblings().find(".opencont").slideUp();
+});`);
+
 // // 처음 보이기 위한 화면
 $(".s4-title-bar").find("div > div").hide().eq(0).show();
 $("code.lh3").html(htmlText3[0]);
 $("code.lc3").html(cssText3[0]);
+$("code.lj3").html(jsText3[0]);
 
 $(".s4-circleAll").click(function(e){
     e.preventDefault();
     console.log($("code.lh3"));
     $("code.lh3").html(htmlText3[$(this).index()]);
     $("code.lc3").html(cssText3[$(this).index()]);
-    // $("code.lj3").html(jsText3[$(this).index()]);
+    $("code.lj3").html(jsText3[$(this).index()]);
     TextColor();
 });
