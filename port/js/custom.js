@@ -1430,6 +1430,6 @@ $(".s5-circleAll").click(function(e){
 // }
 // setInterval(aniTextMove1, 100000);
 
-let Width =$(".ani1-1").outerWidth();
+let Width =$(".collText1").outerWidth();
 console.log("width : "+Width);
 

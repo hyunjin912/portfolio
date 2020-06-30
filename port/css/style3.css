@@ -11,28 +11,31 @@ body {
     z-index: 1000;
     background: #1b1b1b;
 }
-.section2 {
+#section2 {
     position: relative;
     z-index: 1000;
     background: #1b1b1b;
 }
-.section3 {
+#section3 {
     position: relative;
     z-index: 1000;
     background: #1b1b1b;
 }
-.section4 {
+#section4 {
     position: relative;
     z-index: 1000;
     background: #1b1b1b;
 }
-.section5 {
+#section5 {
     position: relative;
     z-index: 1000;
     background: #1b1b1b;
 }
 #section6 {}
-
+.dasf {
+    position: relative;
+    z-index: 1000;
+}
 /* cursor */
 .cursor {
     position: absolute;
@@ -45,7 +48,8 @@ body {
     background-size: cover; /* 이게 없으면 실제 이미지 크기만큼의 영역이 생겨버린다.*/
     /* box-shadow: 0px 0px 50px inset white, 0px 0px 50px inset white; */
     opacity: 1;
-    z-index: 1001;
+    /* z-index: 1001; */
+    z-index: 1000;
 }
 /* .cursor.hidden {
     display: none;
@@ -1359,7 +1363,7 @@ h2.ftitle2 {
 /* section6 */
 #section6 {
     width: 100%;
-    height: 5000px;
+    height: 8000px;
     /* background: blue; */
 }
 .section6 {
@@ -1419,28 +1423,122 @@ h2.ftitle2 {
 .ani-box {
     position: absolute; top: 0; left: 0;
     width: 100%; height: 100vh;
-    
 }
 .ani-wrap {
     position: relative; 
     top: 145px;
-    /* left: 1497px; */
-    left: 77.969vw;
-    /* width: 6999px; */
-    width: 364.531vw;
+    /* left: 1901px; */
+    left: 99.010vw;
+    /* width: 8013px; */
+    width: 417.344vw;
     height: 648px;
     display: flex;
     justify-content: space-evenly;
 }
 .ani-wrap > div {
-    color: #fff;
     /* width: 1242px; */
     width: 64.688vw;
     height: 648px;
+    margin-right: 1005px;
+    overflow: hidden;
 }
 .ani-wrap > div:nth-child(1) {background: #FB8C00;}
 .ani-wrap > div:nth-child(2) {background: #3F51B5;}
 .ani-wrap > div:nth-child(3) {background: #B2FF59;}
-.ani-wrap > div:nth-child(4) {background: #00ACC1;}
-
-
+.ani-wrap > div:nth-child(4) {
+    background: #00ACC1;
+    margin-right: 0;
+}
+.boxAll {
+    position: relative;
+}
+.rectbox1 {
+    position: relative;
+    top: -200px; left: 600px;
+    background: rgba(0,0,0,0.2);
+    width: 480px; height: 511px;
+    transform: rotate(-33.93deg);
+}
+.rectbox2 {
+    position: relative;
+    top: -200px; left: 160px;
+    background: rgba(0,0,0,0.2);
+    width: 480px; height: 511px;
+    transform: rotate(33.93deg);
+}
+.tribox1 {
+    position: relative;
+    top: -30px; left: -200px;
+    width: 0;
+    height: 0;
+    border-left: 300px solid transparent;
+    border-right: 300px solid transparent;
+    border-top: 540px solid rgba(0,0,0,0.2);
+    transform: rotate(105deg);
+}
+.tribox2 {
+    position: relative;
+    top: 80px; left: 750px;
+    width: 0;
+    height: 0;
+    border-left: 300px solid transparent;
+    border-right: 300px solid transparent;
+    border-top: 540px solid rgba(0,0,0,0.2);
+    transform: rotate(15deg);
+}
+.code-btn {
+    position: absolute; left: 46px; bottom: 48px;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Ilisarniq-Light';
+    display: inline-block;
+    width: 72px; height: 72px;
+    line-height: 71px;
+    border-radius: 50%;
+    background: #000;
+    color: #fff;
+    text-transform: uppercase;
+}
+.right-code-btn {
+    position: absolute; right: 46px; bottom: 48px;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Ilisarniq-Light';
+    display: inline-block;
+    width: 72px; height: 72px;
+    line-height: 71px;
+    border-radius: 50%;
+    background: #000;
+    color: #fff;
+    text-transform: uppercase;
+}
+.code-btn:hover {
+    color: #fff;
+}
+.ani-title {
+    position: absolute; right: 47px; bottom: 27px;
+    font-size: 80px;
+    font-family: 'Ilisarniq-Light';
+    text-transform: uppercase;
+    z-index: 500;
+}
+.ani-title p {
+    font-family: 'Ilisarniq-Black';
+    line-height: 50px;
+}
+.box3 .ani-title p {
+    text-align: right;
+}
+.ani-title.right-ani-title {
+    left: 47px; bottom: 27px;
+    z-index: 500;
+}
+/* .dasf {
+    width: 100%;
+    height: 5000px;
+    background: red;
+} */
+.boxAll iframe {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
