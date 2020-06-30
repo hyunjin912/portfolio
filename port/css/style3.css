@@ -1423,18 +1423,18 @@ h2.ftitle2 {
     
 }
 .ani-wrap {
-    position: relative; top: 320px; left: 510px;
-    width: 9000px; height: 300px;
+    position: relative; top: 145px; left: 1242px;
+    width: 6999px; height: 648px;
     display: flex;
     justify-content: space-evenly;
 }
 .ani-wrap > div {
     color: #fff;
-    width: 500px; height: 300px;
+    width: 1242px; height: 648px;
 }
-.ani-wrap > div:nth-child(1) {background: #000;}
-.ani-wrap > div:nth-child(2) {background: #333;}
-.ani-wrap > div:nth-child(3) {background: #555;}
-.ani-wrap > div:nth-child(4) {background: #777;}
+.ani-wrap > div:nth-child(1) {background: #FB8C00;}
+.ani-wrap > div:nth-child(2) {background: #3F51B5;}
+.ani-wrap > div:nth-child(3) {background: #B2FF59;}
+.ani-wrap > div:nth-child(4) {background: #00ACC1;}
 
 
