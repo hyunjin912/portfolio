@@ -1425,13 +1425,10 @@ h2.ftitle2 {
 .ani-wrap {
     position: relative; top: 320px; left: 510px;
     width: 9000px; height: 300px;
-    overflow: hidden; 
-    box-sizing: border-box;
     display: flex;
     justify-content: space-evenly;
 }
 .ani-wrap > div {
-    float: left;
     color: #fff;
     width: 500px; height: 300px;
 }
