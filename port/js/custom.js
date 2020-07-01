@@ -1452,3 +1452,19 @@ $(".script-btn > a").click(function(e){
     $(this).addClass("btnactive").siblings().removeClass("btnactive")
     $(".iframe").attr("src", "../script/parallax/parallax0"+index+".html");
 });
+
+$(".script-btn > a.slidebtn").click(function(e){
+    e.preventDefault();
+    let target = $(this);
+    let index = target.index() + 1;
+    $(this).addClass("btnactive").siblings().removeClass("btnactive")
+    $(".iframe2").attr("src", "../slider/slide0"+index+".html");
+});
+
+$(".script-btn > a.mousebtn").click(function(e){
+    e.preventDefault();
+    let target = $(this);
+    let index = target.index() + 1;
+    $(this).addClass("btnactive").siblings().removeClass("btnactive")
+    $(".iframe3").attr("src", "../mouse/mouse0"+index+".html");
+});
