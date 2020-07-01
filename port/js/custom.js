@@ -126,6 +126,7 @@ $("code.lc1").html(cssText[0]);
 
 $(".s2-circleAll").click(function(e){
     e.preventDefault();
+    $(this).addClass("active2").siblings().removeClass("active2");
     console.log($("code.lh1"));
     $("code.lh1").html(htmlText[$(this).index()]);
     $("code.lc1").html(cssText[$(this).index()]);
@@ -487,6 +488,7 @@ $("code.lc2").html(cssText2[0]);
 
 $(".s3-circleAll").click(function(e){
     e.preventDefault();
+    $(this).addClass("active3").siblings().removeClass("active3");
     console.log($("code.lh2"));
     $("code.lh2").html(htmlText2[$(this).index()]);
     $("code.lc2").html(cssText2[$(this).index()]);
@@ -1110,6 +1112,7 @@ $("code.lj3").html(jsText3[0]);
 
 $(".s4-circleAll").click(function(e){
     e.preventDefault();
+    $(this).addClass("active4").siblings().removeClass("active4");
     console.log($("code.lh3"));
     $("code.lh3").html(htmlText3[$(this).index()]);
     $("code.lc3").html(cssText3[$(this).index()]);
@@ -1412,6 +1415,7 @@ $("code.lj4").html(jsText4[0]);
 
 $(".s5-circleAll").click(function(e){
     e.preventDefault();
+    $(this).addClass("active5").siblings().removeClass("active5");
     console.log($("code.lh4"));
     $("code.lh4").html(htmlText4[$(this).index()]);
     $("code.lc4").html(cssText4[$(this).index()]);
