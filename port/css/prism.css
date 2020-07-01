@@ -174,7 +174,7 @@ pre[class*="language-"].line-numbers > code {
 	background-color: lightblue;
 }
 .code-content::-webkit-scrollbar-track-piece {
-	background-color: gray;
+	background-color: #202124;
 }
 .code-content::-webkit-scrollbar-thumb {
 	border-radius: 8px;
@@ -192,7 +192,7 @@ pre[class*="language-"].line-numbers > code {
 	background-color: lightblue;
 }
 .code-content2::-webkit-scrollbar-track-piece {
-	background-color: gray;
+	background-color: #202124;
 }
 .code-content2::-webkit-scrollbar-thumb {
 	border-radius: 8px;
