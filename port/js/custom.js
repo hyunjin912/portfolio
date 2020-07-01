@@ -1448,7 +1448,7 @@ $(".scriptview-wrap").mouseout(function(){
 $(".script-btn > a").click(function(e){
     e.preventDefault();
     let target = $(this);
-    let index = target.index() + 1;
+    let index = target.index() + 3;
     $(this).addClass("btnactive").siblings().removeClass("btnactive")
     $(".iframe").attr("src", "../script/parallax/parallax0"+index+".html");
 });
