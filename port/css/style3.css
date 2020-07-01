@@ -1559,7 +1559,7 @@ h2.ftitle2 {
         inset 10px 0 40px #a174db,
         inset -10px 0 20px #40245e,
         inset -40px 10px 110px #1b1648;
-    animation: morphingmove 10s infinite alternate ease-in-out;
+    animation: morphingmove 3s infinite alternate ease-in-out;
 }
 @keyframes morphingmove {
     0% {border-radius: 70% 80% 90% 70% / 70% 80% 90% 80%; transform: translate(-50%, -50%) rotate(0deg);}
