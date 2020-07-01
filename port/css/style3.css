@@ -1459,7 +1459,8 @@ h2.ftitle2 {
 .ani-wrap > div:nth-child(2) {background: #3F51B5;}
 .ani-wrap > div:nth-child(3) {background: #B2FF59;}
 .ani-wrap > div:nth-child(4) {
-    background: #00ACC1;
+    /* background: #00ACC1; */
+    background: #FCDCDF;
     margin-right: 0;
 }
 .boxAll {
@@ -1492,6 +1493,7 @@ h2.ftitle2 {
 .tribox2 {
     position: relative;
     top: 80px; left: 750px;
+    z-index: 1000;
     width: 0;
     height: 0;
     border-left: 300px solid transparent;
@@ -1514,6 +1516,7 @@ h2.ftitle2 {
 }
 .right-code-btn {
     position: absolute; right: 46px; bottom: 48px;
+    z-index: 1000;
     font-size: 20px;
     text-align: center;
     font-family: 'Ilisarniq-Light';
@@ -1721,6 +1724,18 @@ animation: shadow 0.58s linear infinite;
     50%  {transform: rotateY(180deg) translatez(0px) scaley(3);}
     100% {transform: rotateY(180deg) translatez(0px) scaley(1);}
 } */
+.step {
+    background-image: url(https://tistory2.daumcdn.net/tistory/3108288/skin/images/steps.jpg);
+    width: 800px; height: 600px;
+    position: absolute; left: 50%; top: 50%;
+    margin-left: -400px; margin-top: -300px;
+    animation: ani 1s steps(16, start) infinite;
+  }
+  
+  @keyframes ani {
+    0% {background-position: 0 0}
+    100% {background-position: -12800px 0}
+  }
 
 /* section7 */
 #section7 {
