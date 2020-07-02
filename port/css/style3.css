@@ -1526,7 +1526,8 @@ h2.ftitle2 {
     /* width: 1242px; */
     width: 64.688vw;
     height: 648px;
-    margin-right: 1005px;
+    /* margin-right: 1005px; */
+    margin-right: 52.344vw;
     overflow: hidden;
 }
 .ani-wrap > div:nth-child(1) {background: #FB8C00;}
@@ -1542,47 +1543,62 @@ h2.ftitle2 {
 }
 .rectbox1 {
     position: relative;
-    top: -200px; left: 600px;
+    top: -200px; 
+    /* left: 600px; */
+    left: 31.250vw;
     background: rgba(0,0,0,0.2);
-    width: 480px; height: 511px;
+    /* width: 480px;  */
+    width: 25vw; 
+    height: 511px;
     transform: rotate(-33.93deg);
 }
 .rectbox2 {
     position: relative;
-    top: -200px; left: 160px;
+    top: -200px; 
+    /* left: 160px; */
+    left: 8.333vw;
     background: rgba(0,0,0,0.2);
-    width: 480px; height: 511px;
+    /* width: 480px;  */
+    width: 25vw; 
+    height: 511px;
     transform: rotate(33.93deg);
 }
 .tribox1 {
     position: relative;
-    top: -30px; left: -200px;
+    top: -30px; 
+    /* left: -200px; */
+    left: -10.417vw;
     width: 0;
     height: 0;
-    border-left: 300px solid transparent;
-    border-right: 300px solid transparent;
-    border-top: 540px solid rgba(0,0,0,0.2);
+    border-left: 15.625vw solid transparent;
+    border-right: 15.625vw solid transparent;
+    border-top: 28.125vw solid rgba(0,0,0,0.2);
     transform: rotate(105deg);
 }
 .tribox2 {
     position: relative;
-    top: 80px; left: 750px;
+    top: 80px; 
+    /* left: 750px; */
+    left: 39.063vw;
     z-index: 1000;
     width: 0;
     height: 0;
-    border-left: 300px solid transparent;
-    border-right: 300px solid transparent;
-    border-top: 540px solid rgba(0,0,0,0.2);
+    border-left: 15.625vw solid transparent;
+    border-right: 15.625vw solid transparent;
+    border-top: 28.125vw solid rgba(0,0,0,0.2);
     transform: rotate(15deg);
 }
 .code-btn {
     position: absolute; left: 46px; bottom: 48px;
-    font-size: 20px;
+    /* font-size: 20px; */
+    font-size: 1.042vw;
     text-align: center;
     font-family: 'Ilisarniq-Light';
     display: inline-block;
-    width: 72px; height: 72px;
-    line-height: 71px;
+    /* width: 72px; height: 72px; */
+    width: 3.750vw; height: 3.750vw;
+    /* line-height: 71px; */
+    line-height: 3.698vw;
     border-radius: 50%;
     background: #000;
     color: #fff;
@@ -1591,12 +1607,15 @@ h2.ftitle2 {
 .right-code-btn {
     position: absolute; right: 46px; bottom: 48px;
     z-index: 1000;
-    font-size: 20px;
+    /* font-size: 20px; */
+    font-size: 1.042vw;
     text-align: center;
     font-family: 'Ilisarniq-Light';
     display: inline-block;
-    width: 72px; height: 72px;
-    line-height: 71px;
+    /* width: 72px; height: 72px; */
+    width: 3.750vw; height: 3.750vw;
+    /* line-height: 71px; */
+    line-height: 3.698vw;
     border-radius: 50%;
     background: #000;
     color: #fff;
@@ -1606,21 +1625,24 @@ h2.ftitle2 {
     color: #fff;
 }
 .ani-title {
-    position: absolute; right: 47px; bottom: 27px;
-    font-size: 80px;
+    /* position: absolute; right: 47px; bottom: 27px; */
+    position: absolute; right: 2.448vw; bottom: 27px;
+    /* font-size: 80px; */
+    font-size: 4.167vw;
     font-family: 'Ilisarniq-Light';
     text-transform: uppercase;
     z-index: 500;
 }
 .ani-title p {
     font-family: 'Ilisarniq-Black';
-    line-height: 50px;
+    /* line-height: 50px; */
+    line-height: 2.604vw;
 }
 .box3 .ani-title p {
     text-align: right;
 }
-.ani-title.right-ani-title {
-    left: 47px; bottom: 27px;
+.ani-title.left-ani-title {
+    left: 2.448vw; bottom: 27px;
     z-index: 500;
 }
 .box1 .morphing {
