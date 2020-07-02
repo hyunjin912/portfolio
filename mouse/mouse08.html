@@ -92,7 +92,7 @@
         pointer-events: none;
     }
     
-    .infor4 {position: absolute; left: 0; bottom: 0; z-index: 1000; padding: 20px;}
+    .infor4 {position: absolute; left: 45%; bottom: 0; z-index: 1000; padding: 20px;}
     .infor4 a {color: #fff; border: 1px solid #fff; border-radius: 30px; padding: 5px 30px}
     .infor4 .modal {
         background: rgba(0,0,0,0.8);
@@ -301,6 +301,12 @@
                 
                     spanFast.css({"transform": "translate("+-position+"px)"});
             }
+
+        // 출력용
+        window.addEventListener("mousemove", function(e){
+            document.querySelector(".pageX").textContent = e.pageX;
+            document.querySelector(".pageY").textContent = e.pageY;
+        });
     </script>
 </body>
 </html>

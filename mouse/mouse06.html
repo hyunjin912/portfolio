@@ -147,7 +147,7 @@
     }
     
     /* 모달 */
-    .infor4 {position: absolute; left: 0; bottom: 0; z-index: 1000; padding: 20px;}
+    .infor4 {position: absolute; left: 45%; bottom: 0; z-index: 1000; padding: 20px;}
     .infor4 a {color: #fff; border: 1px solid #fff; border-radius: 30px; padding: 5px 30px}
     /* .infor4 a.axis {
         display: inline-block;
@@ -195,18 +195,12 @@
         </ul>
     </div>
 
-    <!-- <div class="info3">
+    <div class="info3">
         <ul>
             <li>pageX : <span class="pageX">0</span></li>
             <li>pageY : <span class="pageY">0</span></li>
-            <li>mouseX : <span class="mouseX">0</span></li>
-            <li>mouseY : <span class="mouseY">0</span></li>
-            <li>angleX : <span class="angleX">0</span></li>
-            <li>angleY : <span class="angleY">0</span></li>
-            <li>fmouseX : <span class="fmouseX">0</span></li>
-            <li>fmouseY : <span class="fmouseY">0</span></li>
         </ul>
-    </div> -->
+    </div>
 
     <div class="infor4">
         <a href="#" class="view">코드 보기</a>
@@ -324,6 +318,12 @@ window.addEventListener("mousemove",function(e){
                                     ${mouseY}px ${-mouseX}px 0px rgba(80, 122, 212, 0.7),
                                     ${-mouseY}px ${mouseX}px 0px rgba(143, 177, 250, 0.8)`;
             })
+        });
+
+        // 출력용
+        window.addEventListener("mousemove", function(e){
+            document.querySelector(".pageX").textContent = e.pageX;
+            document.querySelector(".pageY").textContent = e.pageY;
         });
     </script>
 </body>

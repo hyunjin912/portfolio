@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 body {
     background-color: #1B1B1B;
     overflow-x: hidden;
@@ -52,9 +55,22 @@ body {
     /* z-index: 1001; */
     z-index: 1000;
 }
-/* .cursor.hidden {
-    display: none;
-} */
+/* cursor2 */
+/* Circle Text Styles */
+#outerCircleText {
+    /* Optional - DO NOT SET FONT-SIZE HERE, SET IT IN THE SCRIPT */
+    font-style: italic;
+    font-weight: bold;
+    font-family: 'comic sans ms', verdana, arial;
+    color: red;
+    /* End Optional */
+    
+    /* Start Required - Do Not Edit */
+    position: absolute;top: 0;left: 0;z-index: 3000;cursor: default;}
+    #outerCircleText div {position: relative;}
+    #outerCircleText div div {position: absolute;top: 0;left: 0;text-align: center;}
+    /* End Required */
+    /* End Circle Text Styles */
 
 /* info */
 .info {
@@ -62,7 +78,7 @@ body {
     background: rgba(255,255,255,0.4);
     color: #fff; padding: 10px;
     font-size: 14px; font-weight: 300;
-    z-index: 10000;
+    z-index: 1000;
     font-style: normal;
 }
 
@@ -166,12 +182,15 @@ body {
     position: relative;
 }
 .left-title h2 {
-    position: absolute; top: 1.25vw; left: 7.604vw;
+    /* position: absolute; top: 1.25vw; left: 7.604vw; */
+    position: absolute; top: 15.25vw; left: 25.604vw;
+    opacity: 0;
     font-size: 9.986vw;
     font-family: 'Ilisarniq-Black';
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 0.346vw;
+    transform: skew(0deg, -5deg);
 }
 h2.ftitle {
     z-index: 10;
@@ -188,12 +207,14 @@ h2.ftitle {
     width: 67.917vw;
     height: 38.542vw;
     position: absolute; top: 9.531vw; left: 0;
+    overflow: hidden;
 }
 .img-wrap::before {
     position: absolute; left: 0; top: 0;
     content: '';
     width: 100%; height: 100%;
     background: rgba(13, 147, 120, 0.5);
+    z-index: 1;
 }
 .s2-img {
     background: url(../img/webstandard_silver_gray.jpg) no-repeat center center;
@@ -201,6 +222,7 @@ h2.ftitle {
 }
 .left-num-wrap {
     position: absolute; top: 18vw; left: 86vw;
+    z-index: -1;
     transform: rotate(90deg);
     width: 23.906vw; height: 24.74vw;
 }
@@ -219,13 +241,37 @@ h2.ftitle {
     -o-text-stroke: 2px #292929;
 }
 .left-desc-wrap {
-    position: relative;
-}
-.left-desc-wrap .left-desc {
+    /* position: relative; */
     position: absolute; top: 36vw; left: 58.5vw;
     width: 33.854vw;
     height: 24.583vw;
+    z-index: 2;
     background: #fff;
+    opacity: 0;
+}
+.left-desc-wrap.reveal {
+    animation: descshow 0.1s 1.1s forwards;
+}
+@keyframes descshow {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+.left-desc-wrap.reveal::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    background: rgb(243, 138, 0);
+    z-index: 1;
+    animation: reveal 1.8s ease-in-out;
+}
+@keyframes reveal {
+    0% {top: 0; left: 0; width: 0%;}
+    65% {top: 0; left: 0; width: 100%;}
+    100% {top: 0; left: 100%; width: 0;}
+}
+.left-desc-wrap .left-desc {
+    /* position: absolute; top: 190px; left: 64px; */
+    position: absolute; top: 9.896vw; left: 3.333vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -247,7 +293,8 @@ h2.ftitle {
     text-align: justify;
 }
 .btn-wrap {
-    position: absolute; top: 53.4vw; left: 61.9vw;
+    /* position: absolute; top: 335px; left: 64px; */
+    position: absolute; top: 17.448vw; left: 3.333vw;
     display: flex;
     justify-content: space-between;
     width: 27.083vw;
@@ -649,7 +696,9 @@ h2.ftitle {
     position: relative;
 }
 .right-title h2 {
-    position: absolute; top: 1.25vw; right: 7.604vw;
+    /* position: absolute; top: 1.25vw; right: 7.604vw; */
+    position: absolute; top: 15.25vw; right: 25.604vw;
+    opacity: 0;
     font-size: 9.986vw;
     font-family: 'Ilisarniq-Black';
     color: #fff;
@@ -671,12 +720,14 @@ h2.ftitle2 {
     width: 67.917vw;
     height: 38.542vw;
     position: absolute; top: 9.531vw; right: 0;
+    overflow: hidden;
 }
 .img-wrap2::before {
     position: absolute; right: 0; top: 0;
     content: '';
     width: 100%; height: 100%;
     background: rgba(114, 101, 46, 0.5);
+    z-index: 1;
 }
 .s4-img {
     background: url(../img/nongshim_gray.jpg) no-repeat center center;
@@ -702,13 +753,35 @@ h2.ftitle2 {
     -o-text-stroke: 2px #292929;
 }
 .right-desc-wrap {
-    position: relative;
-}
-.right-desc-wrap .right-desc {
     position: absolute; top: 36vw; right: 58.5vw;
     width: 33.854vw;
     height: 24.583vw;
+    z-index: 2;
     background: #fff;
+    opacity: 0;
+}
+.right-desc-wrap.reveal {
+    animation: descshow 0.1s 1.1s forwards;
+}
+@keyframes descshow {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+.right-desc-wrap.reveal::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    background: rgb(243, 138, 0);
+    z-index: 1;
+    animation: reveal2 1.8s ease-in-out;
+}
+@keyframes reveal2 {
+    0% {top: 0; right: 0; width: 0%;}
+    65% {top: 0; right: 0; width: 100%;}
+    100% {top: 0; right: 100%; width: 0;}
+}
+.right-desc-wrap .right-desc {
+    position: absolute; top: 9.896vw; left: 3.333vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -730,7 +803,7 @@ h2.ftitle2 {
     text-align: justify;
 }
 .btn-wrap2 {
-    position: absolute; top: 53.4vw; right: 61.9vw;
+    position: absolute; top: 17.448vw; left: 3.333vw;
     display: flex;
     justify-content: space-between;
     width: 27.083vw;
@@ -1376,14 +1449,15 @@ h2.ftitle2 {
 /* section6 */
 #section6 {
     width: 100%;
-    height: 8000px;
+    height: 9000px;
     /* background: blue; */
+    background-color: rgb(30,136,299);
+
 }
 .section6 {
     position: fixed; top: 0; left: 0;
     width: 100%;
     height: 100vh;
-    background: #1b1b1b;
 }
 .aniText1,
 .aniText2,
@@ -1402,13 +1476,13 @@ h2.ftitle2 {
     position: relative;
     white-space: nowrap;
     text-transform: uppercase;
-    display: flex;
 }
 .aniText1 {
-    animation: move1 20s linear infinite;
+    animation: move1 20s linear infinite forwards;
 }
 @keyframes move1 {
-    0% {left: -4081px;}
+    /* 0% {left: -4081px;} */
+    0% {left: -3806px;}
     100% {left: 0px;}
 }
 .collText1 {
@@ -1416,20 +1490,20 @@ h2.ftitle2 {
 }
 @keyframes move2 {
     0% {left: 0;}
-    100% {left: -5880px;}
+    100% {left: -3806px;}
 }
 .aniText2 {
     animation: move3 40s linear infinite;
 }
 @keyframes move3 {
     0% {left: 0;}
-    100% {left: -4081px;}
+    100% {left: -3806px;}
 }
 .collText2 {
     animation: move4 70s linear infinite;
 }
 @keyframes move4 {
-    0% {left: -5580px;}
+    0% {left: -3806px;}
     100% {left: 0px;}
 }
 
@@ -1528,7 +1602,7 @@ h2.ftitle2 {
     color: #fff;
     text-transform: uppercase;
 }
-.code-btn:hover {
+.code-btn:hover, .right-code-btn:hover {
     color: #fff;
 }
 .ani-title {
