@@ -345,7 +345,7 @@ video {
     transform: skew(0deg, -5deg);
 }
 .left-title.titMove h2 {
-    animation: titMove1 1.8s ease-in-out forwards;
+    animation: titMove1 1s ease-in-out forwards;
 }
 @keyframes titMove1 {
     0% {top: 15.25vw; left: 25.604vw; opacity: 0; transform: skew(0deg, -5deg);}
@@ -866,7 +866,7 @@ h2.ftitle {
     transform: skew(0deg, -5deg);
 }
 .right-title.titMove h2 {
-    animation: titMove2 1.8s ease-in-out forwards;
+    animation: titMove2 1s ease-in-out forwards;
 }
 @keyframes titMove2 {
     0% {top: 15.25vw; right: 25.604vw; opacity: 0; transform: skew(0deg, -5deg);}
@@ -2034,7 +2034,8 @@ animation: shadow 0.58s linear infinite;
     font-family: 'Ilisarniq-Black';
     position: absolute;
     top: 34%; left: 10%;
-    transition: all 1s;
+    /* transition: all 1s; */
+    z-index: 100;
 }
 .scriptview-wrap:hover ~ .script-text {
     display: none;

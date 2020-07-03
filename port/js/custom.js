@@ -48,6 +48,16 @@ $(window).scroll(function(){
             $(this).removeClass("titMove");
         }
     });
+
+    // if ( $(window).scrollTop() >= 21264) {
+    //     $(".script-text").css({position: "fixed"})
+    //     $(".script-num .snum1").css({position: "fixed"})
+    //     $(".script-num .snum2").css({position: "fixed"})
+    // } else {
+    //     $(".script-text").css({position: "absolute"})
+    //     $(".script-num .snum1").css({position: "absolute"})
+    //     $(".script-num .snum2").css({position: "absolute"})
+    // }
 });
 
 
@@ -1466,6 +1476,12 @@ let Width =$(".ani1-1").outerWidth();
 console.log("width : "+Width);
 
 /* section7 */
+// $(".scriptview-wrap").mouseover(function(){
+//     $(".script-text").css({display: "none"});
+// }).mouseout(function(){
+//     $(".script-text").css({display: "block"});
+// });
+
 $(".script-btn > a").click(function(e){
     e.preventDefault();
     let target = $(this);
