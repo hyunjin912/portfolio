@@ -124,7 +124,7 @@ $("#section1").on("mousemove", function(e){
     
     })();
 
-
+/* scroll */
 $(window).scroll(function(){
     // scroll 값
     const scrollTop = $(window).scrollTop();
@@ -139,11 +139,28 @@ $(window).scroll(function(){
             $(this).removeClass("reveal");
         }
     });
+    
     $(".right-desc-wrap").each(function(){
         if ( $(window).scrollTop() + $(window).height() > $(this).offset().top ){
             $(this).addClass("reveal");
         } else {
             $(this).removeClass("reveal");
+        }
+    });
+
+    /* titleMove */
+    $(".left-title").each(function(){
+        if ( $(window).scrollTop() + $(window).height() > $(this).offset().top ){
+            $(this).addClass("titMove");
+        } else {
+            $(this).removeClass("titMove");
+        }
+    });
+    $(".right-title").each(function(){
+        if ( $(window).scrollTop() + $(window).height() > $(this).offset().top ){
+            $(this).addClass("titMove");
+        } else {
+            $(this).removeClass("titMove");
         }
     });
 });

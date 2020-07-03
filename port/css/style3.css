@@ -192,6 +192,13 @@ body {
     letter-spacing: 0.346vw;
     transform: skew(0deg, -5deg);
 }
+.left-title.titMove h2 {
+    animation: titMove 1.8s ease-in-out forwards;
+}
+@keyframes titMove {
+    0% {top: 15.25vw; left: 25.604vw; opacity: 0; transform: skew(0deg, -5deg);}
+    100% {top: 1.25vw; left: 7.604vw; opacity: 1; transform: skew(0deg, 0deg);}
+}
 h2.ftitle {
     z-index: 10;
     -webkit-text-fill-color: transparent;
@@ -704,6 +711,14 @@ h2.ftitle {
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 0.346vw;
+    transform: skew(0deg, -5deg);
+}
+.right-title.titMove h2 {
+    animation: titMove 1.8s ease-in-out forwards;
+}
+@keyframes titMove {
+    0% {top: 15.25vw; right: 25.604vw; opacity: 0; transform: skew(0deg, -5deg);}
+    100% {top: 1.25vw; right: 7.604vw; opacity: 1; transform: skew(0deg, 0deg);}
 }
 h2.ftitle2 {
     z-index: 10;
