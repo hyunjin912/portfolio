@@ -151,7 +151,7 @@ video {
 }
 .smoke1 {
     display: inline-block;
-    animation: smoke 1s linear forwards;
+    animation: smoke 1s .25s linear forwards;
     opacity: 0;
 }
 @keyframes smoke {
