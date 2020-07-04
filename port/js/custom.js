@@ -33,6 +33,15 @@ $(window).scroll(function(){
         }
     });
 
+    $(".script-text").each(function(){
+        if ( $(window).scrollTop() >= 20927 ){
+            $(this).addClass("script-reveal");
+        } else {
+            $(this).removeClass("script-reveal");
+        }
+    });
+
+
     /* titleMove */
     $(".left-title").each(function(){
         if ( $(window).scrollTop() + $(window).height() > $(this).offset().top ){
@@ -1442,7 +1451,7 @@ var marker = new google.maps.Marker({position: uluru, map: map});
 * The callback parameter executes the initMap() function
 --&gt;
 &lt;script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcpoQX6_z0JdS1WitwlwMvwClhif4omgM&callback=initMap"&gt;
+src="https://maps.googleapis.com/maps/api/js?key=개인 key 번호"&gt;
 &lt;/script&gt;`);
 
 // // 처음 보이기 위한 화면
