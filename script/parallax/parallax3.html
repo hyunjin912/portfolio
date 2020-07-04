@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parallax06</title>
+    <title>Parallax03</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <style>
-         @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
          @font-face { 
             font-family: 'GmarketSansMedium'; 
             src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff'); 
@@ -35,7 +35,6 @@
             background-color: var(--color-bg);
             font-family: var(--font-family);
             color: var(--color-title);
-            overflow-x: hidden;
         }
 
         .title {
@@ -67,7 +66,6 @@
             padding: 3vw;
             text-transform: uppercase;
             font-weight: 700;
-            will-change: transform;
         }
 
         #wrap h1 em {
@@ -99,12 +97,11 @@
         .content-item-img {
             position: absolute;
             width: var(--width);
-            --overflow: 60px;
-            top: calc(-2 * var(--overflow));
+            --overflow: 40px;
+            top: calc(-1 * var(--overflow));
             height: calc(100% + (2 * var(--overflow)));
             background-size: cover;
             background-position: 50% 0;
-            will-change: transform;
         }
 
         .content-item:nth-child(even) {
@@ -116,7 +113,6 @@
             font-weight: 100;
             position: absolute; right: -5vw; top: -15vw;
             opacity: 0.04;
-            will-change: transform;
         }
 
         .content-item:nth-child(even) .content-item-num {
@@ -148,8 +144,6 @@
             margin-right: -3vw;
             position: relative;
             z-index: 20;
-            transition: transform 0.3s;
-            will-change: transform;
         }
 
         .content-item:nth-child(even) .content-item-desc {
@@ -169,16 +163,23 @@
 
         /* info */
         .info {
-            position: fixed; bottom: 20px; right: 20px;
+            position: fixed; top: 420px; right: 20px;
             background: rgba(255,255,255,0.4);
             color: #fff; padding: 10px;
             font-size: 14px; font-weight: 300;
             z-index: 10000;
             font-style: normal;
-            font-family: "Abel";
         }
 
-        .infor4 {position: fixed; right: 0; bottom: 8%; z-index: 1000; padding: 20px;}
+        .contents > section {
+            opacity: 0; transform: translateY(10vh);
+            transition: all 0.6s ease;
+        }
+        .contents > section.show {
+            opacity: 1; transform: translateY(0);
+        }
+
+        .infor4 {position: fixed; right: 0; bottom: 2%; z-index: 1000; padding: 20px;}
         .infor4 a {color: #fff; border: 1px solid #fff; border-radius: 30px; padding: 5px 10px}
         .infor4 .modal {
             background: rgba(0,0,0,0.8);
@@ -201,24 +202,32 @@
     <link rel="stylesheet" href="../../mouse/prism.css">
 </head>
 <body>
-
-    <div class="info">
-        <div>pageYOffset : <span class="pageYOffset">0</span>px</div>
-    </div>
-
     <div class="title">
-        <h1>Parallax04</h1>
-        <p>이질감 효과<br>- javascript</p>
+        <h1>Parallax01</h1>
+        <p>Parallax Effect<br>-jQuery</p>
         <ul>
-            <li><a href="parallax03.html">parallax01</a></li>
-            <li><a href="parallax04.html">parallax02</a></li>
-            <li><a href="parallax05.html">parallax03</a></li>
-            <li class="active"><a href="parallax06.html">parallax04</a></li>
-            <li><a href="parallax07.html">parallax05</a></li>
-            <li><a href="parallax08.html">parallax06</a></li>
-            <li><a href="parallax09.html">parallax07</a></li>
+            <li class="active"><a href="parallax3.html">parallax01</a></li>
+            <li><a href="parallax4.html">parallax02</a></li>
+            <li><a href="parallax5.html">parallax03</a></li>
+            <li><a href="parallax6.html">parallax04</a></li>
+            <li><a href="parallax7.html">parallax05</a></li>
+            <li><a href="parallax8.html">parallax06</a></li>
+            <li><a href="parallax9.html">parallax07</a></li>
             <li><a href="parallax10.html">parallax08</a></li>
         </ul>
+    </div>
+
+    <div class="info">
+        <span>scrollTop() : <strong class="scrollTop">0</strong>px</span><br>
+        <span>#section1 offset : <strong class="s1OT">0</strong>px</span><br>
+        <span>#section2 offset : <strong class="s2OT">0</strong>px</span><br>
+        <span>#section3 offset : <strong class="s3OT">0</strong>px</span><br>
+        <span>#section4 offset : <strong class="s4OT">0</strong>px</span><br>
+        <span>#section5 offset : <strong class="s5OT">0</strong>px</span><br>
+        <span>#section6 offset : <strong class="s6OT">0</strong>px</span><br>
+        <span>#section7 offset : <strong class="s7OT">0</strong>px</span><br>
+        <span>#section8 offset : <strong class="s8OT">0</strong>px</span><br>
+        <span>#section9 offset : <strong class="s9OT">0</strong>px</span><br>
     </div>
 
     <div class="infor4">
@@ -232,18 +241,118 @@
                     <span class="control"></span>
                 </h3>
                 <div class="code">
-                    <pre class="line-numbers"><code class="language-js">window.addEventListener("scroll",function(){
-    let pageYOffset = window.pageYOffset || document.documentElement.scrollTop
+                    <pre class="line-numbers"><code class="language-js">$(window).scroll(function(){
+console.log("1. window height: "+$(window).height()/2);
 
-    document.querySelector(".pageYOffset").textContent = pageYOffset;
-    document.querySelector("#wrap h1").style.transform = "translateX("+pageYOffset+"px)";
+console.log("2. window scrollTop: "+$(window).scrollTop());
 
-    document.querySelectorAll(".content-item").forEach(elem => {
-        let target = elem.childNodes[7];
-        console.log(target)
-        let offset = (pageYOffset - elem.offsetTop) * 0.2;
-        target.style.transform = "translateY("+ offset +"px)"
-    });
+const scrollTop = $(window).scrollTop() + $(window).height()/2;
+$(".scrollTop").text(scrollTop);
+
+// $(".s1OT").text( parseInt( $("#section1").offset().top ) );
+// $(".s2OT").text( parseInt( $("#section2").offset().top ) );
+// $(".s3OT").text( parseInt( $("#section3").offset().top ) );
+// $(".s4OT").text( parseInt( $("#section4").offset().top ) );
+// $(".s5OT").text( parseInt( $("#section5").offset().top ) );
+// $(".s6OT").text( parseInt( $("#section6").offset().top ) );
+// $(".s7OT").text( parseInt( $("#section7").offset().top ) );
+// $(".s8OT").text( parseInt( $("#section8").offset().top ) );
+// $(".s9OT").text( parseInt( $("#section9").offset().top ) );
+
+//위를 for문으로 간소화
+for (let i = 1; i &lt;= 9; i++){
+    $(".s"+i+"OT").text( parseInt( $("#section"+i).offset().top ) );
+}
+
+// if( scrollTop > parseInt( $("#section1").offset().top ) ){
+//     $(".s1OT").css("color","red");
+// } else {
+//     $(".s1OT").css("color","black");
+// }
+// if( scrollTop > parseInt( $("#section2").offset().top ) ){
+//     $(".s2OT").css("color","red");
+// }  else {
+//     $(".s2OT").css("color","black");
+// }
+// if( scrollTop > parseInt( $("#section3").offset().top ) ){
+//     $(".s3OT").css("color","red");
+// } else {
+//     $(".s3OT").css("color","black");
+// }
+// if( scrollTop > parseInt( $("#section4").offset().top ) ){
+//     $(".s4OT").css("color","red");
+// } else {
+//     $(".s4OT").css("color","black");
+// }
+// if( scrollTop > parseInt( $("#section5").offset().top ) ){
+//     $(".s5OT").css("color","red");
+// } else {
+//     $(".s5OT").css("color","black");
+// }
+// if( scrollTop > parseInt( $("#section6").offset().top ) ){
+//     $(".s6OT").css("color","red");
+// } else {
+//     $(".s6OT").css("color","black");
+// }
+// if( scrollTop > parseInt( $("#section7").offset().top ) ){
+//     $(".s7OT").css("color","red");
+// } else {
+//     $(".s7OT").css("color","black");
+// }
+// if( scrollTop > parseInt( $("#section8").offset().top ) ){
+//     $(".s8OT").css("color","red");
+// } else {
+//     $(".s8OT").css("color","black");
+// }
+// if( scrollTop > parseInt( $("#section9").offset().top ) ){
+//     $(".s9OT").css("color","red");
+// } else {
+//     $(".s9OT").css("color","black");
+// }
+
+// 위를 for문으로 변경
+for (let i = 1; i &lt;= 9; i++){
+    if( scrollTop > parseInt( $("#section"+i).offset().top ) ){
+        $(".s"+i+"OT").css("color","red");
+    } else {
+        $(".s"+i+"OT").css("color","black");
+    }
+}
+//수작업
+// if( scrollTop > parseInt( $("#section1").offset().top ) ){
+//     $("#section1").addClass("show");
+// }
+// if( scrollTop > parseInt( $("#section2").offset().top ) ){
+//     $("#section2").addClass("show");
+// }
+// if( scrollTop > parseInt( $("#section3").offset().top ) ){
+//     $("#section3").addClass("show");
+// }
+// if( scrollTop > parseInt( $("#section4").offset().top ) ){
+//     $("#section4").addClass("show");
+// }
+// if( scrollTop > parseInt( $("#section5").offset().top ) ){
+//     $("#section5").addClass("show");
+// }
+// if( scrollTop > parseInt( $("#section6").offset().top ) ){
+//     $("#section6").addClass("show");
+// }
+// if( scrollTop > parseInt( $("#section7").offset().top ) ){
+//     $("#section7").addClass("show");
+// }
+// if( scrollTop > parseInt( $("#section8").offset().top ) ){
+//     $("#section8").addClass("show");
+// }
+// if( scrollTop > parseInt( $("#section9").offset().top ) ){
+//     $("#section9").addClass("show");
+// }
+
+//한번에
+$(".content-item").each(function(){
+    if( scrollTop > $(this).offset().top ){
+        $(this).addClass("show");
+    }
+});
 });
 </code></pre>
                 </div>
@@ -253,7 +362,6 @@
         </div>
     </div>
 
-    <!-- parallax -->
     <section id="wrap">
         <h1>Parallax <em>Scrolling</em></h1>
         <div class="contents">
@@ -336,17 +444,117 @@
     <script src="js/jquery-ui.min.js"></script>
     <script src="../../mouse/prism.js"></script>
     <script>
-        window.addEventListener("scroll",function(){
-            let pageYOffset = window.pageYOffset || document.documentElement.scrollTop
+        $(window).scroll(function(){
+            console.log("1. window height: "+$(window).height()/2);
 
-            document.querySelector(".pageYOffset").textContent = pageYOffset;
-            document.querySelector("#wrap h1").style.transform = "translateX("+pageYOffset+"px)";
+            console.log("2. window scrollTop: "+$(window).scrollTop());
+            
+            const scrollTop = $(window).scrollTop() + $(window).height()/2;
+            $(".scrollTop").text(scrollTop);
 
-            document.querySelectorAll(".content-item").forEach(elem => {
-                let target = elem.childNodes[7];
-                console.log(target)
-                let offset = (pageYOffset - elem.offsetTop) * 0.2;
-                target.style.transform = "translateY("+ offset +"px)"
+            // $(".s1OT").text( parseInt( $("#section1").offset().top ) );
+            // $(".s2OT").text( parseInt( $("#section2").offset().top ) );
+            // $(".s3OT").text( parseInt( $("#section3").offset().top ) );
+            // $(".s4OT").text( parseInt( $("#section4").offset().top ) );
+            // $(".s5OT").text( parseInt( $("#section5").offset().top ) );
+            // $(".s6OT").text( parseInt( $("#section6").offset().top ) );
+            // $(".s7OT").text( parseInt( $("#section7").offset().top ) );
+            // $(".s8OT").text( parseInt( $("#section8").offset().top ) );
+            // $(".s9OT").text( parseInt( $("#section9").offset().top ) );
+
+            //위를 for문으로 간소화
+            for (let i = 1; i <= 9; i++){
+                $(".s"+i+"OT").text( parseInt( $("#section"+i).offset().top ) );
+            }
+
+            // if( scrollTop > parseInt( $("#section1").offset().top ) ){
+            //     $(".s1OT").css("color","red");
+            // } else {
+            //     $(".s1OT").css("color","black");
+            // }
+            // if( scrollTop > parseInt( $("#section2").offset().top ) ){
+            //     $(".s2OT").css("color","red");
+            // }  else {
+            //     $(".s2OT").css("color","black");
+            // }
+            // if( scrollTop > parseInt( $("#section3").offset().top ) ){
+            //     $(".s3OT").css("color","red");
+            // } else {
+            //     $(".s3OT").css("color","black");
+            // }
+            // if( scrollTop > parseInt( $("#section4").offset().top ) ){
+            //     $(".s4OT").css("color","red");
+            // } else {
+            //     $(".s4OT").css("color","black");
+            // }
+            // if( scrollTop > parseInt( $("#section5").offset().top ) ){
+            //     $(".s5OT").css("color","red");
+            // } else {
+            //     $(".s5OT").css("color","black");
+            // }
+            // if( scrollTop > parseInt( $("#section6").offset().top ) ){
+            //     $(".s6OT").css("color","red");
+            // } else {
+            //     $(".s6OT").css("color","black");
+            // }
+            // if( scrollTop > parseInt( $("#section7").offset().top ) ){
+            //     $(".s7OT").css("color","red");
+            // } else {
+            //     $(".s7OT").css("color","black");
+            // }
+            // if( scrollTop > parseInt( $("#section8").offset().top ) ){
+            //     $(".s8OT").css("color","red");
+            // } else {
+            //     $(".s8OT").css("color","black");
+            // }
+            // if( scrollTop > parseInt( $("#section9").offset().top ) ){
+            //     $(".s9OT").css("color","red");
+            // } else {
+            //     $(".s9OT").css("color","black");
+            // }
+
+            // 위를 for문으로 변경
+            for (let i = 1; i <= 9; i++){
+                if( scrollTop > parseInt( $("#section"+i).offset().top ) ){
+                    $(".s"+i+"OT").css("color","red");
+                } else {
+                    $(".s"+i+"OT").css("color","black");
+                }
+            }
+            //수작업
+            // if( scrollTop > parseInt( $("#section1").offset().top ) ){
+            //     $("#section1").addClass("show");
+            // }
+            // if( scrollTop > parseInt( $("#section2").offset().top ) ){
+            //     $("#section2").addClass("show");
+            // }
+            // if( scrollTop > parseInt( $("#section3").offset().top ) ){
+            //     $("#section3").addClass("show");
+            // }
+            // if( scrollTop > parseInt( $("#section4").offset().top ) ){
+            //     $("#section4").addClass("show");
+            // }
+            // if( scrollTop > parseInt( $("#section5").offset().top ) ){
+            //     $("#section5").addClass("show");
+            // }
+            // if( scrollTop > parseInt( $("#section6").offset().top ) ){
+            //     $("#section6").addClass("show");
+            // }
+            // if( scrollTop > parseInt( $("#section7").offset().top ) ){
+            //     $("#section7").addClass("show");
+            // }
+            // if( scrollTop > parseInt( $("#section8").offset().top ) ){
+            //     $("#section8").addClass("show");
+            // }
+            // if( scrollTop > parseInt( $("#section9").offset().top ) ){
+            //     $("#section9").addClass("show");
+            // }
+
+            //한번에
+            $(".content-item").each(function(){
+                if( scrollTop > $(this).offset().top ){
+                    $(this).addClass("show");
+                }
             });
         });
     </script>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parallax05</title>
+    <title>Parallax07</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <style>
@@ -31,7 +31,7 @@
             --font-family: 'lato', sans-serif;
             --aspect-ratio: 32/17;
             --image-width-max: 500px;
-            overflow-x: hidden;
+
             background-color: var(--color-bg);
             font-family: var(--font-family);
             color: var(--color-title);
@@ -176,7 +176,7 @@
             font-style: normal;
             font-family: "Abel";
         }
-
+        
         .infor4 {position: fixed; right: 0; bottom: 8%; z-index: 1000; padding: 20px;}
         .infor4 a {color: #fff; border: 1px solid #fff; border-radius: 30px; padding: 5px 10px}
         .infor4 .modal {
@@ -202,20 +202,20 @@
 <body>
 
     <div class="info">
-        <div>scrollTop() : <span class="scrollTop">0</span>px</div>
+        <div>pageYOffset : <span class="pageYOffset">0</span>px</div>
     </div>
 
     <div class="title">
-        <h1>Parallax03</h1>
-        <p>이질감 효과<br>- jQuery</p>
+        <h1>Parallax05</h1>
+        <p>기울임 효과</p>
         <ul>
-            <li><a href="parallax03.html">parallax01</a></li>
-            <li><a href="parallax04.html">parallax02</a></li>
-            <li class="active"><a href="parallax05.html">parallax03</a></li>
-            <li><a href="parallax06.html">parallax04</a></li>
-            <li><a href="parallax07.html">parallax05</a></li>
-            <li><a href="parallax08.html">parallax06</a></li>
-            <li><a href="parallax09.html">parallax07</a></li>
+            <li><a href="parallax3.html">parallax01</a></li>
+            <li><a href="parallax4.html">parallax02</a></li>
+            <li><a href="parallax5.html">parallax03</a></li>
+            <li><a href="parallax6.html">parallax04</a></li>
+            <li class="active"><a href="parallax7.html">parallax05</a></li>
+            <li><a href="parallax8.html">parallax06</a></li>
+            <li><a href="parallax9.html">parallax07</a></li>
             <li><a href="parallax10.html">parallax08</a></li>
         </ul>
     </div>
@@ -231,42 +231,70 @@
                     <span class="control"></span>
                 </h3>
                 <div class="code">
-                    <pre class="line-numbers"><code class="language-js">$(window).scroll(function(){
-    let scrollTop = $(window).scrollTop();
+                    <pre class="line-numbers"><code class="language-js">/*
+// 제이쿼리
+let scrollTop = $(window).scrollTop();
 
-    $(".scrollTop").text(scrollTop);
+function scroll(){
+    let newScrollTop = $(window).scrollTop();
+    let different = newScrollTop - scrollTop;
 
-$("#wrap h1").css({transform: "translateX("+scrollTop+"px)"});
+    console.log("scrollTop : "+scrollTop)
+    console.log("newScrollTop : "+newScrollTop)
+    console.log("different : "+different)
 
-// let offset1 = (scrollTop - $("#section1").offset().top);
-// let offset2 = (scrollTop - $("#section2").offset().top);
-// let offset3 = (scrollTop - $("#section3").offset().top);
-// let offset4 = (scrollTop - $("#section4").offset().top);
-// let offset5 = (scrollTop - $("#section5").offset().top);
-// let offset6 = (scrollTop - $("#section6").offset().top);
-// let offset7 = (scrollTop - $("#section7").offset().top);
-// let offset8 = (scrollTop - $("#section8").offset().top);
-// let offset9 = (scrollTop - $("#section9").offset().top);
-$(".content-item").each(function(){
-    let offset1 = (scrollTop - $(this).offset().top) * 0.1;
-    let offset2 = (scrollTop - $(this).offset().top) * 0.2;
-    let offset3 = (scrollTop - $(this).offset().top) * 0.3;
+    $(".content-item-desc").css( "transform","skewY("+different+"deg)")
 
-    $(this).find(".content-item-desc").css({"transform":"translateY("+ -offset1+"px)"})
-    $(this).find(".content-item-num").css({"transform":"translateY("+ offset2+"px)"})
-    $(this).find(".content-item-img").css({"transform":"translateX("+ offset3+"px)"})
+    scrollTop = newScrollTop;
+    requestAnimationFrame(scroll)
+}
+scroll();
+
+// 일정한 시간 동안 반복적 함수를 실행
+
+let num = 0;
+function render(){
+    $(".content-item-num").text(num);
+    num++;
+    requestAnimationFrame(render);      // 본인 함수를 안에 또 쓰면 재귀함수라 한다(무한에 빠진다)
+    // setInterval(render, 100);        버벅이기 때문에 새로나온 위에 코드를 사용
+}
+// render(); 숫자 막 커지기 때문에 주석했음
+*/
+
+// 자바스크립트
+let pageYOffset = window.pageYOffset;
+
+const scroll = () => {
+    const newPageYOffset = window.pageYOffset;
+    const different = newPageYOffset - pageYOffset;
+
+    console.log("pageYOffset : "+pageYOffset)
+    console.log("newPageYOffset : "+newPageYOffset)
+    console.log("different : "+different)
+
+    /*
+    let target = document.querySelectorAll(".content-item-img");
+    // forEach는 jQuery의 each와 똑같이 forEach메서드에 함수를 사용하고 그 함수의 첫번 째 매개변수를 사용하면 선택자의 인덱스를 알 수 있다.
+    target.forEach(function(imgIndex){
+        imgIndex.style.transform = 'skewY('+different * 0.1 +'deg)' // different에 숫자를 곱하면 천천히 적용된다.
+    });
+    */
+
+    // gsap
+    // gsap.to(".content-item-img", {duration: 0.3, rotation: different});
+    gsap.to(".content-item-img", {duration: 0.3, ease: "power1.out", skewY: different * 0.2});
+    gsap.to(".content-item-desc", {duration: 0.3, ease: "power5.out", skewY: -different * 0.7});
     
-});
+    pageYOffset = newPageYOffset;
+    requestAnimationFrame(scroll);
+}
+scroll();
 
-//     $("#section1 .content-item-desc").css({transform: "translateX("+offset1+"px)"});
-//     $("#section2 .content-item-desc").css({transform: "translateX("+offset2+"px)"});
-//     $("#section3 .content-item-desc").css({transform: "translateX("+offset3+"px)"});
-//     $("#section4 .content-item-desc").css({transform: "translateX("+offset4+"px)"});
-//     $("#section5 .content-item-desc").css({transform: "translateX("+offset5+"px)"});
-//     $("#section6 .content-item-desc").css({transform: "translateX("+offset6+"px)"});
-//     $("#section7 .content-item-desc").css({transform: "translateX("+offset7+"px)"});
-//     $("#section8 .content-item-desc").css({transform: "translateX("+offset8+"px)"});
-//     $("#section9 .content-item-desc").css({transform: "translateX("+offset9+"px)"});
+window.addEventListener("scroll",function(){
+    let pageYOffset = window.pageYOffset || document.documentElement.scrollTop
+
+    document.querySelector(".pageYOffset").textContent = pageYOffset;
 });
 </code></pre>
                 </div>
@@ -357,45 +385,74 @@ $(".content-item").each(function(){
 
     <script src="js/jquery.min_1.12.4.js"></script>
     <script src="js/jquery-ui.min.js"></script>
+    <script src="js/gsap.min_3.3.0.js"></script>
     <script src="../../mouse/prism.js"></script>
     <script>
-        $(window).scroll(function(){
-            let scrollTop = $(window).scrollTop();
+        /*
+        // 제이쿼리
+        let scrollTop = $(window).scrollTop();
 
-            $(".scrollTop").text(scrollTop);
+        function scroll(){
+            let newScrollTop = $(window).scrollTop();
+            let different = newScrollTop - scrollTop;
 
-            $("#wrap h1").css({transform: "translateX("+scrollTop+"px)"});
+            console.log("scrollTop : "+scrollTop)
+            console.log("newScrollTop : "+newScrollTop)
+            console.log("different : "+different)
 
-            // let offset1 = (scrollTop - $("#section1").offset().top);
-            // let offset2 = (scrollTop - $("#section2").offset().top);
-            // let offset3 = (scrollTop - $("#section3").offset().top);
-            // let offset4 = (scrollTop - $("#section4").offset().top);
-            // let offset5 = (scrollTop - $("#section5").offset().top);
-            // let offset6 = (scrollTop - $("#section6").offset().top);
-            // let offset7 = (scrollTop - $("#section7").offset().top);
-            // let offset8 = (scrollTop - $("#section8").offset().top);
-            // let offset9 = (scrollTop - $("#section9").offset().top);
-            $(".content-item").each(function(){
-                let offset1 = (scrollTop - $(this).offset().top) * 0.1;
-                let offset2 = (scrollTop - $(this).offset().top) * 0.2;
-                let offset3 = (scrollTop - $(this).offset().top) * 0.3;
+            $(".content-item-desc").css( "transform","skewY("+different+"deg)")
 
-                $(this).find(".content-item-desc").css({"transform":"translateY("+ -offset1+"px)"})
-                $(this).find(".content-item-num").css({"transform":"translateY("+ offset2+"px)"})
-                $(this).find(".content-item-img").css({"transform":"translateX("+ offset3+"px)"})
-                
+            scrollTop = newScrollTop;
+            requestAnimationFrame(scroll)
+        }
+        scroll();
+
+        // 일정한 시간 동안 반복적 함수를 실행
+        
+        let num = 0;
+        function render(){
+            $(".content-item-num").text(num);
+            num++;
+            requestAnimationFrame(render);      // 본인 함수를 안에 또 쓰면 재귀함수라 한다(무한에 빠진다)
+            // setInterval(render, 100);        버벅이기 때문에 새로나온 위에 코드를 사용
+        }
+        // render(); 숫자 막 커지기 때문에 주석했음
+        */
+
+        // 자바스크립트
+        let pageYOffset = window.pageYOffset;
+
+        const scroll = () => {
+            const newPageYOffset = window.pageYOffset;
+            const different = newPageYOffset - pageYOffset;
+
+            console.log("pageYOffset : "+pageYOffset)
+            console.log("newPageYOffset : "+newPageYOffset)
+            console.log("different : "+different)
+
+            /*
+            let target = document.querySelectorAll(".content-item-img");
+            // forEach는 jQuery의 each와 똑같이 forEach메서드에 함수를 사용하고 그 함수의 첫번 째 매개변수를 사용하면 선택자의 인덱스를 알 수 있다.
+            target.forEach(function(imgIndex){
+                imgIndex.style.transform = 'skewY('+different * 0.1 +'deg)' // different에 숫자를 곱하면 천천히 적용된다.
             });
+            */
 
-        //     $("#section1 .content-item-desc").css({transform: "translateX("+offset1+"px)"});
-        //     $("#section2 .content-item-desc").css({transform: "translateX("+offset2+"px)"});
-        //     $("#section3 .content-item-desc").css({transform: "translateX("+offset3+"px)"});
-        //     $("#section4 .content-item-desc").css({transform: "translateX("+offset4+"px)"});
-        //     $("#section5 .content-item-desc").css({transform: "translateX("+offset5+"px)"});
-        //     $("#section6 .content-item-desc").css({transform: "translateX("+offset6+"px)"});
-        //     $("#section7 .content-item-desc").css({transform: "translateX("+offset7+"px)"});
-        //     $("#section8 .content-item-desc").css({transform: "translateX("+offset8+"px)"});
-        //     $("#section9 .content-item-desc").css({transform: "translateX("+offset9+"px)"});
+            // gsap
+            // gsap.to(".content-item-img", {duration: 0.3, rotation: different});
+            gsap.to(".content-item-img", {duration: 0.3, ease: "power1.out", skewY: different * 0.2});
+            gsap.to(".content-item-desc", {duration: 0.3, ease: "power5.out", skewY: -different * 0.7});
+            
+            pageYOffset = newPageYOffset;
+            requestAnimationFrame(scroll);
+        }
+        scroll();
+
+        window.addEventListener("scroll",function(){
+            let pageYOffset = window.pageYOffset || document.documentElement.scrollTop
+
+            document.querySelector(".pageYOffset").textContent = pageYOffset;
         });
-    </script>    
+    </script>
 </body>
 </html>
