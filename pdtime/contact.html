@@ -93,6 +93,15 @@
               
     <!-- script -->
     <script src="js/jquery.min.js"></script>
+    
+    <!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+    * The callback parameter executes the initMap() function
+    -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQSRhyAdDkJIEoiVVXNj41YR3hFjangjM&callback=initMap">
+    </script>
     <script>
         // Initialize and add the map
         function initMap() {
@@ -104,16 +113,8 @@
           // The marker, positioned at Uluru
           var marker = new google.maps.Marker({position: home, map: map});
         }
-            </script>
-            <!--Load the API from the specified URL
-            * The async attribute allows the browser to render the page while the API loads
-            * The key parameter will contain your own API key (which is not needed for this tutorial)
-            * The callback parameter executes the initMap() function
-            -->
-            <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQSRhyAdDkJIEoiVVXNj41YR3hFjangjM&callback=initMap">
-            </script>
-    <script>
+        // google map api
+
         let wHeight = $(window).height();         //브라우저 높이
         let dHeight = $(document).height();       //문서 자체 높이
         let hHeight = $(".header").outerHeight(); //헤더 높이
