@@ -1,113 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+<html>
+  <head>
     <style>
-        body {
-            background: #000;
-        }
-    .section7 {
-        width: 100%;
-        height: 480vh;
-        /* height무조건 있어야 세로스크롤 느낌 나옴 */
-    }
-    .parallax, .slide, .mouse {
-        position: relative;
-    }
-    .scriptview-wrap {
-                        /*left: 638px; */
-    position: absolute; left: 33.229vw;
-    /* width: 1208px; height: 727px; */
-    width: 62.917vw; height: 727px;
-    /* padding: 16.5px 17px; */
-    padding: 0.859vw 0.885vw;
-    background: #1b1b1b;
-    box-sizing: border-box;
-    border: 1px solid #424242;
-    border-radius: 15px;
-}
-.scriptview-wrap.w2 {
-    top: 120vh;
-}
-.scriptview-wrap.w3 {
-    top: 120vh;
-}
-.view-box {
-    /* width: 1174px; height: 694px; */
-    width: 61.146vw; height: 694px;
-}
-.view-box .iframe {
-    width: 100%; height: 100%;
-}
-.script-text {
-    font-family: 'Ilisarniq-Black';
-    position: absolute;
-    top: 34%; left: 10%;
-    transition: all 1s;
-}
-.scriptview-wrap:hover ~ .script-text {
-    display: none;
-}
-
-.script-text h2 {
-    /* font-size: 200px; */
-    font-size: 10.417vw;
-    color: #fff;
-    text-transform: uppercase;
-}
-.script-text h3 {
-    margin-top: -30px;
-    margin-left: 17px;
-    /* font-size: 36px; */
-    font-size: 1.875vw;
-    color: #fff;
-    text-transform: uppercase;
-}
-.script-text p {
-    margin-left: 17px;
-    font-family: 'S-CoreDream-3Light';
-    /* width: 651px; */
-    width: 33.906vw;
-    /* font-size: 18px; */
-    font-size: 0.938vw;
-    color: #fff;
-    letter-spacing: 0.5px;
-}
+      /* Set the size of the div element that contains the map */
+      #map {
+        height: 400px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
     </style>
-</head>
-<body>
-    <div class="section7">
-        <div class="script-text">
-            <h2>parallax</h2>
-            <h3>what</h3>
-            <p>
-                Parallax는 ‘시차’ 라는 뜻으로 천문학에서 사용하는 용어입니다. 즉 멀리 있는 물체는 천천히 움직이고, 가까이 있는 물체는 빨리 움직이는 현상을 의미하며, 이 현상을 이용하면 입체감, 실체감을 높여서 보다 인상적인 디자인을 할 수 있습니다. 
-            </p>
-        </div>
-        <div class="parallax">
-            <div class="scriptview-wrap w1">
-                <div class="view-box">
-                    <iframe class="iframe" src="../script/parallax/parallax03.html" frameborder="0"></iframe>
-                </div>
-            </div>
-        </div>
-        <div class="slide">
-            <div class="scriptview-wrap w2">
-                <div class="view-box">
-                    <iframe class="iframe2" src="../slider/slide01.html" frameborder="0"></iframe>
-                </div>
-            </div>
-        </div>
-        <div class="mouse">
-            <div class="scriptview-wrap w3">
-                <div class="view-box">
-                    <iframe class="iframe3" src="../mouse/mouse01.html" frameborder="0"></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
+  </head>
+  <body>
+    <h3>My Google Maps Demo</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+    <script>
+// Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  var uluru = {lat: -25.344, lng: 131.036};
+  // The map, centered at Uluru
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 4, center: uluru});
+  // The marker, positioned at Uluru
+  var marker = new google.maps.Marker({position: uluru, map: map});
+}
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQSRhyAdDkJIEoiVVXNj41YR3hFjangjM&callback=initMap">
+    </script>
+  </body>
 </html>
