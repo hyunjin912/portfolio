@@ -111,3 +111,27 @@ h1.main-tit .split span {
         display: none;
     }
 }
+
+@media (max-width: 410px){
+    .header-title h1.main-tit {
+        font-size: 35px;
+        line-height: 37px;
+        padding-top: 58px;
+    }
+    .header-title h1.main-tit strong span:nth-child(4){
+        min-width: 2vw;
+        height: 1px;
+    }.header-title h1.main-tit strong span:nth-child(8){
+        min-width: 2vw;
+        height: 1px;
+    }
+    .header-title h1.main-tit strong span:nth-child(12) {
+        display: block;
+    }
+    .header-title h1.main-tit em span:nth-child(1) {
+        display: block;
+    }
+    .header-title .sub-tit {
+        font-size: 16px;
+    }
+}
