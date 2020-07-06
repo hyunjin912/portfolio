@@ -1,18 +1,25 @@
 /* layout */
 body {
     background: #1b1b1b;
-    overflow: hidden;
+    overflow-x: hidden;
 }
+#contents {}
+#header {height: 100vh;}
+#section1 {height: 100vh; background: powderblue;}
+#section2 {}
+#section3 {}
+#section4 {}
+#section5 {}
+#section6 {}
+#section7 {}
+
+/* container */
 .container {
-    width: 1532px;
-    position: absolute; left: 50%;
-    transform: translateX(-50%);
-    background: red;
+    max-width: 1532px;
+    width: 100%;
+    margin: 0 auto;
 }
 
-#header {
-    height: 100vh;
-}
 
 /* cursor */
 .cursor {
@@ -28,73 +35,50 @@ body {
 }
 
 /* header */
-.header {}
-.header .header-title {
-    padding-top: 98px;
-    box-sizing: border-box;
-    
-    background: blue;
+.header {
+    height: 100vh;
+    position: relative;
 }
-.header .header-title h1 {
+.header-title {
+    width: 91%;
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
     font-family: 'Ilisarniq-Black';
-    font-size: 144px;
-    line-height: 142px;
+    color: #fff;
+}
+.header-title h1.main-tit {
+    font-size: 6.5vw;
+    line-height: 7vw;
+    color: #fff;
     text-transform: uppercase;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 2px #fff;
-    -moz-text-fill-color: transparent;
-    -moz-text-stroke: 2px #fff;
-    -ms-text-fill-color: transparent;
-    -ms-text-stroke: 2px #fff;
-    -o-text-fill-color: 2px #fff;
-    -o-text-stroke: 2px #fff;
 
 }
-.header .header-title h1 span {
-    -webkit-text-fill-color: #fff;
-    -webkit-text-stroke: 0px;
-    -moz-text-fill-color: #fff;
-    -moz-text-stroke: 0px;
-    -ms-text-fill-color: #fff;
-    -ms-text-stroke: 0px;
-    -o-text-fill-color: #fff;
-    -o-text-stroke: 0px;
-    
-    display: block;
+.header-title h1.main-tit strong {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px #fff;
 }
-.header .header-title h2 {
-    margin-top: 26px;
-    text-indent: 12px;
+.header-title h1.main-tit em {}
+.header-title .sub-tit {
+    font-size: 2vw;
     font-family: 'Ilisarniq-Light';
-    font-size: 22px;
-    color: #fff;
+    padding-bottom: 10vw;
+
 }
-.header .header-title h2 span {
-    font-family: 'Ilisarniq-Regular';
+.header-title .desc {
+    font-family: 'S-CoreDream-3Light';
+    font-size: 1vw;
+    line-height: 1.6vw;
 }
-.header .header-desc {
-    margin-left: 12px;
-    margin-top: 225px;
-    font-family: 'S-CoreDream-1Thin'; 
-    font-size: 20px;
-    letter-spacing: 1px;
-    color: #fff;
-}
-.header .header-desc strong {
+.header-title .desc strong {
     font-family: 'S-CoreDream-6Bold';
 }
 
-
-
 /* mediaquery */
 @media (max-width: 1700px){
-    .container {width: 100%;}
+    .header-title {width: 80%;}
 }
-
 @media (max-width: 1310px){
-    .header .header-title h1 {
-        font-size: 120px;
-    }
+  
 }
 
 @media (max-width: 1024px){}
