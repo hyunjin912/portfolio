@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이현진 | Portfolio</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="wrap">
+        <div class="container">
+            <header id="headerWrap">
+                <div class="header">
+                    <div class="title">
+                        <h1>생각을 거듭하다</h1>
+                    </div>
+                    <div class="stitle">
+                        <h3 class="firstLogo">Thinking = Thinking + Thinking</h3>
+                        <h3 class="secondLogo">T+=T</h3>
+                    </div>
+                    <div class="content">
+                        <p>
+                            안녕하세요. 이현진입니다.
+                            <span>생각을 거듭할수록</span> 한계가 없는 세상을 만드는 퍼블리셔에 빠지게됐습니다. 덕분에 제 자신도 마치 <span>한계 없이 발전</span>하는 것처럼 느껴졌습니다.<br>
+                            물론, 한계가 없으니 끝없이 노력해야하는 힘든 직업이지만, <span>성취감</span> 또한 <span>무한</span>하니 굉장히 가치있다고 생각합니다.
+                            저의 생각을 거듭한 결과, <span>지금부터 시작</span>합니다.
+                        </p>
+                    </div>
+                </div>
+            </header>
+        </div>
+
+        <section id="siteWrap">
+            <div class="site">
+                <div class="siteTitle">WEB STANDARD</div>
+                <div class="sTit">WEBSITE</div>
+                <div class="siteImg"></div>
+                <div class="siteNum">01</div>
+                <a class="viewCodeWrap" href="#">
+                    <div class="viewCode">
+                        <div class="viewtext">
+                            VIEW CODE
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/jquery.min_1.12.4.js"></script>
+    <script>
+
+        function logoStart(){
+            $(".firstLogo").css("opacity", "0");
+            $(".secondLogo").css("opacity", "1");
+        };
+        setTimeout(logoStart, 1300);
+    </script>
+</body>
+</html>
