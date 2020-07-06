@@ -1485,11 +1485,11 @@ let Width =$(".ani1-1").outerWidth();
 console.log("width : "+Width);
 
 /* section7 */
-$(".scriptview-wrap").mouseover(function(){
-    $(".script-text").css({display: "none"});
-}).mouseout(function(){
-    $(".script-text").css({display: "block"});
-});
+// $(".scriptview-wrap").mouseover(function(){
+//     $(".script-text").css({display: "none"});
+// }).mouseout(function(){
+//     $(".script-text").css({display: "block"});
+// });
 
 $(".script-btn > a").click(function(e){
     e.preventDefault();
