@@ -62,9 +62,11 @@ html {width: 100%; height: 100%; margin: 0; padding: 0;}
     -webkit-text-stroke: 2px #fff;
 }
 .sec1 .title h1 strong span {
+    display: inline-block;
     transform: translateY(80px);
 }
 .sec1 .title h1 em span {
+    display: inline-block;
     transform: translateY(80px);
 }
 .sec1 .title .sub-title {
