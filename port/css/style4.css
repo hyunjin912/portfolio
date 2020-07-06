@@ -6,8 +6,6 @@ body {
 #contents {}
 #header {
     height: 100vh;
-    /* background: url(../img/mainbg.jpg) no-repeat center center fixed;
-    background-size: cover; */
 }
 #section1 {height: 100vh; background: powderblue;}
 #section2 {}
@@ -26,18 +24,9 @@ body {
 
 
 /* cursor */
-.cursor {
-    position: absolute;
-    left: 50%; top: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    user-select: none;
-    pointer-events: none;
-    background: url(../img/mainbg.jpg) no-repeat center center fixed; /* body에 있는거 그래도 사용하는데 꼭 background-attachment: fixed가 추가되어야 한다.*/
-    background-size: cover; /* 이게 없으면 실제 이미지 크기만큼의 영역이 생겨버린다.*/
-    z-index: -1;
+.cursor {}
 
-}
+/* split */
 h1.main-tit .split span {
     display: inline-block;
     min-width: 1vw;
@@ -48,6 +37,7 @@ h1.main-tit .split span {
     min-width: 0.08vw;
     opacity: 0;
 }
+
 /* header */
 .header {
     height: 100vh;
@@ -65,7 +55,6 @@ h1.main-tit .split span {
     line-height: 7vw;
     color: #fff;
     text-transform: uppercase;
-
 }
 .header-title h1.main-tit strong {
     -webkit-text-fill-color: transparent;
