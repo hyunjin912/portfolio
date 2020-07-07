@@ -18,21 +18,22 @@ $(window).scroll(function(){
 
     /* reveal */
     $(".box").each(function(){
-        if ( $(window).scrollTop() == 937 ){
+        if ( $(window).scrollTop() >= $("#big-title").offset().top){
             $(this).addClass("reveal");
         } else {
             $(this).removeClass("reveal");
         }
     });
     $(".big-title div").each(function(){
-        if ( $(window).scrollTop() == 937 ){
+        if ( $(window).scrollTop() >= $("#big-title").offset().top){
             $(this).addClass("reveal");
         } else {
             $(this).removeClass("reveal");
         }
     });
+    
 });
-
+console.log( $("#big-title").offset().top );
 
 /* split */
 $(".split").each(function () {
