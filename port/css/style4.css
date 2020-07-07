@@ -85,24 +85,21 @@ h1.main-tit .split span {
 /* mediaquery */
 @media (max-width: 1024px){
     .header-title h1.main-tit {
-        text-align: center;
         font-size: 67px;
         line-height: 67px;
-        padding-top: 13px;
+        padding-top: 0px;
     }
     .header-title h1.main-tit em span:nth-child(1) {
         display: block;
     }
     .header-title .sub-tit {
         font-size: 36px;
-        text-align: center;
         padding-top: 40px;
     }
     .header-title .desc {
-        text-align: center;
         font-family: 'S-CoreDream-1Thin'; 
-        font-size: 23px;
-        line-height: 33px;
+        font-size: 19px;
+        line-height: 28px;
     }
     .header-title .desc br:nth-child(1) {
         display: block;
@@ -114,10 +111,12 @@ h1.main-tit .split span {
 
 @media (max-width: 800px){
     .header-title {
+        text-align: center;
         width: 74.610vw;
     }
     .header-title h1.main-tit {
         font-size: 53px;
+        text-align: center;
         padding-top: 75px;
     }
     .header-title .desc, .cursor {
