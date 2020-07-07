@@ -102,9 +102,6 @@ h1.main-tit .split span {
 
 /* mediaquery */
 @media (max-width: 1024px){
-    .cursorbg {
-        display: none;
-    }
     .header-title h1.main-tit {
         font-size: 67px;
         line-height: 67px;
@@ -140,7 +137,7 @@ h1.main-tit .split span {
         text-align: center;
         padding-top: 75px;
     }
-    .header-title .desc, .cursor {
+    .header-title .desc, .cursor, .cursorbg {
         display: none;
     }
 }
