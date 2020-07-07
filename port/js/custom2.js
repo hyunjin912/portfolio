@@ -5,8 +5,8 @@ const cursor = $(".cursor")
 let circleWidth = cursor.width();
 let circleHeight = cursor.height();
 
-$("body").on("mousemove", function(e){
-    gsap.to(cursor,{duration: 0.3, left: e.pageX - (circleWidth / 2), top: e.pageY - (circleHeight / 2)});
+$("#header").on("mousemove", function(e){
+    gsap.to(cursor,{duration: 0.3, left: e.pageX - 100, top: e.pageY - 100});
 });
 
 /* split */
@@ -22,5 +22,7 @@ setTimeout(function(){
     gsap.to(".header-title h1 em span", 0.6, {ease: Back.easeOut.config(1.7), opacity: 1, y: 0, stagger: 0.05, delay: 0.5});
     gsap.to(".sub-tit span", 0.6, {ease: Back.easeOut.config(1.7), opacity: 1, stagger: 0.05, delay: 1.5});
     gsap.to(".desc", 0.6, {ease: Back.easeOut.config(1.7), opacity: 1, y: 0, stagger: 0.05, delay: 3.5});
+    gsap.to(".cursorbg", 1, {ease: "bounce.out", opacity: 0, stagger: 0.05, delay: 3.5});
+    gsap.to(".cursor", 1, {ease: "bounce.out", opacity: 1, width: 200, height: 200, stagger: 0.05, delay: 3.5});
 },2000);
 
