@@ -112,11 +112,11 @@ h1.main-tit .split span {
     }
 }
 
-@media (max-width: 410px){
+@media (max-width: 414px){
     .header-title h1.main-tit {
         font-size: 35px;
         line-height: 37px;
-        padding-top: 58px;
+        padding-top: 56px;
     }
     .header-title h1.main-tit strong span:nth-child(4){
         min-width: 2vw;
