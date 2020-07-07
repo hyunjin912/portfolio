@@ -102,6 +102,9 @@ h1.main-tit .split span {
 
 /* mediaquery */
 @media (max-width: 1024px){
+    .cursorbg {
+        display: none;
+    }
     .header-title h1.main-tit {
         font-size: 67px;
         line-height: 67px;
