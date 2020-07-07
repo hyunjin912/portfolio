@@ -33,7 +33,6 @@ $(window).scroll(function(){
     });
     
 });
-console.log( $("#big-title").offset().top );
 
 /* split */
 $(".split").each(function () {
@@ -43,12 +42,17 @@ $(".split").each(function () {
     $(this).html(split).attr("aria-label", txt);
 });
 
+let hWidth = $("#header").outerWidth() /  2;
+let hHeight = $("#header").outerHeight() / 2;
+
+console.log("헤더너비 : "+hWidth);
+console.log("헤더높이 : "+hHeight);
 setTimeout(function(){
     gsap.to(".header-title h1 strong span", 0.6, {ease: Back.easeOut.config(1.7), opacity: 1, y: 0, stagger: 0.05});
     gsap.to(".header-title h1 em span", 0.6, {ease: Back.easeOut.config(1.7), opacity: 1, y: 0, stagger: 0.05, delay: 0.5});
     gsap.to(".sub-tit span", 0.6, {ease: Back.easeOut.config(1.7), opacity: 1, stagger: 0.05, delay: 1.5});
     gsap.to(".desc", 0.6, {ease: Back.easeOut.config(1.7), opacity: 1, y: 0, stagger: 0.05, delay: 3.5});
     gsap.to(".cursorbg", 1, {opacity: 0, stagger: 0.05, delay: 3.5});
-    gsap.to(".cursor", 1, {ease: "bounce.out", opacity: 1, width: 200, height: 200, stagger: 0.05, delay: 3.5});
+    gsap.to(".cursor", 1, {ease: "bounce.out", top: hHeight-100, left: hWidth-100, opacity: 1, width: 200, height: 200, stagger: 0.05, delay: 3.5});
 },2000);
 
