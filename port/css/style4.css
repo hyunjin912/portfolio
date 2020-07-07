@@ -86,16 +86,29 @@ h1.main-tit .split span {
 @media (max-width: 1024px){
     .header-title h1.main-tit {
         text-align: center;
-        font-size: 66px;
-        line-height: 66px;
+        font-size: 67px;
+        line-height: 67px;
+        padding-top: 13px;
+    }
+    .header-title h1.main-tit em span:nth-child(1) {
+        display: block;
     }
     .header-title .sub-tit {
+        font-size: 36px;
         text-align: center;
         padding-top: 40px;
     }
     .header-title .desc {
-        font-size: 15px;
-        line-height: 25px;
+        text-align: center;
+        font-family: 'S-CoreDream-1Thin'; 
+        font-size: 23px;
+        line-height: 33px;
+    }
+    .header-title .desc br:nth-child(1) {
+        display: block;
+    }
+    .header-title .desc br {
+        display: none;
     }
 }
 
@@ -118,10 +131,14 @@ h1.main-tit .split span {
         line-height: 37px;
         padding-top: 56px;
     }
+    .header-title h1.main-tit strong {
+        -webkit-text-stroke: 0.5px #fff;
+    }
     .header-title h1.main-tit strong span:nth-child(4){
         min-width: 2vw;
         height: 1px;
-    }.header-title h1.main-tit strong span:nth-child(8){
+    }
+    .header-title h1.main-tit strong span:nth-child(8){
         min-width: 2vw;
         height: 1px;
     }
@@ -135,3 +152,18 @@ h1.main-tit .split span {
         font-size: 16px;
     }
 }
+
+@media (max-width: 375px) {
+    .header-title h1.main-tit {
+        font-size: 32px;
+        padding-top: 31px;
+    }
+}
+
+@media (max-width: 360px) {
+    .header-title h1.main-tit {
+        font-size: 30px;
+        padding-top: 40px;
+    }
+}
+
