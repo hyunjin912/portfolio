@@ -9,6 +9,31 @@ $("#header").on("mousemove", function(e){
     gsap.to(cursor,{duration: 0.3, left: e.pageX - 100, top: e.pageY - 100});
 });
 
+/* scroll */
+$(window).scroll(function(){
+    // scroll 값
+    const scrollTop = $(window).scrollTop();
+
+    $(".scrollTop").text(parseInt(scrollTop));
+
+    /* reveal */
+    $(".box").each(function(){
+        if ( $(window).scrollTop() == 937 ){
+            $(this).addClass("reveal");
+        } else {
+            $(this).removeClass("reveal");
+        }
+    });
+    $(".big-title div").each(function(){
+        if ( $(window).scrollTop() == 937 ){
+            $(this).addClass("reveal");
+        } else {
+            $(this).removeClass("reveal");
+        }
+    });
+});
+
+
 /* split */
 $(".split").each(function () {
     let txt = $(this).text();
