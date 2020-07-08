@@ -2,7 +2,6 @@
 body {
     background: #1b1b1b;
     overflow-x: hidden;
-    height: 300vh;
 }
 #contents {}
 #big-title {
@@ -70,20 +69,46 @@ body {
     align-items: center;
     overflow: hidden;
 }
-.big-title div {
-    position: relative; top: 250px;
+.big-title svg {
+    position: relative;
+     /* top: 250px; */
     font-family: 'Ilisarniq-Black';
-    padding-bottom: 30px;
+    /* padding-bottom: 30px; */
     /* height: 350px; */
     font-size: 10.4vw;
     text-transform: uppercase;
     letter-spacing: 0.53vw;
+    width: 500px; height: 300px;
 }
-.big-title div.reveal {
+.big-title svg.reveal {
     color: #fff;
     top: 0;
     transition: all 1s;
 }
+.big-title svg text {
+    fill: transparent;
+    stroke: #fff;
+    stroke-width: 2px;
+    opacity: 0;
+}
+.big-title svg text.reveal {
+    opacity: 1;
+    animation: stroke 1s forwards;
+}
+@keyframes stroke {
+    0% {
+      fill: rgba(72,138,204,0); stroke: rgba(54,95,160,1);
+      stroke-dashoffset: 25%;
+      stroke-dasharray: 0 50%;
+    }
+    70% {fill: rgba(72,138,204,0); stroke: rgba(54,95,160,1);}
+    80% {fill: rgba(72,138,204,0); stroke: rgba(54,95,160,1);}
+    100% {
+      fill: rgba(72,138,204,1); stroke: rgba(54,95,160,0);
+      stroke-dashoffset: -25%;
+      stroke-dasharray: 50 0%;
+    }
+  }
 /* .underline {
     position: absolute; top: -30px; left: 0;
     width: inherit;
@@ -240,4 +265,3 @@ h1.main-tit .split span {
         display: none;
     }
 }
-

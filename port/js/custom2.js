@@ -16,16 +16,17 @@ $(window).scroll(function(){
 
     $(".scrollTop").text(parseInt(scrollTop));
 
+    
     /* reveal */
     $(".box").each(function(){
-        if ( $(window).scrollTop() >= $("#big-title").offset().top){
+        if ( $(window).scrollTop() + $(window).height() / 2 >= $("#big-title").offset().top){
             $(this).addClass("reveal");
         } else {
             $(this).removeClass("reveal");
         }
     });
-    $(".big-title > div").each(function(){
-        if ( $(window).scrollTop() >= $("#big-title").offset().top){
+    $(".big-title svg text").each(function(){
+        if ( $(window).scrollTop() + $(window).height() / 2 >= $("#big-title").offset().top){
             $(this).addClass("reveal");
         } else {
             $(this).removeClass("reveal");
@@ -34,24 +35,22 @@ $(window).scroll(function(){
 
     
 });
-down();
-function down(){
-    
-    if( $(window).scrollTop() >= $("#big-title").offset().top ){
-        $('#big-title').on('scroll touchmove mousewheel', function(event) {
-            event.preventDefault();
-            event.stopPropagation();
-            return false;
-          });
-        if( $(".box").hasClass("reveal") ){
-            $('#big-title').off('scroll touchmove mousewheel');
-        }
-    }
-}
+console.log( "빅타이틀 오프셋 : "+$("#big-title").offset().top )
 
-    
-    
+let timer = setTimeout(function(){
+    $(window).scroll(function(){
+        $("html, body").animate({scrollTop: $("#big-title").offset().top}, 600, "easeInOutExpo");
+    });
+});
+clearTimeout(timer);
 
+// $('#big-title').on('scroll touchmove mousewheel', function(event) {
+//     event.preventDefault();
+//     event.stopPropagation();
+//     return false;
+// });
+    
+// $('#big-title').off('scroll touchmove mousewheel');
 
 
 /* split */
