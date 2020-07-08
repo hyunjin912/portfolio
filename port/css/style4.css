@@ -1,7 +1,7 @@
 /* layout */
-body, html {
-    overflow: visible !important;
+body {
     background: #1b1b1b;
+    overflow-x: hidden;
 }
 #contents {}
 #big-title {
@@ -10,9 +10,7 @@ body, html {
     position: relative;
     overflow: hidden;
 }
-#header {
-    height: 100vh;
-}
+#header {height: 100vh;}
 #section1 {}
 #section2 {}
 #section3 {}
