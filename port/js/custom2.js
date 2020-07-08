@@ -15,8 +15,6 @@ $(window).scroll(function(){
     const scrollTop = $(window).scrollTop();
 
     $(".scrollTop").text(parseInt(scrollTop));
-
-    
     /* reveal */
     $(".box").each(function(){
         if ( $(window).scrollTop() + $(window).height() / 2 >= $("#big-title").offset().top){
@@ -33,16 +31,24 @@ $(window).scroll(function(){
         }
     });
 
+    /* titleMove */
+    $(".left-title").each(function(){
+        if ( $(window).scrollTop() > $(this).offset().top / 2 ){
+            $(this).addClass("titMove");
+        } else {
+            $(this).removeClass("titMove");
+        }
+    });
+
     
 });
-console.log( "빅타이틀 오프셋 : "+$("#big-title").offset().top )
 
-let timer = setTimeout(function(){
-    $(window).scroll(function(){
-        $("html, body").animate({scrollTop: $("#big-title").offset().top}, 600, "easeInOutExpo");
-    });
-});
-clearTimeout(timer);
+// let timer = setTimeout(function(){
+//     $(window).scroll(function(){
+//         $("html, body").animate({scrollTop: $("#big-title").offset().top}, 600, "easeInOutExpo");
+//     });
+// });
+// clearTimeout(timer);
 
 // $('#big-title').on('scroll touchmove mousewheel', function(event) {
 //     event.preventDefault();
@@ -70,9 +76,9 @@ setTimeout(function(){
     gsap.to(".header-title h1 strong span", 0.6, {ease: Back.easeOut.config(1.7), opacity: 1, y: 0, stagger: 0.05});
     gsap.to(".header-title h1 em span", 0.6, {ease: Back.easeOut.config(1.7), opacity: 1, y: 0, stagger: 0.05, delay: 0.5});
     gsap.to(".sub-tit span", 0.6, {ease: Back.easeOut.config(1.7), opacity: 1, stagger: 0.05, delay: 1.5});
-    gsap.to(".desc", 0.6, {ease: Back.easeOut.config(1.7), opacity: 1, y: 0, stagger: 0.05, delay: 3.5});
-    gsap.to(".cursorbg", 1, {opacity: 0, stagger: 0.05, delay: 3.5});
-    gsap.to(".cursor", 1, {ease: "bounce.out", borderRadius: "50%", top: hHeight-100, left: hWidth-100, opacity: 1, width: 200, height: 200, stagger: 0.05, delay: 3.5});
+    gsap.to(".desc", 0.3, {ease: Back.easeOut.config(1.7), opacity: 1, y: 0, stagger: 0.05, delay: 3.5});
+    gsap.to(".cursorbg", 1, {opacity: 0, stagger: 0.05, delay: 4});
+    gsap.to(".cursor", 1, {ease: "bounce.out", borderRadius: "50%", top: hHeight-100, left: hWidth-100, opacity: 1, width: 200, height: 200, stagger: 0.05, delay: 4});
 },2000);
 
 
