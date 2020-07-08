@@ -5,14 +5,21 @@ const cursor = $(".cursor")
 let circleWidth = cursor.width();
 let circleHeight = cursor.height();
 
-$("body").on("mousemove", function(e){
-    gsap.to(cursor,{duration: 0.3, left: e.pageX - 100, top: e.pageY - 100});
+$(window).on("mousemove", function(e){
+    x = e.pageX;  //마우스 X축 좌표값
+    y = e.pageY;  //마우스 Y축 좌표값
+
+    // 원이 커서를 따라다니기 위해 left, top값 필요
+    gsap.to(cursor,{duration: 0.3, left: x-100, top: y-100});
+
 });
+
 
 /* scroll */
 $(window).scroll(function(){
     // scroll 값
     const scrollTop = $(window).scrollTop();
+    let secTop = $("#section1").offset().top;
 
     $(".scrollTop").text(parseInt(scrollTop));
     /* reveal */
@@ -33,12 +40,17 @@ $(window).scroll(function(){
 
     /* titleMove */
     $(".left-title").each(function(){
-        if ( $(window).scrollTop() > $(this).offset().top / 2 ){
-            $(this).addClass("titMove");
+        if ( $(window).scrollTop() >= $(this).offset().top / 2 ){
+            $(this).addClass("titMove").removeClass("titFadeOut");
         } else {
-            $(this).removeClass("titMove");
+            $(this).removeClass("titMove").addClass("titFadeOut");
         }
     });
+
+    if( $(window).scrollTop() >= $("#section1").offset().top / 2 ){
+       gsap.to(".left-title", {duration: 0.4, left: -scrollTop / 5})
+    //    gsap.to(".left-num-wrap", {duration: 0.1, top: scrollTop / 3})
+    }
 
     
 });
@@ -78,6 +90,7 @@ setTimeout(function(){
     gsap.to(".sub-tit span", 0.6, {ease: Back.easeOut.config(1.7), opacity: 1, stagger: 0.05, delay: 1.5});
     gsap.to(".desc", 0.3, {ease: Back.easeOut.config(1.7), opacity: 1, y: 0, stagger: 0.05, delay: 3.5});
     gsap.to(".cursorbg", 1, {opacity: 0, stagger: 0.05, delay: 4});
+    // 원이 200px로 작아지면서 보이는 첫 화면에서의 위치를 중앙으로하기 위해 top, left값이 필요
     gsap.to(".cursor", 1, {ease: "bounce.out", borderRadius: "50%", top: hHeight-100, left: hWidth-100, opacity: 1, width: 200, height: 200, stagger: 0.05, delay: 4});
 },2000);
 
