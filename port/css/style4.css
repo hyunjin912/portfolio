@@ -1,7 +1,7 @@
 /* layout */
-body {
+body, html {
+    overflow: visible !important;
     background: #1b1b1b;
-    overflow-x: hidden;
 }
 #contents {}
 #big-title {
@@ -10,7 +10,9 @@ body {
     position: relative;
     overflow: hidden;
 }
-#header {height: 100vh;}
+#header {
+    height: 100vh;
+}
 #section1 {}
 #section2 {}
 #section3 {}
@@ -93,9 +95,9 @@ body {
 }
 .big-title svg text.reveal {
     opacity: 1;
-    animation: stroke 1s forwards;
+    animation: stroke 1.2s forwards;
 }
-@keyframes stroke {
+/* @keyframes stroke {
     0% {
       fill: rgba(72,138,204,0); stroke: rgba(54,95,160,1);
       stroke-dashoffset: 25%;
@@ -108,7 +110,19 @@ body {
       stroke-dashoffset: -25%;
       stroke-dasharray: 50 0%;
     }
-  }
+} */
+@keyframes stroke {
+    0% {
+      stroke: rgb(255, 255, 255);
+      stroke-dashoffset: 25%;
+      stroke-dasharray: 0 50%;
+    }
+    100% {
+      stroke: rgba(255, 255, 255);
+      stroke-dashoffset: -25%;
+      stroke-dasharray: 50 0%;
+    }
+}
 /* .underline {
     position: absolute; top: -30px; left: 0;
     width: inherit;
@@ -144,6 +158,8 @@ body {
     0% {top: 0; left: 0; width: 0%;}
     100% {top: 0; left: 0%; width: 100%;}
 }
+
+
 
 
 
