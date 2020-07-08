@@ -11,7 +11,7 @@ body {
 }
 #header {
     position: relative;
-    z-index: 1000;
+    z-index: 1;
     /* background: #1b1b1b; */
     background: #000;
 }
@@ -38,7 +38,10 @@ video {
     z-index: 1000;
     background: #000;
 }
-#section6 {}
+#section6 {
+    position: relative;
+    z-index: -1;
+}
 #section7 {
     position: relative;
     z-index: 1000;
@@ -60,9 +63,9 @@ video {
     background: url(../img/mainbg.jpg) no-repeat center center fixed; /* body에 있는거 그래도 사용하는데 꼭 background-attachment: fixed가 추가되어야 한다.*/
     background-size: cover; /* 이게 없으면 실제 이미지 크기만큼의 영역이 생겨버린다.*/
     /* box-shadow: 0px 0px 50px inset white, 0px 0px 50px inset white; */
-    opacity: 1;
+
     /* z-index: 1001; */
-    z-index: 1000;
+    z-index: 2;
 }
 
 /* info */
@@ -139,6 +142,7 @@ h1.main-tit .split span {
     transform: translate(-50%, -50%);
     font-family: 'Ilisarniq-Black';
     color: #fff;
+    
 }
 .header-title h1.main-tit {
     font-size: 6.5vw;

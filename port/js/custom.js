@@ -5,7 +5,7 @@ const cursor = $(".cursor")
 let circleWidth = cursor.width();
 let circleHeight = cursor.height();
 
-$("#section1").on("mousemove", function(e){
+$("body").on("mousemove", function(e){
     gsap.to(cursor,{duration: 0.3, left: e.pageX - (circleWidth / 2), top: e.pageY - (circleHeight / 2)});
 });
 
