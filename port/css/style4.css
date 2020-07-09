@@ -227,11 +227,11 @@ h2.ftitle {
 }
 .left-desc-wrap .left-desc ul .desc-title{
     font-family: 'Ilisarniq-Black';
-    font-size: 1.302vw;
+    font-size: 2vw;
     margin-bottom: 0.823vw;
 }
 .left-desc-wrap .left-desc ul .desc-desc{
-    font-family: 'S-CoreDream-3Light';
+    font-family: 'S-CoreDream-4Regular';
     font-size: 0.781vw;
     line-height: 1.563vw;
     color: #1b1b1b;
@@ -253,10 +253,13 @@ h2.ftitle {
     box-sizing: border-box;
     background: #000;
     text-align: center;
-    line-height: 48px;
+    line-height: 46px;
     color: #fff;
     font-size: 0.938vw;
     text-transform: uppercase;
+}
+.container.sec1-container {
+    position: relative;
 }
 .sec1-circleAll:hover {
     color: #fff;
@@ -266,7 +269,7 @@ h2.ftitle {
     background: #12DA97;
 }
 .circle-wrap1 {
-    position: absolute; top: 67vw; left: 62vw;
+    position: absolute; top: 57.7vw; right: 20vw;
     font-family: 'Ilisarniq-Regular';
     font-size: 16px;
     letter-spacing: 0.56px;
@@ -289,7 +292,7 @@ h2.ftitle {
     100% {transform: rotate(360deg);}
 }
 .circle-wrap2 {
-    position: absolute; top: 74vw; left: 73vw;
+    position: absolute; top: 64vw; right: 8vw;
     font-family: 'Ilisarniq-Regular';
     font-size: 16px;
     letter-spacing: 0.56px;
@@ -312,7 +315,7 @@ h2.ftitle {
     100% {transform: rotate(-360deg);}
 }
 .circle-wrap3 {
-    position: absolute; top: 87vw; left: 70vw;
+    position: absolute; top: 74vw; right: 15vw;
     font-family: 'Ilisarniq-Regular';
     font-size: 16px;
     letter-spacing: 0.56px;
@@ -335,7 +338,7 @@ h2.ftitle {
     100% {transform: rotate(-360deg);}
 }
 .circle-wrap4 {
-    position: absolute; top: 91vw; left: 83.4vw;
+    position: absolute; top: 79vw; right: 4vw;
     font-family: 'Ilisarniq-Regular';
     font-size: 16px;
     letter-spacing: 0.56px;
@@ -360,7 +363,7 @@ h2.ftitle {
 
 .left-chromebox {position: relative;}
 .left-chromebox .left-chromewrap {
-    position: absolute; top: 64.583vw; left: 6.25vw;
+    position: absolute; top: 56.583vw; left: 4vw;
     width: 46.563vw;
     /* height: 28.49vw; */
     height: 547px;
@@ -372,6 +375,7 @@ h2.ftitle {
     font-family: "SF Pro Display";
     font-weight: 300;
     font-size: 12px;
+    letter-spacing: 1px;
     display: flex;
     width: 100%;
     /* height: 8%; */
@@ -418,14 +422,16 @@ h2.ftitle {
     height: 81%;
     background: #202124;
 }
+.title-bar .tap .target {
+    box-sizing: border-box;
+    padding-left: 2vw;
+}
 .title-bar .htmlTap {
     width: 12.5vw;
-    
 }
 .title-bar .htmlTap a {
-    display: flex;
-    justify-content: center;
-    line-height: 35px;
+    display: inline-block;
+    line-height: 36px;
     width: 100%;
     height: 100%;
     color: #fff;
@@ -436,9 +442,8 @@ h2.ftitle {
     width: 12.5vw;
 }
 .title-bar .cssTap a {
-    display: flex;
-    justify-content: center;
-    line-height: 35px;
+    display: inline-block;;
+    line-height: 36px;
     width: 100%;
     height: 100%;
     color: #fff;
@@ -449,9 +454,8 @@ h2.ftitle {
     width: 12.5vw;
 }
 .title-bar .scriptTap a {
-    display: flex;
-    justify-content: center;
-    line-height: 35px; 
+    display: inline-block;
+    line-height: 36px; 
     width: 100%;
     height: 100%;
     color: #fff;
@@ -599,7 +603,6 @@ h2.ftitle {
         left: 0 !important;
     }
     .left-desc-wrap .left-desc ul .desc-desc {
-        font-family: 'S-CoreDream-4Regular';
         font-size: 0.1vw;
     }
     .btn-wrap a {
@@ -607,15 +610,32 @@ h2.ftitle {
         line-height: 32px;
     }
     .sec1-circleAll {font-size: 10px;}
-    .circle-wrap1 {left: 8vw;}
-    .circle-wrap2 {left: 31vw;}
-    .circle-wrap3 {top: 69vw; left: 55vw;}
-    .circle-wrap4 {top: 73vw; left: 82.4vw;}
-
+    .circle-wrap1 {
+        top: 62vw;
+        left: 8vw;
+    }
+    .circle-wrap2 {
+        top: 60.3vw;
+        left: 34vw;
+    }
+    .circle-wrap3 {
+        top: 63.9vw;
+        left: 62vw;
+    }
+    .circle-wrap4 {
+        top: 62vw; 
+        left: 84.6vw;
+    }
     .left-chromebox .left-chromewrap {
-        top: 90.583vw;
-        left: 6.25vw;
         width: 85.563vw;
+        top: 78.583vw;
+        left: 6.3vw;
+    }
+    .title-bar .tap {
+        width: 19.5vw;
+    }
+    .title-bar .tap .target {
+        padding-left: 3.5vw;
     }
     .title-bar > div .code-content {
         width: 84.8vw;
