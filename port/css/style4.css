@@ -16,7 +16,8 @@ body {
     height: 100vh;
 }
 #section1 {
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
+    overflow: hidden;
     height: 220vh;
     margin-top: 300px;
 }

@@ -1,3 +1,7 @@
+TextColor();
+
+var s = skrollr.init();
+
 /* cursor */
 const cursor = $(".cursor")
 
