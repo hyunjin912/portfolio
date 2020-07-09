@@ -9,6 +9,11 @@ const cursor = $(".cursor")
 let circleWidth = cursor.width();
 let circleHeight = cursor.height();
 
+
+let adsf = $(".circle-wrap1").offset().top
+let qwer = $(".circle-wrap1").offset().left
+
+
 $(window).on("mousemove", function(e){
     x = e.pageX;  //마우스 X축 좌표값
     y = e.pageY;  //마우스 Y축 좌표값
@@ -16,6 +21,24 @@ $(window).on("mousemove", function(e){
     // 원이 커서를 따라다니기 위해 left, top값 필요
     gsap.to(cursor,{duration: 0.3, left: x-100, top: y-100});
 
+
+   
+   
+    // gsap.to(".circle-wrap1.active2",{duration: 3, left: qwer + Math.max(-50, Math.min(50, qwer + $('.circle-wrap1').width()/2 - x)) , top: adsf - $("#section1").offset().top + Math.max(-50, Math.min(50, (adsf + $('.circle-wrap1').height()/2) - y))});
+    gsap.to(".circle-wrap1",{duration: 3, left: qwer + Math.max(-50, Math.min(50, qwer + $('.circle-wrap1').width()/2 - x)) , top: adsf - $("#section1").offset().top + Math.max(-50, Math.min(50, (adsf + $('.circle-wrap1').height()/2) - y))});
+    
+    console.log((adsf - $("#section1").offset().top)  / 2);
+    console.log("커서와이 : "+y)
+    console.log("써클오프" + adsf); 
+    console.log("전체오프:"+$("#section1").offset().top)                                                                             
+});
+
+$(".sec1-circleAll").each(function(){
+
+    $(this).click(function(e){
+        e.preventDefault();
+        $(this).addClass("active2").siblings().removeClass("active2");
+    });
 });
 
 
@@ -52,8 +75,12 @@ $(window).scroll(function(){
     });
 
     if( $(window).scrollTop() >= $("#section1").offset().top / 2 ){
-       gsap.to(".left-title", {duration: 0.4, left: -scrollTop / 5})
+       
+
     //    gsap.to(".left-num-wrap", {duration: 0.1, top: scrollTop / 3})
+       
+        gsap.to(".left-title", {duration: 0.4, left: Math.max(-260, -scrollTop / 5)})
+       
     }
 
     
@@ -97,6 +124,3 @@ setTimeout(function(){
     // 원이 200px로 작아지면서 보이는 첫 화면에서의 위치를 중앙으로하기 위해 top, left값이 필요
     gsap.to(".cursor", 1, {ease: "bounce.out", borderRadius: "50%", top: hHeight-100, left: hWidth-100, opacity: 1, width: 200, height: 200, stagger: 0.05, delay: 4});
 },2000);
-
-
-
