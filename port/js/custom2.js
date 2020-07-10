@@ -12,7 +12,7 @@ let circleHeight = cursor.height();
 
 // circlemove
 let adsf = $(".circle-wrap1").offset().top
-let qwer = $(".circle-wrap1").offset().left
+let qwer = $(".circle-wrap1").offset().left - $(".circlebox").offset().left
 
 $(window).on("mousemove", function(e){
     x = e.pageX;  //마우스 X축 좌표값
@@ -21,8 +21,9 @@ $(window).on("mousemove", function(e){
     // 원이 커서를 따라다니기 위해 left, top값 필요
     gsap.to(cursor,{duration: 0.3, left: x-100, top: y-100});
 
-    // gsap.to(".circle-wrap1.active2",{duration: 3, left: qwer + Math.max(-50, Math.min(50, qwer + $('.circle-wrap1').width()/2 - x)) , top: adsf - $("#section1").offset().top + Math.max(-50, Math.min(50, (adsf + $('.circle-wrap1').height()/2) - y))});
-    // gsap.to(".circle-wrap1",{duration: 3, left: qwer + Math.max(-50, Math.min(50, qwer + $('.circle-wrap1').width()/2 - x)) , top: adsf - $("#section1").offset().top + Math.max(-50, Math.min(50, (adsf + $('.circle-wrap1').height()/2) - y))});
+    
+    // gsap.to(".circle-wrap1",{duration: 3, left: qwer + Math.max(-40, Math.min(40, qwer + $('.circle-wrap1').width()/2 - x)) , top: adsf - $("#section1").offset().top + Math.max(-40, Math.min(40, (adsf + $('.circle-wrap1').height()/2) - y))});
+    
     
     console.log((adsf - $("#section1").offset().top)  / 2);
     console.log("커서와이 : "+y)
@@ -65,7 +66,7 @@ $(window).scroll(function(){
     /* sideMove about scroll */
     if( $(window).scrollTop() >= $("#section1").offset().top / 2 ){
         // gsap.to(".left-num-wrap", {duration: 0.1, top: scrollTop / 3})
-        gsap.to(".left-title", {duration: 0.4, left: Math.max(-260, -scrollTop / 5)})
+        gsap.to(".left-title.titMove", {duration: 0.4, left: Math.max(-260, -scrollTop / 5)})
        
     }
 
@@ -105,22 +106,34 @@ $(".title-bar a").click(function(e){
 
 // code
 let htmlText = [];
-htmlText.push(`&lt;!-- 스킵 네비게이션 --&gt;
+htmlText.push(`&lt;!-- 
+스킵 네비게이션은 링크를 건너뛰기 위해 제공되는 메뉴를 의미합니다.
+웹 접근성을 준수하기 위해 원하는 영역으로 바로 이동할 수 있는 건너뛰기 링크를 반드시 제공해야 합니다.
+--&gt;
+
 &lt;div id="skip"&gt;
     &lt;a href="#"&gt;전체 메뉴 바로가기&lt;/a&gt;
     &lt;a href="#"&gt;배너 메뉴 바로가기&lt;/a&gt;
     &lt;a href="#"&gt;컨텐츠 메뉴 바로가기&lt;/a&gt;
-&lt;/div&gt;
-&lt;!-- //스킵 네비게이션 --&gt;`);
+&lt;/div&gt;`);
 
-htmlText.push(`&lt;div class="header-icon"&gt;
+htmlText.push(`&lt;!--
+이미지 스프라이트(image sprite)란 여러 개의 이미지를 하나의 이미지로 합쳐서 관리하는 이미지를
+의미합니다.
+--&gt;
+
+&lt;div class="header-icon"&gt;
     &lt;a href="#" class="icon1"&gt;&lt;span class="ir_pm"&gt;icon1&lt;/span&gt;&lt;/a&gt;
     &lt;a href="#" class="icon2"&gt;&lt;span class="ir_pm"&gt;icon2&lt;/span&gt;&lt;/a&gt;
     &lt;a href="#" class="icon3"&gt;&lt;span class="ir_pm"&gt;icon3&lt;/span&gt;&lt;/a&gt;
     &lt;a href="#" class="icon4"&gt;&lt;span class="ir_pm"&gt;icon4&lt;/span&gt;&lt;/a&gt;
 &lt;/div&gt;`);
 
-htmlText.push(`&lt;div class="ban"&gt;
+htmlText.push(`&lt;!--
+slick.js는 제이쿼리 플러그인입니다. 이것을 이용해 이미지 슬라이드를 구성할 수 있습니다.
+--&gt;
+
+&lt;div class="ban"&gt;
     &lt;div&gt;&lt;a href="#"&gt;&lt;img src="img/banner_link1.jpg" alt="웹 표준 지침서 보기"&gt;&lt;/a&gt;&lt;/div&gt;
     &lt;div&gt;&lt;a href="#"&gt;&lt;img src="img/banner_link2.jpg" alt="CSS 버튼 만들기"&gt;&lt;/a&gt;&lt;/div&gt;
     &lt;div&gt;&lt;a href="#"&gt;&lt;img src="img/banner_link3.jpg" alt="로그인 폼 만들기"&gt;&lt;/a&gt;&lt;/div&gt;
@@ -142,7 +155,11 @@ htmlText.push(`&lt;div class="lightbox"&gt;
 &lt;/div&gt;`);
 
 let cssText = [];
-cssText.push(`/* 스킵 내비게이션 */
+cssText.push(`/* 
+스킵 네비게이션은 링크를 건너뛰기 위해 제공되는 메뉴를 의미합니다.
+웹 접근성을 준수하기 위해 원하는 영역으로 바로 이동할 수 있는 건너뛰기 링크를 반드시 제공해야 합니다. 
+*/
+
 #skip {position: relative;}
 #skip a {
     border: 1px solid #fff; background-color: #333; 
@@ -153,7 +170,12 @@ cssText.push(`/* 스킵 내비게이션 */
 #skip a:active,            
 #skip a:focus {top: 0px;}  /* 탭 버튼 누를 경우 나타남 */`);
 
-cssText.push(`.header .header-icon a {
+cssText.push(`/*
+이미지 스프라이트(image sprite)란 여러 개의 이미지를 하나의 이미지로 합쳐서 관리하는 이미지를
+의미합니다.
+*/
+
+.header .header-icon a {
     display: inline-block; width: 60px; height: 60px; 
     background-image: url(../img/icon.png);
 }                             /* position값으로 이미지 변경 */
@@ -166,11 +188,19 @@ cssText.push(`.header .header-icon a {
 .header .header-icon a.icon3:hover {background-position: -60px -120px;}
 .header .header-icon a.icon4:hover {background-position: -60px -180px;}`);
 
-cssText.push(`.ban {position: relative; padding: 24px 0;}
-.ban .slick-prev {position: absolute; left: -80px; top: 70px; width: 43px; height: 43px;
-    background: url(../img/icon.png) -150px 0; text-indent: -9999px; cursor: pointer;}
-.ban .slick-next {position: absolute; right: -80px; top: 70px; width: 43px; height: 43px; 
-    background: url(../img/icon.png) -150px -43px; text-indent: -9999px; cursor: pointer;}
+cssText.push(`/*
+slick.js는 제이쿼리 플러그인입니다. 이것을 이용해 이미지 슬라이드를 구성할 수 있습니다.
+*/
+
+.ban {position: relative; padding: 24px 0;}
+.ban .slick-prev {
+    position: absolute; left: -80px; top: 70px; width: 43px; height: 43px;
+    background: url(../img/icon.png) -150px 0; text-indent: -9999px; cursor: pointer;
+}
+.ban .slick-next {
+    position: absolute; right: -80px; top: 70px; width: 43px; height: 43px; 
+    background: url(../img/icon.png) -150px -43px; text-indent: -9999px; cursor: pointer;
+}
 
 .ban .slick-prev:hover {background-position: -193px 0;}
 .ban .slick-next:hover {background-position: -193px -43px;}
@@ -178,12 +208,22 @@ cssText.push(`.ban {position: relative; padding: 24px 0;}
 .ban img:hover {border-color: #98bcdc;}
 
 .ban .slick-slide {margin: 10px;} 
-.ban .slick-dots {position: absolute; bottom: 5px; display: block; width: 100%; text-align: center;}
+.ban .slick-dots {
+    position: absolute; bottom: 5px; 
+    display: block; width: 100%; text-align: center;
+}
 .ban .slick-dots li {display: inline-block; margin: 5px;}
-.ban .slick-dots li button {font-size: 0; line-height: 0; display: block; width: 15px; height: 15px; background: #5debc4; border-radius: 50%; cursor: pointer;}
+.ban .slick-dots li button {
+    font-size: 0; line-height: 0; display: block; 
+    width: 15px; height: 15px; 
+    background: #5debc4; border-radius: 50%; cursor: pointer;
+}
 .ban .slick-dots li.slick-active button {background: #2bc8a3;}`);
 
-cssText.push(`.ad h4 {font-size: 14px; color: #0093bd; padding-bottom: 3px; font-weight: bold; margin-top: 15px;}
+cssText.push(`.ad h4 {
+    font-size: 14px; color: #0093bd; 
+    padding-bottom: 3px; font-weight: bold; margin-top: 15px;
+}
 .lightbox {
     display:grid; 
     grid-template-columns: repeat(3, 1fr);
@@ -191,10 +231,31 @@ cssText.push(`.ad h4 {font-size: 14px; color: #0093bd; padding-bottom: 3px; font
 }
 .lightbox a img {width: 100%;}`);
 
+let jsText = [];
+jsText.push(`// 스킵 네비게이션은 script를 사용하지 않습니다.`);
+jsText.push(`// 이미지 스프라이트는 script를 사용하지 않습니다.`);
+jsText.push(`/*
+slick.js는 제이쿼리 플러그인입니다. 이것을 이용해 이미지 슬라이드를 구성할 수 있습니다.
+*/
+
+$('.ban').slick({
+    dots: true,
+    infinite: true,
+    speed: 500,
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 3
+});`);
+jsText.push(`$(".lightbox").lightGallery();`);
+
 // 코드 처음 보이는 화면
 $(".sec1-title-bar").find("div > div").hide().eq(0).show();
 $("code.lh1").html(htmlText[0]);
 $("code.lc1").html(cssText[0]);
+$("code.lj1").html(jsText[0]);
 
 // circle and chrome-code tapMenu
 $(".sec1-circleAll").click(function(e){
@@ -206,6 +267,7 @@ $(".sec1-circleAll").click(function(e){
     // chrome-code-tap-content
     $("code.lh1").html(htmlText[$(this).index()]);
     $("code.lc1").html(cssText[$(this).index()]);
-    // $(".lj1").html(jsText[$(this).index()]);
+    $("code.lj1").html(jsText[$(this).index()]);
     TextColor();
 });
+

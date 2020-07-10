@@ -11,7 +11,7 @@ body, input, textarea, select, button, table {
 h1, h2, h3, h4, h5, h6 {font-size: 13px; color: #222; font-weight: normal;}
 li, ol, ul, menu {list-style: none;}
 img {border: 0 none; vertical-align: top; width: 100%;}
-svg {width: 100%;}
+/* svg {width: 100%;} */
 video {width: 100%;}
 em {font-style: normal;}
 fieldset {border: 0 none;}

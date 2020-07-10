@@ -73,3 +73,8 @@
     font-weight: 400;
     src: url(../../site-apple/assets/fonts/SFProDisplay-Medium.ttf);
 }
+@font-face{ 
+    font-family: "Cascadia";
+    src: url(Cascadia.ttf) format('truetype'),
+         url(Cascadia.woff) format('woff');
+}
