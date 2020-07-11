@@ -21,14 +21,14 @@ $(window).on("mousemove", function(e){
     // 원이 커서를 따라다니기 위해 left, top값 필요
     gsap.to(cursor,{duration: 0.3, left: x-100, top: y-100});
 
-    
+    // cirlceMove about mousemove
     // gsap.to(".circle-wrap1",{duration: 3, left: qwer + Math.max(-40, Math.min(40, qwer + $('.circle-wrap1').width()/2 - x)) , top: adsf - $("#section1").offset().top + Math.max(-40, Math.min(40, (adsf + $('.circle-wrap1').height()/2) - y))});
     
     
-    console.log((adsf - $("#section1").offset().top)  / 2);
-    console.log("커서와이 : "+y)
-    console.log("써클오프" + adsf); 
-    console.log("전체오프:"+$("#section1").offset().top)                                                                             
+    // console.log((adsf - $("#section1").offset().top)  / 2);
+    // console.log("커서와이 : "+y)
+    // console.log("써클오프" + adsf); 
+    // console.log("전체오프:"+$("#section1").offset().top)                                                                             
 });
 
 
@@ -63,15 +63,22 @@ $(window).scroll(function(){
         }
     });
 
-    /* sideMove about scroll */
-    if( $(window).scrollTop() >= $("#section1").offset().top / 2 ){
+    /* titleSideMove about scroll */
+    if( $(window).scrollTop() >= $("#section1").offset().top / 2 && $(window).width() >= 1680){
         // gsap.to(".left-num-wrap", {duration: 0.1, top: scrollTop / 3})
-        gsap.to(".left-title.titMove", {duration: 0.4, left: Math.max(-260, -scrollTop / 5)})
+        gsap.to(".left-title.titMove", {duration: 0.4, left: Math.max(-250, -scrollTop / 5)})
+    }
+    if( $(window).scrollTop() >= $("#section1").offset().top / 2 && $(window).width() <= 1024){
+        gsap.to(".left-title.titMove", {duration: 0.4, left: Math.max(-240, -scrollTop / 5)})
        
     }
+    
 
 });
-
+console.log( "윈도우 너비 : "+$(window).width() ) 
+console.log( "윈도우 아우터 너비 : "+$(window).outerWidth() ) 
+console.log( "섹션1 오프셋 탑 : "+$("#section1").offset().top / 4 )
+console.log( "레프트 타이틀 너비 : "+$(".left-title h2").width() / 3.5 )
 
 /* header */
 $(".split").each(function () {
@@ -98,10 +105,49 @@ setTimeout(function(){
 
 
 /* section1 */
-// 크롬 상단 탭 메뉴
-$(".title-bar a").click(function(e){
+// theme 변경 탭 메뉴
+$(".choice svg").hide().eq(1).show();
+$(".theme").click(function(){
+    $(this).toggleClass("rotate");
+    $(".themelist").slideToggle(300);
+});
+// $(".themelist .theme-name").click(function(e){
+//     e.preventDefault();
+//     let themebg = ["owl", "Monokai", "owlLight"];
+//     $(".theme").removeClass("rotate");
+//     $(".themelist").slideUp(500).stop();
+//     $(".editor-code").addClass(themebg[$(this).index()]);
+// });
+$(".themelist .theme-name:nth-child(1)").click(function(e){
     e.preventDefault();
-    $(this).addClass("active").next().show().parent().siblings().find("a").removeClass("active").next().hide();
+    $(".themelist").slideUp(300).stop();
+    $(".editor").removeClass("Monokai").removeClass("owlLight").addClass("owl");
+    $(".theme .current-theme").text("Owl");
+    $(this).find(".choice svg").show().parents("li.theme-name").siblings().find(".choice svg").hide();
+});
+$(".themelist .theme-name:nth-child(2)").click(function(e){
+    e.preventDefault();
+    $(".themelist").slideUp(300).stop();
+    $(".editor").removeClass("owl").removeClass("owlLight");
+    $(".theme .current-theme").text("Monokai");
+    $(this).find(".choice svg").show().parents("li.theme-name").siblings().find(".choice svg").hide();
+});
+$(".themelist .theme-name:nth-child(3)").click(function(e){
+    e.preventDefault();
+    $(".themelist").slideUp(300).stop();
+    $(".editor").removeClass("Monokai").removeClass("owl").addClass("owlLight");
+    $(".theme .current-theme").text("Owl Light");
+    $(this).find(".choice svg").show().parents("li.theme-name").siblings().find(".choice svg").hide();
+});
+
+$(".themelist a").click(function(){
+    console.log( $(this).index() )
+});
+
+// 코드 상단 탭 메뉴
+$(".menu li").click(function(e){
+    e.preventDefault();
+    $(this).find("a").addClass("active").next().show().parent().siblings().find("a").removeClass("active").next().hide();
 });
 
 // code
@@ -252,19 +298,19 @@ $('.ban').slick({
 jsText.push(`$(".lightbox").lightGallery();`);
 
 // 코드 처음 보이는 화면
-$(".sec1-title-bar").find("div > div").hide().eq(0).show();
+$(".code-content").hide().eq(0).show();
 $("code.lh1").html(htmlText[0]);
 $("code.lc1").html(cssText[0]);
 $("code.lj1").html(jsText[0]);
 
-// circle and chrome-code tapMenu
+
+// circle and code tapMenu
 $(".sec1-circleAll").click(function(e){
     e.preventDefault();
-    
     // circle-Tap
     $(this).addClass("active2").siblings().removeClass("active2");
 
-    // chrome-code-tap-content
+    // code-tap-content
     $("code.lh1").html(htmlText[$(this).index()]);
     $("code.lc1").html(cssText[$(this).index()]);
     $("code.lj1").html(jsText[$(this).index()]);

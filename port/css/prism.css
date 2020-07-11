@@ -13,7 +13,7 @@ pre[class*="language-"] {
 	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
 	/* font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; */
 	font-family: Cascadia, "SF Pro Display";
-	font-size: 1.1em;
+	font-size: 16px;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
@@ -84,6 +84,12 @@ pre[class*="language-"] {
 .token.symbol {
 	color: #f8c555;
 }
+.owl .token.property,
+.owl .token.class-name,
+.owl .token.constant,
+.owl .token.symbol {
+	color: #80CAC3;
+}
 
 .token.selector,
 .token.important,
@@ -91,6 +97,13 @@ pre[class*="language-"] {
 .token.keyword,
 .token.builtin {
 	color: #cc99cd;
+}
+.owl .token.selector,
+.owl .token.important,
+.owl .token.atrule,
+.owl .token.keyword,
+.owl .token.builtin {
+	color: #ADDB67;
 }
 .token.string,
 .token.char,

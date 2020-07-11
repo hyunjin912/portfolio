@@ -169,11 +169,16 @@ h2.ftitle {
     -o-text-fill-color: 2px #fff;
     -o-text-stroke: 2px #fff;
 }
+/* .img-align-box {
+    display: flex;
+    justify-content: flex-end;
+} */
 .img-wrap {
     width: 67.917vw;
     height: 38.542vw;
     /* position: absolute; top: 9.531vw; left: 0; */
     overflow: hidden;
+    background: rgb(115, 182, 169);
 }
 .sec1-img::before {
     position: absolute; left: 0; top: 0;
@@ -184,6 +189,7 @@ h2.ftitle {
 }
 .sec1-img {
     background: url(../img/webstandard_silver_gray.jpg) no-repeat center center;
+    background-size: cover;
     width: 100%; height: 100%;
     position: relative;
 }
@@ -252,8 +258,17 @@ h2.ftitle {
     font-size: 0.938vw;
     text-transform: uppercase;
 }
-.container.sec1-container {
+.container.codecontainer {
+    padding-top: 300px;
+}
+.code-align-box {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.circlebox {
     position: relative;
+    width: 28%;
+    height: 547px;
 }
 .sec1-circleAll:hover {
     color: #fff;
@@ -263,7 +278,7 @@ h2.ftitle {
     background: #12DA97;
 }
 .circle-wrap1 {
-    /* position: absolute; top: 57.7vw; left: 54.4vw; */
+    position: absolute; top: 5%; left: 7%;
     font-family: 'Ilisarniq-Regular';
     font-size: 16px;
     letter-spacing: 0.56px;
@@ -286,7 +301,7 @@ h2.ftitle {
     100% {transform: rotate(360deg);}
 }
 .circle-wrap2 {
-    /* position: absolute; top: 64vw; left: 64.5vw; */
+    position: absolute; top: 28%; left: 68%;
     font-family: 'Ilisarniq-Regular';
     font-size: 16px;
     letter-spacing: 0.56px;
@@ -309,7 +324,7 @@ h2.ftitle {
     100% {transform: rotate(-360deg);}
 }
 .circle-wrap3 {
-    /* position: absolute; top: 74vw; left: 61.3vw; */
+    position: absolute; top: 57%; left: 31%;
     font-family: 'Ilisarniq-Regular';
     font-size: 16px;
     letter-spacing: 0.56px;
@@ -332,7 +347,7 @@ h2.ftitle {
     100% {transform: rotate(-360deg);}
 }
 .circle-wrap4 {
-    /* position: absolute; top: 79vw; left: 70.4vw; */
+    position: absolute; top: 79%; left: 55%;
     font-family: 'Ilisarniq-Regular';
     font-size: 16px;
     letter-spacing: 0.56px;
@@ -355,9 +370,202 @@ h2.ftitle {
     100% {transform: rotate(360deg);}
 }
 
-.codecontainer {
-    background: red;
+.editorbox {
+    position: relative;
+    width: 72%;
+    height: 547px;
 }
+.editor .editor-tab {
+    height: 40px;
+    background: #21252B; 
+    border-top-left-radius: 5px; 
+    border-top-right-radius: 5px;
+    display: flex;
+    font-size: 20px;
+}
+.editor .editor-tab .dot {
+    padding: 14px 55px 14px 14px;
+}
+.editor .editor-tab .dot span {
+    display: block;
+    background: #FFB83D;
+    width: 12px; height: 12px; 
+    border-radius: 50%;
+    position: relative;
+}
+.editor .editor-tab .dot span::before {
+    content: '';
+    background: #FF4A4A; 
+    width: 12px; height: 12px; 
+    border-radius: 50%;
+    position: absolute; left: 20px;
+}
+.editor .editor-tab .dot span::after {
+    content: ''; 
+    background: #00C543; 
+    width: 12px; height: 12px; 
+    border-radius: 50%;
+    position: absolute; left: 40px;
+}
+.editor .editor-tab .menu {
+    overflow: hidden;
+}
+.editor .editor-tab .menu li {
+    float: left;
+}
+.editor .editor-tab .menu li a {
+    display: inline-block;
+    background: #21252B; 
+    color: #8E9093; 
+    padding: 6px 32px;
+    box-sizing: border-box;
+}
+.editor .editor-tab .menu li a.active {
+    background: #383E4A;  color: #fff;
+}
+.editor .editor-tab .menu li .code-content {
+    /* position: absolute; top: 7.4%; left: 0; */
+    position: absolute; top: 40px; left: 0;
+    border-bottom-left-radius: 5px; 
+    border-bottom-right-radius: 5px;
+    width: 100%; height: 507px; 
+    background: #282C34;
+    overflow: auto;
+}
+.editor .editor-tab .theme {
+    position: relative;
+    cursor: pointer;
+    color: #8E9093;
+    margin-left: auto;
+    padding: 5px 10px;
+    border: 2px solid #21252B;
+    border-top-right-radius: 5px;
+    box-sizing: border-box;
+}
+.editor .editor-tab .theme:hover {
+    border: 2px solid #7B61FF;
+}
+.editor .editor-tab .theme .current-theme {
+    display: inline-block;
+    width: 81px;
+}
+.editor .editor-tab .theme .arrow {
+    margin-left: 27px;
+}
+.editor .editor-tab .theme .arrow svg path {
+    stroke:#8E9093;
+}
+.theme.rotate a.arrow svg {
+    display: inline-block;
+    transform: rotate(180deg);
+}
+/* .theme.re-rotate a.arrow svg {
+    transform: rotate(0deg);
+} */
+.editor .editor-tab .theme .themelist {
+    width: 100%;
+    position: absolute; top: 38px; left: -2px;
+    background: #485061;
+    border: 2px solid #485061;
+    display: none;
+    overflow: hidden;
+}
+.editor .editor-tab .theme .themelist a {
+    display: inline-block;
+    /* padding: 5px 17.8px; */
+    padding: 5px 0 5px 25px;
+    width: 97%;
+    color: #8E9093;
+}
+.editor .editor-tab .theme .themelist a:hover {
+    background: #21252B;
+}
+.editor .editor-tab .theme .themelist a .choice {
+    display: inline-block;
+    width: 12px;
+}
+.editor .editor-code {
+    border-bottom-left-radius: 5px; 
+    border-bottom-right-radius: 5px;
+    height: 507px; background: #282C34;
+}
+
+.editor.owl .editor-tab {
+    background: #01111D;
+}
+.editor.owl .editor-tab .menu li a {
+    background: #01111D;
+    color: #5F7E97;
+}
+.editor.owl .editor-tab .menu li a.active {
+    background: #062743;  color: #CFDBE4;
+}
+.editor.owl .code-content {
+    background: #011627 !important;
+}
+.editor.owl .code-content pre.line-numbers {
+    background: #011627 !important;
+}
+.editor.owl .editor-tab .theme {
+    color: #5F7E97;
+    border: 2px solid #01111D;
+}
+.editor.owl .editor-tab .theme:hover {
+    border: 2px solid #7B61FF;
+}
+.editor.owl .editor-tab .theme .themelist {
+    background: #092E4B;
+    border: 2px solid #092E4B;
+}
+.editor.owl .editor-tab .theme .themelist a:hover {
+    background: #01111D;
+}
+.editor.owl .editor-tab .theme .arrow svg path {
+    stroke: #5F7E97;
+}
+.editor.owl .editor-code {
+    background: #011627;
+}
+
+.editor.owlLight .editor-tab {
+    background: #F0F0F0;
+}
+.editor.owlLight .editor-tab .menu li a {
+    background: #F0F0F0;
+    color: #403F53;
+}
+.editor.owlLight .editor-tab .menu li a.active {
+    background: #F8F8F8;  color: #403F53;
+}
+.editor.owlLight .code-content {
+    background: #fbfbfb !important;
+}
+.editor.owlLight .code-content pre.line-numbers {
+    background: #fbfbfb !important;
+}
+.editor.owlLight .editor-tab .theme {
+    color: #403F53;
+    border: 2px solid #F0F0F0;
+}
+.editor.owlLight .editor-tab .theme:hover {
+    border: 2px solid #7B61FF;
+}
+.editor.owlLight .editor-tab .theme .themelist {
+    background: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    
+}
+.editor.owlLight .editor-tab .theme .themelist a:hover {
+    background: #F0F0F0;
+}
+.editor.owlLight .editor-tab .theme .arrow svg path {
+    stroke: #403F53;
+}
+.editor.owlLight .editor-code {
+    background: #fbfbfb;
+}
+
+
 
 
 /* mediaquery */
@@ -397,18 +605,14 @@ h2.ftitle {
     }
     @keyframes titMove1 {
         0% {top: 16.25vw; left: 29.604vw; opacity: 0; transform: skew(0deg, -5deg);}
-        100% {top: 1.25vw; left: 23.604vw; opacity: 1; transform: skew(0deg, 0deg);}
+        100% {top: -8.8vw; left: 23.604vw; opacity: 1; transform: skew(0deg, 0deg);}
     }
     .left-title.titFadeOut h2 {
         animation: titFadeOut1 .5s ease-in-out forwards;
     }
     @keyframes titFadeOut1 {
-        0% {top: 1.25vw; left: 23.604vw; opacity: 1;}
-        100% {top: 1.25vw; left: 23.604vw; opacity: 0;}
-    }
-    .sec1-img {
-        background-size: cover;
-        left: 0 !important;
+        0% {top: -8.8vw; left: 23.604vw; opacity: 1;}
+        100% {top: -8.8vw; left: 23.604vw; opacity: 0;}
     }
     .left-desc-wrap .left-desc {
         top: 9vw;
