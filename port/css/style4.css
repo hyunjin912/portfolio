@@ -777,7 +777,11 @@ h2.ftitle {
     /* secttion1 */
     .img-wrap {
         width: 77vw;
-        height: 70vh;
+        height: 51vh;
+    }
+    .sec1-img {
+        left: 0 !important;
+        transform: scale3d(1,1,1) !important;
     }
     h2.ftitle {
         -webkit-text-fill-color: transparent;

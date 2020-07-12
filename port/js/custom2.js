@@ -109,6 +109,7 @@ $(window).scroll(function(){
        
     }
 
+    /* code opacity */
     if( $(window).scrollTop() >= $(".codecontainer").offset().top * 0.8 ){
         $(".codecontainer").removeClass("opacity0").addClass("opacity1");
     } else {
