@@ -2,6 +2,41 @@
 TextColor();
 var s = skrollr.init();
 
+/* link delay */
+$(".link").click(function(e){
+    e.preventDefault();
+
+    let target = $(this);
+    setTimeout(function(){
+        target.addClass("blank").siblings().removeClass("blank");
+    }, 600)
+    
+    let targetIndex = $(this).index() 
+    let linkList = [];
+    linkList.push("https://hyunjin912.github.io/portfolio/site-webstandard/index.html")
+    linkList.push("https://www.figma.com/proto/knnrHvG9ZKTt33OSGKBC3h/webstandard?node-id=1%3A2&viewport=610%2C485%2C0.05899874493479729&scaling=contain")
+    
+    if ( $(this).hasClass("blank") ){
+        setTimeout(function() {
+            window.open(linkList[targetIndex], "_blank");
+        }, 100); 
+    } else {
+        setTimeout(function() {
+            window.open(linkList[targetIndex], "_blank");
+        }, 800);
+    }
+});
+$(".rightBtn").click(function(){
+    $(this).addClass("movebg");
+    $(".leftBtn").addClass("movebg");
+});
+$(".leftBtn").click(function(){
+    $(this).removeClass("movebg");
+    $(".rightBtn").removeClass("movebg");
+});
+    
+
+
 
 /* mousemove */
 // cursor
@@ -73,9 +108,19 @@ $(window).scroll(function(){
         gsap.to(".left-title.titMove", {duration: 0.4, left: Math.max(-240, -scrollTop / 5)})
        
     }
+
+    if( $(window).scrollTop() >= $(".codecontainer").offset().top * 0.8 ){
+        $(".codecontainer").removeClass("opacity0").addClass("opacity1");
+    } else {
+        $(".codecontainer").removeClass("opacity1").addClass("opacity0");
+    }
+    
     
 
 });
+console.log( "윈도우 스크롤 탑 : "+$(window).scrollTop() )
+console.log( "윈도우 스크롤 탑 + 하프높이: "+$(window).scrollTop() + $(window).height() / 2 )
+console.log( "코드컨테이너 오프셋 탑"+$(".codecontainer").offset().top  * 0.7)
 console.log( "윈도우 너비 : "+$(window).width() ) 
 console.log( "윈도우 아우터 너비 : "+$(window).outerWidth() ) 
 console.log( "섹션1 오프셋 탑 : "+$("#section1").offset().top / 4 )
