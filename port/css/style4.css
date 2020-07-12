@@ -19,7 +19,7 @@ html, body {
 #section1 {
     /* overflow-x: hidden; */
     overflow: hidden;
-    height: 220vh;
+    height: 200vh;
     padding-top: 300px;
 }
 #section2 {}
@@ -498,9 +498,10 @@ h2.ftitle {
 .editor .editor-tab .theme .current-theme {
     display: inline-block;
     width: 81px;
+    text-align: center;
 }
 .editor .editor-tab .theme .arrow {
-    margin-left: 27px;
+    margin-left: 10px;
 }
 .editor .editor-tab .theme .arrow svg path {
     stroke:#8E9093;
@@ -522,8 +523,7 @@ h2.ftitle {
 }
 .editor .editor-tab .theme .themelist a {
     display: inline-block;
-    /* padding: 5px 17.8px; */
-    padding: 5px 0 5px 25px;
+    padding: 5px 0 5px 13px;
     width: 97%;
     color: #8E9093;
 }
@@ -534,11 +534,11 @@ h2.ftitle {
     display: inline-block;
     width: 12px;
 }
-.editor .editor-code {
+/* .editor .editor-code {
     border-bottom-left-radius: 5px; 
     border-bottom-right-radius: 5px;
     height: 507px; background: #282C34;
-}
+} */
 
 .editor.owl .editor-tab {
     background: #01111D;
@@ -652,12 +652,18 @@ h2.ftitle {
     }
 
     /* section1 */
-    #section1 {height: 165vh;}
+    .container.codecontainer {
+        padding-top: 215px;
+    }
+    .row {
+        padding: 0 8%;
+    }
     .left-title h2 {
         position: absolute; top: 16.25vw; left: 29.604vw;
     }
     .left-title.titMove h2 {
-        animation: titMove1 1s ease-in-out forwards;
+        /* animation: titMove1 1s ease-in-out forwards; */
+        animation: titMove1 1s cubic-bezier(0, 3.32, 0,-0.46) forwards;
     }
     @keyframes titMove1 {
         0% {top: 16.25vw; left: 29.604vw; opacity: 0; transform: skew(0deg, -5deg);}
@@ -686,37 +692,51 @@ h2.ftitle {
         height: 32px;
         line-height: 32px;
     }
-    .sec1-circleAll {font-size: 10px;}
+    .code-align-box {
+        display: block;
+    }
+    .circlebox {
+        width: 100%;
+        height: 180px;
+    }
+    .editorbox {
+        width: 100%;
+    }
+    .sec1-circleAll {
+        font-size: 12px;
+    }
     .circle-wrap1 {
-        top: 62vw;
-        left: 8vw;
+        top: 0%;
+        left: 0%;
     }
     .circle-wrap2 {
-        top: 60.3vw;
-        left: 34vw;
+        top: 35%;
+        left: 30%;
     }
     .circle-wrap3 {
-        top: 63.9vw;
-        left: 62vw;
+        top: 0%;
+        left: 64%;
     }
     .circle-wrap4 {
-        top: 62vw; 
-        left: 84.6vw;
+        top: 46%;
+        left: 93.4%;
     }
-    .left-chromebox .left-chromewrap {
-        width: 85.563vw;
-        top: 78.583vw;
-        left: 6.3vw;
+    .editor .editor-tab {
+        font-size: 16px;
     }
-    .title-bar .tap {
-        width: 19.5vw;
+    .editor .editor-tab .menu li a {
+        padding: 9px 32px;
     }
-    .title-bar .tap .target {
-        padding-left: 3.5vw;
+    .editor .editor-tab .menu li .code-content {
+        height: 420px;
     }
-    .title-bar > div .code-content {
-        width: 84.8vw;
+    code[class*="language-"], pre[class*="language-"] {
+        font-size: 14px !important;
     }
+    .editor .editor-tab .theme {
+        padding: 8px 10px;
+    }
+
 }
 
 @media (max-width: 800px){
