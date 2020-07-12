@@ -23,6 +23,7 @@ $(window).on("mousemove", function(e){
 
     // cirlceMove about mousemove
     // gsap.to(".circle-wrap1",{duration: 3, left: qwer + Math.max(-40, Math.min(40, qwer + $('.circle-wrap1').width()/2 - x)) , top: adsf - $("#section1").offset().top + Math.max(-40, Math.min(40, (adsf + $('.circle-wrap1').height()/2) - y))});
+
     
     
     // console.log((adsf - $("#section1").offset().top)  / 2);

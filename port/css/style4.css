@@ -145,7 +145,8 @@ h1.main-tit .split span {
     letter-spacing: 0.2vw;
 }
 .left-title.titMove h2 {
-    animation: titMove1 1s ease-in-out forwards;
+    /* animation: titMove1 1s cubic-bezier(0,-0.32, 0.47, 1.57) forwards; */
+    animation: titMove1 1s cubic-bezier(0, 3.32, 0,-0.46) forwards;
 }
 @keyframes titMove1 {
     0% {top: 5.25vw; left: 24.604vw; opacity: 0; transform: skew(0deg, -5deg);}
@@ -569,6 +570,12 @@ h2.ftitle {
 
 
 /* mediaquery */
+
+@media (max-width:1400px){
+    .container {width: 100%;}
+    .row {padding: 0 3%;}
+}
+
 @media (max-width: 1024px){
     /* header */
     .header-title h1.main-tit {
