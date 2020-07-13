@@ -502,7 +502,7 @@ h2.ftitle {
 }
 .editor .editor-tab .theme .current-theme {
     display: inline-block;
-    width: 84px;
+    width: 90px;
 }
 .editor .editor-tab .theme .arrow {
     /* margin-left: 10px; */
@@ -801,15 +801,17 @@ h2.ftitle {
 }
 
 @media (max-width: 800px){
+    .row {padding: 0 2%;}
     .header-title {
-        text-align: center;
-        width: 74.610vw;
+        width: 100%;
     }
     .header-title h1.main-tit {
-        font-size: 25px;
-        line-height: 30px;
-        text-align: center;
-        padding-top: 40px;
+        /* font-size: 35px; */
+        /* line-height: 34px; */
+        /* padding-top: 38px; */
+        font-size: 10.938vw;
+        line-height: 10.625vw;
+        padding-top: 11.875vw;
     }
     .header-title h1.main-tit strong {
         -webkit-text-stroke: 0.5px #fff;
@@ -842,49 +844,131 @@ h2.ftitle {
     .left-title {
         transform: rotate(-90deg);
         z-index: 2;
-    }
-    h2.ftitle {
-        display: none;
+        left: 4.604vw;
     }
     .left-title h2 {
-        top: -16.8vw; left: 64.604vw;
+        font-size: 14vw;
     }
-    .left-title.titMove h2 {
-        /* animation: titMove1 1s ease-in-out forwards; */
-        animation: titMove1 1s cubic-bezier(0, 3.32, 0,-0.46) forwards;
+    .left-title h2.ftitle {
+        display: none;
     }
+    .left-title h2.btitle {
+        top: -54.8vw; left: 73.604vw;
+        opacity: 1;
+    }
+    .left-title.titMove h2 { 
+        animation: titMove1 1s ease-in-out forwards;
+    } 
     @keyframes titMove1 {
-        0% {top: 16.25vw; left: 29.604vw; opacity: 0; transform: skew(0deg, -5deg);}
-        100% {top: -8.8vw; left: 23.604vw; opacity: 1; transform: skew(0deg, 0deg);}
+        0% {top: -54.8vw; left: 73.604vw;}
+        100% {top: -54.8vw; left: -47.396vw;}
     }
     .left-title.titFadeOut h2 {
-        animation: titFadeOut1 .5s ease-in-out forwards;
+        animation: titFadeOut1 1s ease-in-out forwards;
     }
     @keyframes titFadeOut1 {
-        0% {top: -8.8vw; left: 23.604vw; opacity: 1;}
-        100% {top: -8.8vw; left: 23.604vw; opacity: 0;}
+        0% {top: -54.8vw; left: -47.396vw; opacity: 1;}
+        100% {top: -54.8vw; left: -47.396vw; opacity: 0;}
     }
     .img-align-box {
         position: relative;
         z-index: 1;
+        width: 77%;
+        overflow: hidden;
     }
     .img-wrap {
         width: 77vw;
         /* height: 70vh; */
-        height: 51vh;
+        height: 50vh;
+        background: #1b1b1b;
+        position: relative; left: 100%;
     }
-    .sec1-img {
-        left: 0 !important;
+    .img-wrap.imgMove {
+        animation: imgMove1 1s ease-in-out forwards;
+    }
+    @keyframes imgMove1 {
+        0% {left: 100%;}
+        100% {left: 0%;}
+    }
+    .img-wrap.imgFadeOut {
+        animation: imgFadeOut1 2s ease-in-out forwards;
+    }
+    @keyframes imgFadeOut1 {
+        0% {opacity: 1;}
+        100% {opacity: 0;}
+    }
+    .img {
+        left: 0% !important;
         transform: scale3d(1,1,1) !important;
     }
-    
-    
     .left-num-wrap {
-        top: -30vw !important;
+        top: -29vw !important;
         left: 48vw;
         transform: rotate(0deg);
     }
     .left-num-wrap .left-num {
         font-size: 30.625vw;
     }
+    .left-desc-wrap {
+        width: 77%;
+        height: 320px;
+        top: 80vw !important;
+        left: 23%;
+        padding: 5.427vw 5.385vw 7.688vw;
+    }
+    .sec1-circleAll {
+        font-size: 10px;
+        width: 9vw; height: 9vw;
+    }
+    .circle-wrap1 {
+        top: 32%;
+        left: 5%;
+    }
+    .circle-wrap2 {
+        top: 49%;
+        left: 30%;
+    }
+    .circle-wrap3 {
+        top: 32%;
+        left: 55%;
+    }
+    .circle-wrap4 {
+        top: 49%;
+        left: 80%;
+    }
+    .editor .editor-tab {
+        font-size: 10px;
+        height: 33px;
+    }
+    .editor .editor-tab .dot {
+        padding: 14px 43px 14px 14px;
+    }
+    .editor .editor-tab .dot span,
+    .editor .editor-tab .dot span::before,
+    .editor .editor-tab .dot span::after {
+        width: 8px; height: 8px;
+    }
+    .editor .editor-tab .dot span::before {
+        left: 15px;
+    }
+    .editor .editor-tab .dot span::after {
+        left: 30px;
+    }
+    .editor .editor-tab .menu li a {
+        padding: 9px 7px;
+    }
+    .editor .editor-tab .menu li .code-content {
+        top: 33px;
+    }
+    .editor .editor-tab .theme .current-theme {
+        width: 76px;
+    }
+    .editor .editor-tab .theme a.arrow svg {
+        width: 10px !important;
+        height: 7px !important; 
+    }
+    code[class*="language-"], pre[class*="language-"] {
+        font-size: 10px !important;
+    }
 }
+
