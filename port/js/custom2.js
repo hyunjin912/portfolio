@@ -94,18 +94,18 @@ $(window).scroll(function(){
     $(".left-title").each(function(){
         if ( $(window).scrollTop() >= $(this).offset().top / 2 ){
             $(this).addClass("titMove").removeClass("titFadeOut");
-        } else {
+        } else if( $(this).hasClass("titMove") ){
             $(this).removeClass("titMove").addClass("titFadeOut");
         }
     });
 
     /* titleSideMove about scroll */
     if( $(window).scrollTop() >= $("#section1").offset().top / 2 && $(window).width() >= 1680){
-        // gsap.to(".left-num-wrap", {duration: 0.1, top: scrollTop / 3})
-        gsap.to(".left-title.titMove", {duration: 0.4, left: Math.max(-250, -scrollTop / 5)})
+        // gsap.to(".left-num-wrap", {duration: 0.1, top: scrollTop / 3 })
+        // gsap.to(".left-title.titMove", {duration: 0.4, left: Math.max(-250, -scrollTop / 5)})
     }
     if( $(window).scrollTop() >= $("#section1").offset().top / 2 && $(window).width() <= 1024){
-        gsap.to(".left-title.titMove", {duration: 0.4, left: Math.max(-240, -scrollTop / 5)})
+        // gsap.to(".left-title.titMove", {duration: 0.4, left: Math.max(-240, -scrollTop / 5)})
        
     }
 
@@ -116,7 +116,7 @@ $(window).scroll(function(){
         $(".codecontainer").removeClass("opacity1").addClass("opacity0");
     }
     
-    
+    console.log("스크롤/3 : "+$(window).scrollTop() / 3)
 
 });
 console.log( "윈도우 스크롤 탑 : "+$(window).scrollTop() )
@@ -126,6 +126,7 @@ console.log( "윈도우 너비 : "+$(window).width() )
 console.log( "윈도우 아우터 너비 : "+$(window).outerWidth() ) 
 console.log( "섹션1 오프셋 탑 : "+$("#section1").offset().top / 4 )
 console.log( "레프트 타이틀 너비 : "+$(".left-title h2").width() / 3.5 )
+
 
 /* header */
 $(".split").each(function () {
@@ -363,4 +364,3 @@ $(".sec1-circleAll").click(function(e){
     $("code.lj1").html(jsText[$(this).index()]);
     TextColor();
 });
-

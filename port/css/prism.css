@@ -10,8 +10,8 @@ code[class*="language-"],
 pre[class*="language-"] {
 	color: #f8f8f2;
 	background: none;
-	/* font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; */
-	font-family: Cascadia, "SF Pro Display";
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	/* font-family: Cascadia, "SF Pro Display"; */
 	font-size: 16px;
 	text-align: left;
 	white-space: pre;
@@ -19,7 +19,6 @@ pre[class*="language-"] {
 	word-break: normal;
 	word-wrap: normal;
 	line-height: 1.5;
-
 	-moz-tab-size: 4;
 	-o-tab-size: 4;
 	tab-size: 4;
