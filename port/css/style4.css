@@ -757,7 +757,9 @@ h2.btitle {
 }
 
 @media (max-width: 800px){
-    .row {padding: 0 2%;}
+    .row {
+        padding: 0 2%;
+    }
     .header-title {
         width: 100%;
     }
@@ -798,34 +800,34 @@ h2.btitle {
         padding-top: 66px;
     }
     .left-title {
-        transform: rotate(-90deg);
-        z-index: 2;
         left: 4.604vw;
     }
     .left-title h2 {
-        font-size: 14vw;
+        font-size: 12vw;
     }
     .left-title h2.ftitle {
         display: none;
     }
     .left-title h2.btitle {
+        z-index: 2;
         top: -54.8vw; left: 73.604vw;
         opacity: 1;
+        animation-delay: 0s !important;
     }
     .left-title.titMove h2 { 
         animation: titMove1 1s ease-in-out forwards;
     } 
     @keyframes titMove1 {
-        0% {top: -54.8vw; left: 73.604vw;}
-        100% {top: -54.8vw; left: -51.396vw;}
+        0% {top: -5.9%; left: -100%;}
+        100% {top: -5.9%; left: 2.3%;}
     }
-    .left-title.titFadeOut h2 {
+    /* .left-title.titFadeOut h2 {
         animation: titFadeOut1 1s ease-in-out forwards;
     }
     @keyframes titFadeOut1 {
         0% {top: -54.8vw; left: -51.396vw; opacity: 1;}
         100% {top: -54.8vw; left: -51.396vw; opacity: 0;}
-    }
+    } */
     .img-align-box {
         position: relative;
         z-index: 1;
@@ -836,6 +838,7 @@ h2.btitle {
         width: 77vw;
         /* height: 70vh; */
         height: 58vh;
+        position: relative; left: 100%;
     }
     .img-wrap.imgMove {
         animation: imgMove1 1s ease-in-out forwards;
@@ -857,8 +860,8 @@ h2.btitle {
     }
     .left-num-wrap {
         /* top: -26vw !important; */
-        top: -26vw;
-        left: 48vw;
+        top: -22vw;
+        left: 66vw;
         transform: rotate(0deg);
     }
     .left-num-wrap .left-num {

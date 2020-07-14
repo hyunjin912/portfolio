@@ -97,7 +97,7 @@ $(window).scroll(function(){
         gsap.to(".move2", {x: img_xOffset, duration: 0.4});
         gsap.to(".move4", {y: -desc_yOffset, duration: 0.4});
     }
-    if( scrollTop >= $(".left-num-wrap").offset().top / 2 ){
+    if( scrollTop >= $(".left-num-wrap").offset().top / 2 && $(window).width() > 800){
         let location = $(".left-num-wrap").offset().top / 2;
         num_yOffset = Math.max(0, Math.min(383, (scrollTop - location) * 0.4));
 
@@ -127,7 +127,7 @@ $(window).scroll(function(){
     $(".left-title").each(function(){
         if ( $(window).scrollTop() >= $(this).offset().top / 2 ){
             $(this).addClass("titMove").removeClass("titFadeOut");
-        } else if( $(this).hasClass("titMove") ){
+        } else if( $(this).hasClass("titMove") && $(window).width() > 800 ){
             $(this).removeClass("titMove").addClass("titFadeOut");
         }
     });
@@ -136,7 +136,7 @@ $(window).scroll(function(){
     $(".img-wrap").each(function(){
         if ( $(window).scrollTop() >= $(".left-title").offset().top / 2 ){
             $(this).addClass("imgMove").removeClass("imgFadeOut");
-        } else if( $(this).hasClass("imgMove") ){
+        } else if( $(this).hasClass("imgMove") && $(window).width() > 800 ){
             $(this).removeClass("imgMove").addClass("imgFadeOut");
         }
     });
@@ -154,10 +154,22 @@ $(window).scroll(function(){
  
 
     // code opacity animation
-    if( $(window).scrollTop() >= $(".codecontainer").offset().top * 0.8 ){
-        $(".codecontainer").removeClass("opacity0").addClass("opacity1");
+    if($(window).width() > 800 ) {
+
+        if( $(window).scrollTop() >= $(".codecontainer").offset().top * 0.8 ){
+            $(".codecontainer").removeClass("opacity0").addClass("opacity1");
+        } else {
+            $(".codecontainer").removeClass("opacity1").addClass("opacity0");
+        }
+
     } else {
-        $(".codecontainer").removeClass("opacity1").addClass("opacity0");
+
+        if( $(window).scrollTop() >= $(".codecontainer").offset().top * 0.6 ){
+            $(".codecontainer").removeClass("opacity0").addClass("opacity1");
+        } else {
+            $(".codecontainer").removeClass("opacity1").addClass("opacity0");
+        }
+        
     }
     
 });
