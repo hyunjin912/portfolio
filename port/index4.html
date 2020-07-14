@@ -25,9 +25,7 @@
     <div id="contents">
         <header id="header">
             <!-- <div class="cursor-wrap"> -->
-                <div class="cursor"
-                data-0="opacity: 1"
-                data-650="opacity: 0"></div>
+                <div class="cursor"></div>
             <!-- </div> -->
             <div class="container">
                 <div class="row">
@@ -75,33 +73,20 @@
 
         <section id="section1">
             <div class="sec1 left-section">
-                <!-- <div class="sec1-title left-title"> -->
-                <div class="sec1-title left-title"
-                    data-750="left: 4.604vw;"
-                    data-1400="left: -5.604vw;">
+                
+                <div class="img-align-box">
+                    <div class="sec1-img-wrap img-wrap">
+                        <div class="sec1-img img"></div>
+                    </div>
+                </div>
+                <div class="sec1-title left-title">
                     <h2 class="ftitle">webstandard</h2>
                     <h2 class="btitle">webstandard</h2>
                 </div>
-                <div class="img-align-box">
-                    <div class="sec1-img-wrap img-wrap">
-                        <div class="sec1-img img"
-                            data-700="left: 0px; transform: scale3d(1,1,1)"
-                            data-2300="left: 120px; transform: scale3d(1.24998,1.24998,1);"></div>
-                    </div>
-                </div>
                 <div class="sec1-num-wrap left-num-wrap">
-                <!-- <div class="sec1-num-wrap left-num-wrap"
-                    data-800="top: 18vw;"
-                    data-2000="top: 30vw;"> -->
                     <div class="sec1-num left-num">01</div>
                 </div>
-                <!-- <div class="sec1-desc-wrap left-desc-wrap"> -->
-                <div class="sec1-desc-wrap left-desc-wrap"
-                    data-1100="top: 36vw"
-                    data-2300="top: 15vw">
-                    <!-- <div class="sec1-desc-wrap left-desc-wrap"
-                        data-1100="top: 69%"
-                        data-2300="top: 30%"> -->
+                <div class="sec1-desc-wrap left-desc-wrap">
                         <h2 class="desc-title">webstandard</h2>
                         <p class="desc-desc">
                             웹 페이지의 기본적인 레이아웃을 바탕으로 웹 접근성을 
@@ -223,16 +208,7 @@
     <script src="js/prism.js"></script>
     <script src="js/skrollr.min.js"></script>
     <script src="js/custom2.js"></script>
-    <script>
-        TextColor();
-        var s = skrollr.init();
-
-        $(window).on('resize', function () {
-            if ($(window).width() <= 800) {
-                skrollr.init().destroy(); // skrollr.init() returns the singleton created above
-            }
-        });
-    </script>
+   
 
    
     <!-- <script>

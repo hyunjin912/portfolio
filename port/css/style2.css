@@ -2,7 +2,7 @@
 html {width: 100%; height: 100%; margin: 0; padding: 0;}
 #contents {}
 #section1 {height: 100vh; background: #000;} 
-#section2 {height: 2000px; background: #888;}
+#section2 {height: 7000px; background: #000;}
 #section3 {}
 #section4 {}
 #section5 {}
@@ -36,6 +36,13 @@ html {width: 100%; height: 100%; margin: 0; padding: 0;}
     background: #fff;
     border-radius: 50%;
     opacity: 0;
+    display: none;
+}
+
+/* scroll */
+.scroll {
+    position: fixed;
+    right: 10px; bottom: 10px; color: #fff;
 }
 
 /* sec1 */
@@ -60,6 +67,7 @@ html {width: 100%; height: 100%; margin: 0; padding: 0;}
 .sec1 .title h1 strong {
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 2px #fff;
+    display: block;
 }
 .sec1 .title h1 strong span {
     display: inline-block;
@@ -83,9 +91,87 @@ html {width: 100%; height: 100%; margin: 0; padding: 0;}
 .sec1 .title .sub-desc strong {
     line-height: 1.4;
     font-family: 'S-CoreDream-6Bold';
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #fff;
+}
+
+ 
+/* site-wrap */
+.sec2 {padding: 40vh 0;}
+.site-wrap {}
+.site-wrap .site {
+    margin-bottom: 30vh; 
+    width: 100%; 
+    overflow: hidden;
+}
+.site-wrap .site::before {
+    content: '01';
+    font-family: 'Ilisarniq-Black';
+}
+
+.site-wrap .site-title {
+    font-family: 'Ilisarniq-Black';
+    font-size: 10vw;
+    text-transform: uppercase;
+    color: #fff;
+    padding-left: 10vw;
+    letter-spacing: -0.5vw;
+    position: relative; 
+    z-index: 100;
+}
+.site-wrap .site-img {
+    padding-right: 30vw;
+    margin-top: -12vh;
+    overflow: hidden;
 }
 
 
+.site-wrap .site-intro {
+    background: #fff;
+    margin-left: 60vw;
+    margin-right: 5vw;
+    padding: 4vw;
+    margin-top: -12vh;
+    position: relative;
+    z-index: 100;
+}
+.site-wrap .site-intro h3 {
+    font-size: 40px;
+    line-height: 1;
+    text-transform: uppercase;
+    font-family: 'Ilisarniq-Black';
+    padding-bottom: 1.5vw;
+}
+.site-wrap .site-intro p {
+    font-size: 18px;
+    font-family: 'S-CoreDream-3Light';
+    padding-bottom: 1.5vw;
+}
+.site-wrap .site-intro .btn {
+    display: flex; 
+    justify-content: space-between;
+}
+.site-wrap .site-intro .btn a {
+    text-align: center;
+    font-size: 18px;
+    line-height: 1;
+    background: #000;
+    color: #fff;
+    display: inline-block;
+    width: 49%;
+    text-transform: uppercase;
+    padding: 0.6vw 1vw 0.8vw 1vw;
+    box-sizing: border-box;
+    font-family: 'Ilisarniq-Light'; 
+}
+
+.site-wrap .site-code {
+    display: flex; max-width: 1400px; 
+    margin: 0 auto;
+    width: 100%;
+}
+.site-wrap .site-code .code-view {width: 70%; height: 540px; background: #ccc; }
+.site-wrap .site-code .code-btn {width: 30%; height: 540px; background: #ddd;}
 
 
 
@@ -98,6 +184,16 @@ html {width: 100%; height: 100%; margin: 0; padding: 0;}
 @media (max-width:1220px){
     .sec1 {text-align: center;}
     .row {padding: 0 4%;}
+    
+    .site-wrap .site-img {margin-top: -5vh;}
+    .site-wrap .site-intro h3 {font-size: 30px;}
+    .site-wrap .site-intro p {font-size: 14px;}
+    .site-wrap .site-intro .btn a {font-size: 14px;}
+    
+}
+@media (max-width:960px){
+    .site-wrap .site-intro {margin-left: 50vw;}
+    
 }
 
 @media (max-width:800px){
@@ -106,8 +202,23 @@ html {width: 100%; height: 100%; margin: 0; padding: 0;}
     .sec1 .title .sub-title {font-size: 14px; margin-top: 10px;}
     .sec1 .title .sub-desc {display: none;}
     .cursor {display: none;}
+    
+    .site-wrap .site-img {padding-right: 5vw; padding-left: 5vw;}
+    .site-wrap .site-intro {margin-left: 5vw; margin-top: 0;}
+    
+    .site-wrap .site-code {flex-direction: column; padding-right: 5vw; padding-left: 5vw; box-sizing: border-box;}
+    .site-wrap .site-code .code-view {width: 100%; height: 300px; }
+    .site-wrap .site-code .code-btn {width: 100%; height: 200px; }   
 }
-
+@media (max-width:600px){ 
+    .site-wrap .site-img {margin-top: 0; padding-right: 20px; padding-left: 20px;}
+    .site-wrap .site-title {display: none;}
+    .site-wrap .site-intro h3 {padding-bottom: 20px;}
+    .site-wrap .site-intro p {padding-bottom: 20px;}
+    .site-wrap .site-intro .btn a {padding: 10px 0;}
+    .site-wrap .site-intro {padding: 30px; margin-right: 20px; margin-left: 20px;}
+    .site-wrap .site-code {padding-right: 20px; padding-left: 20px;}
+}
 
 
 
