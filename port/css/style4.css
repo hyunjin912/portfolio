@@ -506,7 +506,7 @@ h2.ftitle {
 }
 .editor .editor-tab .theme .arrow {
     /* margin-left: 10px; */
-    position: absolute; right: 12px;
+    position: absolute; top: 28%; right: 7%;
 }
 .editor .editor-tab .theme .arrow svg path {
     stroke:#8E9093;
@@ -886,7 +886,8 @@ h2.ftitle {
         padding: 5.427vw 5.385vw 7.688vw;
     }
     .container.codecontainer {
-        padding-top: 250px;
+        /* padding-top: 250px; */
+        padding-top: 187px;
     }
     .sec1-circleAll {
         font-size: 10px;
@@ -937,7 +938,7 @@ h2.ftitle {
         top: 33px;
     }
     .editor .editor-tab .theme .current-theme {
-        width: 82px;
+        width: 76px;
     }
     .editor .editor-tab .theme a.arrow svg {
         width: 10px !important;
