@@ -123,7 +123,7 @@ $(window).scroll(function(){
 
 
     /* titleSideMove about scroll */
-    if( $(window).scrollTop() >= $("#section1").offset().top / 2 ){
+    if( $(window).scrollTop() >= $("#section1").offset().top / 2 && $(window).width() > 800 ){
         gsap.to(".left-num-wrap", {duration: 0.4, top: scrollTop / 3 })
         // gsap.to(".left-title.titMove", {duration: 0.4, left: Math.max(-250, -scrollTop / 5)})
     }

@@ -834,8 +834,8 @@ h2.ftitle {
         animation: titFadeOut1 1s ease-in-out forwards;
     }
     @keyframes titFadeOut1 {
-        0% {top: -54.8vw; left: -47.396vw; opacity: 1;}
-        100% {top: -54.8vw; left: -47.396vw; opacity: 0;}
+        0% {top: -54.8vw; left: -51.396vw; opacity: 1;}
+        100% {top: -54.8vw; left: -51.396vw; opacity: 0;}
     }
     .img-align-box {
         position: relative;
@@ -865,11 +865,12 @@ h2.ftitle {
         100% {opacity: 0;}
     }
     .img {
-        left: 0% !important;
-        transform: scale3d(1,1,1) !important;
+        /* left: 0% !important;
+        transform: scale3d(1,1,1) !important; */
     }
     .left-num-wrap {
-        top: -26vw !important;
+        /* top: -26vw !important; */
+        top: -26vw;
         left: 48vw;
         transform: rotate(0deg);
     }
@@ -879,7 +880,8 @@ h2.ftitle {
     .left-desc-wrap {
         width: 77%;
         height: 320px;
-        top: 80vw !important;
+        /* top: 80vw !important; */
+        top: 80vw;
         left: 23%;
         padding: 5.427vw 5.385vw 7.688vw;
     }
