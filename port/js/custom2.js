@@ -2,13 +2,15 @@
 TextColor();
 // var s = skrollr.init();
 
-if ($(window).width() > 800) {
-    skrollr.init();
-}
+// if ($(window).width() > 800) {
+//     skrollr.init();
+// }
     
-$(window).on('resize', function () {
-    if ($(window).width() <= 800) {
-         skrollr.init().destroy(); 
+$(window).resize(function() {
+    if ( $(window).width() > 800 ) {
+        var s = skrollr.init(); 
+    } else {
+        skrollr.init().destroy(); 
     }
 });
 

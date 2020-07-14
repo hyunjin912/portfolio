@@ -719,40 +719,7 @@ h2.ftitle {
     .row {
         padding: 0 8%;
     }
-    .left-title h2 {
-        position: absolute; top: 16.25vw; left: 29.604vw;
-    }
-    .left-title.titMove h2 {
-        /* animation: titMove1 1s cubic-bezier(0, 3.32, 0,-0.46) forwards; */
-        animation: titMove1 1s ease-in-out forwards;
-    }
-    @keyframes titMove1 {
-        0% {top: 16.25vw; left: 29.604vw; opacity: 0; transform: skew(0deg, -5deg);}
-        100% {top: -8.8vw; left: 23.604vw; opacity: 1; transform: skew(0deg, 0deg);}
-    }
-    .left-title.titFadeOut h2 {
-        animation: titFadeOut1 .5s ease-in-out forwards;
-    }
-    @keyframes titFadeOut1 {
-        0% {top: -8.8vw; left: 23.604vw; opacity: 1;}
-        100% {top: -8.8vw; left: 23.604vw; opacity: 0;}
-    }
-    /* .left-desc-wrap .left-desc {
-        top: 9vw;
-    }
-    .left-desc-wrap .left-desc ul .desc-title {
-        margin-bottom: 0.6vw;
-    }
-    .left-desc-wrap .left-desc ul .desc-desc {
-        font-size: 0.1vw;
-    }
-    .btn-wrap {
-        top: 17.6vw;
-    }
-    .btn-wrap a {
-        height: 32px;
-        line-height: 32px;
-    } */
+   
     .code-align-box {
         display: block;
     }
@@ -861,7 +828,7 @@ h2.ftitle {
     } 
     @keyframes titMove1 {
         0% {top: -54.8vw; left: 73.604vw;}
-        100% {top: -54.8vw; left: -47.396vw;}
+        100% {top: -54.8vw; left: -51.396vw;}
     }
     .left-title.titFadeOut h2 {
         animation: titFadeOut1 1s ease-in-out forwards;
@@ -879,7 +846,7 @@ h2.ftitle {
     .img-wrap {
         width: 77vw;
         /* height: 70vh; */
-        height: 50vh;
+        height: 58vh;
         background: #1b1b1b;
         position: relative; left: 100%;
     }
@@ -902,7 +869,7 @@ h2.ftitle {
         transform: scale3d(1,1,1) !important;
     }
     .left-num-wrap {
-        top: -29vw !important;
+        top: -26vw !important;
         left: 48vw;
         transform: rotate(0deg);
     }
@@ -916,23 +883,30 @@ h2.ftitle {
         left: 23%;
         padding: 5.427vw 5.385vw 7.688vw;
     }
+    .container.codecontainer {
+        padding-top: 250px;
+    }
     .sec1-circleAll {
         font-size: 10px;
         width: 9vw; height: 9vw;
     }
     .circle-wrap1 {
+        border-width: 1px;
         top: 32%;
         left: 5%;
     }
     .circle-wrap2 {
+        border-width: 1px;
         top: 49%;
         left: 30%;
     }
     .circle-wrap3 {
+        border-width: 1px;
         top: 32%;
         left: 55%;
     }
     .circle-wrap4 {
+        border-width: 1px;
         top: 49%;
         left: 80%;
     }
