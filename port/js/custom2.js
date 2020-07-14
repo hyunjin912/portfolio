@@ -1,10 +1,3 @@
-/* set */
-$("body").bind('touchmove', function(e){
-    e.preventDefault()
-});
-
-    
-
 
 /* link delay */
 $(".link").click(function(e){
