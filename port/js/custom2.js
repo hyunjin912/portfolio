@@ -1,15 +1,14 @@
 /* set */
 TextColor();
-// var s = skrollr.init();
+var s = skrollr.init();
+
 $("body").bind('touchmove', function(e){
     e.preventDefault()
 });
 
     
 $(window).resize(function() {
-    if ( $(window).width() > 800 ) {
-        var s = skrollr.init(); 
-    } else {
+    if ( $(window).width() <= 800 ) {
         skrollr.init().destroy(); 
     }
 });
