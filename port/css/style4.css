@@ -939,8 +939,8 @@ h2.btitle {
         font-size: 10px !important;
     }
 }
-
-@media (max-width: 409px) {
+/* max-width: 409px */
+@media (max-width: 500px) {
     /* header */
     .header-title {
         width: 100%;
@@ -949,7 +949,8 @@ h2.btitle {
 
     /* section1 */
     #section1 {
-        padding-top: 105px;
+        /* padding-top: 105px; */
+        padding-top: 130px;
     }
     .header-title h1.main-tit {
         font-size: 9.938vw;
@@ -972,7 +973,8 @@ h2.btitle {
     }
     @keyframes titMove1 {
         0% {top: -5.9%; left: -100%;}
-        100% {top: -5.9%; left: 4.7%;}
+        /* 100% {top: -5.9%; left: 4.7%;} */
+        100% {top: -5.9%; left: 13%;}
     }
     .img-wrap {
         left: 110%;
@@ -1016,7 +1018,7 @@ h2.btitle {
         position: absolute;
         height: 100%;
         z-index: 10;
-        background: #1b1b1b;
+        background: #73B6A9;
     }
     .left-desc-wrap.reveal-ltr.reveal::before {
         animation: revealLTR 1.8s ease-in-out;

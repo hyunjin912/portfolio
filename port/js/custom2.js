@@ -95,7 +95,7 @@ $(window).scroll(function(){
         desc_yOffset = (scrollTop - location) * 0.4;
 
         gsap.to(".move2", {x: img_xOffset, duration: 0.4});
-        if($(window).width() > 409){
+        if($(window).width() > 500){
             gsap.to(".move4", {y: -desc_yOffset, duration: 0.4});
         }
     }
