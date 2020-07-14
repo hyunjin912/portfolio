@@ -65,7 +65,6 @@ $(window).on("mousemove", function(e){
                                                                           
 });
 
-
 /* scroll */
 $(window).scroll(function(){
     // scroll 값
@@ -74,19 +73,36 @@ $(window).scroll(function(){
 
 
     // move collection
-    let scroll = $(this).scrollTop();
-    let offset = 0;
-
+    /*
     $(".offset").each(function(){
-        let location = $(this).offset().top;
-        xOffset = (scroll - location) * 0.3;
-        //rotateOffset = (scroll - location) * 0.01;
-        scaleOffset =  Math.abs(Math.ceil( (scroll - location) * 0.01));
-        console.log(scaleOffset)
+        let location = $(this).offset().top / 2; // 2로 나누지 않으면 이미지가 왼쪽으로 이동한다
+        tit_xOffset = (scrollTop - location) * 0.1;
+        img_xOffset = Math.max(0, (scrollTop - location) * 0.1);
+        num_yOffset = Math.max(0, Math.min(383, (scrollTop - location) * 0.4));
+        desc_yOffset = (scrollTop - location) * 0.4;
+        scaleOffset =  Math.max( 1, Math.min( 1.24998, (scrollTop - location) * 0.1  ) ) ;
+        // mouseX = Math.max(-100, Math.min(100, $(window).width() / 2 - x));
     });
+    */
 
-    gsap.to(".move1", {x: -xOffset, duration: 0.4});
-    // gsap.to(".move2", {y: -xOffset, duration: 0.4});
+    // h2에 적용하면 글씨효과는 되는데 움직이지가 않음
+    // if( $(".left-title").hasClass("titMove") ){
+    //     gsap.to(".move1", {x: -tit_xOffset, duration: 0.4});
+    // }
+    if( scrollTop >= $(".img-wrap").offset().top / 2 ){
+        let location = $(".img-wrap").offset().top / 2;
+        img_xOffset = Math.max(0, (scrollTop - location) * 0.1);
+        desc_yOffset = (scrollTop - location) * 0.4;
+
+        gsap.to(".move2", {x: img_xOffset, duration: 0.4});
+        gsap.to(".move4", {y: -desc_yOffset, duration: 0.4});
+    }
+    if( scrollTop >= $(".left-num-wrap").offset().top / 2 ){
+        let location = $(".left-num-wrap").offset().top / 2;
+        num_yOffset = Math.max(0, Math.min(383, (scrollTop - location) * 0.4));
+
+        gsap.to(".move3", {y: num_yOffset, duration: 0.4});
+    }
     //gsap.to(".move3", {scale: scaleOffset, duration: 0.4});
 
 

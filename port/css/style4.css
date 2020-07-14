@@ -127,20 +127,41 @@ h1.main-tit .split span {
     position: relative;
 }
 .left-title h2 {
-    position: absolute; top: -9.25vw; left: 1.604vw;
+    position: absolute;
     font-size: 9.986vw;
     font-family: 'Ilisarniq-Black';
     text-transform: uppercase;
     letter-spacing: 0.2vw;
+    transition: all 1s;
+    opacity: 0;
 }
 h2.ftitle {
-    
+    z-index: 2;
     -webkit-text-stroke: 2px #fff;
     -webkit-text-fill-color: transparent;
 }
 h2.btitle {
     color: #fff;
-    z-index: -1;
+}
+.left-title.titMove h2 {
+    animation: titMove1 1s ease-in-out forwards;
+}
+.left-title.titMove h2.btitle {
+    animation-delay: .5s;
+}
+@keyframes titMove1 {
+    0% {top: 7.25vw; left: 13.604vw; opacity: 0; transform: skew(0deg, -5deg);}
+    /* 100% {top: -9vw; left: 4.604vw; opacity: 1; transform: skew(0deg, 0deg);} */
+    100% {top: -9vw; left: 8.604vw; opacity: 1; transform: skew(0deg, 0deg);}
+}
+.left-title.titFadeOut h2 {
+    animation: titFadeOut1 .5s ease-in-out forwards;
+}
+@keyframes titFadeOut1 {
+    /* 0% {top: -9vw; left: 4.604vw; opacity: 1;} */
+    /* 100% {top: -9vw; left: 4.604vw; opacity: 0;} */
+    0% {top: -9vw; left: 8.604vw; opacity: 1;}
+    100% {top: -9vw; left: 8.604vw; opacity: 0;}
 }
 /* .img-align-box {
     display: flex;
@@ -151,14 +172,17 @@ h2.btitle {
     height: 38.542vw;
     /* position: absolute; top: 9.531vw; left: 0; */
     overflow: hidden;
+    background: #73B6A9;
     transition: all 1s;
 }
 .img {
-    background: url(../img/webstandard_silver_gray.jpg) no-repeat center center;
+    background: url(../img/webstandard_silver_green.jpg) no-repeat center center;
     background-size: cover;
     width: 100%; height: 100%;
     position: relative;
+    z-index: 1;
 }
+
 .left-num-wrap {
     position: absolute; top: 18vw; left: 86vw;
     transform: rotate(90deg);
@@ -466,7 +490,8 @@ h2.btitle {
 }
 .editor .editor-tab .theme .current-theme {
     display: inline-block;
-    width: 90px;
+    /* width: 90px; */
+    width: 115px;
 }
 .editor .editor-tab .theme .arrow {
     /* margin-left: 10px; */
@@ -650,7 +675,7 @@ h2.btitle {
     }
 }
 
-@media (max-width: 1024px){
+@media (max-width: 1040px){
     /* header */
     .header-title h1.main-tit {
         font-size: 67px;
@@ -811,8 +836,6 @@ h2.btitle {
         width: 77vw;
         /* height: 70vh; */
         height: 58vh;
-        background: #1b1b1b;
-        position: relative; left: 100%;
     }
     .img-wrap.imgMove {
         animation: imgMove1 1s ease-in-out forwards;
