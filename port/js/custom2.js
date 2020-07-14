@@ -95,7 +95,9 @@ $(window).scroll(function(){
         desc_yOffset = (scrollTop - location) * 0.4;
 
         gsap.to(".move2", {x: img_xOffset, duration: 0.4});
-        gsap.to(".move4", {y: -desc_yOffset, duration: 0.4});
+        if($(window).width() > 409){
+            gsap.to(".move4", {y: -desc_yOffset, duration: 0.4});
+        }
     }
     if( scrollTop >= $(".left-num-wrap").offset().top / 2 && $(window).width() > 800){
         let location = $(".left-num-wrap").offset().top / 2;
@@ -107,27 +109,19 @@ $(window).scroll(function(){
 
 
     // reveal 
-    $(".box").each(function(){
-        if ( $(window).scrollTop() + $(window).height() / 2 >= $("#big-title").offset().top){
+    $(".left-desc-wrap").each(function(){
+        if ( $(window).scrollTop() >= $(".left-title").offset().top / 2){
             $(this).addClass("reveal");
-        } else {
-            $(this).removeClass("reveal");
-        }
+        } 
     });
-    $(".big-title svg text").each(function(){
-        if ( $(window).scrollTop() + $(window).height() / 2 >= $("#big-title").offset().top){
-            $(this).addClass("reveal");
-        } else {
-            $(this).removeClass("reveal");
-        }
-    });
+    
 
 
     // titMove animation
     $(".left-title").each(function(){
         if ( $(window).scrollTop() >= $(this).offset().top / 2 ){
             $(this).addClass("titMove").removeClass("titFadeOut");
-        } else if( $(this).hasClass("titMove") && $(window).width() > 800 ){
+        } else if( $(this).hasClass("titMove") && $(window).width() >= 800 ){
             $(this).removeClass("titMove").addClass("titFadeOut");
         }
     });
@@ -136,7 +130,7 @@ $(window).scroll(function(){
     $(".img-wrap").each(function(){
         if ( $(window).scrollTop() >= $(".left-title").offset().top / 2 ){
             $(this).addClass("imgMove").removeClass("imgFadeOut");
-        } else if( $(this).hasClass("imgMove") && $(window).width() > 800 ){
+        } else if( $(this).hasClass("imgMove") && $(window).width() >= 800 ){
             $(this).removeClass("imgMove").addClass("imgFadeOut");
         }
     });
@@ -169,7 +163,7 @@ $(window).scroll(function(){
         } else {
             $(".codecontainer").removeClass("opacity1").addClass("opacity0");
         }
-        
+
     }
     
 });

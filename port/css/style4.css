@@ -217,6 +217,7 @@ h2.btitle {
     font-family: 'Ilisarniq-Black';
     /* font-size: 2vw; */
     font-size: 39px;
+    line-height: 1;
     text-transform: uppercase;
 }
 .left-desc-wrap p {
@@ -939,3 +940,90 @@ h2.btitle {
     }
 }
 
+@media (max-width: 409px) {
+    /* header */
+    .header-title {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* section1 */
+    #section1 {
+        padding-top: 105px;
+    }
+    .header-title h1.main-tit {
+        font-size: 9.938vw;
+    }
+    .img-align-box {
+        width: 100%;
+        padding-left: 4%;
+        padding-right: 4%;
+        box-sizing: border-box;
+    }
+    .img-wrap {
+        width: 100%;
+        height: 220px;
+    }
+    .left-title h2 {
+        font-size: 47px;
+    }
+    .left-title.titMove h2 {
+        animation: titMove1 1s ease-in-out forwards;
+    }
+    @keyframes titMove1 {
+        0% {top: -5.9%; left: -100%;}
+        100% {top: -5.9%; left: 4.7%;}
+    }
+    .img-wrap {
+        left: 110%;
+    }
+    .img-wrap.imgMove {
+        animation: imgMove1 1s ease-in-out forwards;
+    }
+    @keyframes imgMove1 {
+        0% {left: 110%;}
+        100% {left: 0%;}
+    }
+    .left-num-wrap {
+        top: -39vw;
+    }
+    .left-desc-wrap {
+        width: 92%;
+        height: 278px;
+        top: 19%;
+        left: 0%;
+        padding-left: 4%;
+        padding-right: 4%;
+        box-sizing: border-box;
+        margin-left: 4%;
+        opacity: 0;
+    }
+    .container.codecontainer {
+        padding-top: 308px;
+    }
+    .row {
+        padding: 0 4%;
+    }
+    .left-desc-wrap.reveal {
+        animation: reveal_opacity 0.1s 1.1s forwards
+    }
+    @keyframes reveal_opacity {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+    }
+    .left-desc-wrap.reveal::before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        z-index: 10;
+        background: #1b1b1b;
+    }
+    .left-desc-wrap.reveal-ltr.reveal::before {
+        animation: revealLTR 1.8s ease-in-out;
+    }
+    @keyframes revealLTR {
+        0% {width: 0; top: 0; left: 0;}
+        65% {width: 100%; top: 0; left: 0;}
+        100% {width: 0; top: 0; left: 100%;}
+    }
+}
