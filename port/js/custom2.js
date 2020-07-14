@@ -1,10 +1,10 @@
 /* set */
 TextColor();
 // var s = skrollr.init();
+$("body").bind('touchmove', function(e){
+    e.preventDefault()
+});
 
-// if ($(window).width() > 800) {
-//     skrollr.init();
-// }
     
 $(window).resize(function() {
     if ( $(window).width() > 800 ) {
