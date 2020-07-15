@@ -86,6 +86,7 @@ setTimeout(function(){
 },2000);
 
 
+
 /* section2 */
 /* code tap-menu */
 $(".title-bar a").click(function(e){
