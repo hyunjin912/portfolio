@@ -950,7 +950,7 @@ h2.btitle {
     /* section1 */
     #section1 {
         /* padding-top: 105px; */
-        padding-top: 130px;
+        padding-top: 180px;
     }
     .header-title h1.main-tit {
         font-size: 9.938vw;
@@ -974,7 +974,7 @@ h2.btitle {
     @keyframes titMove1 {
         0% {top: -5.9%; left: -100%;}
         /* 100% {top: -5.9%; left: 4.7%;} */
-        100% {top: -5.9%; left: 13%;}
+        100% {top: -5.9%; left: 50%; transform: translatex(-50%);}
     }
     .img-wrap {
         left: 110%;
@@ -988,6 +988,11 @@ h2.btitle {
     }
     .left-num-wrap {
         top: -39vw;
+        left: 50%;
+        transform: translateX(50%) rotate(0deg);
+    }
+    .left-num-wrap .left-num {
+        font-size: 130px;
     }
     .left-desc-wrap {
         width: 92%;
