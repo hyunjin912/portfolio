@@ -1029,4 +1029,20 @@ h2.btitle {
         65% {width: 100%; top: 0; left: 0;}
         100% {width: 0; top: 0; left: 100%;}
     }
+    .sec1-circleAll {
+        width: 13vw;
+        height: 13vw;
+    }
+    .circle-wrap1 .sec1-circle1 {
+        animation: sec1-c1 8s linear infinite paused;
+    }
+    .circle-wrap2 .sec1-circle2 {
+        animation: sec1-c2 4s linear infinite paused;
+    }
+    .circle-wrap3 .sec1-circle3 {
+        animation: sec1-c3 7s linear infinite paused;
+    }
+    .circle-wrap4 .sec1-circle4 {
+        animation: sec1-c4 15s linear infinite paused;
+    }
 }
