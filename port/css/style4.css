@@ -811,7 +811,7 @@ h2.btitle {
     }
     .left-title h2.btitle {
         z-index: 2;
-        top: -54.8vw; left: 73.604vw;
+        top: -58.8vw; left: 73.604vw;
         opacity: 1;
         animation-delay: 0s !important;
     }
@@ -971,11 +971,7 @@ h2.btitle {
     .left-title.titMove h2 {
         animation: titMove1 1s ease-in-out forwards;
     }
-    @keyframes titMove1 {
-        0% {top: -5.9%; left: -100%;}
-        /* 100% {top: -5.9%; left: 4.7%;} */
-        100% {top: -5.9%; left: 50%; transform: translatex(-50%);}
-    }
+   
     .img-wrap {
         left: 110%;
     }
