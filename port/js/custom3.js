@@ -53,6 +53,49 @@ $(".leftBtn").click(function(){
 });
 
 
+/* scroll */
+$(window).scroll(function(){
+    // scroll value
+    const scrollTop = $(window).scrollTop();
+    $(".scrollTop").text(parseInt(scrollTop));
+
+
+    // titlle show
+    if( scrollTop > $(".site-title").offset().top * 0.2){
+        gsap.to(".site-title.ftitle span", 0.5, {opacity: 1, y:0, x:0, delay: 1.7});
+        gsap.to(".site-title.btitle span", 0.7, {opacity: 1, y:0, x:0, delay: 1.7});
+    }
+    // title move
+    let location = $(".site-title").offset().top / 2;
+    tit_xOffset = (scrollTop - location) * 0.2;
+
+    gsap.to(".move1", {x: -tit_xOffset, duration: 0.1,});
+    
+    // num, desc move
+    if( scrollTop >= $(".site-num").offset().top / 2 && $(window).width() > 800){
+        let location = $(".site-num").offset().top / 2;
+        num_yOffset = Math.max(0, Math.min(383, (scrollTop - location) * 0.4));
+        desc_yOffset = (scrollTop - location) * 0.4;
+
+        gsap.to(".move3", {y: num_yOffset, duration: 0.4});
+        gsap.to(".move4", {y: -desc_yOffset, duration: 0.4});
+    }    
+
+    // reveal
+    $(".img-wrap").each(function(index){
+        if ( $(window).scrollTop() >= $(".site-title").offset().top * 0.2){
+            $(this).addClass("reveal");
+        } 
+    });
+
+    // code opacity    
+    // section1
+    if( $(window).scrollTop() >= $("#section1 .site-wrap .container").offset().top * 0.8 ){
+        $("#section1 .site-wrap .container").addClass("opacity1");
+    }
+   
+});
+
 /* header */
 $(".split").each(function () {
     let txt = $(this).text();
@@ -76,67 +119,6 @@ setTimeout(function(){
     gsap.to(".cursor", 0.7, {ease: "bounce.out", borderRadius: "50%", top: hHeight-100, left: hWidth-100, opacity: 1, width: 200, height: 200, stagger: 0.05, delay: 4});
 },2000);
 
-
-/* scroll */
-$(window).scroll(function(){
-    // scroll value
-    const scrollTop = $(window).scrollTop();
-    $(".scrollTop").text(parseInt(scrollTop));
-
-
-    // titlle show
-    if( scrollTop > $(".site-title").offset().top * 0.4){
-        gsap.to(".site-title.ftitle span", 0.5, {opacity: 1, y:0, x:0, delay: 1.7});
-        gsap.to(".site-title.btitle span", 0.7, {opacity: 1, y:0, x:0, delay: 1.7});
-    }
-    // title move
-    let location = $(".site-title").offset().top / 2;
-    tit_xOffset = (scrollTop - location) * 0.2;
-
-    gsap.to(".move1", {x: -tit_xOffset, duration: 0.1,});
-    
-    // num, desc move
-    if( scrollTop >= $(".site-num").offset().top / 2 && $(window).width() > 800){
-        let location = $(".site-num").offset().top / 2;
-        num_yOffset = Math.max(0, Math.min(383, (scrollTop - location) * 0.4));
-        desc_yOffset = (scrollTop - location) * 0.4;
-
-        gsap.to(".move3", {y: num_yOffset, duration: 0.4});
-        gsap.to(".move4", {y: -desc_yOffset, duration: 0.4});
-    }    
-
-    
-
-    // reveal
-    $(".img-wrap").each(function(index){
-        if ( $(window).scrollTop() >= $(".site-title").offset().top * 0.4){
-            $(this).addClass("reveal");
-        } 
-    });
-
-    // code opacity
-    if($(window).width() > 800 ) {
-        // section1 code
-        if( $(window).scrollTop() >= $(".sec1-cc").offset().top * 0.8 ){
-            $(".sec1-cc").removeClass("opacity0").addClass("opacity1");
-        } else {
-            $(".sec1-cc").removeClass("opacity1").addClass("opacity0");
-        }
-
-    } else {
-        // section1 code
-        if( $(window).scrollTop() >= $(".sec1-cc").offset().top * 0.8 ){
-            $(".sec1-cc").removeClass("opacity0").addClass("opacity1");
-        } else {
-            $(".sec1-cc").removeClass("opacity1").addClass("opacity0");
-        }
-    }
-
-   
-
-});
-
-console.log("site-title/2 : "+ $(".site-title").offset().top * 0.5)
 
 /* section1 */
 // theme 변경 탭 메뉴
@@ -339,11 +321,11 @@ $("code.lj1").html(jsText[0]);
 
 
 // circle and code tapMenu
-$(".sec1-circleAll").click(function(e){
+$(".allcircle-wrap").click(function(e){
     e.preventDefault();
     // circle-Tap
     $(this).addClass("active2").siblings().removeClass("active2");
-
+    
     // code-tap-content
     $("code.lh1").html(htmlText[$(this).index()]);
     $("code.lc1").html(cssText[$(this).index()]);

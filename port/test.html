@@ -4,10 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
+    <style>
+        span {
+            display: inline-block;
+            font-size: 40px;
+            position: fixed; top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .boxwrap{
+            background: pink;
+            height: 4000px;
+        }
+        .box {
+            width: 200px; height: 200px;
+            margin-bottom: 300px;
+        }
+        .box:nth-child(1) {
+            margin-top: 300px;
+            background: red;
+        }
+        .box:nth-child(2) {background: orange;}
+        .box:nth-child(3) {background: yellow;}
+        .box:nth-child(4) {background: green;}
+        .box:nth-child(5) {background: blue;}
+        .box:nth-child(6) {background: darkblue;}
+        .box:nth-child(7) {background: purple;}
+    </style>
 </head>
 <body>
-    <div class="box">
-        <iframe class="ifr1" src="../script/parallax/parallax5.html" frameborder="0"></iframe>
+    <span></span>
+    <div class="boxwrap">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
     </div>
+
+    <script src="../script/jquery.min_1.12.4.js"></script>
+    <script>
+        $(window).scroll(function(){
+            $("span").text($(window).scrollTop())
+            // if($(window).scrollTop() >= $(".box").offset().top){
+            //     $(".box").addClass("zzz")
+            // }
+
+            $(".box").each(function(){
+                if($(window).scrollTop() >= $(this).offset().top){
+                    $(this).addClass("1356")
+                }
+
+                console.log($(this).offset().top)
+            });
+        });
+    </script>
 </body>
 </html>

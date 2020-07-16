@@ -120,7 +120,10 @@
                 let location = $(this).offset().top;
                 xOffset = (scroll - location) * 0.1;
                 scaleOffset =  Math.abs(Math.ceil( (scroll - location) * 0.01));
-                console.log(scaleOffset)
+                if($(window).scrollTop() >= $(this).offset().top){
+                    $(this).addClass("hi");
+                }
+                console.log($(this).offset().top)
             });
 
             gsap.to(".move1", {x: xOffset, duration: 0.4});
