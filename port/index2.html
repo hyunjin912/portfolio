@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="css/style2.css">
     <link rel="stylesheet" href="css/prism.css">
     <link rel="stylesheet" href="font/font.css">
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
 </head>
 <body>
     <div class="cursor"></div><!-- //cursor -->
@@ -40,12 +42,14 @@
             <div class="sec2">
                 <div class="site-wrap">
                     <div class="site s1">
-                        <h2 class="site-title offset move1">webstandard</h2>
+                        <span class="site-num">01</span>
+                        <h2 class="site-title t1 offset move1 split">webstandard</h2>
                         <div class="site-img">
                             <div class="si-wrap">
                                 <img src="img/webstandard_silver_gray.jpg" alt="">
                             </div>
                         </div>
+                        <h2 class="site-title t2 offset move1 split">webstandard</h2>
                         <div class="site-intro offset move2">
                             <h3>webstandard</h3>
                             <p>웹 페이지의 기본적인 레이아웃을 바탕으로 웹 접근성을 위해 스크린 리더기를 고려한 탭 메뉴와 탭 이동을 구성하였고, 슬릭을 이용해 이미지가 자동으로 움직이는 효과를 주었습니다. 또한 동작 버튼을 추가하여 이미지의 동작 상태를 조절 할 수 있게 하였습니다. 마지막으로 라이트박스 플러그인을 사용하여 이미지에 팝업 기능도 추가하였습니다.</p>
@@ -115,18 +119,31 @@
             $(".offset").each(function(){
                 let location = $(this).offset().top;
                 xOffset = (scroll - location) * 0.1;
-                //rotateOffset = (scroll - location) * 0.01;
                 scaleOffset =  Math.abs(Math.ceil( (scroll - location) * 0.01));
                 console.log(scaleOffset)
             });
 
             gsap.to(".move1", {x: xOffset, duration: 0.4});
             gsap.to(".move2", {y: -xOffset, duration: 0.4});
-            //gsap.to(".move3", {scale: scaleOffset, duration: 0.4});
+
+            
+//            $(".site").each(function () {
+//                if (scroll > $(this).offset().top) {
+//                    $(this).addClass("show");
+//                }
+//            });
+            
+            
+            if(scroll > $(".site.s1").offset().top - $(window).height()/3){
+                gsap.to(".site-wrap .site-title.t1 span",{opacity: 1, y:0, x:0, duration: 0.8, stagger:0.07, ease: "power4.out"});
+                gsap.to(".site-wrap .site-title.t2 span",{opacity: 1, y:0, x:0, duration: 0.8, stagger:0.07, ease: "power4.out"});
+            }
+            
+            
             
         });
         
-        
+        //글시 자르기
         $(".split").each(function () {
             let txt = $(this).text();
             let split = txt.split("").join("</span><span aria-hidden='true'>");
@@ -150,6 +167,7 @@
 //                {ease: Back.easeOut.config(1.7), opacity: 1, y: 0}, 0.05);
 //        },2000);
         
+        //메인 효과
         setTimeout(function(){
             gsap.to(".title h1 strong span", 0.6, {ease: Back.easeOut.config(1.7), opacity: 1, y: 0, stagger: 0.05});
             gsap.to(".title h1 em span", 0.6, {ease: Back.easeOut.config(1.7), opacity: 1, y: 0, stagger: 0.05, delay: 0.5});
