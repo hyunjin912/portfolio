@@ -66,13 +66,15 @@
                     <!-- site1 -->
                     
                     <div class="site s2">
-                        <h2 class="site-title">webstandard</h2>
+                        <span class="site-num">01</span>
+                        <h2 class="site-title t1 offset move1 split">webstandard</h2>
                         <div class="site-img">
                             <div class="si-wrap">
                                 <img src="img/webstandard_silver_gray.jpg" alt="">
                             </div>
                         </div>
-                        <div class="site-intro">
+                        <h2 class="site-title t2 offset move1 split">webstandard</h2>
+                        <div class="site-intro offset move2">
                             <h3>webstandard</h3>
                             <p>웹 페이지의 기본적인 레이아웃을 바탕으로 웹 접근성을 위해 스크린 리더기를 고려한 탭 메뉴와 탭 이동을 구성하였고, 슬릭을 이용해 이미지가 자동으로 움직이는 효과를 주었습니다. 또한 동작 버튼을 추가하여 이미지의 동작 상태를 조절 할 수 있게 하였습니다. 마지막으로 라이트박스 플러그인을 사용하여 이미지에 팝업 기능도 추가하였습니다.</p>
                             <div class="btn">
@@ -85,7 +87,31 @@
                             <div class="code-btn"></div>
                         </div>
                     </div>
-                    <!-- site1 -->
+                    <!-- site2 -->
+                    
+                    <div class="site s3">
+                        <span class="site-num">01</span>
+                        <h2 class="site-title t1 offset move1 split">webstandard</h2>
+                        <div class="site-img">
+                            <div class="si-wrap">
+                                <img src="img/webstandard_silver_gray.jpg" alt="">
+                            </div>
+                        </div>
+                        <h2 class="site-title t2 offset move1 split">webstandard</h2>
+                        <div class="site-intro offset move2">
+                            <h3>webstandard</h3>
+                            <p>웹 페이지의 기본적인 레이아웃을 바탕으로 웹 접근성을 위해 스크린 리더기를 고려한 탭 메뉴와 탭 이동을 구성하였고, 슬릭을 이용해 이미지가 자동으로 움직이는 효과를 주었습니다. 또한 동작 버튼을 추가하여 이미지의 동작 상태를 조절 할 수 있게 하였습니다. 마지막으로 라이트박스 플러그인을 사용하여 이미지에 팝업 기능도 추가하였습니다.</p>
+                            <div class="btn">
+                                <a href="#">view site</a>
+                                <a href="#">view figma</a>              
+                            </div>
+                        </div>
+                        <div class="site-code">
+                            <div class="code-view"></div>
+                            <div class="code-btn"></div>
+                        </div>
+                    </div>
+                    <!-- site3 -->
                 </div>
             </div>
         </section>
@@ -116,31 +142,69 @@
             let offset = 0;
             $(".scroll").text(scroll);
 
-            $(".offset").each(function(){
-                let location = $(this).offset().top;
-                xOffset = (scroll - location) * 0.1;
-                scaleOffset =  Math.abs(Math.ceil( (scroll - location) * 0.01));
-                if($(window).scrollTop() >= $(this).offset().top){
-                    $(this).addClass("hi");
-                }
-                console.log($(this).offset().top)
-            });
-
-            gsap.to(".move1", {x: xOffset, duration: 0.4});
-            gsap.to(".move2", {y: -xOffset, duration: 0.4});
-
-            
-//            $(".site").each(function () {
-//                if (scroll > $(this).offset().top) {
-//                    $(this).addClass("show");
-//                }
+//            $(".offset").each(function(){
+//                let location = $(this).offset().top;
+//                xOffset = (scroll - location) * 0.1;
+//                scaleOffset =  Math.abs(Math.ceil( (scroll - location) * 0.01));
 //            });
+//
+//            
+//            
+//            
+            
+            $(".site-wrap > div").each(function(){
+                let location = $(this).offset().top;
+                let xoffset = (scroll - location) * 0.1;
+                
+                if(scroll > $(this).offset().top - $(window).height()/2){
+                    
+                    var spaa1 = $(this).find(".site-title.t1 > span");
+                    var spaa2 = $(this).find(".site-title.t2 > span");
+                    var spaa3 = $(this).find(".move1");
+                    var spaa4 = $(this).find(".move2");
+                    
+                    gsap.to(spaa1, {opacity: 1, y:0, x:0, duration: 0.8, stagger:0.07, ease: "power4.out"});
+                    gsap.to(spaa2, {opacity: 1, y:0, x:0, duration: 0.8, stagger:0.07, ease: "power4.out"});
+
+                    gsap.to(spaa3, {x: -xoffset, duration: 0.4});
+                    gsap.to(spaa4, {y: xoffset, duration: 0.4});
+                }
+            });
             
             
-            if(scroll > $(".site.s1").offset().top - $(window).height()/3){
-                gsap.to(".site-wrap .site-title.t1 span",{opacity: 1, y:0, x:0, duration: 0.8, stagger:0.07, ease: "power4.out"});
-                gsap.to(".site-wrap .site-title.t2 span",{opacity: 1, y:0, x:0, duration: 0.8, stagger:0.07, ease: "power4.out"});
-            }
+            
+//            let offset1 = $(".site.s1").offset().top;
+//            let offset2 = $(".site.s2").offset().top;
+//            let offset3 = $(".site.s3").offset().top;
+            
+//            let xoffset1 = (scroll - offset1) * 0.1;
+//            let xoffset2 = (scroll - offset2) * 0.1;
+//            let xoffset3 = (scroll - offset3) * 0.1;
+            
+            
+//            if(scroll > $(".site.s1").offset().top - $(window).height()/3){
+//                gsap.to(".site.s1 .site-title.t1 span",{opacity: 1, y:0, x:0, duration: 0.8, stagger:0.07, ease: "power4.out"});
+//                gsap.to(".site.s1 .site-title.t2 span",{opacity: 1, y:0, x:0, duration: 0.8, stagger:0.07, ease: "power4.out"});
+//                
+//                gsap.to(".site.s1 .move1", {x: xoffset1, duration: 0.4});
+//                gsap.to(".site.s1 .move2", {y: -xoffset1, duration: 0.4});
+//            }
+//            
+//            if(scroll > $(".site.s2").offset().top - $(window).height()/3){
+//                gsap.to(".site.s2 .site-title.t1 span",{opacity: 1, y:0, x:0, duration: 0.8, stagger:0.07, ease: "power4.out"});
+//                gsap.to(".site.s2 .site-title.t2 span",{opacity: 1, y:0, x:0, duration: 0.8, stagger:0.07, ease: "power4.out"});
+//                
+//                gsap.to(".site.s2 .move1", {x: xoffset2, duration: 0.4});
+//                gsap.to(".site.s2 .move2", {y: -xoffset2, duration: 0.4});
+//            }
+//            
+//            if(scroll > $(".site.s3").offset().top - $(window).height()/3){
+//                gsap.to(".site.s3 .site-title.t1 span",{opacity: 1, y:0, x:0, duration: 0.8, stagger:0.07, ease: "power4.out"});
+//                gsap.to(".site.s3 .site-title.t2 span",{opacity: 1, y:0, x:0, duration: 0.8, stagger:0.07, ease: "power4.out"});
+//                
+//                gsap.to(".site.s3 .move1", {x: xoffset3, duration: 0.4});
+//                gsap.to(".site.s3 .move2", {y: -xoffset3, duration: 0.4});
+//            }
             
             
             

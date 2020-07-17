@@ -132,7 +132,7 @@ html {width: 100%; height: 100%; margin: 0; padding: 0;}
 }
 .site-wrap .site-title span {
     display: inline-block;
-    transform: translate(9%, 90%);
+    transform: translate(100px, 320px);
 }
 .site-wrap .site-title.t1 {
     z-index: 10; color: #fff;

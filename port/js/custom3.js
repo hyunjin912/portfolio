@@ -61,44 +61,71 @@ $(window).scroll(function(){
 
 
     // titlle show
-    if( scrollTop > $(".site-title").offset().top * 0.2){
-        gsap.to(".site-title.ftitle span", 0.5, {opacity: 1, y:0, x:0, delay: 1.7});
-        gsap.to(".site-title.btitle span", 0.7, {opacity: 1, y:0, x:0, delay: 1.7});
-    }
-    // title move
-    $("#section1 .site-title").each(function(){
-        let location = $(this).offset().top / 2;
-        tit_xOffset = (scrollTop - location) * 0.2;
-
-        gsap.to(".t-moveLTR", {x: -tit_xOffset, duration: 0.1,});
-    });
-    $("#section2 .site-title").each(function(){
-        if( $(window).scrollTop() >= $(this).offset().top * 0.75 ) {
-            let location = $(this).offset().top / 2;
-            tit_xOffset = (scrollTop - location) * 0.2;
+   
+    // for(i=1; i<=$(".site-wrap").length; i++){
+    //     if( scrollTop >= $(".img-wrap").offset().top - $(window).height / 2){
+    //         gsap.to("#section"+i+" .site-title.ftitle span", 0.5, {opacity: 1, y:0, x:0, delay: 1.7});
+    //         gsap.to("#section"+i+" .site-title.btitle span", 0.7, {opacity: 1, y:0, x:0, delay: 1.7});
+    //     }
+    // }
+    // $(".img-wrap").each(function(idx){
+    //     let index = idx + 1;
+    //     if( scrollTop >= $(this).offset().top - $(window).height / 2){
+    //         gsap.to("#section"+index+" .site-title.ftitle span", 0.5, {opacity: 1, y:0, x:0, delay: 1.7});
+    //         gsap.to("#section"+index+" .site-title.btitle span", 0.7, {opacity: 1, y:0, x:0, delay: 1.7});
+    //     }
+    // });
+    // if( scrollTop >= $("#section1 .img-wrap").offset().top - $(window).height() / 2){
+    //     gsap.to("#section1 .site-title.ftitle span", 0.5, {opacity: 1, y:0, x:0, delay: 1.7});
+    //     gsap.to("#section1 .site-title.btitle span", 0.7, {opacity: 1, y:0, x:0, delay: 1.7});
+    // }
+    // if( scrollTop >= $("#section2 .img-wrap").offset().top - $(window).height() / 2){
+    //     gsap.to("#section2 .site-title.ftitle span", 0.5, {opacity: 1, y:0, x:0, delay: 1.7});
+    //     gsap.to("#section2 .site-title.btitle span", 0.7, {opacity: 1, y:0, x:0, delay: 1.7});
+    // }
+   
     
-            gsap.to(".t-moveRTL", {x: tit_xOffset, duration: 0.1,});
+    // site effect
+    $(".site-wrap").each(function(){
+        // variable to move
+        let secOffset = $(this).offset().top;
+        let titMove = (scrollTop - secOffset) * 0.2;
+        let numdescMove = (scrollTop - secOffset) * 0.4;
+        let imgMove = (scrollTop - secOffset) * 0.3;
+
+        let $ftitle = $(this).find(".site-title.ftitle span");
+        let $btitle = $(this).find(".site-title.btitle span");
+        let $move1 = $(this).find(".move1"); 
+        let $move2 = $(this).find(".move2"); 
+        let $move3 = $(this).find(".move3"); 
+        let $move4 = $(this).find(".move4"); 
+        let $imgWrap = $(this).find(".img-wrap");
+
+
+        
+
+
+
+        if( scrollTop > $(this).offset().top - $(window).height() * 0.9 ){
+            
+
+            // show
+            gsap.to($ftitle, 0.5, {opacity: 1, y:0, x:0, delay: 1.7});
+            gsap.to($btitle, 0.7, {opacity: 1, y:0, x:0, delay: 1.7});
+
+            // move
+            gsap.to($move1, {x: titMove});
+            gsap.to($move2, {x: -imgMove, duration: 0.4});
+            gsap.to($move3, {y: numdescMove, duration: 0.4});
+            gsap.to($move4, {y: -numdescMove, duration: 0.4});
+
+            // reveal
+            $imgWrap.addClass("reveal")
         }
     });
+   
     
-    // num, desc move
-    if( scrollTop >= $(".site-num").offset().top / 2 && $(window).width() > 800){
-        let location = $(".site-num").offset().top / 2;
-        num_yOffset = Math.max(0, Math.min(383, (scrollTop - location) * 0.4));
-        desc_yOffset = (scrollTop - location) * 0.4;
-
-        gsap.to(".move3", {y: num_yOffset, duration: 0.4});
-        gsap.to(".move4", {y: -desc_yOffset, duration: 0.4});
-    }    
-
-    // reveal
-    $(".img-wrap").each(function(){
-        if ( $(window).scrollTop() >= $(this).offset().top * 0.2){
-            $(this).addClass("reveal");
-        } 
-
-        console.log( $(this).offset().top)
-    });
+    
 
     // code opacity    
     $(".site-wrap .container").each(function(){
