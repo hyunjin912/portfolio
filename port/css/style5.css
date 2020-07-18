@@ -1001,6 +1001,10 @@ h1.main-tit .split span {
         font-size: 14px;
         line-height: 27px;
     }
+    #section3 .site-desc-wrap p.desc-desc br, 
+    #section4 .site-desc-wrap p.desc-desc br {
+        display: none;
+    } 
     .site-wrap .img-wrap {
         height: 60vw;
     }
