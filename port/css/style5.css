@@ -360,14 +360,14 @@ h1.main-tit .split span {
 .editor .editor-tab .dot span::before {
     content: '';
     background: #FF4A4A; 
-    width: 12px; height: 12px; 
+    width: 100%; height: 100%; 
     border-radius: 50%;
     position: absolute; left: 20px;
 }
 .editor .editor-tab .dot span::after {
     content: ''; 
     background: #00C543; 
-    width: 12px; height: 12px; 
+    width: 100%; height: 100%; 
     border-radius: 50%;
     position: absolute; left: 40px;
 }
@@ -968,6 +968,7 @@ h1.main-tit .split span {
     .editorbox {
         width: 100%;
     }
+    
 
 }
 /* max-width: 409px */
@@ -983,6 +984,89 @@ h1.main-tit .split span {
     }
     .header-title h1.main-tit {
         font-size: 9.938vw;
+    }
+
+    /* section1 - 4 */
+    .site-desc-wrap h2 {
+        font-size: 34px;
+    }
+    .site-title.ftitle {
+        -webkit-text-stroke: 1px #fff;
+    }
+    .site-desc-wrap {
+        height: 340px;
+        padding: 7.427vw 4.385vw 8.688vw;
+    }
+    .site-desc-wrap p {
+        font-size: 14px;
+        line-height: 27px;
+    }
+    .site-wrap .img-wrap {
+        height: 60vw;
+    }
+    .site-wrap .site-num {
+        font-size: 25.625vw;
+        top: -21vw;
+    }
+    .btn-wrap a {
+        font-size: 18px;
+        height: 41px;
+    }
+    .circlebox {
+        justify-content: space-around;
+        padding: 46px 0;
+        box-sizing: border-box;
+    }
+    .circle-wrap1,
+    .circle-wrap3,
+    #section2 .circle-wrap1,
+    #section2 .circle-wrap3,
+    #section3 .circle-wrap1,
+    #section3 .circle-wrap3,
+    #section4 .circle-wrap1,
+    #section4 .circle-wrap3 {
+        align-self: flex-start;
+    }
+    .circle-wrap2,
+    .circle-wrap4,
+    #section2 .circle-wrap2,
+    #section3 .circle-wrap2,
+    #section4 .circle-wrap2 {
+        align-self: flex-end;
+    }
+    .allcircle-wrap {
+        font-size: 10px;
+    }
+    .editor .editor-tab {
+        font-size: 12px;
+    }
+    .editor .editor-tab .dot {
+        padding: 15px 38px 10px 9px;
+    }
+    .editor .editor-tab .dot span {
+        width: 8px;
+        height: 8px;
+    }
+    .editor .editor-tab .dot span::before {
+        left: 15px;
+    }
+    .editor .editor-tab .dot span::after {
+        left: 30px;
+    }
+    .editor .editor-tab .menu li a {
+        padding: 10px 11px;
+    }
+    .editor .editor-tab .theme {
+        padding: 8px 27px 8px 0px;
+    }
+    .editor .editor-tab .theme .current-theme {
+        width: 73px;
+    }
+    .editor .editor-tab .theme .arrow {
+        top: 28%;
+    }
+    code[class*="language-"], pre[class*="language-"] {
+        font-size: 12px !important;
     }
 }
 

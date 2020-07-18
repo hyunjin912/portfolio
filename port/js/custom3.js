@@ -178,12 +178,14 @@ $(window).scroll(function(){
             gsap.to($btitle, 0.7, {opacity: 1, y:0, x:0, delay: 1.7});
 
             // move
-            if( $(window).width() > 800){
-                gsap.to($move1, {x: Math.max(-90, titMove)});
+            if( $(window).width() <= 430){
+                gsap.to($move1, {x: Math.max(-28, titMove)});
+            } else if( $(window).width() <= 800 ) {
+                gsap.to($move1, {x: Math.max(-47, titMove)});
             } else {
-                gsap.to($move1, {x: Math.max(-51, titMove)});
+                gsap.to($move1, {x: Math.max(-90, titMove)});
             }
-            
+
             gsap.to($move2, {x: -imgMove, duration: 0.4});
 
             if( $(window).width() > 800 ){
