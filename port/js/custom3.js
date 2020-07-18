@@ -174,8 +174,8 @@ $(window).scroll(function(){
         if( scrollTop > $(this).offset().top - $(window).height() * 0.9 ){
             
             // show
-            gsap.to($ftitle, 0.5, {opacity: 1, y:0, x:0, delay: 1.7});
-            gsap.to($btitle, 0.7, {opacity: 1, y:0, x:0, delay: 1.7});
+            gsap.to($ftitle, 0.5, {opacity: 1, y:0, x:0, delay: 0.7});
+            gsap.to($btitle, 0.7, {opacity: 1, y:0, x:0, delay: 0.7});
 
             // move
             if( $(window).width() <= 430){
@@ -194,10 +194,7 @@ $(window).scroll(function(){
             }
 
             // reveal
-            // $imgWrap.addClass("reveal");
-            $imgWrap.delay( $imgWrap.data("delay") ).queue(function(){
-                $imgWrap.addClass("reveal");
-            });
+            $imgWrap.addClass("reveal");
         }
     });
    

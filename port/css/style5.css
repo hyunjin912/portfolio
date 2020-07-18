@@ -153,20 +153,25 @@ h1.main-tit .split span {
     background: #73B6A9;
     position: relative;
     z-index: 2;
-    opacity: 0;
+    transition: 0.5s;
+    transform-origin: left;
+    transform: scaleX(0);
 }
-.img-wrap.reveal {
-    animation: reveal_opacity 0.1s 1.1s forwards
+.site-wrap .img-wrap.reveal {
+    transform: scaleX(1);
 }
-.img-wrap.reveal::before {
+.site-wrap .img-wrap::before {
     content: '';
-    position: absolute;
-    height: 100%;
-    z-index: 10;
-    background: #62968b;
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #fff;
+    z-index: 1;
+    transition: all 0.5s 0.5s;
+    transform-origin: right
 }
-.img-wrap.reveal-ltr.reveal::before {
-    animation: revealLTR 1.8s ease-in-out;
+.site-wrap .img-wrap.reveal::before {
+    background: #05edbe;
+    transform: scaleX(0);
 }
 .site-wrap .img-wrap .imgframe {
     background: url(../img/webstandard_silver_green.jpg) no-repeat center center;
@@ -530,18 +535,8 @@ h1.main-tit .split span {
 #section2 .site-wrap .img-wrap {
     background: #AA7F77;
 }
-#section2 .site-wrap .img-wrap.reveal {
-    animation: reveal_opacity 0.1s 1.1s forwards
-}
 #section2 .site-wrap .img-wrap.reveal::before {
-    content: '';
-    position: absolute;
-    height: 100%;
-    z-index: 10;
-    background: #88635e;
-}
-#section2 .site-wrap .img-wrap.reveal-ltr.reveal::before {
-    animation: revealLTR 1.8s ease-in-out;
+    background: #ed3801;
 }
 #section2 .site-wrap .img-wrap .imgframe {
     background: url(../img/responsive_red.jpg) center center no-repeat;
@@ -603,18 +598,8 @@ h1.main-tit .split span {
 #section3 .site-wrap .img-wrap {
     background: #D8D0B1;
 }
-#section3 .site-wrap .img-wrap.reveal {
-    animation: reveal_opacity 0.1s 1.1s forwards
-}
 #section3 .site-wrap .img-wrap.reveal::before {
-    content: '';
-    position: absolute;
-    height: 100%;
-    z-index: 10;
-    background: #968c64;
-}
-#section3 .site-wrap .img-wrap.reveal-ltr.reveal::before {
-    animation: revealLTR 1.8s ease-in-out;
+    background: #f4c302;
 }
 #section3 .site-wrap .img-wrap .imgframe {
     background: url(../img/nongshim_yellow.jpg) center center no-repeat;
@@ -677,24 +662,8 @@ h1.main-tit .split span {
 #section4 .site-wrap .img-wrap {
     background: #739BD5;
 }
-#section4 .site-wrap .img-wrap.reveal {
-    animation: reveal_opacity 0.1s 1.1s forwards
-}
-#section4 .site-wrap .img-wrap.reveal::before,
-#section4 .site-wrap .img-wrap.reveal::after {
-    content: '';
-    position: absolute;
-    height: 100%;
-    z-index: 10;
-}
 #section4 .site-wrap .img-wrap.reveal::before {
-    animation: revealLTR 1.8s ease-in-out;
-    background: #354763;
-}
-#section4 .site-wrap .img-wrap.reveal::after {
-    animation: revealLTR 1s 0.6s ease-in-out;
-    animation-delay: 0.5s;
-    background: #00daf2;
+    background: #02d4f9;
 }
 #section4 .site-wrap .img-wrap .imgframe {
     background: url(../img/ptdime_blue.jpg) center center no-repeat;
