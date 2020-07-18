@@ -178,22 +178,31 @@ $(window).scroll(function(){
             gsap.to($btitle, 0.7, {opacity: 1, y:0, x:0, delay: 1.7});
 
             // move
-            gsap.to($move1, {x: titMove});
+            if( $(window).width() > 800){
+                gsap.to($move1, {x: Math.max(-90, titMove)});
+            } else {
+                gsap.to($move1, {x: Math.max(-51, titMove)});
+            }
+            
             gsap.to($move2, {x: -imgMove, duration: 0.4});
-            gsap.to($move3, {y: numdescMove, duration: 0.4});
-            gsap.to($move4, {y: -numdescMove, duration: 0.4});
+
+            if( $(window).width() > 800 ){
+                gsap.to($move3, {y: numdescMove, duration: 0.4});
+                gsap.to($move4, {y: -numdescMove, duration: 0.4});
+            }
 
             // reveal
-            $imgWrap.addClass("reveal")
+            // $imgWrap.addClass("reveal");
+            $imgWrap.delay( $imgWrap.data("delay") ).queue(function(){
+                $imgWrap.addClass("reveal");
+            });
         }
     });
    
     
-    
-
     // code opacity    
     $(".site-wrap .container").each(function(){
-        if( $(window).scrollTop() >= $(this).offset().top * 0.8 ){
+        if( $(window).scrollTop() >= $(this).offset().top - $(window).height() * 0.2 ){
             $(this).addClass("opacity1")
         }
     });
