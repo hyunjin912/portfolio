@@ -24,7 +24,11 @@ html, body {
     overflow: hidden;
     padding: 300px 0;
 }
-#section5 {}
+#section5 {
+    overflow: hidden;
+    height: 100vh;
+    background: powderblue;
+}
 #section6 {}
 #section7 {}
 
@@ -716,6 +720,35 @@ h1.main-tit .split span {
 #section4 .circle-wrap3 {
     position: absolute; top: 76%; left: 42%;
     width: 6.3vw; height: 6.3vw;
+}
+
+
+
+
+/* section5 */
+/* .bg-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+} */
+.bg-title .anitxt {
+    display: block;
+    font-size: 150px;
+    font-family: 'Ilisarniq-Black';
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px #fff;
+    text-transform: uppercase;
+    white-space: nowrap;
+    animation: ani-title-move 10s linear infinite;
+    transform: translateX(0);
+}
+@keyframes ani-title-move {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 
