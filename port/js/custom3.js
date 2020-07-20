@@ -154,12 +154,14 @@ $(window).scroll(function(){
     const scrollTop = $(window).scrollTop();
     $(".scrollTop").text(parseInt(scrollTop));
 
+    /* section1 - 4 */
     // site effect
     $(".site-wrap").each(function(){
         // variable to move
         let secOffset = $(this).offset().top;
         let titMove = (scrollTop - secOffset) * 0.2;
-        let numdescMove = (scrollTop - secOffset) * 0.4;
+        let numMove = (scrollTop - secOffset) * 0.4;
+        let descMove = (scrollTop - secOffset) * 0.4;
         let imgMove = (scrollTop - secOffset) * 0.1;
 
         let $ftitle = $(this).find(".site-title.ftitle span");
@@ -168,6 +170,7 @@ $(window).scroll(function(){
         let $move2 = $(this).find(".move2"); 
         let $move3 = $(this).find(".move3"); 
         let $move4 = $(this).find(".move4"); 
+        let $descWrap = $(this).find(".site-desc-wrap"); 
         let $imgWrap = $(this).find(".img-wrap");
 
 
@@ -189,12 +192,17 @@ $(window).scroll(function(){
             gsap.to($move2, {x: -imgMove, duration: 0.4});
 
             if( $(window).width() > 800 ){
-                gsap.to($move3, {y: numdescMove, duration: 0.4});
-                gsap.to($move4, {y: -numdescMove, duration: 0.4});
+                gsap.to($move3, {y: numMove, duration: 0.4});
+                gsap.to($move4, {y: -descMove, duration: 0.4});
             }
-
+            
             // reveal
             $imgWrap.addClass("reveal");
+        }
+
+        // width <= 800
+        if( scrollTop >= $descWrap.offset().top - $(window).height() * 0.6 ){
+            $descWrap.addClass("opacity1");
         }
     });
    
@@ -203,6 +211,25 @@ $(window).scroll(function(){
     $(".site-wrap .container").each(function(){
         if( $(window).scrollTop() >= $(this).offset().top - $(window).height() * 0.2 ){
             $(this).addClass("opacity1")
+        }
+    });
+
+    /* section5 */
+    // ani-content move
+    if( scrollTop >= $("#section5").offset().top ) {
+        let aniOffset = $("#section5").offset().top;
+        let aniMove = (scrollTop - aniOffset);
+
+        gsap.to(".ani-content", {x: -aniMove});
+    }
+
+    // ani-wrap background color
+    $(".boxAll").each(function(idx){
+        bgcolor = ["","show1", "show2", "show3"] // .boxAll이 4개이므로 배열3개만 쓰면 클래스가 다 지워져서 원래 배경색으로 바뀜
+        // bgcolor = ["show1", "show2", "show3", "show3"]
+
+        if( $(this).offset().left <= -$(this).width() * 0.4 ){
+            $("#section5").removeClass().addClass(bgcolor[idx]);
         }
     });
 });

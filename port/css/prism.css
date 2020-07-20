@@ -248,12 +248,7 @@ pre[class*="language-"] {
 }
 
 
-
-
-
-
-
-
+/* common */
 pre[class*="language-"].line-numbers {
 	position: relative;
 	padding-left: 3.8em;
