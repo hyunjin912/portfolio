@@ -232,6 +232,69 @@ $(window).scroll(function(){
             $("#section5").removeClass().addClass(bgcolor[idx]);
         }
     });
+
+    /* section6 */
+    // if( scrollTop >= $("#section6").offset().top ){
+    //     $(".script-txt-wrap").css({"transform": "scale(1)"});
+    // } else {
+    //     $(".script-txt-wrap").css({"transform": "scale(0)"});
+    // }
+
+    // if( scrollTop >= 24813){
+    //     $(".script-title").text("slide");
+    //     $(".script-desc").text("Image Slide는 웹 사이트에서 자주 사용되는 스크립트이며, slide의 ‘미끄러지다’ 라는 뜻 처럼 고정된 이미지를 미끄러지게 하여 웹 사이트에 생동감을 주며, 사용자에게 쉽게 정보를 제공할 수 있습니다.")
+    // } else {
+    //     $(".script-title").text("parallax");
+    //     $(".script-desc").text("Parallax는 ‘시차’ 라는 뜻으로 천문학에서 사용하는 용어입니다. 즉 멀리 있는 물체는 천천히 움직이고, 가까이 있는 물체는 빨리 움직이는 현상을 의미하며, 이 현상을 이용하면 입체감, 실체감을 높여서 보다 인상적인 디자인을 할 수 있습니다.")
+    // }
+   
+
+    // $(".script-top").each(function(index){
+    //     let title = ["parallax", "image slide", "mouse"];
+    //     let desc = [];
+    //         desc.push(`Parallax는 ‘시차’ 라는 뜻으로 천문학에서 사용하는 용어입니다. 즉 멀리 있는 물체는 천천히 움직이고, 가까이 있는 물체는 빨리 움직이는 현상을 의미하며, 이 현상을 이용하면 입체감, 실체감을 높여서 보다 인상적인 디자인을 할 수 있습니다.`)
+    //         desc.push(`Image Slide는 웹 사이트에서 자주 사용되는 스크립트이며, slide의 ‘미끄러지다’ 라는 뜻 처럼 고정된 이미지를 미끄러지게 하여 웹 사이트에 생동감을 주며, 사용자에게 쉽게 정보를 제공할 수 있습니다.`)
+    //         desc.push(`Interaction은 사용자와 서비스간의 상호작용을 뜻하며, Mouse는 상호작용을 위한 중요한 수단입니다. Mouse에 다양한 효과를 주게 되면 컨텐츠에 대한 집중을 높일 수 있습니다.`)
+
+    //     if( scrollTop >= $(this).offset().top + $(this).height() * 0.5 ){
+    //         $(".script-txt-wrap").addClass("reveal")
+
+    //     }
+     
+    //     if( scrollTop >= $(this).offset().top + $(this).height() * 0.6 ){
+    //         $(".script-title").text(title[index]);
+    //         $(".script-desc").text(desc[index]);
+    //     } 
+    // });
+
+ 
+
+        // if( scrollTop >= $(".script-top").eq(0).offset().top){
+        //     $(".stw2").removeClass("r2")
+        //     $(".stw3").removeClass("r3")
+        //     $(".stw1").addClass("r1")
+        // }
+        // if( scrollTop >= $(".script-top").eq(1).offset().top){
+        //     $(".stw1").removeClass("r1")
+        //     $(".stw3").removeClass("r3")
+        //     $(".stw2").addClass("r2")
+        // }
+        // if( scrollTop >= $(".script-top").eq(2).offset().top){
+        //     $(".stw1").removeClass("r1")
+        //     $(".stw2").removeClass("r2")
+        //     $(".stw3").addClass("r3")
+        // }
+     
+        console.log(scrollTop)
+        console.log("0 : "+$(".script-top").eq(0).offset().top)
+        console.log("1 : "+$(".script-top").eq(1).offset().top)
+        console.log("2 : "+$(".script-top").eq(2).offset().top)
+ 
+
+
+   
+
+   
 });
 
 /* header */

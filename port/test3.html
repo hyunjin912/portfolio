@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            height: 200vh;
+            background: dodgerblue;
+        }
+        .show {
+            
+            width: 600px;
+            height: 200px;
+            /* background: yellow; */
+            position: absolute;
+            top: 500px;
+            clip: rect( 200px, 600px, 200px, 600px );
+            
+        }
+        .show.on {
+            animation: on 1s forwards;
+        }
+        @keyframes on {
+            0% {clip: rect( 200px, 600px, 200px, 600px );}
+            50% {clip: rect( 20px, 220px, 220px, 20px );}
+            100% {clip: rect( 200px, 600px, 200px, 600px );}
+        }
+    </style>
+</head>
+<body>
+    <div class="show">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </div>
+
+    <script src="../port/js/jquery.min_1.12.4.js"></script>
+    <script>
+        $(window).scroll(function(){
+           if($(window).scrollTop()>= $(".show").offset().top){
+               $(".show").addClass("on");
+           } 
+        });
+    </script>
+</body>
+</html>
