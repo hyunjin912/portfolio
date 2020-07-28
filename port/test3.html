@@ -10,27 +10,44 @@
             height: 200vh;
             background: dodgerblue;
         }
+        .scroll {
+            font-size: 50px;
+            position: fixed;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+        }
         .show {
             
             width: 600px;
             height: 200px;
-            /* background: yellow; */
+            
             position: absolute;
             top: 500px;
-            clip: rect( 200px, 600px, 200px, 600px );
+            left: 0;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+            opacity: 0;
+            transition: all 0.5s 0.5s;
             
         }
         .show.on {
-            animation: on 1s forwards;
+            animation: on 1s;
+            opacity: 1;
         }
         @keyframes on {
-            0% {clip: rect( 200px, 600px, 200px, 600px );}
-            50% {clip: rect( 20px, 220px, 220px, 20px );}
-            100% {clip: rect( 200px, 600px, 200px, 600px );}
+            0% {
+                clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+            }
+            50% {
+                clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 0% 100%);
+            }
+            100% {
+                clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+            }
         }
     </style>
 </head>
 <body>
+    <div class="scroll">0</div>
     <div class="show">
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
     </div>
@@ -38,9 +55,21 @@
     <script src="../port/js/jquery.min_1.12.4.js"></script>
     <script>
         $(window).scroll(function(){
-           if($(window).scrollTop()>= $(".show").offset().top){
+           if($(window).scrollTop()>= $(".show").offset().top * 0.6){
                $(".show").addClass("on");
-           } 
+                setTimeout(function(){
+                    $(".show").text("rrrrrrrrrrrrrrrrrrrrrrrr")
+                },500);
+           } else {
+                $(".show").removeClass("on");
+                setTimeout(function(){
+                    $(".show").text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.")
+                },1200);
+           }
+
+      
+           
+           $(".scroll").text( parseInt($(window).scrollTop()) )
         });
     </script>
 </body>

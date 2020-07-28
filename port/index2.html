@@ -117,7 +117,19 @@
         </section>
         <!-- //section2 -->
 
-        <section id="section3"></section><!-- //section3 -->
+        <section id="section3">
+            
+            <h2>webstoryboy1</h2>
+            <h2>webstoryboy2</h2>
+            <h2>webstoryboy3</h2>
+<!--
+            <h2>webstoryboy</h2>
+            <h2>webstoryboy</h2>
+            <h2>webstoryboy</h2>
+            <h2>webstoryboy</h2>
+-->
+            
+        </section><!-- //section3 -->
         <section id="section4"></section><!-- //section4 -->
         <section id="section5"></section><!-- //section5 -->
         <section id="section6"></section><!-- //section6 -->
@@ -147,10 +159,18 @@
 //                xOffset = (scroll - location) * 0.1;
 //                scaleOffset =  Math.abs(Math.ceil( (scroll - location) * 0.01));
 //            });
-//
-//            
-//            
-//            
+            
+            
+            
+            
+            if( scroll > 0 && scroll < 100){
+                $("#section3 h2").addClass("show");
+                setInterval(function(){
+                    $("#section3 h2").eq(2).hide();
+                },1000);
+            }
+            
+            
             
             $(".site-wrap > div").each(function(){
                 let location = $(this).offset().top;
@@ -169,6 +189,11 @@
                     gsap.to(spaa3, {x: -xoffset, duration: 0.4});
                     gsap.to(spaa4, {y: xoffset, duration: 0.4});
                 }
+                
+                
+                
+                
+                
             });
             
             
