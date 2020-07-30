@@ -39,7 +39,8 @@ html, body {
 #section6 {
     position: relative; z-index: 10;
     background: #1b1b1b;
-    height: 10000px;
+    /* height: 10000px; */
+    height: 6000px;
     overflow: hidden;
 }
 #section7 {
@@ -173,7 +174,7 @@ h1.main-tit .split span {
     background: #73B6A9;
     position: relative;
     z-index: 2;
-    transition: 0.5s;
+    transition: all 0.5s cubic-bezier(0.15, 0.65, 0.2, 1);
     transform-origin: left;
     transform: scaleX(0);
 }
@@ -186,7 +187,7 @@ h1.main-tit .split span {
     width: 100%; height: 100%;
     background: #fff;
     z-index: 1;
-    transition: all 0.5s 0.5s;
+    transition: all 0.5s 0.5s cubic-bezier(0.15, 0.65, 0.2, 1);
     transform-origin: right
 }
 .site-wrap .img-wrap.reveal::before {
@@ -1021,12 +1022,13 @@ h1.main-tit .split span {
     display: none;
 } */
 .script-txt-wrap {
-    position: fixed; top: 45%; left: 10%;
+    position: absolute; top: 45%; left: 10%;
     font-family: 'Ilisarniq-Black';
     width: 67.146vw;
-    transition: 0.5s;
+    transition: all 0.5s cubic-bezier(0.15, 0.65, 0.2, 1);
     transform-origin: left;
     transform: scaleX(0);
+    z-index: 100;
 }
 .script-txt-wrap.reveal {
     transform: scaleX(1);
@@ -1035,8 +1037,8 @@ h1.main-tit .split span {
     content: '';
     position: absolute; top: 0; left: 0;
     width: 100%; height: 100%;
-    background: #1b1b1b;
-    transition: all 0.5s 0.5s;
+    background: #fff;
+    transition: all 0.5s 0.5s cubic-bezier(0.15, 0.65, 0.2, 1);
     transform-origin: right;
 }
 .script-txt-wrap.reveal::before {
@@ -1070,9 +1072,10 @@ h1.main-tit .split span {
 }
 .script-top {
     position: relative;
-    height: 100vh;
-    margin-top: 200vh;
-    /* margin-bottom: 80vh; */
+    /* height: 100vh; */
+    height: 110vh;
+    /* margin-top: 200vh; */
+    margin-top: 70vh;
     perspective: 2000px;
     /* perspective-origin: 50% 50%; */
     z-index: 100;
@@ -1107,7 +1110,7 @@ h1.main-tit .split span {
 .click-wrap {
     width: 100%;
     height: 200vh;
-    background: rgb(216, 216, 216);
+    background: #1b1b1b;
     visibility: hidden;
     z-index: 101;
     position: relative;
@@ -1125,6 +1128,7 @@ h1.main-tit .split span {
     font-size: 2vw;
     text-transform: uppercase;
     cursor: pointer;
+    color: #fff;
 }
 .click-cont {
     margin-top: 10vh;
