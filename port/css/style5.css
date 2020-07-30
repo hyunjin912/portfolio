@@ -1045,12 +1045,11 @@ h1.main-tit .split span {
 .script-top {
     position: relative;
     height: 100vh;
-    padding-top: 200vh;
+    margin-top: 200vh;
     /* margin-bottom: 80vh; */
     perspective: 2000px;
     /* perspective-origin: 50% 50%; */
     z-index: 100;
-    overflow: hidden;
 }
 .scriptimg-wrap {
     /*left: 638px; */
@@ -1065,10 +1064,12 @@ h1.main-tit .split span {
     border-radius: 15px;
     cursor: pointer;
     transition: transform 0.75s cubic-bezier(0.15, 0.65, 0.2, 1);
-    
 }
-.script-wrap.rotate .script-top .scriptimg-wrap {
-    transform: translate(-20%, 80%) translateZ(-2000px) rotate3d(-1,-1.5,.4,-40deg);
+.scriptimg-wrap.rotate {
+    transform: 
+        translate(-20%, 80%) 
+        translateZ(-2000px) 
+        rotate3d(-1,-1.5,.4,-40deg);
 }
 .img-box {
     /* width: 1174px; height: 694px; */
@@ -1079,17 +1080,34 @@ h1.main-tit .split span {
 }
 .click-wrap {
     width: 100%;
-    height: 100vh;
-    background: yellow;
-    position: absolute; top: 100%;
+    height: 200vh;
+    background: rgb(216, 216, 216);
+    visibility: hidden;
+    z-index: 101;
+    position: relative;
+    top: 100%;
+    transition: all 1s cubic-bezier(0.15, 0.65, 0.2, 1);
+    text-align: center;
 }
-.script-wrap.rotate .click-wrap {
+.click-wrap.rotate {
+    visibility: visible;
     top: 0;
 }
+.close {
+    padding-top: 10vh;
+    font-family: 'Ilisarniq-Regular';
+    font-size: 2vw;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.click-cont {
+    margin-top: 10vh;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .scriptview-wrap {
-    /*left: 638px; */
-    position: absolute; left: 50%; top: 50%;
-    transform: translate(-50%, -50%);
     /* width: 1208px; height: 727px; */
     width: 62.917vw; height: 727px;
     /* padding: 16.5px 17px; */
@@ -1108,19 +1126,19 @@ h1.main-tit .split span {
     width: 100%; height: 100%;
 }
 .script-btn {
-    position: absolute;
-    bottom: 3%; left: 39%;
+    margin-top: 2vw;
     z-index: 100;
+    width: 62.917vw;
+    display: flex;
+    justify-content: space-evenly;
 }
 .script-btn a {
-    display: inline-block;
+    display: block;
     font-family: 'Ilisarniq-Regular';
     /* font-size: 14px;
-    width: 60px; height: 60px;
-    margin-right: 68px; */
+    width: 60px; height: 60px; */
     font-size: 0.729vw;
     width: 3.125vw; height: 3.125vw;
-    margin-right: 3.542vw;
     text-align: center;
     line-height: 3.125vw;
     border-radius: 50%;

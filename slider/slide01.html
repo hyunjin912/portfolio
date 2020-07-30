@@ -23,6 +23,9 @@
             font-family: 'Abel', 'GmarketSansMedium';
             color: #fff;
             height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         body::before {
             content: '';
@@ -52,15 +55,14 @@
 
         /* slide */
         .slide-wrap {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+            /* height: 100vh; */
+            height: 31.250vw;
         }
 
         .slide-img {
             /* position: relative; .slides에 absolute를 줄 경우 사용 */
-            width: 1000px; height: 600px;
+            /* width: 1000px; height: 600px; */
+            width: 52.083vw; height: 31.250vw;
             overflow: hidden;
             box-shadow: 4px 4px 20px rgba(0,0,0,0.5);
         }

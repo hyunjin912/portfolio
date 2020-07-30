@@ -52,7 +52,8 @@
 
         /* slide */
         .slider-wrap {
-            width: 1000px; height: 600px;
+            /* width: 1000px; height: 600px; */
+            width: 52.083vw; height: 31.250vw;
             overflow: hidden;
             position: absolute; left: 50%; top: 50%;
             transform: translate(-50%, -50%);
@@ -60,13 +61,15 @@
         }
 
         .slider-img {
-            width: 1000px; height: 3000px;
+            /* width: 1000px; height: 3000px; */
+            width: 52.083vw; height: 156.250vw;
             overflow: hidden;
             position: relative; 
         }
 
         .slider-img .slides{
-            width: 1000px;
+            /* width: 1000px; */
+            width: 52.083vw;
         }
     </style>
 </head>
@@ -114,7 +117,7 @@
 
        //3초에 한 번씩 실행
        setInterval(function(){
-           sliderImg.animate( {top: "-600px"}, 400, function(){
+           sliderImg.animate( {top: "-31.250vw"}, 400, function(){
                $(".slides:first-child").appendTo(sliderImg);
                sliderImg.css("top","");
            } ); 

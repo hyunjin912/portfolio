@@ -706,29 +706,31 @@
                 </div>
                 
                 <div class="script-top parallax">
-                    <div class="click-wrap">
-                        <!-- <div class="scriptview-wrap">
-                            <div class="view-box">
-                                <iframe class="ifr1" src="../script/parallax/parallax3.html" frameborder="0"></iframe>
-                            </div>
-                        </div>
-                        <div class="script-btn">
-                            <a class="btnactive" href="#">01</a>
-                            <a href="#">02</a>
-                            <a href="#">03</a>
-                            <a href="#">04</a>
-                            <a href="#">05</a>
-                            <a href="#">06</a>
-                            <a href="#">07</a>
-                            <a href="#">08</a>
-                        </div> -->
-                    </div>
                     <div class="scriptimg-wrap">
                         <div class="img-box">
                             <img src="img/parallax.jpg" alt="패럴랙스 스크립트">
                         </div>
                     </div>
-                    
+                    <div class="click-wrap">
+                        <div class="close">close</div>
+                        <div class="click-cont">
+                            <div class="scriptview-wrap">
+                                <div class="view-box">
+                                    <iframe class="ifr1" src="../script/parallax/parallax3.html" frameborder="0"></iframe>
+                                </div>
+                            </div>
+                            <div class="script-btn">
+                                <a class="btnactive" href="#">01</a>
+                                <a href="#">02</a>
+                                <a href="#">03</a>
+                                <a href="#">04</a>
+                                <a href="#">05</a>
+                                <a href="#">06</a>
+                                <a href="#">07</a>
+                                <a href="#">08</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                
                 <div class="script-top slide">
@@ -737,43 +739,54 @@
                             <img src="img/slide.jpg" alt="슬라이드 스크립트">
                         </div>
                     </div>
-                    <!-- <div class="scriptview-wrap">
-                        <div class="view-box">
-                            <iframe class="ifr2" src="../slider/slide01.html" frameborder="0"></iframe>
+                    <div class="click-wrap">
+                        <div class="close">close</div>
+                        <div class="click-cont">
+                            <div class="scriptview-wrap">
+                                <div class="view-box">
+                                    <iframe class="ifr2" src="../slider/slide01.html" frameborder="0"></iframe>
+                                </div>
+                            </div>
+                            <div class="script-btn">
+                                <a class="slidebtn btnactive" href="#">01</a>
+                                <a class="slidebtn" href="#">02</a>
+                                <a class="slidebtn" href="#">03</a>
+                                <a class="slidebtn" href="#">04</a>
+                                <a class="slidebtn" href="#">05</a>
+                                <a class="slidebtn" href="#">06</a>
+                                <a class="slidebtn" href="#">07</a>
+                                <a class="slidebtn" href="#">08</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="script-btn">
-                        <a class="slidebtn btnactive" href="#">01</a>
-                        <a class="slidebtn" href="#">02</a>
-                        <a class="slidebtn" href="#">03</a>
-                        <a class="slidebtn" href="#">04</a>
-                        <a class="slidebtn" href="#">05</a>
-                        <a class="slidebtn" href="#">06</a>
-                        <a class="slidebtn" href="#">07</a>
-                        <a class="slidebtn" href="#">08</a>
-                    </div> -->
                 </div>
+
                 <div class="script-top mouse">
                     <div class="scriptimg-wrap">
                         <div class="img-box">
                             <img src="img/mouse.jpg" alt="마우스 스크립트">
                         </div>
                     </div>
-                    <!-- <div class="scriptview-wrap">
-                        <div class="view-box">
-                            <iframe class="ifr3" src="../mouse/mouse01.html" frameborder="0"></iframe>
+                    <div class="click-wrap">
+                        <div class="close">close</div>
+                        <div class="click-cont">
+                            <div class="scriptview-wrap">
+                                <div class="view-box">
+                                    <iframe class="ifr3" src="../mouse/mouse01.html" frameborder="0"></iframe>
+                                </div>
+                            </div>
+                            <div class="script-btn">
+                                <a class="mousebtn btnactive" href="#">01</a>
+                                <a class="mousebtn" href="#">02</a>
+                                <a class="mousebtn" href="#">03</a>
+                                <a class="mousebtn" href="#">04</a>
+                                <a class="mousebtn" href="#">05</a>
+                                <a class="mousebtn" href="#">06</a>
+                                <a class="mousebtn" href="#">07</a>
+                                <a class="mousebtn" href="#">08</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="script-btn">
-                        <a class="mousebtn btnactive" href="#">01</a>
-                        <a class="mousebtn" href="#">02</a>
-                        <a class="mousebtn" href="#">03</a>
-                        <a class="mousebtn" href="#">04</a>
-                        <a class="mousebtn" href="#">05</a>
-                        <a class="mousebtn" href="#">06</a>
-                        <a class="mousebtn" href="#">07</a>
-                        <a class="mousebtn" href="#">08</a>
-                    </div> -->
                 </div>
             </div>
         </section>
@@ -789,33 +802,5 @@
     <script src="js/gsap.min.js"></script>
     <script src="js/prism.js"></script>
     <script src="js/custom3.js"></script>
-    <script src="js/luxy.js"></script>
-    <!-- <script>
-        if (window.addEventListener) window.addEventListener('DOMMouseScroll', wheel, false);
-window.onmousewheel = document.onmousewheel = wheel;
-
-function wheel(event) {
-    var delta = 0;
-    if (event.wheelDelta) delta = event.wheelDelta / 90;
-    // if (event.wheelDelta) delta = event.wheelDelta / 120;
-    else if (event.detail) delta = -event.detail / 3;
-    // else if (event.detail) delta = -event.detail / 100;
-
-    handle(delta);
-    if (event.preventDefault) event.preventDefault();
-    event.returnValue = false;
-}
-
-function handle(delta) {
-    var time = 1000;
-    // var time = 800;
-	// var distance = 300;
-	var distance = 270;
-    
-    $('html, body').stop().animate({
-        scrollTop: $(window).scrollTop() - (distance * delta)
-    }, time );
-}
-    </script> -->
 </body>
 </html>

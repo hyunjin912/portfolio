@@ -50,9 +50,10 @@
             border-bottom: 1px dashed #fff;
         }
 
-        /* slide */
+        /* slide */ 
         .slider-wrap {
-            width: 1000px; height: 600px;
+            /* width: 1000px; height: 600px; */
+            width: 52.083vw; height: 31.250vw;
             overflow: hidden;
             position: absolute; left: 50%; top: 50%;
             transform: translate(-50%, -50%);
@@ -60,15 +61,20 @@
         }
 
         .slider-img {
-            width: 5000px; height: 600px;
+            /* width: 5000px; height: 600px; */
+            width: 260.417vw; height: 31.250vw;
             position: relative; 
             /* script에서 animate로 left를 적용 시키려면
              position속성이 있어야 한다. */
         }
 
         .slider-img .slides{
-            float: left; width: 1000px;
+            float: left; 
+            /* width: 1000px; */
+            width: 52.083vw
         }
+
+      
     </style>
 </head>
 <body>
@@ -125,7 +131,7 @@
 
              //삼항 연산자 ( 위의 if문을 한 번에 쓰는 것)
             currentIndex < 4 ? currentIndex++ : currentIndex = 0;
-            sliderImg.animate( {left: currentIndex * (-1000) + "px"}, 400 );
+            sliderImg.animate( {left: currentIndex * (-52.083) + "vw"}, 400 );
 
         }, 3000);
     </script>
