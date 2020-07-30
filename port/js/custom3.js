@@ -237,7 +237,24 @@ $(window).scroll(function(){
         }
     });
 
+
+
     /* section6 */
+    // if( scrollTop >= $(".script-top").eq(0).offset().top - $(window).height() * 2){
+    //     $(".script-txt-wrap").eq(0).addClass("reveal");
+    // }
+    // if( scrollTop >= $(".script-top").eq(1).offset().top - $(window).height() * 2){
+    //     $(".script-txt-wrap").eq(1).addClass("reveal");
+    //     setTimeout(function(){
+    //         $(".script-txt-wrap").eq(0).css({display: "none"}).removeClass("reveal");
+    //     }, 250);
+    // }
+    // if( scrollTop >= $(".script-top").eq(2).offset().top - $(window).height() * 2){
+    //     $(".script-txt-wrap").eq(2).addClass("reveal");
+    //     setTimeout(function(){
+    //         $(".script-txt-wrap").eq(1).css({display: "none"}).removeClass("reveal");
+    //     }, 250);
+    // }
     // if( scrollTop >= $(".script-top.parallax").offset().top - $(window).height()
     //     && scrollTop <= $(".script-top.parallax").offset().top + $(".script-top.parallax").height() ){
     //     $(".script-txt-wrap").eq(0).show().addClass("clip");
@@ -283,61 +300,84 @@ $(window).scroll(function(){
     //     }
     // })
 
-    // if( scrollTop >= $(".click-wrap").offset().top + ( $(window).height() * 0.4 ) && $("#section6").hasClass("scroll") ){
-    //     $(".click-wrap").removeClass("rotate");
-        
-    //     setTimeout(function(){
-    //         $(".scriptimg-wrap").removeClass("rotate");
-    //         $("#section6").removeClass("scroll");
-    //     }, 1300)
-    //     setTimeout(function(){
-    //         $("html, body").animate({scrollTop: $(".script-top").offset().top}, 300, "easeInOutExpo");
-    //     }, 1000);
-    // }
-
-    
-    
-        
-
+ 
      
-    if( scrollTop >=  $(".click-wrap").eq(0).offset().top + $(window).height() * 0.5 && $("#section6").hasClass("scroll") && $(".script-top").eq(0).hasClass("here") ){
+    if( scrollTop >= $(".click-wrap").eq(0).offset().top + $(window).height() * 0.35 && $("#section6").hasClass("scroll") && $(".script-top").eq(0).hasClass("here") ){
         $(".click-wrap").eq(0).removeClass("rotate");
 
         setTimeout(function(){
             $("html, body").animate({scrollTop: $(".script-top").eq(0).offset().top}, 300, "easeInOutExpo");
+            $(".scriptimg-wrap").eq(0).removeClass("rotate");
         }, 1000);
         setTimeout(function(){
-            $(".scriptimg-wrap").eq(0).removeClass("rotate");
             $("#section6").removeClass("scroll");
             $(".script-top").eq(0).removeClass("here");
         }, 1300)
-    }
+    } 
+    // else if( scrollTop < $(".click-wrap").eq(0).offset().top && $("#section6").hasClass("scroll") && $(".script-top").eq(0).hasClass("here") ){
+    //     $(".click-wrap").eq(0).removeClass("rotate");
 
-    if( scrollTop >=  $(".click-wrap").eq(1).offset().top + $(window).height() * 0.5 && $("#section6").hasClass("scroll") && $(".script-top").eq(1).hasClass("here") ){
+    //     setTimeout(function(){
+    //         $("html, body").animate({scrollTop: $(".script-top").eq(0).offset().top}, 300, "easeInOutExpo");
+    //     }, 1000);
+    //     setTimeout(function(){
+    //         $(".scriptimg-wrap").eq(0).removeClass("rotate");
+    //         $("#section6").removeClass("scroll");
+    //         $(".script-top").eq(0).removeClass("here");
+    //     }, 1300)
+    // }
+
+    
+    if( scrollTop >= $(".click-wrap").eq(1).offset().top + $(window).height() * 0.35 && $("#section6").hasClass("scroll") && $(".script-top").eq(1).hasClass("here") ){
         $(".click-wrap").eq(1).removeClass("rotate");
 
         setTimeout(function(){
             $("html, body").animate({scrollTop: $(".script-top").eq(1).offset().top}, 300, "easeInOutExpo");
+            $(".scriptimg-wrap").eq(1).removeClass("rotate");
         }, 1000);
         setTimeout(function(){
-            $(".scriptimg-wrap").eq(1).removeClass("rotate");
             $("#section6").removeClass("scroll");
             $(".script-top").eq(1).removeClass("here");
         }, 1300)
-    }
+    } 
+    // else if( scrollTop < $(".click-wrap").eq(1).offset().top && $("#section6").hasClass("scroll") && $(".script-top").eq(1).hasClass("here") ){
+    //     $(".click-wrap").eq(1).removeClass("rotate");
 
-    if( scrollTop >=  $(".click-wrap").eq(2).offset().top + $(window).height() * 0.5 && $("#section6").hasClass("scroll") && $(".script-top").eq(2).hasClass("here") ){
+    //     setTimeout(function(){
+    //         $("html, body").animate({scrollTop: $(".script-top").eq(1).offset().top}, 300, "easeInOutExpo");
+    //     }, 1000);
+    //     setTimeout(function(){
+    //         $(".scriptimg-wrap").eq(1).removeClass("rotate");
+    //         $("#section6").removeClass("scroll");
+    //         $(".script-top").eq(1).removeClass("here");
+    //     }, 1300)
+    // }
+
+
+    if( scrollTop >= $(".click-wrap").eq(2).offset().top + $(window).height() * 0.35 && $("#section6").hasClass("scroll") && $(".script-top").eq(2).hasClass("here") ){
         $(".click-wrap").eq(2).removeClass("rotate");
 
         setTimeout(function(){
             $("html, body").animate({scrollTop: $(".script-top").eq(2).offset().top}, 300, "easeInOutExpo");
+            $(".scriptimg-wrap").eq(2).removeClass("rotate");
         }, 1000);
         setTimeout(function(){
-            $(".scriptimg-wrap").eq(2).removeClass("rotate");
             $("#section6").removeClass("scroll");
             $(".script-top").eq(2).removeClass("here");
         }, 1300)
-    }
+    } 
+    // else if( scrollTop < $(".click-wrap").eq(2).offset().top && $("#section6").hasClass("scroll") && $(".script-top").eq(2).hasClass("here") ){
+    //     $(".click-wrap").eq(2).removeClass("rotate");
+
+    //     setTimeout(function(){
+    //         $("html, body").animate({scrollTop: $(".script-top").eq(2).offset().top}, 300, "easeInOutExpo");
+    //     }, 1000);
+    //     setTimeout(function(){
+    //         $(".scriptimg-wrap").eq(2).removeClass("rotate");
+    //         $("#section6").removeClass("scroll");
+    //         $(".script-top").eq(2).removeClass("here");
+    //     }, 1300)
+    // }
 
 });
 
@@ -1938,3 +1978,9 @@ $(".script-top").each(function(){
     });
 });
  
+
+/* section7 */
+$(".contact-btn").click(function(e){
+    e.preventDefault();
+    $(this).addClass("active3");
+});

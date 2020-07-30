@@ -42,6 +42,11 @@ html, body {
     height: 10000px;
     overflow: hidden;
 }
+#section7 {
+    position: relative; z-index: 10;
+    background: #1b1b1b;
+    height: 100vh;
+}
 
 /* container */
 .container {
@@ -204,7 +209,6 @@ h1.main-tit .split span {
     line-height: 1;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 2px #292929;
-    
 }
 .site-desc-wrap {
     position: absolute; top: 36vw; left: 60%;
@@ -1009,26 +1013,48 @@ h1.main-tit .split span {
 
 
 /* section6 */
-.script-txt-wrap {
+/* .script-txt-wrap {
     position: fixed; top: 45%; left: 10%;
     font-family: 'Ilisarniq-Black';
     background: #1b1b1b;
     width: 67.146vw;
     display: none;
+} */
+.script-txt-wrap {
+    position: fixed; top: 45%; left: 10%;
+    font-family: 'Ilisarniq-Black';
+    width: 67.146vw;
+    transition: 0.5s;
+    transform-origin: left;
+    transform: scaleX(0);
+}
+.script-txt-wrap.reveal {
+    transform: scaleX(1);
+}
+.script-txt-wrap::before {
+    content: '';
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #1b1b1b;
+    transition: all 0.5s 0.5s;
+    transform-origin: right;
+}
+.script-txt-wrap.reveal::before {
+    transform: scaleX(0);
 }
 .script-txt-wrap.clip {
     animation: clip 1.6s ease;
 }
 .script-title {
     font-size: 10.417vw;
-    color: #1b1b1b;
+    color: #fff;
     text-transform: uppercase;
     line-height: 1;
     /* text-indent: -15px; */
 }
 .script-what {
     font-size: 1.875vw;
-    color: #1b1b1b;
+    color: #fff;
     text-transform: uppercase;
     padding-left: 13px;
     box-sizing: border-box;
@@ -1037,7 +1063,7 @@ h1.main-tit .split span {
     font-family: 'S-CoreDream-3Light';
     width: 34.906vw;
     font-size: 0.938vw;
-    color: #1b1b1b;
+    color: #fff;
     letter-spacing: 0.5px;
     padding-left: 12px;
     box-sizing: border-box;
@@ -1067,8 +1093,8 @@ h1.main-tit .split span {
 }
 .scriptimg-wrap.rotate {
     transform: 
-        translate(-20%, 80%) 
-        translateZ(-2000px) 
+        /* translate3d(-20%, 70%, -2000px) */
+        translate3d(-20%, 20%, -2000px)
         rotate3d(-1,-1.5,.4,-40deg);
 }
 .img-box {
@@ -1182,6 +1208,69 @@ h1.main-tit .split span {
 .script-btn a:nth-child(8) {
     animation-delay: 7s;
 }
+
+
+
+
+
+/* section7 */
+.contact-title h2 {
+    font-family: 'Ilisarniq-Black';
+    font-size: 144px;
+    color: #fff;
+    text-transform: uppercase;
+    padding-top: 30px;
+}
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: absolute; top: 60%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    width: 868px;
+    height: 404px;
+    color: #fff;
+    font-family: 'Ilisarniq-Light';
+}
+.contact-content input {
+    width: 400px;
+    font-size: 24px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    align-self: flex-end;
+    color: #fff;
+    font-family: 'Ilisarniq-Light';
+    outline: none;
+}
+.contact-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 146px; height: 146px;
+    border-radius: 50%;
+    border: 2px solid #AA5018; 
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 5.8px;
+    white-space: nowrap;
+    position: absolute; top: 193px; right: 150px;
+}
+.contact-btn {
+    transition: background .2s;
+    animation: circlemove 5s linear infinite;
+}
+.contact-btn:hover {
+    color: #fff;
+    background: #AA5018;
+}
+.contact-btn.active3 {
+    background: #AA5018;
+}
+
+
+
 
 
 /* mediaquery */
