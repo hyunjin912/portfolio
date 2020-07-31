@@ -818,7 +818,7 @@
                 <div class="contact-title">
                     <h2>let's talk</h2>
                 </div>
-                <form action="POST" action="https://formspree.io/dlwjswlgh@naver.com">
+                <form method="POST" action="https://formspree.io/dlwjswlgh@naver.com">
                     <div class="contact-content">
                         <div class="question">
                             Hello. What's your name?
@@ -831,16 +831,18 @@
                         <div class="question">
                             Would you like to leave a message?
                         </div>
-                        <input type="text" placeholder="Message">
+                        <textarea name="message" placeholder="Message"></textarea>
                     </div>
                     <!-- <a class="contact-btn" href="#">SEND MESSAGE</a> -->
-                    <input type="submit" value="SEND" class="contact-btn">
+                    <!-- <input type="submit" value="SEND" class="contact-btn"> -->
+                    <button type="submit" class="contact-btn">SEND MESSAGE</button>
                     </div>
                 </form>
             </div>
         </section>
         <!-- //section7 -->
     </div>
+   
     
 
     <!-- script -->
