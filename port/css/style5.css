@@ -1249,7 +1249,8 @@ h1.main-tit .split span {
     font-family: 'Ilisarniq-Light';
     outline: none;
 }
-.contact-btn {
+.contact-btn,
+button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1264,18 +1265,22 @@ h1.main-tit .split span {
     white-space: nowrap;
     position: absolute; top: 193px; right: 150px;
 }
-.contact-btn {
+.contact-btn,
+button {
     transition: background .2s;
     animation: circlemove 5s linear infinite;
 }
-.contact-btn:hover {
+.contact-btn:hover,
+button:hover {
     color: #fff;
     background: #AA5018;
 }
-.contact-btn:focus {
+.contact-btn:focus,
+button:focus {
     outline: none;
 }
-.contact-btn.active3 {
+.contact-btn.active3,
+button.active3 {
     background: #AA5018;
 }
 
