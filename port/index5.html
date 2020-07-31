@@ -819,9 +819,21 @@
                     <h2>let's talk</h2>
                 </div>
                 <form method="POST" action="https://formspree.io/dlwjswlgh@naver.com">
-                    <input type="email" name="email" placeholder="Your email">
-                    <textarea name="message" placeholder="Test Message"></textarea>
-                    <button type="submit">Send Test</button>
+                    <div class="contact-content">
+                        <div class="question">
+                            Hello. What's your name?
+                        </div>
+                        <input type="text" placeholder="Name">
+                        <div class="question">
+                            How can I contact you?
+                        </div>
+                        <input type="email" name="email" placeholder="Your email">
+                        <div class="question">
+                            Would you like to leave a message?
+                        </div>
+                        <textarea name="message" placeholder="Test Message"></textarea>
+                    </div>
+                    <button type="submit" class="contact-btn">Send Test</button>
                 </form>
             </div>
         </section>
