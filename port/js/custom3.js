@@ -315,7 +315,7 @@ $(window).scroll(function(){
 
  
      
-    if( scrollTop >= $(".click-wrap").eq(0).offset().top + $(window).height() * 0.35 && $("#section6").hasClass("scroll") && $(".script-top").eq(0).hasClass("here") ){
+    if( scrollTop >= $(".click-wrap").eq(0).offset().top + $(window).height() * 0.45 && $("#section6").hasClass("scroll") && $(".script-top").eq(0).hasClass("here") ){
         $(".click-wrap").eq(0).removeClass("rotate");
 
         setTimeout(function(){
@@ -341,7 +341,7 @@ $(window).scroll(function(){
     // }
 
     
-    if( scrollTop >= $(".click-wrap").eq(1).offset().top + $(window).height() * 0.35 && $("#section6").hasClass("scroll") && $(".script-top").eq(1).hasClass("here") ){
+    if( scrollTop >= $(".click-wrap").eq(1).offset().top + $(window).height() * 0.45 && $("#section6").hasClass("scroll") && $(".script-top").eq(1).hasClass("here") ){
         $(".click-wrap").eq(1).removeClass("rotate");
 
         setTimeout(function(){
@@ -367,7 +367,7 @@ $(window).scroll(function(){
     // }
 
 
-    if( scrollTop >= $(".click-wrap").eq(2).offset().top + $(window).height() * 0.35 && $("#section6").hasClass("scroll") && $(".script-top").eq(2).hasClass("here") ){
+    if( scrollTop >= $(".click-wrap").eq(2).offset().top + $(window).height() * 0.45 && $("#section6").hasClass("scroll") && $(".script-top").eq(2).hasClass("here") ){
         $(".click-wrap").eq(2).removeClass("rotate");
 
         setTimeout(function(){
