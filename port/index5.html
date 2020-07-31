@@ -819,21 +819,24 @@
                     <h2>let's talk</h2>
                 </div>
                 <div class="contact-content">
-                    <form method="POST" action="https://formspree.io/dlwjswlgh@naver.com">
-                        <label class="question">
-                            Hello. What's your name?
-                            <input type="text" placeholder="Name">
-                        </label>
-                        <label class="question">
-                            How can I contact you?
-                            <input type="email" name="email" placeholder="Your email">
-                        </label>
-                        <label class="question">
-                            Would you like to leave a message?
-                            <textarea name="message" placeholder="Test Message"></textarea>
-                        </label>
-                        <button type="submit" class="contact-btn">Send Test</button>
-                    </form>
+                    <form
+                    action="https://formspree.io/dlwjswlgh@naver.com"
+                    method="POST"
+                  >
+                    <label>
+                      Your Name:
+                      <input type="text" name="name">
+                    </label>
+                    <label>
+                      Your Email:
+                      <input type="email" name="_replyto">
+                    </label>
+                    <label>
+                      Message:
+                      <textarea name="message"></textarea>
+                    </label>
+                    <button type="submit" value="Send">send</button>
+                  </form>
                 </div>
             </div>
         </section>
