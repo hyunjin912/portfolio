@@ -1991,6 +1991,21 @@ $(".script-top").each(function(){
     });
 });
  
+$(".btn-6").mouseenter(function(e){
+    var parentOffset = $(this).offset(),
+        relX = e.pageX - parentOffset.left,
+        relY = e.pageY - parentOffset.top;
+
+    $(this).find('span').css({top:relY, left:relX})
+}).mouseout(function(e){
+    var parentOffset = $(this).offset(),
+        relX = e.pageX - parentOffset.left,
+        relY = e.pageY - parentOffset.top;
+        
+    $(this).find('span').css({top:relY, left:relX})
+});
+
+
 
 /* section7 */
 $(".contact-btn").click(function(e){
