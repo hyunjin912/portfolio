@@ -11,8 +11,9 @@ $(window).on("mousemove", function(e){
     // 원이 커서를 따라다니기 위해 left, top값 필요
     if (cursor.width() == 200) {
         gsap.to(cursor,{duration: 0.3, left: x-100, top: y-100});
-    }                                      
+    }                                   
 });
+
 
 
 /* link delay */
@@ -158,6 +159,8 @@ $(window).scroll(function(){
     const scrollTop = $(window).scrollTop();
     $(".scrollTop").text(parseInt(scrollTop));
 
+
+
     /* section1 - 4 */
     // site effect
     $(".site-wrap").each(function(){
@@ -217,6 +220,8 @@ $(window).scroll(function(){
             $(this).addClass("opacity1")
         }
     });
+
+
 
     /* section5 */
     // ani-content move
@@ -392,6 +397,14 @@ $(window).scroll(function(){
     //     }, 1300)
     // }
 
+
+
+    /* section7 */
+    if( scrollTop >= $("#section7").offset().top ){
+        $("#section7").addClass("change");
+        
+    }
+    
 });
 
 /* header */
@@ -412,7 +425,7 @@ setTimeout(function(){
     gsap.to(".header-title h1 em span", 0.6, {ease: Back.easeOut.config(1.7), opacity: 1, y: 0, stagger: 0.05, delay: 0.5});
     gsap.to(".sub-tit span", 0.6, {ease: Back.easeOut.config(1.7), opacity: 1, stagger: 0.05, delay: 1.5});
     gsap.to(".desc", 0.3, {ease: Back.easeOut.config(1.7), opacity: 1, y: 0, stagger: 0.05, delay: 3.5});
-    gsap.to(".cursorbg", 1, {opacity: 0, stagger: 0.05, delay: 4});
+    gsap.to(".cursorbg", 1, {opacity: 0, delay: 4});
     // 원이 200px로 작아지면서 보이는 첫 화면에서의 위치를 중앙으로하기 위해 top, left값이 필요
     gsap.to(".cursor", 0.7, {ease: "bounce.out", borderRadius: "50%", top: hHeight-100, left: hWidth-100, opacity: 1, width: 200, height: 200, stagger: 0.05, delay: 4});
 },2000);

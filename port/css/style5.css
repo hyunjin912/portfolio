@@ -45,8 +45,10 @@ html, body {
 }
 #section7 {
     position: relative; z-index: 10;
-    background: #1b1b1b;
+    width: 100%;
     height: 100vh;
+    overflow: hidden;
+    background: url(../img/mainbg.jpg) no-repeat center center;
 }
 
 /* container */
@@ -65,16 +67,17 @@ html, body {
     background: url(../img/mainbg.jpg) no-repeat center center fixed; /* body에 있는거 그래도 사용하는데 꼭 background-attachment: fixed가 추가되어야 한다.*/
     background-size: cover; /* 이게 없으면 실제 이미지 크기만큼의 영역이 생겨버린다.*/
     opacity: 0;
-    overflow: hidden;
+   
 }
 .cursorbg {
     position: absolute;
     top: 0; left: 0;
     width: 100%;
     height: 100vh;
-    background: url(../img/mainbg.jpg) no-repeat center center fixed; /* body에 있는거 그래도 사용하는데 꼭 background-attachment: fixed가 추가되어야 한다.*/
-    background-size: cover; /* 이게 없으면 실제 이미지 크기만큼의 영역이 생겨버린다.*/
+    background: url(../img/mainbg.jpg) no-repeat center center; /* body에 있는거 그래도 사용하는데 꼭 background-attachment: fixed가 추가되어야 한다.*/
+    background-size: cover; /* 이게 없으면 커서가 꿀렁거리는 느낌 생긴다.*/
 }
+
 
 /* info */
 .info {
@@ -126,7 +129,8 @@ h1.main-tit .split span {
 .header-title h1.main-tit em span {
     transform: translateY(80px);
 }
-.header-title .sub-tit {
+.header-title .sub-tit,
+#section7 .sub-tit {
     font-size: 2vw;
     font-family: 'Ilisarniq-Light';
     padding-bottom: 10vw;
@@ -1147,7 +1151,6 @@ h1.main-tit .split span {
     border-radius: 15px;
     cursor: pointer;
     transition: transform 0.75s cubic-bezier(0.15, 0.65, 0.2, 1);
-
     overflow: hidden;
 }
 .scriptimg-wrap.rotate {
@@ -1163,24 +1166,12 @@ h1.main-tit .split span {
 .img-box img {
     width: 100%; height: 100%;
 }
-/* .btn-11 {
-    display: block;
-    overflow: hidden;
-    width: 100%;
-    height: 80px;
-    max-width: 250px;
-    margin: 1rem auto;
-    text-transform: uppercase;
-    border: 1px solid currentColor;
-} */
 .scriptimg-wrap:before, .scriptimg-wrap:after {
-    position: absolute;
-    top: 50%;
     content: '';
+    position: absolute; top: 50%;
     width: 20px;
     height: 20px;
-    /* background-color: #816878; */
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 50%;
 }
 .scriptimg-wrap:before {
@@ -1195,67 +1186,49 @@ h1.main-tit .split span {
      color: #e0d9dd;
 }
 .scriptimg-wrap:hover:before {
-    animation: criss-cross-left 0.8s both;
-    animation-direction: alternate;
+    animation: cross-left 0.8s forwards;
 }
 .scriptimg-wrap:hover:after {
-    animation: criss-cross-right 0.8s both;
-    animation-direction: alternate;
-}
-@keyframes criss-cross-left {
-    0% {
-        left: -20px;
-    }
-    50% {
-        left: 50%;
-        width: 20px;
-        height: 20px;
-    }
-    100% {
-        left: 50%;
-        width: 200%;
-        height: 200%;
-    }
-}
-@keyframes criss-cross-right {
-    0% {
-        right: -20px;
-    }
-    50% {
-        right: 50%;
-        width: 20px;
-        height: 20px;
-    }
-    100% {
-        right: 50%;
-        width: 200%;
-        height: 200%;
-    }
+    animation: cross-right 0.8s forwards;
 }
 .scriptimg-wrap span {
+    position: relative;
     text-transform: uppercase;
     font-size: 50px;
-    color: #a7b980;
-    transition: color 0.7s ease-in-out;
+    color: #fff;
+    transition: color 0.5s ease-in-out;
     position: absolute; top: 50%; left: 50%;
-    transform: scale(1) translate(-50%, -50%);
-    font-family: 'Ilisarniq-Regular';
+    transform: translate(-50%, -50%);
+    font-family: 'Ilisarniq-Black';
     z-index: 1;
 }
-
-
+.scriptimg-wrap span::before {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    content: '';
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: #000;
+    z-index: -1;
+    transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+}
+.scriptimg-wrap:hover span::before {
+    width: 0; height: 0;
+}
 .scriptimg-wrap:hover span {
-    color: #fff;
+    color: #000;
     animation-play-state: paused;
 }
 .click-wrap {
     width: 100%;
     height: 200vh;
-    background: #1b1b1b;
+    background-color: rgba(0, 0, 0, 0.45);
     visibility: hidden;
     z-index: 101;
     position: relative;
-    top: 100%;
+    top: 100%; left: 50%;
+    transform: translateX(-50%);
     transition: all 1s cubic-bezier(0.15, 0.65, 0.2, 1);
     text-align: center;
 }
@@ -1359,41 +1332,56 @@ h1.main-tit .split span {
 
 
 /* section7 */
+#section7::before, #section7::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* border-top: 500px solid #1e4b5c; */
+    border-top: 500px solid #1b1b1b;
+    /* border-bottom: 500px solid #1e4b5c; */
+    border-bottom: 500px solid #1b1b1b;
+    transition: transform 1s;
+    z-index: -1;
+}
+#section7::before {
+    border-right: 500px solid transparent;
+    transform: translateX(-100%);
+}
+#section7::after {
+    border-left: 500px solid transparent;
+    transform: translateX(100%);
+}
+#section7.change::before {
+    transform: translateX(0%);
+}
+#section7.change::after {
+    transform: translateX(0%);
+}
+#section7 .contact-wrap .contact-title .sub-tit {
+    padding-left: 7px;
+}
+.contact-wrap {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 72.610vw;
+    color: #fff;
+}
 .contact-title h2 {
     font-family: 'Ilisarniq-Black';
-    /* font-size: 144px; */
-    font-size: 7.500vw;
+    font-size: 6.5vw;
+    line-height: 7vw;
     color: #fff;
     text-transform: uppercase;
-    padding-top: 30px;
+    position: relative;
+    z-index: 1;
 }
 .contact-content {
-    display: flex;
-    justify-content: space-between;
-    position: absolute; top: 65%; left: 50%;
-    transform: translate(-50%, -50%);
-    /* font-size: 24px; */
-    font-size: 1.250vw;
-    /* width: 868px; */
-    width: 45.208vw;
-    height: 404px;
-    color: #fff;
-    font-family: 'Ilisarniq-Light';
+    padding-left: 7px;
 }
-.contact-content .question-wrap {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    position: relative;
-    top: -5vh;
-}
-.contact-content form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-.contact-content input,
-.contact-content textarea {
+.contact-content input {
     display: block;
     /* width: 400px; */
     width: 20.833vw;
@@ -1406,9 +1394,11 @@ h1.main-tit .split span {
     font-family: 'Ilisarniq-Light';
     outline: none;
 }
-.contact-btn,
+.contact-content input::placeholder {
+    color: #fff;
+}
 button {
-    position: absolute; top: -30%; right: -30%;
+    position: absolute; right: 3vw; bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1424,21 +1414,17 @@ button {
     white-space: nowrap;
     cursor: pointer;
 }
-.contact-btn,
 button {
     transition: background .2s;
     animation: circlemove 5s linear infinite;
 }
-.contact-btn:hover,
 button:hover {
     color: #fff;
     background: #AA5018;
 }
-.contact-btn:focus,
 button:focus {
     outline: none;
 }
-.contact-btn.active3,
 button.active3 {
     background: #AA5018;
 }
@@ -1936,4 +1922,14 @@ button.active3 {
     0% {clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);}
     50% {clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 0% 100%);}
     100% {clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);}
+}
+@keyframes cross-left {
+    0% {left: -20px;}
+    50% {left: 50%; width: 20px; height: 20px;}
+    100% {left: 50%; width: 300px; height: 300px;}
+}
+@keyframes cross-right {
+    0% {right: -20px;}
+    50% {right: 50%; width: 20px; height: 20px;}
+    100% {right: 50%; width: 300px; height: 300px;}
 }
