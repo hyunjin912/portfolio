@@ -223,7 +223,6 @@ h1.main-tit .split span {
     width: 33.86%; height: 472px;
     background: #fff;
     /* position: absolute; top: 69%; left: 60%; */
-    
     /* padding: 85px 65px 90px; */
     padding: 4.427vw 3.385vw 4.688vw;
     box-sizing: border-box;
@@ -1018,36 +1017,12 @@ h1.main-tit .split span {
 
 
 /* section6 */
-/* .script-txt-wrap {
-    position: fixed; top: 45%; left: 10%;
-    font-family: 'Ilisarniq-Black';
-    background: #1b1b1b;
-    width: 67.146vw;
-    display: none;
-} */
 .script-txt-wrap {
     position: absolute; top: 45%; left: 10%;
     font-family: 'Ilisarniq-Black';
     width: 67.146vw;
-    /* transition: all 0.5s cubic-bezier(0.15, 0.65, 0.2, 1);
-    transform-origin: left;
-    transform: scaleX(0); */
     z-index: 100;
 }
-/* .script-txt-wrap.reveal {
-    transform: scaleX(1);
-} */
-/* .script-txt-wrap::before {
-    content: '';
-    position: absolute; top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: #fff;
-    transition: all 0.5s 0.5s cubic-bezier(0.15, 0.65, 0.2, 1);
-    transform-origin: right;
-} */
-/* .script-txt-wrap.reveal::before {
-    transform: scaleX(0);
-} */
 .script-title {
     color: #fff;
     text-transform: uppercase;
@@ -1122,6 +1097,15 @@ h1.main-tit .split span {
 }
 .script-desc span::before {
     transition-delay: 1.5s;
+}
+.script-txt-wrap.reveal .script-title span::before {
+    background: #ed3801;
+}
+.script-txt-wrap.reveal .script-what span::before {
+    background: #f4c302;
+}
+.script-txt-wrap.reveal .script-desc span::before {
+    background: #02d4f9;
 }
 .script-txt-wrap.reveal .script-title span::before,
 .script-txt-wrap.reveal .script-what span::before,
