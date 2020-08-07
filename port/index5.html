@@ -822,14 +822,7 @@
                         <h2>how to contact me</h2>
                         <p class="sub-tit">Thinking= Thinking + Thinking</p>
                     </div>
-                    <div class="contact-content">
-                        <form action="https://formspree.io/dlwjswlgh@naver.com" method="POST">
-                            <input type="text" name="name" placeholder="Name">
-                            <input type="email" name="_replyto" placeholder="E-mail">
-                            <input name="message" placeholder="Message"></textarea>
-                            <button type="submit" value="Send">SEND MESSAGE</button>
-                        </form>
-                    </div>
+                    <a href="#" class="send-btn">SEND MESSAGE</a>
                 </div>
             </div>
         </section>
@@ -837,6 +830,23 @@
     </div>
    
     
+    <div class="send-wrap">
+        <form action="https://formspree.io/dlwjswlgh@naver.com" method="POST">
+            <label>
+                Your Name:
+                <input type="text" name="name">
+            </label>
+            <label>
+                Your Email:
+                <input type="email" name="_replyto">
+            </label>
+            <label>
+                Message:
+                <textarea name="message"></textarea>
+            </label>
+            <input type="submit" value="SEND">
+        </form>
+    </div>
 
     <!-- script -->
     <script src="js/jquery.min_1.12.4.js"></script>

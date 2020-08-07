@@ -1366,31 +1366,55 @@ h1.main-tit .split span {
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 2px #fff;
 }
-.contact-content {
-    padding-left: 7px;
+.send-wrap {
+    padding-top: 0.5vw;
 }
-.contact-content input {
+.send-wrap .label-position {
+    display: flex;
+    justify-content: space-evenly;
+}
+.send-wrap label {
+    font-size: 3vw;
     display: block;
-    /* width: 400px; */
-    width: 20.833vw;
-    /* font-size: 24px; */
-    font-size: 1.250vw;
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid #fff;
-    color: #fff;
-    font-family: 'Ilisarniq-Light';
-    outline: none;
 }
-.contact-content input::placeholder {
+.send-wrap input {
+    display: block;
+    width: 30vw;
+    font-size: 1vw;
+    padding: 0.5vw;
+    margin-top: 0.3vw;
+}
+.send-wrap textarea {
+    display: block;
+    width: 100%;
+    height: 15vh;
+    font-size: 1vw;
+    padding: 1vw;
+    margin-top: 0.3vw;
+    box-sizing: border-box;
+}
+.send-wrap form > label {
+    font-family: 'Ilisarniq-Black';
+    font-size: 1vw;
+    line-height: 1.7vw;
+    margin-bottom: 1vw;
     color: #fff;
 }
-button {
+.send-wrap form > input {
+    width: 15VW;
+    float: right;
+    margin-top: 1vw;
+    font-family: 'Ilisarniq-Black';
+    background: #AA5018;
+    color:#fff;
+    font-family: 'Ilisarniq-Black';
+    border: 0;
+}
+.send-btn {
     position: absolute; right: 3vw; bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* width: 146px; height: 146px; */
     width: 7.604vw; height: 7.604vw;
     border-radius: 50%;
     border: 2px solid #AA5018; 
@@ -1402,19 +1426,35 @@ button {
     white-space: nowrap;
     cursor: pointer;
 }
-button {
+.send-btn {
     transition: background .2s;
     animation: circlemove 5s linear infinite;
 }
-button:hover {
+.send-btn:hover {
     color: #fff;
     background: #AA5018;
 }
-button:focus {
+.send-btn:focus {
     outline: none;
 }
-button.active3 {
+.send-btn.active3 {
     background: #AA5018;
+}
+.send-wrap {
+    position: fixed; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    background-color: rgba(0, 0, 0, 0.9);
+    visibility: hidden;
+    z-index: 1000;
+    padding: 4vw;
+    box-sizing: border-box;
+}
+.send-wrap.send {
+    visibility: visible;
+    top: 50%;
+    transition: all 1s;
+    
 }
 
 

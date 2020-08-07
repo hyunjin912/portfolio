@@ -2012,3 +2012,8 @@ $(".contact-btn").click(function(e){
     e.preventDefault();
     $(this).addClass("active3");
 });
+
+$(".send-btn").click(function(e){
+    e.preventDefault();
+    $(".send-wrap").addClass("send");
+});
