@@ -6,82 +6,48 @@
     <title>Document</title>
 
     <style>
-        body {
-            height: 4000px;
-            background: dodgerblue;
-        }
-        .scroll {
-            font-size: 50px;
-            position: fixed;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-        }
-        .parent {
-            position: relative;
-            width: 300px;
-            height: 300px;
-            border: 2px solid #000;
-            perspective: 200px;
-            overflow: hidden;
-        }
-        .child {
-            width: 100px;
-            height: 100px;
-            background: green;
-            position: absolute; top: 50%; left: 50%;
-            transform: translate(50%, 50%);
-            font-size: 20px;
-            color: #fff;
-            transition: transform 1s cubic-bezier(0.15, 0.65, 0.2, 1);
-        }
-        .parent.rotate .child {
-            transform: translate(-50%, -50%) rotate3d(0.5, 0.9, 0.2, 50deg);
-        }
-        .show {
-            width: 100vw;
-            height: 100vh;
-            background: rgba(182, 236, 4, 0.521);
-            position: absolute; left: 0; top: 100%;
-            transition: top 1s 0.5s;
-        }
-        .show.rotate {
-            top: 0;
-        }
-        .close {
-            position: absolute; left: 50%; top: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 50px;
-            color: #fff;
-            border: 2px solid #fff;
-            border-radius: 10px;
-            cursor: pointer;
-        }
+    .btn-6 {
+        display: block;
+        width: 200px;
+        height: 100px;
+        color: #000;
+        overflow: hidden;
+        border: 2px solid dodgerblue;
+        text-decoration: none;
+        position: relative;
+    }
+
+    span {
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 500%;
+        border-radius: 50%;
+        background: dodgerblue;
+        transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+
+    .btn-6:hover span {
+        width: 500%;
+        
+    }
+
+       
        
         
     </style>
 </head>
 <body>
-    <div class="scroll">0</div>
-    <div class="parent">
-        <div class="child">안녕</div>
-    </div>
-    <div class="show">
-        <div class="close">close</div>
-    </div>
+    <a class="btn-6" href="#">Position Aware<span></span></a>
    
 
     <script src="../port/js/jquery.min_1.12.4.js"></script>
     <script>
-        $(window).scroll(function(){
-           $(".scroll").text( parseInt($(window).scrollTop()) )
-        });
-
-        $(".child").click(function(){
-            $(".parent, .show").addClass("rotate");
-        });
-        $(".close").click(function(){
-            $(".parent, .show").removeClass("rotate");
-        });
+   
+   
+ 
     </script>
 </body>
 </html>
