@@ -6,8 +6,8 @@
     <title>Document</title>
 
     <style>
-    .btn-6 {
-        color: #a7b980;
+    .btn-11 {
+        color: #947f8c;
         position: relative;
         display: block;
         overflow: hidden;
@@ -18,24 +18,64 @@
         text-transform: uppercase;
         border: 1px solid currentColor;
     }
-    .btn-6 span {
+    .btn-11:before, .btn-11:after {
         position: absolute;
-        display: block;
-        width: 0;
-        height: 0;
+        top: 50%;
+        content: '';
+        width: 20px;
+        height: 20px;
+        background-color: #816878;
         border-radius: 50%;
-        background-color: #5b6840;
-        transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
-        transform: translate(-50%, -50%);
         z-index: -1;
     }
-    .btn-6:hover {
-        color: #e5ebda;
+    .btn-11:before {
+        left: -20px;
+        transform: translate(-50%, -50%);
     }
-    .btn-6:hover span {
-        transition: width 1s ease-in-out, height 1s ease-in-out;
-        width: 225%;
-        height: 562.5px;
+    .btn-11:after {
+        right: -20px;
+        transform: translate(50%, -50%);
+    }
+    .btn-11:hover {
+         color: #e0d9dd;
+    }
+    .btn-11:hover:before {
+        animation: criss-cross-left 0.8s both;
+        animation-direction: alternate;
+    }
+    .btn-11:hover:after {
+        animation: criss-cross-right 0.8s both;
+        animation-direction: alternate;
+    }
+    @keyframes criss-cross-left {
+        0% {
+            left: -20px;
+        }
+        50% {
+            left: 50%;
+            width: 20px;
+            height: 20px;
+        }
+        100% {
+            left: 50%;
+            width: 375px;
+            height: 375px;
+        }
+    }
+    @keyframes criss-cross-right {
+        0% {
+            right: -20px;
+        }
+        50% {
+            right: 50%;
+            width: 20px;
+            height: 20px;
+        }
+        100% {
+            right: 50%;
+            width: 375px;
+            height: 375px;
+        }
     }
 
        
@@ -44,41 +84,13 @@
     </style>
 </head>
 <body>
-    <a class="btn-6" href="#">Position Aware<span></span></a>
+    <a class="btn-11" href="#">Collision</a>
    
 
     <script src="../port/js/jquery.min_1.12.4.js"></script>
     <script>
 
-        // $('.btn-6')
-        // .on('mouseenter', function(e) {
-        //         var parentOffset = $(this).offset(),
-        //         relX = e.pageX - parentOffset.left,
-        //         relY = e.pageY - parentOffset.top;
-        //         $(this).find('span').css({top:relY, left:relX})
-        // })
-        // .on('mouseout', function(e) {
-        //         var parentOffset = $(this).offset(),
-        //         relX = e.pageX - parentOffset.left,
-        //         relY = e.pageY - parentOffset.top;
-        //     $(this).find('span').css({top:relY, left:relX})
-        // });
        
-
-
-        $(".btn-6").mouseenter(function(e){
-            var parentOffset = $(this).offset(),
-                relX = e.pageX - parentOffset.left,
-                relY = e.pageY - parentOffset.top;
-
-            $(this).find('span').css({top:relY, left:relX})
-        }).mouseout(function(e){
-            var parentOffset = $(this).offset(),
-                relX = e.pageX - parentOffset.left,
-                relY = e.pageY - parentOffset.top;
-                
-            $(this).find('span').css({top:relY, left:relX})
-        });
    
  
     </script>
