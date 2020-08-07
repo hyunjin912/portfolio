@@ -1179,7 +1179,8 @@ h1.main-tit .split span {
     content: '';
     width: 20px;
     height: 20px;
-    background-color: #816878;
+    /* background-color: #816878; */
+    background-color: rgba(255, 255, 255, 0.3);
     border-radius: 50%;
 }
 .scriptimg-wrap:before {
@@ -1239,14 +1240,9 @@ h1.main-tit .split span {
     position: absolute; top: 50%; left: 50%;
     transform: scale(1) translate(-50%, -50%);
     font-family: 'Ilisarniq-Regular';
-    animation: scale 1s infinite;
     z-index: 1;
 }
-@keyframes scale {
-    0% {transform: scale(1) translate(-50%, -50%);}
-    50% {transform: scale(1.1) translate(-50%, -50%);}
-    100% {transform: scale(1) translate(-50%, -50%);}
-}
+
 
 .scriptimg-wrap:hover span {
     color: #fff;
