@@ -1378,6 +1378,10 @@ h1.main-tit .split span {
     position: relative;
     z-index: 1;
 }
+.contact-title h2:first-child {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px #fff;
+}
 .contact-content {
     padding-left: 7px;
 }
