@@ -84,14 +84,23 @@
     </style>
 </head>
 <body>
-    <a class="btn-11" href="#">Collision</a>
+    <a class="btn-11" href="#">0</a>
    
 
     <script src="../port/js/jquery.min_1.12.4.js"></script>
     <script>
 
+        let pp = 0;
+       let c = setInterval(function(){
+        $(".btn-11").text(pp)
+        pp++
+        if(pp == 40) {
+
+            clearInterval(c)
+        }
+       }, 50);
        
-   
+      
  
     </script>
 </body>
