@@ -1,15 +1,9 @@
 /* layout */
 html, body {
     background: #1b1b1b;
-    overflow: visible !important;
+    /* overflow: visible !important; */
 }
 #contents {}
-/* #big-title {
-    height: 100vh;
-    background: #fff;
-    position: relative;
-    overflow: hidden;
-} */
 #header {
     /* 커서 히든하기 위해 포지션 필요 */
     position: relative; z-index: 10;
@@ -1206,7 +1200,7 @@ h1.main-tit .split span {
 }
 .click-wrap {
     width: 100%;
-    height: 200vh;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.45);
     visibility: hidden;
     z-index: 101;
@@ -1214,25 +1208,29 @@ h1.main-tit .split span {
     top: 100%; left: 50%;
     transform: translateX(-50%);
     transition: all 1s cubic-bezier(0.15, 0.65, 0.2, 1);
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .click-wrap.rotate {
     visibility: visible;
     top: 0;
 }
 .close {
-    padding-top: 10vh;
-    font-family: 'Ilisarniq-Regular';
+    font-family: 'Ilisarniq-Black';
     font-size: 2vw;
     text-transform: uppercase;
     cursor: pointer;
     color: #fff;
+    text-align: right;
+    padding-right: 5vw;
+    
 }
 .click-cont {
-    margin-top: 10vh;
-    height: 100vh;
+    width: 75%;
+    margin: 0 auto;
     display: flex;
-    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
 }
 .scriptview-wrap {
@@ -1253,13 +1251,6 @@ h1.main-tit .split span {
 .view-box iframe {
     width: 100%; height: 100%;
 }
-.script-btn {
-    margin-top: 2vw;
-    z-index: 100;
-    width: 62.917vw;
-    display: flex;
-    justify-content: space-evenly;
-}
 .script-btn a {
     display: block;
     font-family: 'Ilisarniq-Regular';
@@ -1273,6 +1264,7 @@ h1.main-tit .split span {
     border: 1px solid #424242;
     color: #fff;
     transition: background .2s;
+    margin: 1vw 0;
 }
 .script-btn a.btnactive {
     background: #424242;
@@ -1280,35 +1272,11 @@ h1.main-tit .split span {
 .script-btn a:hover {
     background: #424242;
 }
-.script-btn a:last-child {
-    margin-right: 0;
-}
 .script-btn a:nth-child(odd) {
     animation: updown1 5s linear infinite;
 }
 .script-btn a:nth-child(even) {
     animation: updown2 5s linear infinite;
-}
-.script-btn a:nth-child(2) {
-    animation-delay: 1s;
-}
-.script-btn a:nth-child(3) {
-    animation-delay: 2s;
-}
-.script-btn a:nth-child(4) {
-    animation-delay: 3s;
-}
-.script-btn a:nth-child(5) {
-    animation-delay: 4s;
-}
-.script-btn a:nth-child(6) {
-    animation-delay: 5s;
-}
-.script-btn a:nth-child(7) {
-    animation-delay: 6s;
-}
-.script-btn a:nth-child(8) {
-    animation-delay: 7s;
 }
 
 
@@ -1366,50 +1334,6 @@ h1.main-tit .split span {
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 2px #fff;
 }
-.send-wrap {
-    padding-top: 0.5vw;
-}
-.send-wrap .label-position {
-    display: flex;
-    justify-content: space-evenly;
-}
-.send-wrap label {
-    font-size: 3vw;
-    display: block;
-}
-.send-wrap input {
-    display: block;
-    width: 30vw;
-    font-size: 1vw;
-    padding: 0.5vw;
-    margin-top: 0.3vw;
-}
-.send-wrap textarea {
-    display: block;
-    width: 100%;
-    height: 15vh;
-    font-size: 1vw;
-    padding: 1vw;
-    margin-top: 0.3vw;
-    box-sizing: border-box;
-}
-.send-wrap form > label {
-    font-family: 'Ilisarniq-Black';
-    font-size: 1vw;
-    line-height: 1.7vw;
-    margin-bottom: 1vw;
-    color: #fff;
-}
-.send-wrap form > input {
-    width: 15VW;
-    float: right;
-    margin-top: 1vw;
-    font-family: 'Ilisarniq-Black';
-    background: #AA5018;
-    color:#fff;
-    font-family: 'Ilisarniq-Black';
-    border: 0;
-}
 .send-btn {
     position: absolute; right: 3vw; bottom: 0;
     display: flex;
@@ -1441,7 +1365,7 @@ h1.main-tit .split span {
     background: #AA5018;
 }
 .send-wrap {
-    position: fixed; top: 50%; left: 50%;
+    position: fixed; top: 200%; left: 50%;
     transform: translate(-50%, -50%);
     width: 80vw;
     background-color: rgba(0, 0, 0, 0.9);
@@ -1449,12 +1373,55 @@ h1.main-tit .split span {
     z-index: 1000;
     padding: 4vw;
     box-sizing: border-box;
+    transition: all 2s;
 }
 .send-wrap.send {
     visibility: visible;
     top: 50%;
     transition: all 1s;
-    
+}
+.send-wrap label {
+    display: block;
+    font-family: 'Ilisarniq-Black';
+    font-size: 1vw;
+    line-height: 1.7vw;
+    margin-bottom: 1vw;
+    color: #fff;
+}
+.send-wrap input {
+    display: block;
+    width: 30vw;
+    font-size: 1vw;
+    padding: 0.5vw;
+    margin-top: 0.3vw;
+}
+.send-wrap textarea {
+    display: block;
+    width: 100%;
+    height: 15vh;
+    font-size: 1vw;
+    padding: 1vw;
+    margin-top: 0.3vw;
+    box-sizing: border-box;
+}
+.send-wrap form > input {
+    width: 15vw;
+    float: right;
+    margin-top: 1vw;
+    background: #AA5018;
+    color:#fff;
+    font-family: 'Ilisarniq-Black';
+    border: 0;
+    cursor: pointer;
+}
+.send-wrap .send-close {
+    display: block;
+    font-family: 'Ilisarniq-Black';
+    font-size: 1vw;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #fff;
+    position: absolute; top: 0.6vw; right: 1vw;
 }
 
 
@@ -1931,20 +1898,14 @@ h1.main-tit .split span {
 @keyframes ani {
     0% {background-position: 0 0}
     100% {background-position: -12800px 0}
-  }
+}
 @keyframes updown1 {
-    0%{transform: translateY(0px) rotate(0);}
-    25%{transform: translateY(13px) rotate(-72deg);}
-    50%{transform: translateY(0px) rotate(-144deg);}
-    75%{transform: translateY(-13px) rotate(-216deg);}
-    100%{transform: translateY(0px) rotate(-360deg);}
+    0%{transform: rotate(0);}
+    100%{transform: rotate(-360deg);}
 }
 @keyframes updown2 {
-    0%{transform: translateY(0px) rotate(0);}
-    25%{transform: translateY(13px) rotate(72deg);}
-    50%{transform: translateY(0px) rotate(144deg);}
-    75%{transform: translateY(-13px) rotate(216deg);}
-    100%{transform: translateY(0px) rotate(360deg);}
+    0%{transform: rotate(0);}
+    100%{transform: rotate(360deg);}
 }
 @keyframes clip {
     0% {clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);}

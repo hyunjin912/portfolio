@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Effect01</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+    @font-face { 
+        font-family: 'GmarketSansMedium'; 
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff'); 
+        font-weight: normal; 
+        font-style: normal; 
+    }
+    @font-face {
+        font-family: 'S-CoreDream-7ExtraBold'; 
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-7ExtraBold.woff') format('woff'); 
+        font-weight: normal; 
+        font-style: normal; 
+    }
+
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    a {text-decoration: none; color: #fff;}
+    img {width: 100%; vertical-align: top;}
+    ul {padding:10px 20px;}
+    body {
+        background: url(../slider/img/p11.jpg) no-repeat center center;
+        background-size: cover;
+        font-family: 'Lato','GmarketSansMedium';
+        color: #fff;
+        height: 100vh;
+        cursor: none;
+        overflow: hidden;
+        }
+    body::before {
+        content: '';
+        position: absolute; left: 0; top: 0;
+        width: 100%; height: 100vh;
+        background: rgba(53, 95, 76, 0.4);
+        z-index: -1;
+    }
+
+    /* info */
+    .info {
+        position: absolute; left: 0; top: 0; z-index: 1000;
+        padding: 20px;
+    }
+    .info h1 {
+     margin-bottom: 10px;
+    }
+
+    .info2 {
+        position: absolute; top: 0; right: 0; z-index: 1000;
+        padding: 20px;
+    }
+    .info2 li {
+        list-style: none;
+        margin-bottom: 5px;
+    }.info2 li a {
+         color: #fff;
+    }
+    .info2 li.active a {
+        border-bottom: 1px dashed #fff;
+    }
+
+    .info3 {
+        position: absolute; right: 0; bottom: 0; z-index: 1000; padding: 20px;
+    }
+    .info3 li {
+        list-style: none;
+        margin-bottom: 5px;
+    }
+    .info3 li a {
+        color: #fff;
+    }
+
+    .contents {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%; height: 100vh;
+        flex-direction: column;
+    }
+    .contents p {
+        max-width: 70vw;
+        font-size: 2vw;
+        font-family: 'S-CoreDream-7ExtraBold';
+        color: rgba(255,255,255,0.9);
+
+    }
+    .contents p a {
+        text-decoration: none; color: orange;
+        border-bottom: 2px dashed orange;
+    }
+        
+    .cursor {
+        position: absolute; left: 0; top: 0;
+        width: 50px; height: 50px;
+        border-radius: 50%;
+        border : 3px solid #fff;
+        background-color: rgba(255,255,255,0.1);
+        z-index: 1000;
+        user-select: none;
+        pointer-events: none;
+        transition: background-color .2s, border-color .2s;
+    }
+    .cursor.active {
+        background-color: rgba(255,165,0,0.4);
+        border-color: orange;
+    }
+
+    .infor4 {position: absolute; left: 45%; bottom: 0; z-index: 1000; padding: 20px;}
+    .infor4 a {color: #fff; border: 1px solid #fff; border-radius: 30px; padding: 5px 30px}
+    .infor4 .modal {
+        background: rgba(0,0,0,0.8);
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 100%;
+        left: 0;
+        transition: all 600ms cubic-bezier(0.86, 0, 0.07, 1);
+    }
+    .infor4 .modal.show {
+        top: 0;
+    }
+    .infor4 .modal .close {
+        position: absolute; right: 10px; top: 20px;
+    }
+    </style>
+
+    <link rel="stylesheet" href="prism.css">
+</head>
+<body>
+    <div class="info">
+        <h1>Mouse Effect01</h1>
+        <p>마우스 따라다니기</p>
+        <ul>
+            <li>clientX, clientY</li>
+        </ul>
+    </div>
+
+    <div class="info2">
+        <ul>
+            <li class="active"><a href="mouse01.html">Mouse01</a></li>
+            <li><a href="mouse02.html">Mouse02</a></li>
+            <li><a href="mouse03.html">Mouse03</a></li>
+            <li><a href="mouse04.html">Mouse04</a></li>
+            <li><a href="mouse05.html">Mouse05</a></li>
+            <li><a href="mouse06.html">Mouse06</a></li>
+            <li><a href="mouse07.html">Mouse07</a></li>
+            <li><a href="mouse08.html">Mouse08</a></li>
+        </ul>
+    </div>
+
+    <div class="info3">
+        <ul>
+            <li>clientX : <span class="clientX">0</span></li>
+            <li>clientY : <span class="clientY">0</span></li>
+            <li>offsetX : <span class="offsetX">0</span></li>
+            <li>offsetY : <span class="offsetY">0</span></li>
+            <li>pageX : <span class="pageX">0</span></li>
+            <li>pageY : <span class="pageY">0</span></li>
+            <li>screenX : <span class="screenX">0</span></li>
+            <li>screenY : <span class="screenY">0</span></li>
+        </ul>
+    </div>
+
+    <div class="infor4">
+        <a href="#" class="view">코드 보기</a>
+        <!-- modal -->
+        <div class="modal">
+            <div class="code-editor">
+                <h3>Script Editor
+                    <span class="control"></span>
+                    <span class="control"></span>
+                    <span class="control"></span>
+                </h3>
+                <div class="code">
+                    <pre class="line-numbers"><code class="language-js">// $("body, html").mousemove(function(event){
+//     $(".clientX").text(event.clientX);
+//     $(".clientY").text(event.clientY);
+//     $(".offsetX").text(event.offsetX);
+//     $(".offsetY").text(event.offsetY);
+//     $(".pageX").text(event.pageX);
+//     $(".pageY").text(event.pageY);
+//     $(".screenX").text(event.screenX);
+//     $(".screenY").text(event.screenY);
+
+//     $(".cursor").css({ left: event.clientX-25, top: event.clientY-25 });
+// });
+
+// $(".contents a").mouseenter(function(){
+//     $(".cursor").css({borderColor: "orange"})
+// })
+// $(".contents a").mouseleave(function(){
+//     $(".cursor").css({borderColor: "white"})
+// })
+
+
+// 위에꺼 자바스크립트로 변경하기
+
+/*
+window.addEventListener("mousemove", function(event){
+
+    document.querySelector(".clientX").innerHTML = event.clientX
+    document.querySelector(".clientY").innerHTML = event.clientY
+    document.querySelector(".offsetX").innerHTML = event.offsetX
+    document.querySelector(".offsetY").innerHTML = event.offsetY
+    document.querySelector(".pageX").innerHTML = event.pageX
+    document.querySelector(".pageY").innerHTML = event.pageY
+    document.querySelector(".screenX").innerHTML = event.screenX
+    document.querySelector(".screenY").innerHTML = event.screenY
+
+
+    document.querySelector(".cursor").style.left = (event.clientX-25)+"px"     //event.clientX+"px" - "25px" 나 event.clientX+"px-25px"는 왜 안되는지 꼭! 물어보자 자바스크립트는 단위를 안쓰면 인식 못한다. 제이쿼리는 인식한다.
+    document.querySelector(".cursor").style.top = (event.clientY-25)+"px"
+});
+
+let aTag = document.querySelectorAll(".contents p a");
+let aTagCount = aTag.length;
+
+for(i = 0; i < aTagCount; i++){
+    aTag[i].addEventListener("mouseenter", function(){
+        document.querySelector(".cursor").style.borderColor = "orange";
+    });
+    aTag[i].addEventListener("mouseleave", function(){
+        document.querySelector(".cursor").style.borderColor = "white";
+    });
+};
+*/
+
+// 위에껀 내가, 아래껀 선생님
+window.addEventListener("mousemove", function(event){
+
+    document.querySelector(".clientX").innerHTML = event.clientX
+    document.querySelector(".clientY").innerHTML = event.clientY
+    document.querySelector(".offsetX").innerHTML = event.offsetX
+    document.querySelector(".offsetY").innerHTML = event.offsetY
+    document.querySelector(".pageX").innerHTML = event.pageX
+    document.querySelector(".pageY").innerHTML = event.pageY
+    document.querySelector(".screenX").innerHTML = event.screenX
+    document.querySelector(".screenY").innerHTML = event.screenY
+
+
+    document.querySelector(".cursor").style.left = (event.clientX-25)+"px"     //event.clientX+"px" - "25px" 나 event.clientX+"px-25px"는 왜 안되는지 꼭! 물어보자 자바스크립트는 단위를 안쓰면 인식 못한다. 제이쿼리는 인식한다.
+    document.querySelector(".cursor").style.top = (event.clientY-25)+"px"
+
+    let x = (event.clientX-25)+"px"
+    let y = (event.clientY-25)+"px"
+    document.querySelector(".cursor").style.cssText = "left: "+x+"; top: "+y;
+
+
+    // document.querySelector(".contents a").addEventListener("mouseenter", function(){});
+    // document.querySelector(".contents a").addEventListener("mouseleave", function(){});
+    // document.querySelector(".contents a").addEventListener("mouseenter", () => {
+    //     document.querySelector(".cursor").classList.add("active");
+    // });
+    // document.querySelector(".contents a").addEventListener("mouseleave", () => {
+    //     document.querySelector(".cursor").classList.remove("active");
+    // });
+    document.querySelectorAll("a").forEach(elem => {
+        elem.addEventListener("mouseenter", () => {
+            document.querySelector(".cursor").classList.add("active");
+        });
+        elem.addEventListener("mouseleave", () => {
+            document.querySelector(".cursor").classList.remove("active");
+        });
+    });
+
+});
+
+
+// 모달
+$(".infor4 a").click(function(){
+    $(".infor4 .modal").addClass("show");
+});
+$(".infor4 .close").click(function(){
+    $(".infor4 .modal").removeClass("show");
+});
+</code></pre>
+                </div>
+
+            </div>
+            <a class="close">Close</a>
+        </div>
+    </div>
+                
+    <!-- 
+        clientX : 브라우저 페이지에서의 X좌표 위치를 반환하나 스크롤은 무시하고 해당 페이지의 상단을 0으로 측정합니다.
+
+        clientY : 브라우저 페이지에서의 Y좌표 위치를 반환하나 스크롤은 무시하고 해당 페이지의 상단을 0으로 측정합니다.
+
+        offsetX : 이벤트 대상 객체에서의 상대적 마우스 x좌표 위치를 반환합니다.
+
+        offsetY : 이벤트 대상 객체에서의 상대적 마우스 y좌표 위치를 반환합니다.
+            
+        pageX : 브라우저 페이지에서의 x좌표 위치를 반환합니다.
+
+        pageY : 브라우저 페이지에서의 Y좌표 위치를 반환합니다.
+
+        screenX : 전체 모니터 스크린에서의 x좌표 위치를 반환합니다.
+
+        screenY : 전체 모니터 스크린에서의 y좌표 위치를 반환합니다.
+     -->
+
+     <!-- contents -->
+     <div class="cursor"></div>
+     <div class="contents">
+        <p>To climb steep hills requires <a>slow</a> pace at first.</p>
+        <p>험준한 산을 오르기 위해선 먼저 <a>천천히</a> 걸어야 한다.</p>
+    </div>
+
+     <script src="../slider/js/jquery.min_1.12.4.js"></script>
+     <script src="prism.js"></script>
+     <script>
+        
+
+        // $("body, html").mousemove(function(event){
+        //     $(".clientX").text(event.clientX);
+        //     $(".clientY").text(event.clientY);
+        //     $(".offsetX").text(event.offsetX);
+        //     $(".offsetY").text(event.offsetY);
+        //     $(".pageX").text(event.pageX);
+        //     $(".pageY").text(event.pageY);
+        //     $(".screenX").text(event.screenX);
+        //     $(".screenY").text(event.screenY);
+
+        //     $(".cursor").css({ left: event.clientX-25, top: event.clientY-25 });
+        // });
+
+        // $(".contents a").mouseenter(function(){
+        //     $(".cursor").css({borderColor: "orange"})
+        // })
+        // $(".contents a").mouseleave(function(){
+        //     $(".cursor").css({borderColor: "white"})
+        // })
+
+
+        // 위에꺼 자바스크립트로 변경하기
+        
+        /*
+        window.addEventListener("mousemove", function(event){
+
+            document.querySelector(".clientX").innerHTML = event.clientX
+            document.querySelector(".clientY").innerHTML = event.clientY
+            document.querySelector(".offsetX").innerHTML = event.offsetX
+            document.querySelector(".offsetY").innerHTML = event.offsetY
+            document.querySelector(".pageX").innerHTML = event.pageX
+            document.querySelector(".pageY").innerHTML = event.pageY
+            document.querySelector(".screenX").innerHTML = event.screenX
+            document.querySelector(".screenY").innerHTML = event.screenY
+
+
+            document.querySelector(".cursor").style.left = (event.clientX-25)+"px"     //event.clientX+"px" - "25px" 나 event.clientX+"px-25px"는 왜 안되는지 꼭! 물어보자 자바스크립트는 단위를 안쓰면 인식 못한다. 제이쿼리는 인식한다.
+            document.querySelector(".cursor").style.top = (event.clientY-25)+"px"
+        });
+
+        let aTag = document.querySelectorAll(".contents p a");
+        let aTagCount = aTag.length;
+
+        for(i = 0; i < aTagCount; i++){
+            aTag[i].addEventListener("mouseenter", function(){
+                document.querySelector(".cursor").style.borderColor = "orange";
+            });
+            aTag[i].addEventListener("mouseleave", function(){
+                document.querySelector(".cursor").style.borderColor = "white";
+            });
+        };
+        */
+        
+        // 위에껀 내가, 아래껀 또 다른 방법
+        window.addEventListener("mousemove", function(event){
+
+            document.querySelector(".clientX").innerHTML = event.clientX
+            document.querySelector(".clientY").innerHTML = event.clientY
+            document.querySelector(".offsetX").innerHTML = event.offsetX
+            document.querySelector(".offsetY").innerHTML = event.offsetY
+            document.querySelector(".pageX").innerHTML = event.pageX
+            document.querySelector(".pageY").innerHTML = event.pageY
+            document.querySelector(".screenX").innerHTML = event.screenX
+            document.querySelector(".screenY").innerHTML = event.screenY
+
+
+            document.querySelector(".cursor").style.left = (event.clientX-25)+"px"     //event.clientX+"px" - "25px" 나 event.clientX+"px-25px"는 왜 안되는지 꼭! 물어보자 자바스크립트는 단위를 안쓰면 인식 못한다. 제이쿼리는 인식한다.
+            document.querySelector(".cursor").style.top = (event.clientY-25)+"px"
+
+            let x = (event.clientX-25)+"px"
+            let y = (event.clientY-25)+"px"
+            document.querySelector(".cursor").style.cssText = "left: "+x+"; top: "+y;
+
+
+            // document.querySelector(".contents a").addEventListener("mouseenter", function(){});
+            // document.querySelector(".contents a").addEventListener("mouseleave", function(){});
+            // document.querySelector(".contents a").addEventListener("mouseenter", () => {
+            //     document.querySelector(".cursor").classList.add("active");
+            // });
+            // document.querySelector(".contents a").addEventListener("mouseleave", () => {
+            //     document.querySelector(".cursor").classList.remove("active");
+            // });
+            document.querySelectorAll("a").forEach(elem => {
+                elem.addEventListener("mouseenter", () => {
+                    document.querySelector(".cursor").classList.add("active");
+                });
+                elem.addEventListener("mouseleave", () => {
+                    document.querySelector(".cursor").classList.remove("active");
+                });
+            });
+
+        });
+
+        // 모달
+        $(".infor4 a").click(function(){
+            $(".infor4 .modal").addClass("show");
+        });
+        $(".infor4 .close").click(function(){
+            $(".infor4 .modal").removeClass("show");
+        });
+     </script>
+</body>
+</html>

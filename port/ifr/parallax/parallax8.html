@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax08</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+         @font-face { 
+            font-family: 'GmarketSansMedium'; 
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff'); 
+            font-weight: normal; 
+            font-style: normal;
+        }
+
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        li {list-style: none;}
+        a {text-decoration: none; color: #fff;}
+        :root {
+            font-size: 16px;
+        }
+
+        body {
+            --color-h1: #dc6e25;
+            --color-title: #fff;
+            --color-sub: #999;
+            --color-link: #000;
+            --color-bg: #111;
+            --font-family: 'lato', sans-serif;
+            --aspect-ratio: 32/17;
+            --image-width-max: 500px;
+
+            background-color: var(--color-bg);
+            font-family: var(--font-family);
+            color: var(--color-title);
+        }
+
+        .title {
+            position: fixed; top: 0; right: 0; z-index: 1000;
+            padding: 20px;
+            font-family: 'GmarketSansMedium';
+            text-align: right;
+        }
+        .title h1 {
+            margin-bottom: 10px;
+        }
+        .title p {
+            font-size: 18px;
+        }
+        .title ul {
+            padding: 20px 0;
+            font-family: "Abel";
+        }
+        .title li {
+            padding-bottom: 5px;
+        }
+        .title li.active a {
+            border-bottom: 1px dashed #fff;
+        }
+
+        #wrap h1 {
+            font-size: 7vw;
+            color: var(--color-h1);
+            padding: 3vw;
+            text-transform: uppercase;
+            font-weight: 700;
+            will-change: transform;
+        }
+
+        #wrap h1 em {
+            display: block;
+            font-weight: 100;
+            padding-left: 18vw;
+        }
+
+        .contents {
+            margin: 35vh auto 35vh;
+        }
+
+        .content-item {
+            position: relative;
+            --image-width: calc(var(--image-width-max) * var(--aspect-ratio)); 
+            width: var(--image-width);
+            max-width: 90vw;
+            margin: 30vh 0 50vh;
+        }
+        
+        .content-item-imgWrap {
+            position: relative;
+            --width: 100%;
+            width: var(--width);
+            padding-bottom: calc(var(--width) / (var(--aspect-ratio)));
+            overflow: hidden;
+        }
+
+        .content-item-img {
+            position: absolute;
+            width: var(--width);
+            --overflow: 60px;
+            top: calc(-2 * var(--overflow));
+            height: calc(100% + (2 * var(--overflow)));
+            background-size: cover;
+            background-position: 50% 0;
+            will-change: transform;
+        }
+
+        .content-item:nth-child(even) {
+            margin-left: auto;
+        }
+
+        .content-item-num {
+            font-size: 20vw;
+            font-weight: 100;
+            position: absolute; right: -5vw; top: -15vw;
+            opacity: 0.04;
+            will-change: transform;
+        }
+
+        .content-item:nth-child(even) .content-item-num {
+            right: auto; left: -8vw;
+        }
+
+        .content-item-title {
+            text-align: right;
+            font-weight: 300;
+            text-transform: capitalize;
+            color: var(--color-sub);
+            padding-bottom: 0.8vw;
+            font-size: 1.5rem;    
+        }
+
+        .content-item:nth-child(even) .content-item-title {
+            text-align: left;
+        }
+
+        .content-item-desc {
+            font-size: 4vw;
+            line-height: 1.2;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--color-title);
+            text-align: right;
+            word-break: keep-all;
+            margin-top: -6vw;
+            margin-right: -3vw;
+            position: relative;
+            z-index: 20;
+            transition: transform 0.3s;
+            will-change: transform;
+        }
+
+        .content-item:nth-child(even) .content-item-desc {
+            text-align: left;
+            margin-right: 0;
+            margin-left: -3vw;
+        }
+        #section1 .content-item-img {background-image: url(img/p1.jpg);}
+        #section2 .content-item-img {background-image: url(img/p2.jpg);}
+        #section3 .content-item-img {background-image: url(img/p3.jpg);}
+        #section4 .content-item-img {background-image: url(img/p4.jpg);}
+        #section5 .content-item-img {background-image: url(img/p5.jpg);}
+        #section6 .content-item-img {background-image: url(img/p6.jpg);}
+        #section7 .content-item-img {background-image: url(img/p7.jpg);}
+        #section8 .content-item-img {background-image: url(img/p8.jpg);}
+        #section9 .content-item-img {background-image: url(img/p9.jpg);}
+
+        /* info */
+        .info {
+            position: fixed; bottom: 20px; right: 20px;
+            background: rgba(255,255,255,0.4);
+            color: #fff; padding: 10px;
+            font-size: 14px; font-weight: 300;
+            z-index: 10000;
+            font-style: normal;
+            font-family: "Abel";
+        }
+
+        /* contents */
+        /*
+        .content-item-desc {
+            opacity: 0;
+            transform: translateY(70px);
+            transition: all 0.44s ease;
+        }
+        .content-item-desc.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        */
+
+        #section1 .content-item-desc span {
+            opacity: 0;
+            transform: translateY(70px);
+            transition: all 0.44s ease;
+            display: inline-block;      /* 인라인은 translate가 적용 되지 않음 */
+            min-width: 20px;            /* 띄어쓰기가 없어져서 적용 시킴 */    
+        } 
+        #section1 .content-item-desc span.show {
+            opacity: 1;
+            transform: translateY(0);
+        } 
+
+        #section2 .content-item-desc span {
+            opacity: 0;
+            transition: all 0.44s ease;
+            display: inline-block;      /* 인라인은 translate가 적용 되지 않음 */
+            min-width: 20px;            /* 띄어쓰기가 없어져서 적용 시킴 */    
+        } 
+        #section2 .content-item-desc span.show {
+            opacity: 1;
+            animation: flipInY 1s;
+        } 
+        @keyframes flipInY {
+            from {
+                transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+                animation-timing-function: ease-in;
+                opacity: 0;
+            }
+
+            40% {
+                transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+                animation-timing-function: ease-in;
+            }
+
+            60% {
+                transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+                opacity: 1;
+            }
+
+            80% {
+                transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+            }
+
+            to {
+                transform: perspective(400px);
+            }
+        }   
+
+        #section3 .content-item-desc span {
+            opacity: 0;
+            transition: all 0.44s ease;
+            display: inline-block;      /* 인라인은 translate가 적용 되지 않음 */
+            min-width: 20px;            /* 띄어쓰기가 없어져서 적용 시킴 */    
+        } 
+        #section3 .content-item-desc span.show {
+            opacity: 1;
+            animation: backInLeft 1s;
+        }
+        @keyframes backInLeft {
+            0% {
+            transform: translateX(-2000px) scale(0.7);
+            opacity: 0.7;
+            }
+
+            80% {
+            transform: translateX(0px) scale(0.7);
+            opacity: 0.7;
+            }
+
+            100% {
+            transform: scale(1);
+            opacity: 1;
+            }
+        }   
+
+        #section4 .content-item-desc span {
+            opacity: 0;
+            transition: all 0.44s ease;
+            display: inline-block;      /* 인라인은 translate가 적용 되지 않음 */
+            min-width: 20px;            /* 띄어쓰기가 없어져서 적용 시킴 */    
+        } 
+        #section4 .content-item-desc span.show {
+            opacity: 1;
+            animation: rotateInDownLeft 1s;
+        } 
+        @keyframes rotateInDownLeft {
+            from {
+            transform: rotate3d(0, 0, 1, -45deg);
+            opacity: 0;
+            }
+
+            to {
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+            }
+        }
+        #section5 .content-item-desc span {
+            opacity: 0;
+            transition: all 0.44s ease;
+            display: inline-block;      /* 인라인은 translate가 적용 되지 않음 */
+            min-width: 20px;            /* 띄어쓰기가 없어져서 적용 시킴 */    
+        } 
+        #section5 .content-item-desc span.show {
+            opacity: 1;
+            animation: fadeInBottomRight 1s;
+        }
+        @keyframes fadeInBottomRight {
+            from {
+                opacity: 0;
+                -webkit-transform: translate3d(100%, 100%, 0);
+                transform: translate3d(100%, 100%, 0);
+            }
+            to {
+                opacity: 1;
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+        }
+        #section6 .content-item-desc span {
+            opacity: 0;
+            transition: all 0.44s ease;
+            display: inline-block;      /* 인라인은 translate가 적용 되지 않음 */
+            min-width: 20px;            /* 띄어쓰기가 없어져서 적용 시킴 */    
+        } 
+        #section6 .content-item-desc span.show {
+            opacity: 1;
+            animation: rotateIn 1s;
+        }
+        @keyframes rotateIn {
+            from {
+                -webkit-transform: rotate3d(0, 0, 1, -200deg);
+                transform: rotate3d(0, 0, 1, -200deg);
+                opacity: 0;
+            }
+
+            to {
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+                opacity: 1;
+            }
+        }
+        #section7 .content-item-desc span {
+            opacity: 0;
+            transition: all 0.44s ease;
+            display: inline-block;      /* 인라인은 translate가 적용 되지 않음 */
+            min-width: 20px;            /* 띄어쓰기가 없어져서 적용 시킴 */    
+        } 
+        #section7 .content-item-desc span.show {
+            opacity: 1;
+            animation: zoomInUp 1s;
+        }
+        @keyframes zoomInUp {
+            from {
+                opacity: 0;
+                -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 1000px, 0);
+                transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 1000px, 0);
+                -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+                animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            }
+
+            60% {
+                opacity: 1;
+                -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+                transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+                -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+                animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+            }
+        }
+        #section8 .content-item-desc span {
+            opacity: 0;
+            transition: all 0.44s ease;
+            display: inline-block;      /* 인라인은 translate가 적용 되지 않음 */
+            min-width: 20px;            /* 띄어쓰기가 없어져서 적용 시킴 */    
+        } 
+        #section8 .content-item-desc span.show {
+            opacity: 1;
+            animation: rollIn 1s;
+        }
+        @keyframes rollIn {
+            from {
+                opacity: 0;
+                -webkit-transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+                transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+            }
+
+            to {
+                opacity: 1;
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+        }
+        #section9 .content-item-desc span {
+            opacity: 0;
+            transition: all 0.44s ease;
+            display: inline-block;      /* 인라인은 translate가 적용 되지 않음 */
+            min-width: 20px;            /* 띄어쓰기가 없어져서 적용 시킴 */    
+        } 
+        #section9 .content-item-desc span.show {
+            opacity: 1;
+            animation: lightSpeedInRight 1s;
+        }
+        @keyframes lightSpeedInRight {
+            from {
+                -webkit-transform: translate3d(100%, 0, 0) skewX(-30deg);
+                transform: translate3d(100%, 0, 0) skewX(-30deg);
+                opacity: 0;
+            }
+
+            60% {
+                -webkit-transform: skewX(20deg);
+                transform: skewX(20deg);
+                opacity: 1;
+            }
+
+            80% {
+                -webkit-transform: skewX(-5deg);
+                transform: skewX(-5deg);
+            }
+
+            to {
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+        }
+        
+        
+        .infor4 {position: fixed; right: 0; bottom: 8%; z-index: 1000; padding: 20px;}
+        .infor4 a {color: #fff; border: 1px solid #fff; border-radius: 30px; padding: 5px 10px}
+        .infor4 .modal {
+            background: rgba(0,0,0,0.8);
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            top: 100%;
+            left: 0;
+            transition: all 600ms cubic-bezier(0.86, 0, 0.07, 1);
+        }
+        .infor4 .modal.show {
+            top: 0;
+        }
+        .infor4 .modal .close {
+            position: absolute; right: 10px; top: 20px;
+            cursor: pointer;
+        }
+    </style>
+
+    <link rel="stylesheet" href="../mouse/prism.css">
+</head>
+<body>
+
+    <div class="info">
+        <div>scrollTop : <span class="scrollTop">0</span>px</div>
+    </div>
+
+    <div class="title">
+        <h1>Parallax06</h1>
+        <p>텍스트 효과</p>
+        <ul>
+            <li><a href="parallax3.html">parallax01</a></li>
+            <li><a href="parallax4.html">parallax02</a></li>
+            <li><a href="parallax5.html">parallax03</a></li>
+            <li><a href="parallax6.html">parallax04</a></li>
+            <li><a href="parallax7.html">parallax05</a></li>
+            <li class="active"><a href="parallax8.html">parallax06</a></li>
+            <li><a href="parallax9.html">parallax07</a></li>
+            <li><a href="parallax10.html">parallax08</a></li>
+        </ul>
+    </div>
+
+    <div class="infor4">
+        <a href="#" class="view">코드 보기</a>
+        <!-- modal -->
+        <div class="modal">
+            <div class="code-editor">
+                <h3>Script Editor
+                    <span class="control"></span>
+                    <span class="control"></span>
+                    <span class="control"></span>
+                </h3>
+                <div class="code">
+                    <pre class="line-numbers"><code class="language-js"> // let txt = $("#section1 .content-item-desc").text();     //  text메서드는 가져 올 수도 있고 삽입할 수도 있다.
+// alert(txt);
+// let split = txt.split("").join("&lt;/span>&lt;span aira-hidden='true'>")
+//     split = "&lt;span aira-hidden='true'>" + split + "&lt;/span>"
+// alert(split);
+// $("#section1 .content-item-desc").html(split).attr("aira-label", txt)
+
+/*
+split은 javascript 언어이다. .split("") 하면 한 글자씩 쪼갠다(띄어쓰기도 같이 쪼갠다)
+.split(" ") 하면 한 단어씩 쪼갠다.
+join도 javascript 언어이다.
+
+span에 aria-hidden을 써야 접근성을 준수하는 것이다.
+저 속성이 없으면 시각리더기가 한 글자씩 끊어서 읽어버린다.
+그래서 aria-hidden을 써서 시각리더기가 읽지 못하도록 해야 한다.
+aria-hidden을 사용할 때는 aira-label속성도 같이 있어야 한다.
+이 속성의 속성값으로는 읽지 않아야 하는 글을 쓰면 된다.
+*/
+
+
+
+// 위 스크립트를 한 번에 사용(글씨 분할)
+$(".content-item-desc").each(function(){
+    let txt = $(this).text();
+    let split = txt.split("").join("&lt;/span>&lt;span aira-hidden='true'>")
+        split = "&lt;span aira-hidden='true'>" + split + "&lt;/span>"
+    $(this).html(split).attr("aira-label", txt)
+});
+// for(i = 1; i &lt;= 9; i++){
+//     $("#section"+i+ ".content-item-desc").html(split).attr("aira-label", txt)
+// }
+
+
+
+// 패럴랙스 이펙트
+$(window).scroll(function(){
+    const scrollTop = $(window).scrollTop();
+    $(".scrollTop").text(scrollTop);
+
+
+    // $(".content-item").each(function(){
+    //     if( $(window).scrollTop() > $(this).offset().top ){
+    //         $(this).find(".content-item-desc").addClass("show");
+    //     } else {
+    //         $(this).find(".content-item-desc").removeClass("show");
+    //     }
+    // });
+
+    if( $(window).scrollTop() >= $("#section1").offset().top ){
+        $("#section1 .content-item-desc span").each(function(index){
+            setInterval(function(){
+                $("#section1 .content-item-desc span").eq(index).addClass("show");
+            }, 100 * index);
+        });
+    }
+
+    if( $(window).scrollTop() >= $("#section2").offset().top ){
+        $("#section2 .content-item-desc span").each(function(index){
+            setInterval(function(){
+                $("#section2 .content-item-desc span").eq(index).addClass("show");
+            }, 100 * index);
+        });
+    }
+
+    if( $(window).scrollTop() >= $("#section3").offset().top ){
+        $("#section3 .content-item-desc span").each(function(index){
+            setInterval(function(){
+                $("#section3 .content-item-desc span").eq(index).addClass("show");
+            }, 100 * index);
+        });
+    }
+
+    if( $(window).scrollTop() >= $("#section4").offset().top ){
+        $("#section4 .content-item-desc span").each(function(index){
+            setInterval(function(){
+                $("#section4 .content-item-desc span").eq(index).addClass("show");
+            }, 100 * index);
+        });
+    }
+    
+});
+</code></pre>
+                </div>
+
+            </div>
+            <a class="close">Close</a>
+        </div>
+    </div>
+
+    <!-- parallax -->
+    <section id="wrap">
+        <h1>Parallax <em>Scrolling</em></h1>
+        <div class="contents">
+            <section id="section1" class="content-item">
+                <span class="content-item-num">01</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+            </section>
+            <section id="section2" class="content-item">
+                <span class="content-item-num">02</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+            </section>
+            <section id="section3" class="content-item">
+                <span class="content-item-num">03</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+            </section>
+            <section id="section4" class="content-item">
+                <span class="content-item-num">04</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+            </section>
+            <section id="section5" class="content-item">
+                <span class="content-item-num">05</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+            </section>
+            <section id="section6" class="content-item">
+                <span class="content-item-num">06</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+            </section>
+            <section id="section7" class="content-item">
+                <span class="content-item-num">07</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+            </section>
+            <section id="section8" class="content-item">
+                <span class="content-item-num">08</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+            </section>
+            <section id="section9" class="content-item">
+                <span class="content-item-num">09</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+            </section>
+        </div> 
+    </section>
+
+    <script src="js/jquery.min_1.12.4.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/gsap.min_3.3.0.js"></script>
+    <script src="../mouse/prism.js"></script>
+    <script>
+        // let txt = $("#section1 .content-item-desc").text();     //  text메서드는 가져 올 수도 있고 삽입할 수도 있다.
+        // alert(txt);
+        // let split = txt.split("").join("</span><span aira-hidden='true'>")
+        //     split = "<span aira-hidden='true'>" + split + "</span>"
+        // alert(split);
+        // $("#section1 .content-item-desc").html(split).attr("aira-label", txt)
+
+        /*
+        split은 javascript 언어이다. .split("") 하면 한 글자씩 쪼갠다(띄어쓰기도 같이 쪼갠다)
+        .split(" ") 하면 한 단어씩 쪼갠다.
+        join도 javascript 언어이다.
+
+        span에 aria-hidden을 써야 접근성을 준수하는 것이다.
+        저 속성이 없으면 시각리더기가 한 글자씩 끊어서 읽어버린다.
+        그래서 aria-hidden을 써서 시각리더기가 읽지 못하도록 해야 한다.
+        aria-hidden을 사용할 때는 aira-label속성도 같이 있어야 한다.
+        이 속성의 속성값으로는 읽지 않아야 하는 글을 쓰면 된다.
+        */
+        
+
+        
+        // 위 스크립트를 한 번에 사용(글씨 분할)
+        $(".content-item-desc").each(function(){
+            let txt = $(this).text();   // 메서드만 쓰면 대상의 텍스트를 가져온다.
+            let split = txt.split("").join("</span><span aira-hidden='true'>")
+                split = "<span aira-hidden='true'>" + split + "</span>"
+            $(this).html(split).attr("aira-label", txt)
+        });
+        // for(i = 1; i <= 9; i++){
+        //     $("#section"+i+ ".content-item-desc").html(split).attr("aira-label", txt)
+        // }
+
+
+
+        // 패럴랙스 이펙트
+        $(window).scroll(function(){
+            const scrollTop = $(window).scrollTop();
+            $(".scrollTop").text(scrollTop);
+
+
+            // $(".content-item").each(function(){
+            //     if( $(window).scrollTop() > $(this).offset().top ){
+            //         $(this).find(".content-item-desc").addClass("show");
+            //     } else {
+            //         $(this).find(".content-item-desc").removeClass("show");
+            //     }
+            // });
+
+            if( $(window).scrollTop() + $(window).height() / 2 >= $("#section1").offset().top ){
+                $("#section1 .content-item-desc span").each(function(index){
+                    setInterval(function(){
+                        $("#section1 .content-item-desc span").eq(index).addClass("show");  // 여러개의 span에 0.1s마다 show가 붙는다. 그래서 애니메이션에 dealy가 있는 것 처럼 보인다.
+                    }, 100 * index);
+                });
+            }
+
+            if( $(window).scrollTop() + $(window).height() / 2 >= $("#section2").offset().top ){
+                $("#section2 .content-item-desc span").each(function(index){
+                    setInterval(function(){
+                        $("#section2 .content-item-desc span").eq(index).addClass("show");
+                    }, 100 * index);
+                });
+            }
+
+            if( $(window).scrollTop() + $(window).height() / 2 >= $("#section3").offset().top ){
+                $("#section3 .content-item-desc span").each(function(index){
+                    setInterval(function(){
+                        $("#section3 .content-item-desc span").eq(index).addClass("show");
+                    }, 100 * index);
+                });
+            }
+
+            if( $(window).scrollTop() + $(window).height() / 2 >= $("#section4").offset().top ){
+                $("#section4 .content-item-desc span").each(function(index){
+                    setInterval(function(){
+                        $("#section4 .content-item-desc span").eq(index).addClass("show");
+                    }, 100 * index);
+                });
+            }
+
+            if( $(window).scrollTop() + $(window).height() / 2 >= $("#section5").offset().top ){
+                $("#section5 .content-item-desc span").each(function(index){
+                    setInterval(function(){
+                        $("#section5 .content-item-desc span").eq(index).addClass("show");
+                    }, 100 * index);
+                });
+            }
+
+            if( $(window).scrollTop() + $(window).height() / 2 >= $("#section6").offset().top ){
+                $("#section6 .content-item-desc span").each(function(index){
+                    setInterval(function(){
+                        $("#section6 .content-item-desc span").eq(index).addClass("show");
+                    }, 100 * index);
+                });
+            }
+
+            if( $(window).scrollTop() + $(window).height() / 2 >= $("#section7").offset().top ){
+                $("#section7 .content-item-desc span").each(function(index){
+                    setInterval(function(){
+                        $("#section7 .content-item-desc span").eq(index).addClass("show");
+                    }, 100 * index);
+                });
+            }
+
+            if( $(window).scrollTop() + $(window).height() / 2 >= $("#section8").offset().top ){
+                $("#section8 .content-item-desc span").each(function(index){
+                    setInterval(function(){
+                        $("#section8 .content-item-desc span").eq(index).addClass("show");
+                    }, 100 * index);
+                });
+            }
+
+            if( $(window).scrollTop() + $(window).height() / 2 >= $("#section9").offset().top ){
+                $("#section9 .content-item-desc span").each(function(index){
+                    setInterval(function(){
+                        $("#section9 .content-item-desc span").eq(index).addClass("show");
+                    }, 100 * index);
+                });
+            }
+            
+        });
+    </script>
+</body>
+</html>

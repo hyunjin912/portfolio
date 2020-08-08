@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider06 - 좌우로 움직이기</title>
+ 
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+        @font-face { 
+            font-family: 'GmarketSansMedium'; 
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff'); 
+            font-weight: normal; 
+            font-style: normal; 
+        }
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        a {text-decoration: none; color: #fff;}
+        img {width: 100%; vertical-align: top;}
+        ul {padding: 10px 20px;}
+        body {
+            background: url(img/p10.jpg) no-repeat center center;
+            background-size: cover;
+            font-family: 'Abel', 'GmarketSansMedium';
+            color: #fff;
+            height: 100vh;
+        }
+        body::before {
+            content: '';
+            position: absolute; left: 0; top: 0;
+            width: 100%; height: 100vh;
+            background: rgba(50,37,11,0.86);
+            z-index: -1;
+        }
+        .info {
+            position: absolute; left: 0; top: 0; z-index: 1000;
+            padding: 20px;
+        }
+        .info h1 {
+            margin-bottom: 10px;
+        }
+        .info2 {
+            position: absolute; top: 0; right: 0; z-index: 1000;
+            padding: 20px;
+        }
+        .info2 li {
+            list-style: none;
+            margin-bottom: 5px;
+        }
+        .info2 li.active a {
+            border-bottom: 1px dashed #fff;
+        }
+
+        /* slide */
+        .slider-wrap {
+            /* width: 1000px; height: 600px; */
+            width: 52.083vw; height: 31.250vw;
+            overflow: hidden;
+            position: absolute; left: 50%; top: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 4px 4px 20px rgba(0,0,0,0.5);
+        }
+
+        .slider-img {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider-img .slides{
+            float: left;
+            width: 52.083vw;
+        }
+
+        .slider-btn a {
+            position: absolute; top: 50%; 
+            transform: translateY(-50%);
+            z-index: 1000;
+            padding: 20px;
+            background: rgba(0,0,0,0.5);
+            text-transform: uppercase;
+        }
+        .slider-btn a.prev {
+            left: 0;
+        }
+        .slider-btn a.next {
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="info">
+        <h1>Image Slider06</h1>
+        <p>좌우로 움직이기</p>
+        <ul>
+            <li>연속적으로 움직이기</li>
+            <li>버튼 만들기</li>
+        </ul>
+    </div>
+    <div class="info2">
+        <ul>
+            <li><a href="slide01.html">slider01</a></li>
+            <li><a href="slide02.html">slider02</a></li>
+            <li><a href="slide03.html">slider03</a></li>
+            <li><a href="slide04.html">slider04</a></li>
+            <li><a href="slide05.html">slider05</a></li>
+            <li class="active"><a href="slide06.html">slider06</a></li>
+            <li><a href="slide07.html">slider07</a></li>
+            <li><a href="slide08.html">slider08</a></li>
+            <li><a href="slide09.html">slider09</a></li>
+        </ul>
+    </div>
+
+    <!-- slider -->
+    <div class="slider-wrap">
+        <div class="slider-img">
+            <div class="slides s1"><img src="img/p6.jpg" alt="이미지1"></div>
+            <div class="slides s2"><img src="img/p7.jpg" alt="이미지2"></div>
+            <div class="slides s3"><img src="img/p8.jpg" alt="이미지3"></div>
+            <div class="slides s4"><img src="img/p9.jpg" alt="이미지4"></div>
+            <div class="slides s5"><img src="img/p10.jpg" alt="이미지5"></div>
+        </div>
+    </div>
+
+    <div class="slider-btn">
+        <a href="#" class="prev">prev</a>
+        <a href="#" class="next">next</a>
+    </div>
+
+
+    <!-- script -->
+    <script src="js/jquery.min_1.12.4.js"></script>
+    <script>
+       const sliderWrap = $(".slider-wrap");
+       const sliderImg = $(".slider-img");
+       const sliders = $(".slides");
+       const sliderBtn = $(".slider-btn"); 
+
+       let slideCount = sliders.length;
+       let slideWidth = sliders.width();
+       let slideHeight = sliders.height();
+       let slideTotalWidth = slideCount * slideWidth;
+
+        console.log(slideTotalWidth)
+    //    sliders.css( {width: slideWidth, height: slideHeight} ); 없어도 괜찮다
+
+       sliderImg.css( {width: slideTotalWidth, height: slideHeight, marginLeft: -slideWidth } );
+
+       /* 위 코드에서  marginLeft: -slideWidth가 없으면 오른쪽버튼 눌렀을 때는 문제없이 작동하지만 
+        왼쪽버튼을 눌렀을 때는 이미지가 잠시 안보였다가 보인다. 이것을 방지하기 위해
+        marginLeft: -slideWidth을 줘서 처음이미지 왼쪽에 왼쪽버튼을 눌렀을 경우 보여질 이미지를 미리 준비해둬서
+        바로 보이게 해 준 것이다.
+        
+        width: slideTotalWidth가 없으면 오른쪽버튼을 누를 때 왼쪽과 같이 잠시 이미지가 안보이다가 보이게 된다.
+        이것은 왼쪽과는 현상은 같지만 이유가 다르다. 이 코드가 없다면 이미지를 감싸는 .slider-img의 너비보다 커서
+        이미지가 정렬이 되지 않기 때문에 잠시 사라졌다가 보이는 것이다. 그래서 이미지너비 * 갯수 만큼의 너비가
+        .slider-img에 적용이 되어야 한다.
+        */
+    //    $(".slides:last-child").prependTo(sliderImg);  없어도 괜찮다
+
+       function moveLeft(){
+            sliderImg.animate( {left: slideWidth}, 400, function(){
+                $(".slides:last-child").prependTo(sliderImg);
+                $(sliderImg).css("left",""); //0이 있어도 괜찮고 없어도 괜찮다. 다만 left:0 이 검사에서 보이냐 안보이냐 차이
+            } );
+       };
+
+       function moveRight(){
+            sliderImg.animate( {left: - slideWidth}, 400, function(){
+                $(".slides:first-child").appendTo(sliderImg);
+                $(sliderImg).css("left","");
+            } );
+       };
+
+       sliderBtn.find(".prev").click(function(){
+            moveLeft();
+       });
+       sliderBtn.find(".next").click(function(){
+            moveRight();
+       });
+    
+       
+    </script>
+</body>
+</html>
