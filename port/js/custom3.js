@@ -1886,12 +1886,6 @@ $(".script-top").each(function(){
         setTimeout(function(){
             $clickWrap.addClass("rotate");
             $("body").css({height: "100vh", overflow: "hidden"});
-          
-            $(window).on("scroll touchmove mousewheel", function(e){
-                e.preventDefault();
-                e.stopPropagation();
-                return false;
-            });
         }, 1075)
     });
 
@@ -1900,7 +1894,6 @@ $(".script-top").each(function(){
         $section6.removeClass("scroll");
         $clickWrap.removeClass("rotate");
         $("body").css({height: "auto", overflow: "visible"});
-        $(window).off("scroll touchmove mousewheel");
         
 
         // setTimeout(function(){
