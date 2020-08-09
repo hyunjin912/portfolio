@@ -1900,11 +1900,7 @@ $(".script-top").each(function(){
         $section6.removeClass("scroll");
         $clickWrap.removeClass("rotate");
         $("body").css({height: "auto", overflow: "visible"});
-        $(window).on("scroll touchmove mousewheel", function(e){
-            e.preventDefault();
-            e.stopPropagation();
-            return false;
-        });
+        $(window).off("scroll touchmove mousewheel");
         
 
         // setTimeout(function(){
