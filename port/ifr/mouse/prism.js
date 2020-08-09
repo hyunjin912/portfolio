@@ -588,7 +588,8 @@ Prism.languages.javascript = Prism.languages.extend("clike", {
 }();
 
 // 모달
-$(".infor4 a.view").click(function () {
+$(".infor4 a.view").click(function (e) {
+    e.preventDefault();
     $(".infor4 .modal").addClass("show");
 });
 $(".infor4 .close").click(function () {
