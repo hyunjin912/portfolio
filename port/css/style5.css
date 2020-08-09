@@ -1204,7 +1204,7 @@ h1.main-tit .split span {
     background-color: rgba(0, 0, 0, 0.45);
     visibility: hidden;
     z-index: 101;
-    position: relative;
+    position: fixed;
     top: 100%; left: 50%;
     transform: translateX(-50%);
     transition: all 1s cubic-bezier(0.15, 0.65, 0.2, 1);
@@ -1284,33 +1284,41 @@ h1.main-tit .split span {
 
 
 /* section7 */
-#section7::before, #section7::after {
+#section7:before, #section7:after,
+#section7 > span:before,
+#section7 > span:after {
     content: '';
     position: absolute;
     top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    /* border-top: 500px solid #1e4b5c; */
-    border-top: 500px solid #1b1b1b;
-    /* border-bottom: 500px solid #1e4b5c; */
-    border-bottom: 500px solid #1b1b1b;
-    transition: transform 1s;
+    width: 25%;
+    height: 0;
+    background-color: #1b1b1b;
+    transition: 1s ease-in-out;
     z-index: -1;
 }
-#section7::before {
-    border-right: 500px solid transparent;
-    transform: translateX(-100%);
+#section7:before {
+    left: 0;
 }
-#section7::after {
-    border-left: 500px solid transparent;
-    transform: translateX(100%);
+#section7:after {
+    left: 50%;
 }
-#section7.change::before {
-    transform: translateX(0%);
+#section7 > span:before, #section7 > span:after {
+    top: auto;
+    bottom: 0;
 }
-#section7.change::after {
-    transform: translateX(0%);
+#section7 > span:before {
+    left: 25%;
+}
+#section7 > span:after {
+    left: 75%;
+}
+#section7:hover {
+    color: #d8c1bf;
+}
+#section7.change:before, #section7.change:after,
+#section7.change > span:before,
+#section7.change > span:after {
+    height: 100%;
 }
 #section7 .contact-wrap .contact-title .sub-tit {
     padding-left: 7px;
@@ -1348,9 +1356,6 @@ h1.main-tit .split span {
     letter-spacing: 5.8px;
     text-indent: 5px;
     white-space: nowrap;
-    cursor: pointer;
-}
-.send-btn {
     transition: background .2s;
     animation: circlemove 5s linear infinite;
 }
