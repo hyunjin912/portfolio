@@ -155,11 +155,7 @@ const makeHeaderShapes = (number) => {
         el_span.style.top   = y + '%';
         el_span.style.height = height + 'px';
         el_headerShapes.appendChild(el_span);
-
-      
     }
-
-    
 }
 
 
@@ -180,6 +176,20 @@ const makeHalfBackgroundShapes = (number) => {
         el_halfBackgroundShapes.appendChild(el_span);
     }
 }
+
+// const $body = document.querySelector("body");
+// let noScroll = setTimeout(function(){
+//     $body.style.overflow = "hidden";
+//     $body.style.width = "100%";
+//     $body.style.height = "100vh";
+// })
+// let autoScroll = setTimeout(function(){
+//     $body.style.overflow = "auto";
+//     $body.style.width = "";
+//     $body.style.height = "";
+// }, 1500)
+
+
 
 const initPage = () => {
     makeHeaderShapes(14);

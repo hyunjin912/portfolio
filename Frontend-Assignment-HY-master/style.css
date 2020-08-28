@@ -16,14 +16,14 @@ html,body {
     width: 100%;
     position: fixed;
     top: 0; left: 0;
-    padding: 50px;
-    padding-bottom: 0;
+    padding: 10px 50px;
     display: flex;
     box-sizing: border-box;
     justify-content: space-between;
     z-index: 20;
     font-size: 20px;
-    mix-blend-mode: difference;
+    /* mix-blend-mode: difference; */
+    background-color: #fff;
     color: #777;
 }
 
@@ -185,20 +185,20 @@ html,body {
     animation: star 2s forwards;
 }
 
-.header__shapes span:nth-child(1){animation-delay: 2s;}
-.header__shapes span:nth-child(2){animation-delay: 2.5s;}
-.header__shapes span:nth-child(3){animation-delay: 3s;}
-.header__shapes span:nth-child(4){animation-delay: 3.5s;}
-.header__shapes span:nth-child(5){animation-delay: 4s;}
-.header__shapes span:nth-child(6){animation-delay: 4.5s;}
-.header__shapes span:nth-child(7){animation-delay: 5s;}
-.header__shapes span:nth-child(8){animation-delay: 2s;}
-.header__shapes span:nth-child(9){animation-delay: 2.5s;}
-.header__shapes span:nth-child(10){animation-delay: 3s;}
-.header__shapes span:nth-child(11){animation-delay: 3.5s;}
-.header__shapes span:nth-child(12){animation-delay: 4s;}
-.header__shapes span:nth-child(13){animation-delay: 4.5s;}
-.header__shapes span:nth-child(14){animation-delay: 5s;}
+.header__shapes span:nth-child(1){animation-delay: 1.5s;}
+.header__shapes span:nth-child(2){animation-delay: 2s;}
+.header__shapes span:nth-child(3){animation-delay: 2.5s;}
+.header__shapes span:nth-child(4){animation-delay: 3s;}
+.header__shapes span:nth-child(5){animation-delay: 3.5s;}
+.header__shapes span:nth-child(6){animation-delay: 4s;}
+.header__shapes span:nth-child(7){animation-delay: 4.5s;}
+.header__shapes span:nth-child(8){animation-delay: 1.5s;}
+.header__shapes span:nth-child(9){animation-delay: 2s;}
+.header__shapes span:nth-child(10){animation-delay: 2.5s;}
+.header__shapes span:nth-child(11){animation-delay: 3s;}
+.header__shapes span:nth-child(12){animation-delay: 3.5s;}
+.header__shapes span:nth-child(13){animation-delay: 4s;}
+.header__shapes span:nth-child(14){animation-delay: 4.5s;}
 
 @keyframes star {
     0% {
