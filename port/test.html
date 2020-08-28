@@ -6,60 +6,88 @@
     <title>Document</title>
     
     <style>
+        html, body {
+            width: 100%;
+        }
+        * {
+            padding: 0; margin: 0;
+        }
         span {
-            display: inline-block;
-            font-size: 40px;
-            position: fixed; top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
+            font-size: 50px;
+            display: block;
         }
-        .boxwrap{
-            background: pink;
-            height: 4000px;
-        }
-        .box {
-            width: 200px; height: 200px;
-            margin-bottom: 300px;
-        }
-        .box:nth-child(1) {
-            margin-top: 300px;
-            background: red;
-        }
-        .box:nth-child(2) {background: orange;}
-        .box:nth-child(3) {background: yellow;}
-        .box:nth-child(4) {background: green;}
-        .box:nth-child(5) {background: blue;}
-        .box:nth-child(6) {background: darkblue;}
-        .box:nth-child(7) {background: purple;}
+       .box {
+           /* width: 800px; */
+           max-width: 800px;
+           /* height: 200px; */
+           background: dodgerblue;
+           display: flex;
+           font-size: 120px;
+           /* font-size: 10vw; */
+           
+       }
+       .sb {
+           width: 50%;
+           height: 100%;
+           color: #fff;
+       }
+       .sb:nth-child(1) {
+           background: red;
+       }
+       .sb:nth-child(2) {
+           background: orange;
+       }
+       .sb:nth-child(3) {
+           background: yellow;
+       }
+       .sb:nth-child(4) {
+           background: green;
+       }
+       .sb:nth-child(5) {
+           background: blue;
+       }
+       .sb:nth-child(6) {
+           background: rgb(4, 4, 78);
+       }
+       .sb:nth-child(7) {
+           background: purple;
+       }
     </style>
 </head>
 <body>
-    <span></span>
-    <div class="boxwrap">
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
+    <span class="window-width">window : 0</span>
+    <span class="box-width">box : 0</span>
+    <div class="box">
+        <!-- <div class="sb">1</div>
+        <div class="sb">2</div>
+        <div class="sb">3</div>
+        <div class="sb">4</div>
+        <div class="sb">5</div>
+        <div class="sb">6</div>
+        <div class="sb">7</div> -->
+        안녕하십니까
     </div>
 
     <script src="../script/jquery.min_1.12.4.js"></script>
     <script src="../port/js/gsap.min.js"></script>
     <script>
-        $(window).scroll(function(){
-            $("span").text($(window).scrollTop())
-            // if($(window).scrollTop() >= $(".box").offset().top){
-            //     $(".box").addClass("zzz")
-            // }
+        // $(window).scroll(function(){
+        //     $("span").text($(window).scrollTop())
+        //     // if($(window).scrollTop() >= $(".box").offset().top){
+        //     //     $(".box").addClass("zzz")
+        //     // }
 
-            $(".box").each(function(){
-                if($(window).scrollTop() >= $(this).offset().top){
-                    $(this).addClass("1356")
-                }
+        //     $(".box").each(function(){
+        //         if($(window).scrollTop() >= $(this).offset().top){
+        //             $(this).addClass("1356")
+        //         }
 
-                console.log($(this).offset().top)
-            });
+        //         console.log($(this).offset().top)
+        //     });
+        // });
+        $(window).resize(function(){
+            $(".window-width").text(`window : ${$(window).width()}`)
+            $(".box-width").text(`box : ${$(".box").outerWidth()}`)
         });
 
 
