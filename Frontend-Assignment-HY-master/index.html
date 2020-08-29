@@ -64,23 +64,30 @@
             </ul>
         </section>
         <section class="half">
-            <div class="half__item">
-                <div class="half__background"></div>
-                <div class="half__backgroundshapes">
+                <div class="half__item">
+                    <div class="half__background"></div>
+                    <div class="half__backgroundshapes">
 
+                    </div>
                 </div>
-            </div>
-            <div class="half__item">
-                <div class="section-title">
-                    <h3>METUS CONVALLIS</h3>
-                    <span class="shape-line"></span>
+                <div class="half__item">
+                    <div class="section-title">
+                        <h3>METUS CONVALLIS</h3>
+                        <span class="shape-line"></span>
+                    </div>
+                    <div class="section-text">
+                        <p>
+                            Nam dapibus risus in mi maximus, at auctor leo convallis. Etiam sit amet nunc porttitor, eleifend nunc in, egestas dolor. Nam sodales, est id vulputate pellentesque, justo mi sollicitudin arcu, eu ultrices tortor lacus a leo. Praesent et magna ex. Nam fringilla ex et nunc hendrerit semper. Sed commodo consectetur risus, eget varius lacus egestas ut. Donec laoreet vitae metus sed elementum. Proin in leo augue. Morbi ornare eros sit amet erat tincidunt, non volutpat metus convallis. Nulla pretium est vitae velit sollicitudin finibus. Quisque vel eros aliquet, lacinia arcu at, ullamcorper sapien.
+                        </p>
+                        <div class="section-btn">
+                            <ul>
+                                <li><a href="#">first</a></li>
+                                <li><a href="#">second</a></li>
+                                <li><a href="#">third</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="section-text">
-                    <p>
-                        Nam dapibus risus in mi maximus, at auctor leo convallis. Etiam sit amet nunc porttitor, eleifend nunc in, egestas dolor. Nam sodales, est id vulputate pellentesque, justo mi sollicitudin arcu, eu ultrices tortor lacus a leo. Praesent et magna ex. Nam fringilla ex et nunc hendrerit semper. Sed commodo consectetur risus, eget varius lacus egestas ut. Donec laoreet vitae metus sed elementum. Proin in leo augue. Morbi ornare eros sit amet erat tincidunt, non volutpat metus convallis. Nulla pretium est vitae velit sollicitudin finibus. Quisque vel eros aliquet, lacinia arcu at, ullamcorper sapien.
-                    </p>
-                </div>
-            </div>
         </section>
 
         <section class="subscribe">
@@ -143,63 +150,99 @@
 
 <script>
 
-const makeHeaderShapes = (number) => {
-    const el_headerShapes = document.querySelector('.header__shapes');
-
-    for(let i = 0; i < number; ++i){
-        const el_span = document.createElement('span');
-        const x             = Math.random() * 100;
-        const y             = Math.random() * 100;
-        const height        = 30 + (Math.random() * 400);
-        el_span.style.left  = x + '%';
-        el_span.style.top   = y + '%';
-        el_span.style.height = height + 'px';
-        el_headerShapes.appendChild(el_span);
-    }
-}
 
 
+window.addEventListener('DOMContentLoaded', function(){
+    const makeHeaderShapes = (number) => {
+        const el_headerShapes = document.querySelector('.header__shapes');
 
-const makeHalfBackgroundShapes = (number) => {
-    const el_halfBackgroundShapes = document.querySelector('.half__backgroundshapes');
+        for(let i = 0; i < number; ++i){
+            const el_span = document.createElement('span');
+            const x             = Math.random() * 100;
+            const y             = Math.random() * 100;
+            const height        = 30 + (Math.random() * 400);
+            el_span.style.left  = x + '%';
+            el_span.style.top   = y + '%';
+            el_span.style.height = height + 'px';
+            el_headerShapes.appendChild(el_span);
+        }
+    };
 
-    for(let i = 0; i < number; ++i){
-        const standardY = Math.random();
-        const el_span   = document.createElement('span');
-        const x         = Math.random() * 100;
-        const y         = 30 + (standardY * 60);
-        const scale     = standardY
-        const rotate    = Math.random() * 360;
-        el_span.style.left  = x + '%';
-        el_span.style.top   = y + '%';
-        el_span.style.transform = `scale(${scale}) rotate(${rotate}deg)`;
-        el_halfBackgroundShapes.appendChild(el_span);
-    }
-}
+    const makeHalfBackgroundShapes = (number) => {
+        const el_halfBackgroundShapes = document.querySelector('.half__backgroundshapes');
 
-// const $body = document.querySelector("body");
-// let noScroll = setTimeout(function(){
-//     $body.style.overflow = "hidden";
-//     $body.style.width = "100%";
-//     $body.style.height = "100vh";
-// })
-// let autoScroll = setTimeout(function(){
-//     $body.style.overflow = "auto";
-//     $body.style.width = "";
-//     $body.style.height = "";
-// }, 1500)
+        for(let i = 0; i < number; ++i){
+            const standardY = Math.random();
+            const el_span   = document.createElement('span');
+            const x         = Math.random() * 100;
+            const y         = 30 + (standardY * 60);
+            const scale     = standardY
+            const rotate    = Math.random() * 360;
+            el_span.style.left  = x + '%';
+            el_span.style.top   = y + '%';
+            el_span.style.transform = `scale(${scale}) rotate(${rotate}deg)`;
+            el_halfBackgroundShapes.appendChild(el_span);
+        }
+    };
 
+    const navUpDown = () => {
+        let moveScroll;
+        let lastScrollTop = 0
 
+        window.addEventListener("scroll", () => {
+            moveScroll = true;
+            // console.log(moveScroll);
+        });
 
-const initPage = () => {
-    makeHeaderShapes(14);
-    makeHalfBackgroundShapes(24);
-}
+        setInterval(function(){
+            if(moveScroll) {
+                hasScroll();
+                moveScroll = false;
+            }
+            // console.log(moveScroll);
+        }, 250);
 
-window.addEventListener('DOMContentLoaded', initPage);
+        function hasScroll(){
+            const wScroll = window.pageYOffset;  
+            //   console.log(`wScroll: ${wScroll}`)
+            if(wScroll > lastScrollTop) {
+                //스크롤을 내렸을 때
+                document.querySelector("#nav").classList.add("on");
+            } else {
+                //스크롤을 올렸을 때
+                document.querySelector("#nav").classList.remove("on");
+            }
+            lastScrollTop = wScroll;
+        };
+    };
+
+    const cardUp = () => {
+        let el_card__item = document.querySelectorAll(".card__item");
+        let el_cardsTop = document.querySelector(".cards").offsetTop;
+        
+        window.addEventListener("scroll", function(){
+            let scrollTop = window.pageYOffset;
+            console.log(`scrollTop : ${scrollTop}`);
+            console.log(`window.innerHeight : ${window.innerHeight}`)
+            console.log(el_cardsTop - window.innerHeight * 0.3);
+
+            if(scrollTop >= el_cardsTop - window.innerHeight * 0.3){
+                gsap.to(el_card__item, 1, {ease: Back.easeOut.config(1.7), opacity: 1, y: 0, stagger: 0.3});
+            }
+
+        });
+    };
+
+    const initPage = () => {
+        makeHeaderShapes(14);
+        makeHalfBackgroundShapes(24);
+        navUpDown();
+        cardUp();
+    };
+    initPage();
+});
 
 </script>
-<script src="script.js"></script>
 
 </body>
 </html>

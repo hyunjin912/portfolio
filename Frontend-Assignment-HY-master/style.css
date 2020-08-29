@@ -25,6 +25,10 @@ html,body {
     /* mix-blend-mode: difference; */
     background-color: #fff;
     color: #777;
+    transition: top 0.3s;
+}
+#nav.on {
+   top: -60px;
 }
 
 #nav a{
@@ -43,6 +47,23 @@ html,body {
 #nav #menu .menu__item{
     font-size: 20px;
     margin-left: 50px;
+}
+
+#nav #menu .menu__item a {
+    position: relative;
+}
+
+#nav #menu .menu__item a::before {
+    content: '';
+    position: absolute; 
+    bottom: -8px; left: 50%; right: 50%;
+    height: 2px;
+    background: #777;
+    transition: 0.3s;
+}
+
+#nav #menu .menu__item a:hover::before {
+    left: 0; right: 0;
 }
 
 .section-title {
@@ -243,6 +264,8 @@ html,body {
     border: 1px solid rgba(57, 51, 87, 0.521);
     position: relative;
     box-shadow: 0 10px 10px rgba(15, 31, 114, 0.2);
+    opacity: 0;
+    transform: translateY(150px);
 }
 
 .card__background {
@@ -311,17 +334,39 @@ html,body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     position: relative;
 }
 .half__item:nth-of-type(2){
-    padding: 50px;
+    padding: 200px 50px;
 }
 
 .half__item .section-text{
     padding: 0 100px;
-    margin-top: 100px;
-    overflow: scroll;
+    margin-top: 50px;
+    /* overflow: scroll; */
+}
+
+.half__item .section-btn {
+    margin-top: 50px;
+}
+.half__item .section-btn ul {
+    display: flex;
+    justify-content: space-between;
+}
+.half__item .section-btn li {
+
+}
+.half__item .section-btn li a {
+    display: inline-block;
+    text-align: center;
+    /* background-color: tan; */
+    background-color: silver;
+    font-size: 20px;
+    width: 150px;
+    padding: 8px 0;
+    box-sizing: border-box;
+    color: #fff;
 }
 
 .half__background{
