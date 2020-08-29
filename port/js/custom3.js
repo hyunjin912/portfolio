@@ -1867,7 +1867,7 @@ $(".script-btn > a.mousebtn").click(function(e){
     $(this).addClass("btnactive").siblings().removeClass("btnactive")
     $(".ifr3").attr("src", "ifr/mouse/mouse0"+index+".html");
 });
-
+ 
 $(".script-top").each(function(){
     let $scriptTop = $(this);
     let $section6 = $(this).closest("#section6");

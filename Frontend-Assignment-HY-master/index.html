@@ -64,30 +64,32 @@
             </ul>
         </section>
         <section class="half">
-                <div class="half__item">
-                    <div class="half__background"></div>
-                    <div class="half__backgroundshapes">
+            <div class="slide">
+                <div class="align_box">
+                    <div class="half__item">
+                        <div class="half__background"></div>
+                        <div class="half__backgroundshapes">
 
+                        </div>
                     </div>
-                </div>
-                <div class="half__item">
-                    <div class="section-title">
-                        <h3>METUS CONVALLIS</h3>
-                        <span class="shape-line"></span>
-                    </div>
-                    <div class="section-text">
-                        <p>
-                            Nam dapibus risus in mi maximus, at auctor leo convallis. Etiam sit amet nunc porttitor, eleifend nunc in, egestas dolor. Nam sodales, est id vulputate pellentesque, justo mi sollicitudin arcu, eu ultrices tortor lacus a leo. Praesent et magna ex. Nam fringilla ex et nunc hendrerit semper. Sed commodo consectetur risus, eget varius lacus egestas ut. Donec laoreet vitae metus sed elementum. Proin in leo augue. Morbi ornare eros sit amet erat tincidunt, non volutpat metus convallis. Nulla pretium est vitae velit sollicitudin finibus. Quisque vel eros aliquet, lacinia arcu at, ullamcorper sapien.
-                        </p>
-                        <div class="section-btn">
-                            <ul>
-                                <li><a href="#">first</a></li>
-                                <li><a href="#">second</a></li>
-                                <li><a href="#">third</a></li>
-                            </ul>
+                    <div class="half__item">
+                        <div class="section-title">
+                            <h3>METUS CONVALLIS</h3>
+                            <span class="shape-line"></span>
+                        </div>
+                        <div class="section-text">
+                            <p>
+                                Nam dapibus risus in mi maximus, at auctor leo convallis. Etiam sit amet nunc porttitor, eleifend nunc in, egestas dolor. Nam sodales, est id vulputate pellentesque, justo mi sollicitudin arcu, eu ultrices tortor lacus a leo. Praesent et magna ex. Nam fringilla ex et nunc hendrerit semper. Sed commodo consectetur risus, eget varius lacus egestas ut. Donec laoreet vitae metus sed elementum. Proin in leo augue. Morbi ornare eros sit amet erat tincidunt, non volutpat metus convallis. Nulla pretium est vitae velit sollicitudin finibus. Quisque vel eros aliquet, lacinia arcu at, ullamcorper sapien.
+                            </p>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="slide_btn">
+                <a href="#" class="prev">Prev</a>
+                <a href="#" class="next">Next</a>
+            </div>
         </section>
 
         <section class="subscribe">
@@ -217,27 +219,114 @@ window.addEventListener('DOMContentLoaded', function(){
     };
 
     const cardUp = () => {
-        let el_card__item = document.querySelectorAll(".card__item");
-        let el_cardsTop = document.querySelector(".cards").offsetTop;
+        const el_card__item = document.querySelectorAll(".card__item");
+        const el_cardsTop = document.querySelector(".cards").offsetTop;
         
         window.addEventListener("scroll", function(){
-            let scrollTop = window.pageYOffset;
-            console.log(`scrollTop : ${scrollTop}`);
-            console.log(`window.innerHeight : ${window.innerHeight}`)
-            console.log(el_cardsTop - window.innerHeight * 0.3);
+            const scrollTop = window.pageYOffset;
+            // console.log(`scrollTop : ${scrollTop}`);
+            // console.log(`window.innerHeight : ${window.innerHeight}`)
+            // console.log(el_cardsTop - window.innerHeight * 0.3);
 
             if(scrollTop >= el_cardsTop - window.innerHeight * 0.3){
                 gsap.to(el_card__item, 1, {ease: Back.easeOut.config(1.7), opacity: 1, y: 0, stagger: 0.3});
             }
+        });
+
+        // let currentIndex = 0;
+        // function show(index){
+        //     el_card__item[index].classList.toggle("detail");
+
+        //     currentIndex = index;
+        // }
+        // for(let i = 0; i < el_card__item.length; i++){
+        //     el_card__item[i].addEventListener("click", function(){
+        //         show(i);
+        //     });
+        // }
+        el_card__item[0].addEventListener("click", function(){
+            el_card__item[0].classList.toggle("detail");
+            el_card__item[1].classList.remove("detail");
+            el_card__item[2].classList.remove("detail");
+        });
+        el_card__item[1].addEventListener("click", function(){
+            el_card__item[0].classList.remove("detail");
+            el_card__item[1].classList.toggle("detail");
+            el_card__item[2].classList.remove("detail");
+        });
+        el_card__item[2].addEventListener("click", function(){
+            el_card__item[0].classList.remove("detail");
+            el_card__item[1].classList.remove("detail");
+            el_card__item[2].classList.toggle("detail");
+        });
+
+    };
+
+    const copy = () => {
+        const el_slide = document.querySelector(".slide");
+        const el_align_box = document.querySelector(".align_box");
+        const copyItem1 = el_align_box.cloneNode(true);
+        const copyItem2 = el_align_box.cloneNode(true);
+        const copyItem3 = el_align_box.cloneNode(true);
+
+        el_slide.appendChild(copyItem1);
+        el_slide.appendChild(copyItem2);
+        el_slide.appendChild(copyItem3);
+    }
+
+    const slide = () => {
+        const slideViewport = document.querySelector(".half");
+        const slideMove = document.querySelector(".slide");
+        const slideElements = document.querySelectorAll(".align_box");
+        const slideElementsCount = slideElements.length;
+        const prevBtn = document.querySelector(".prev"); 
+        const nextBtn = document.querySelector(".next"); 
+
+        let currentIndex = 0;
+
+        function action(index){
+            slideMove.style.left = `${index * -100}%`;
+            slideMove.classList.add("show");
+
+            currentIndex = index;
+
+            btnState()
+        };
+        function btnState(){
+            if(currentIndex == 0){
+                prevBtn.classList.add("hidden");
+            } else {
+                prevBtn.classList.remove("hidden");
+            }
+
+            if(currentIndex == slideElementsCount - 1){
+                nextBtn.classList.add("hidden");
+            } else {
+                nextBtn.classList.remove("hidden");
+            }
+        }
+        prevBtn.addEventListener("click", function(e){
+            e.preventDefault();
+
+            action(currentIndex - 1);
 
         });
-    };
+        nextBtn.addEventListener("click", function(e){
+            e.preventDefault();
+
+            action(currentIndex + 1);
+        });
+
+        action(0);
+    }
 
     const initPage = () => {
         makeHeaderShapes(14);
         makeHalfBackgroundShapes(24);
         navUpDown();
         cardUp();
+        copy();
+        slide();
     };
     initPage();
 });
