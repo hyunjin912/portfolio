@@ -234,7 +234,8 @@ $(window).scroll(function(){
 
     // ani-wrap background color
     $(".boxAll").each(function(idx){
-        bgcolor = ["","show1", "show2", "show3"] // .boxAll이 4개이므로 배열3개만 쓰면 클래스가 다 지워져서 원래 배경색으로 바뀜
+        // bgcolor = ["","show1", "show2", "show3"] // .boxAll이 4개이므로 배열3개만 쓰면 클래스가 다 지워져서 원래 배경색으로 바뀜
+        bgcolor = ["","show1", "show2", ""] // 스텝애니메이션 삭제
         // bgcolor = ["show1", "show2", "show3", "show3"]
 
         if( $(this).offset().left <= -$(this).width() * 0.4 ){
