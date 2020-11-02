@@ -747,7 +747,7 @@ h1.main-tit .split span {
 .ani-wrap {
     position: fixed; top: 0; left: 0;
     width: 100%;
-    height: 100vw;
+    height: 100vh;
 }
 .ani-wrap .bg-title {
     display: flex;
@@ -771,19 +771,19 @@ h1.main-tit .split span {
 }
 .ani-content {
     /* position: absolute; top: 145px; left: 100vw; */
-    position: absolute; top: 8%; left: 100%;
+    position: absolute; top: 16%; left: 100%;
     /* width: 8013px; */
     /* width: 417.344vw; */
     /* width: 9932px; */
     width: 517.292vw;
-    height: 648px;
     display: flex;
     justify-content: space-evenly;
 }
 .ani-content > div {
     /* width: 1242px; */
     width: 64.688vw;
-    height: 648px;
+    /* height: 648px; */
+    height: 70vh;
     /* margin-right: 1005px; */
     margin-right: 52.344vw;
     overflow: hidden;
