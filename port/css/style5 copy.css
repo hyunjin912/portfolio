@@ -1912,6 +1912,14 @@ h1.main-tit .split span {
     .script-btn {
         display: none;
     }
+
+    /* section7 */
+    .contact-title h2 {
+        font-size: 9.938vw;
+    }
+    .contact-title h2:first-child {
+        -webkit-text-stroke: 0.5px #fff;
+    }
 }
 
 
