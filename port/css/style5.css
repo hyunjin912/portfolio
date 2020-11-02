@@ -1806,7 +1806,8 @@ h1.main-tit .split span {
         font-size: 126px;
     }
     .ani-content {
-        top: 15%;
+        /* top: 15%; */
+        top: 23%;
         width: 550.292vw;
     }
     .ani-content > div {
