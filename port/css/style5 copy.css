@@ -1935,6 +1935,22 @@ h1.main-tit .split span {
         width: 15.604vw;
         height: 15.604vw;
     }
+    .send-wrap {
+        width: 94vw;
+    }
+    .send-wrap form > input {
+        margin-top: 0;
+    }
+    .send-wrap label {
+        font-size: 4vw;
+        line-height: 1.4;
+    }
+    .send-wrap input {
+        font-size: 3vw;
+    }
+    .send-wrap .send-close {
+        font-size: 4vw;
+    }
 }
 
 
