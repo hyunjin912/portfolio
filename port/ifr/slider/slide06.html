@@ -174,10 +174,12 @@
             } );
        };
 
-       sliderBtn.find(".prev").click(function(){
+       sliderBtn.find(".prev").click(function(e){
+           e.preventDefault();
             moveLeft();
        });
-       sliderBtn.find(".next").click(function(){
+       sliderBtn.find(".next").click(function(e){
+           e.preventDefault();
             moveRight();
        });
     
