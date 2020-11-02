@@ -20,7 +20,8 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
  
 .code-editor {
     box-sizing: border-box;
-    width: 60vw; 
+	/* width: 60vw;  */
+	width: 93vw;
     text-align: left;
     background-color: #2d2d2d;
     border-radius: 0 0 5px 5px;
