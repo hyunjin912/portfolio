@@ -1895,6 +1895,22 @@ h1.main-tit .split span {
     }
     .click-wrap {
         width: 106%;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    .close {
+        font-size: 6vw;
+        right: 3%;
+    }
+    .click-cont {
+        width: 94%;
+    }
+    .scriptview-wrap {
+        width: 100%;
+        height: 70vh;
+        padding: 1.859vw 1.885vw
+    }
+    .script-btn {
+        display: none;
     }
 }
 
