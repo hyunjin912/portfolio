@@ -94,7 +94,8 @@
         }
 
         .slider-dot {
-            position: absolute; bottom: 20px; left: 50%;
+            /* width: 100%; */
+            position: absolute; bottom: 4px; left: 50%;
             transform: translate(-50%);
             white-space: nowrap;
         }
@@ -115,6 +116,21 @@
             background-size: cover;
             color: tomato;
             opacity: 1;
+        }
+
+        @media (max-width: 446px) {
+            .slider-btn a {
+                padding: 10px;
+            }
+            .slider-dot {
+                width: 100%;
+            }
+            .slider-dot a {
+                width: 19%;
+                margin: 0.5%;
+                height: 25px;
+                line-height: 25px;
+            }
         }
     </style>
 </head>
@@ -144,18 +160,18 @@
     <!-- slider -->
     <div class="slider-wrap">
         <div class="slider-img">
-            <div class="slides s1"><img src="img/p6.jpg" alt="이미지1"><span>1</span></div>
-            <div class="slides s2"><img src="img/p7.jpg" alt="이미지2"><span>2</span></div>
-            <div class="slides s3"><img src="img/p8.jpg" alt="이미지3"><span>3</span></div>
-            <div class="slides s4"><img src="img/p9.jpg" alt="이미지4"><span>4</span></div>
-            <div class="slides s5"><img src="img/p10.jpg" alt="이미지5"><span>5</span></div>
+            <div class="slides s1"><img src="img/p6.jpg" alt="1"><span>1</span></div>
+            <div class="slides s2"><img src="img/p7.jpg" alt="2"><span>2</span></div>
+            <div class="slides s3"><img src="img/p8.jpg" alt="3"><span>3</span></div>
+            <div class="slides s4"><img src="img/p9.jpg" alt="4"><span>4</span></div>
+            <div class="slides s5"><img src="img/p10.jpg" alt="5"><span>5</span></div>
         </div>
     </div>
 
-    <!-- <div class="slider-btn">
+    <div class="slider-btn">
         <a href="#" class="prev">prev</a>
         <a href="#" class="next">next</a>
-    </div> -->
+    </div>
 
     <!-- <div class="slider-dot">
         <a href="#" class="dot active">1</a>
@@ -171,7 +187,7 @@
     <script src="js/jquery-ui.min.js"></script>
     <script>
         //버튼과 닷 태그 추가하기
-        $(".slider-wrap").append("<div class='slider-btn'><a href='#' class='prev'>prev</a><a href='#' class='next'>next</a></div>");
+        // $(".slider-wrap").append("<a href='#' class='prev'>prev</a><a href='#' class='next'>next</a>");
         $(".slider-wrap").append("<div class='slider-dot'></div>");
 
         const sliderWrap = $(".slider-wrap");
