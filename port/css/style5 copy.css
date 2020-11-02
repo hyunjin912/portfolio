@@ -1027,7 +1027,7 @@ h1.main-tit .split span {
     /* line-height: 1; */
     /* text-indent: -15px; */
     font-size: 10.417vw;
-    line-height: 9.7vw;
+    line-height: 0.92;
     
 }
 .script-what {
@@ -1036,7 +1036,7 @@ h1.main-tit .split span {
     padding: 10px 0px 10px 13px;
     box-sizing: border-box;
     font-size: 1.875vw;
-    line-height: 1.7vw;
+    line-height: 0.92;
 }
 .script-desc {
     font-family: 'S-CoreDream-3Light';
@@ -1872,8 +1872,23 @@ h1.main-tit .split span {
         width: 200px;
         height: 200px;
     }
-    .script-title span {
+    .scriptimg-wrap:hover:before {
+        animation: cross-left_mobile 0.6s forwards;
+    }
+    .scriptimg-wrap:hover:after {
+        animation: cross-right_mobile 0.6s forwards;
+    }
+    .script-title {
         font-size: 14vw;
+    }
+    .script-what {
+        font-size: 6vw;
+        padding: 10px 0px 10px 6px;
+    }
+    .script-desc {
+        font-size: 3vw;
+        padding-left: 6px;
+        margin-bottom: 10px;
     }
 }
 
@@ -1962,4 +1977,14 @@ h1.main-tit .split span {
     0% {right: -20px;}
     50% {right: 50%; width: 20px; height: 20px;}
     100% {right: 50%; width: 300px; height: 300px;}
+}
+@keyframes cross-left_mobile {
+    0% {left: -20px;}
+    50% {left: 50%; width: 20px; height: 20px;}
+    100% {left: 50%; width: 200px; height: 200px;}
+}
+@keyframes cross-right_mobile {
+    0% {right: -20px;}
+    50% {right: 50%; width: 20px; height: 20px;}
+    100% {right: 50%; width: 200px; height: 200px;}
 }
