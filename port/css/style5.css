@@ -1227,9 +1227,11 @@ h1.main-tit .split span {
     text-transform: uppercase;
     cursor: pointer;
     color: #fff;
-    text-align: right;
-    padding-right: 5vw;
-    
+    /* text-align: right;
+    padding-right: 5vw; */
+    position: absolute;
+    right: 5%;
+    top: 30px;
 }
 .click-cont {
     width: 75%;
@@ -1443,7 +1445,9 @@ h1.main-tit .split span {
     .container {width: 100%;}
     .row {padding: 0 3%;}
 }
+/* notebook */
 @media (max-width: 1366px) {
+    /* section5 */
     .bg-title .anitxt {
         font-size: 102px;
     }
@@ -1452,6 +1456,10 @@ h1.main-tit .split span {
     }
     .ani-content > div {
         height: 452px;
+    }
+    /* section6 */
+    .script-txt-wrap {
+        top: 73%;
     }
 }
 @media (max-width: 1300px){
