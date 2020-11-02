@@ -197,7 +197,8 @@
         };
 
         //버튼 클릭하기
-        sliderBtn.on("click","a", function(){
+        sliderBtn.on("click","a", function(e){
+            e.preventDefault();
             // if( $(this).hasClass("prev") ){
             //     moveLeft();
             // } else {

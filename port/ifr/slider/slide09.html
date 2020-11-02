@@ -236,7 +236,8 @@
         sliderWrap.on({mouseenter: stopTImer, mouseleave: startTimer})
 
         // 버튼 클릭하기
-        sliderBtn.on("click", "a", function(){
+        sliderBtn.on("click", "a", function(e){
+            e.preventDefault();
             let nextIndex = (currentIndex + 1) % sliderCount;
             let prevIndex = (currentIndex - 1) % sliderCount;
 
@@ -276,7 +277,8 @@
         
 
         // 닷 버튼 클릭하기
-        sliderDot.on("click", "a", function(){
+        sliderDot.on("click", "a", function(e){
+            e.preventDefault();
             gotoSlide( $(this).index() );
         });
     </script>

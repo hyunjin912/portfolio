@@ -242,7 +242,8 @@
         //     updataDot()
         // });
 
-        sliderDot.on("click", "a", function(){
+        sliderDot.on("click", "a", function(e){
+            e.preventDefault();
             gotoSlider( $(this).index() );
         });
     </script>
