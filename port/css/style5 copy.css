@@ -1893,6 +1893,9 @@ h1.main-tit .split span {
     .scriptimg-wrap.rotate {
         transform: translate3d(0%, 0%, -1000px) rotate3d(-1,-1.5,.4,-40deg);
     }
+    .click-wrap {
+        width: 106%;
+    }
 }
 
 
