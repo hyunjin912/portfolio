@@ -1124,7 +1124,7 @@ h1.main-tit .split span {
     /*left: 638px; */
     position: absolute; left: 33.229vw;
     /* width: 1208px; height: 727px; */
-    width: 62.917vw; height: 727px;
+    width: 62.917vw; height: 80vh;
     /* padding: 16.5px 17px; */
     padding: 0.859vw 0.885vw;
     background: #1b1b1b;
@@ -1143,7 +1143,7 @@ h1.main-tit .split span {
 }
 .img-box {
     /* width: 1174px; height: 694px; */
-    width: 61.146vw; height: 694px; 
+    width: 100%; height: 100%; 
 }
 .img-box img {
     width: 100%; height: 100%;
@@ -1226,8 +1226,9 @@ h1.main-tit .split span {
     text-transform: uppercase;
     cursor: pointer;
     color: #fff;
-    text-align: right;
-    padding-right: 5vw;
+    position: absolute;
+    right: 5%;
+    top: 10%;
     
 }
 .click-cont {
@@ -1239,7 +1240,7 @@ h1.main-tit .split span {
 }
 .scriptview-wrap {
     /* width: 1208px; height: 727px; */
-    width: 62.917vw; height: 727px;
+    width: 62.917vw; height: 80vh;
     /* padding: 16.5px 17px; */
     padding: 0.859vw 0.885vw;
     background: #1b1b1b;
@@ -1250,7 +1251,7 @@ h1.main-tit .split span {
 }
 .view-box {
     /* width: 1174px; height: 694px; */
-    width: 61.146vw; height: 694px;
+    width: 100%; height: 100%;
 }
 .view-box iframe {
     width: 100%; height: 100%;
