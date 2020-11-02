@@ -35,7 +35,6 @@ html, body {
     background: #1b1b1b;
     /* height: 10000px; */
     height: 6000px;
-    padding: 0 3%;
     overflow: hidden;
 }
 #section7 {
@@ -1027,12 +1026,17 @@ h1.main-tit .split span {
     text-transform: uppercase;
     /* line-height: 1; */
     /* text-indent: -15px; */
+    font-size: 10.417vw;
+    line-height: 9.7vw;
+    
 }
 .script-what {
     color: #fff;
     text-transform: uppercase;
     padding: 10px 0px 10px 13px;
     box-sizing: border-box;
+    font-size: 1.875vw;
+    line-height: 1.7vw;
 }
 .script-desc {
     font-family: 'S-CoreDream-3Light';
@@ -1041,17 +1045,18 @@ h1.main-tit .split span {
     letter-spacing: 0.5px;
     padding-left: 12px;
     box-sizing: border-box;
+    font-size: 0.938vw;
 }
 .script-title span {
-    font-size: 10.417vw;
-    line-height: 7.7vw;
+    /* font-size: 10.417vw;
+    line-height: 7.7vw; */
 }
 .script-what span {
-    font-size: 1.875vw;
-    line-height: 1.7vw;
+    /* font-size: 1.875vw;
+    line-height: 1.7vw; */
 }
 .script-desc span {
-    font-size: 0.938vw;
+    /* font-size: 0.938vw; */
 }
 .script-title span,
 .script-what span,
@@ -1847,6 +1852,9 @@ h1.main-tit .split span {
     }
 
     /* section6 */
+    #section6 {
+        padding: 0 3%;
+    }
     .script-txt-wrap {
         position: static;
         width: 100%;
@@ -1859,6 +1867,13 @@ h1.main-tit .split span {
         left: 0;
         width: 100%; height: 40vh;
         padding: 1.859vw 1.885vw
+    }
+    .scriptimg-wrap span::before {
+        width: 200px;
+        height: 200px;
+    }
+    .script-title span {
+        font-size: 14vw;
     }
 }
 
