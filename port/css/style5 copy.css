@@ -1686,6 +1686,12 @@ h1.main-tit .split span {
     .ani-title {
         font-size: 6.167vw;
     }
+
+    /* section7 */
+    .contact-title h2 {
+        line-height: 10.625vw;
+    }
+    
 }
 
 /* max-width: 409px */
@@ -1914,11 +1920,20 @@ h1.main-tit .split span {
     }
 
     /* section7 */
+    #section7 .sub-tit {
+        font-size: 16px;
+        margin-top: 40px;
+    }
     .contact-title h2 {
         font-size: 9.938vw;
     }
     .contact-title h2:first-child {
         -webkit-text-stroke: 0.5px #fff;
+    }
+    .send-btn {
+        bottom: -30vw;
+        width: 15.604vw;
+        height: 15.604vw;
     }
 }
 
