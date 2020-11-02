@@ -35,6 +35,7 @@ html, body {
     background: #1b1b1b;
     /* height: 10000px; */
     height: 6000px;
+    padding: 0 3%;
     overflow: hidden;
 }
 #section7 {
@@ -1843,6 +1844,21 @@ h1.main-tit .split span {
     .square::after {
         width: 59px;
         height: 59px;
+    }
+
+    /* section6 */
+    .script-txt-wrap {
+        position: static;
+        width: 100%;
+    }
+    .script-desc {
+        width: 100%;
+        padding-left: 0;
+    }
+    .scriptimg-wrap {
+        left: 0;
+        width: 100%; height: 40vh;
+        padding: 1.859vw 1.885vw
     }
 }
 
