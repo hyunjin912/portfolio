@@ -273,6 +273,59 @@
             position: absolute; right: 10px; top: 20px;
             cursor: pointer;
         }
+
+        @media (max-width: 446px) {
+            .title {
+                top: 23%;
+            }
+            .title h1 {
+                margin-bottom: 10px;
+                font-size: 18px;
+            }
+            .title p {
+                font-size: 18px;
+            }
+            .title ul {
+                padding: 10px 0;
+            }
+            .content-item-num {
+                left: 0;
+                right: auto;
+                opacity: 0.1;
+            }
+            .content-item-title {
+                text-align: left;
+            }
+            .content-item-imgWrap {
+                --width: 78%;
+                width: var(--width);
+            }
+            .content-item-img {
+                width: 100%;
+            }
+            .content-item-desc {
+                width: 78%;
+                text-align: left;
+                margin-top: -3vw;
+                margin-left: 0;
+            }
+            .content-item:nth-child(even) {
+                margin-left: 0;
+            }
+            .content-item:nth-child(even) .content-item-num {
+                right: auto;
+                left: 0;
+            }
+            .content-item:nth-child(even) .content-item-desc {
+                margin-left: 0;
+            }
+            .info {
+                display: none;
+            }
+            #wrap h1 {
+                font-size: 13vw;
+            }
+        }
     </style>
 
     <link rel="stylesheet" href="../mouse/prism.css">
