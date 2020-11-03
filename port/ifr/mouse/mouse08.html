@@ -93,7 +93,7 @@
     }
     
     .infor4 {position: absolute; left: 45%; bottom: 0; z-index: 1000; padding: 20px;}
-    .infor4 a {color: #fff; border: 1px solid #fff; border-radius: 30px; padding: 5px 30px}
+    .infor4 a {color: #fff; border: 1px solid #fff; border-radius: 30px; padding: 5px 10px}
     .infor4 .modal {
         background: rgba(0,0,0,0.8);
         width: 100%;
@@ -119,6 +119,31 @@
     .textWrap .line .right .spanWrap {width: 100vw; text-align: center; transform: translate(-50vw);}
     .textWrap .line .right .spanWrap span {font-size: 3vw;}
     .textWrap span {display: inline-block;} /* 인라인 구조는 translate가 적용되지 않으므로 inline-block으로 변경 */
+
+    @media (max-width: 446px) {
+        .info2 {
+            padding: 0;
+        }
+        .info2 ul {
+            padding: 20px 20px;
+        }
+        .info3 {
+            display: none;
+        }
+        .infor4 {
+            left: auto;
+            right: 0;
+            bottom: 2%;
+        }
+        .contents p {
+            max-width: 92vw;
+            font-size: 4vw;
+        }
+        .textWrap .line .left .spanWrap span,
+        .textWrap .line .right .spanWrap span {
+            font-size: 6vw;
+        }
+    }
     </style>
 
     <link rel="stylesheet" href="prism.css">
