@@ -497,7 +497,8 @@
 
 
         //버튼 클릭하기
-        slideBtn.on("click", "a", function(){
+        slideBtn.on("click", "a", function(e){
+            e.preventDefault();
             let nextIndex = (currentIndex + 1) % slideCount;
             let prevIndex = (currentIndex - 1) % slideCount;
 

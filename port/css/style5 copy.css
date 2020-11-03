@@ -1966,6 +1966,9 @@ h1.main-tit .split span {
     .send-wrap input {
         font-size: 3vw;
     }
+    .send-wrap textarea {
+        font-size: 3vw;
+    }
     .send-wrap .send-close {
         font-size: 4vw;
     }
